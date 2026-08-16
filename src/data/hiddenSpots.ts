@@ -3792,19 +3792,19 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-eldorado-beach': 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Pirogue_sur_la_plage_de_la_route_des_p%C3%AAcheurs_%C3%A0_Cotonou.jpg',
   'spot-hotel-novotel': 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Boulevard_de_la_Marina.jpg',
   'spot-hotel-cote': 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Plage_de_Fidjross%C3%A9.jpg',
-  'spot-code-bar': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_B%C3%A9nin.jpg/1280px-Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_B%C3%A9nin.jpg',
-  'spot-casino-partouche': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Boulevard_de_la_Marina_%C3%A0_Cotonou_la_nuit.jpg/1280px-Boulevard_de_la_Marina_%C3%A0_Cotonou_la_nuit.jpg',
-  'spot-le-black': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Makounba_Restaurant_et_night_club_02.jpg/1280px-Makounba_Restaurant_et_night_club_02.jpg',
-  'spot-vip-club': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Makounba_Restaurant_et_night_club_03.jpg/1280px-Makounba_Restaurant_et_night_club_03.jpg',
-  'spot-le-loft': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Makounba_Restaurant_et_night_club_05.jpg/1280px-Makounba_Restaurant_et_night_club_05.jpg',
-  'spot-black-white-club': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_B%C3%A9nin1.jpg/1280px-Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_B%C3%A9nin1.jpg',
-  'spot-2001-night-club': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_B%C3%A9nin2.jpg/1280px-Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_B%C3%A9nin2.jpg',
-  'spot-jammin': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_au_B%C3%A9nin.jpg/1280px-Int%C3%A9rieur_d%27un_bar_Restaurant_a_Cotonou_au_B%C3%A9nin.jpg',
-  'spot-calypso': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Faty_en_concert_%C3%A0_la_fete_de_la_musique_2020_au_B%C3%A9nin_02.jpg/1280px-Faty_en_concert_%C3%A0_la_fete_de_la_musique_2020_au_B%C3%A9nin_02.jpg',
-  'spot-le-seven': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Fifi_Finder_en_prestation_%C3%A0_la_f%C3%AAte_de_la_musique_2021_%C3%A0_Cotonou_au_B%C3%A9nin.jpg/1280px-Fifi_Finder_en_prestation_%C3%A0_la_f%C3%AAte_de_la_musique_2021_%C3%A0_Cotonou_au_B%C3%A9nin.jpg',
-  'spot-crystal-palace': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Wiskid_au_concert_WeLoveEya_2025_%C3%A0_Cotonou.jpg/1280px-Wiskid_au_concert_WeLoveEya_2025_%C3%A0_Cotonou.jpg',
-  'spot-le-tabou': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Olouwa_K%C3%A8mi_%C3%A0_la_f%C3%AAte_de_la_musique_2021_%C3%A0_Cotonou_au_B%C3%A9nin_23.jpg/1280px-Olouwa_K%C3%A8mi_%C3%A0_la_f%C3%AAte_de_la_musique_2021_%C3%A0_Cotonou_au_B%C3%A9nin_23.jpg',
-  'spot-314-club': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Bobo_w%C3%AA_sur_le_concert_WeLoveEya_2025_%C3%A0_Cotonou.jpg/1280px-Bobo_w%C3%AA_sur_le_concert_WeLoveEya_2025_%C3%A0_Cotonou.jpg'
+  'spot-code-bar': '/images/club-code-bar.jpg',
+  'spot-casino-partouche': '/images/club-casino.jpg',
+  'spot-le-black': '/images/club-le-black.jpg',
+  'spot-vip-club': '/images/club-vip.jpg',
+  'spot-le-loft': '/images/club-le-loft.jpg',
+  'spot-black-white-club': '/images/club-black-white.jpg',
+  'spot-2001-night-club': '/images/club-2001.jpg',
+  'spot-jammin': '/images/club-jammin.jpg',
+  'spot-calypso': '/images/club-calypso.jpg',
+  'spot-le-seven': '/images/club-le-seven.jpg',
+  'spot-crystal-palace': '/images/club-crystal-palace.jpg',
+  'spot-le-tabou': '/images/club-le-tabou.jpg',
+  'spot-314-club': '/images/club-314.jpg'
 };
 
 export const INITIAL_HIDDEN_SPOTS: HiddenSpot[] = RAW_SPOTS.map((spot) =>
