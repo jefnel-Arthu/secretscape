@@ -1,0 +1,6 @@
+{
+  "name": "SecretScape - Guide & Calendrier des Lieux Cachés",
+  "description": "Plateforme touristique interactive pour découvrir des lieux cachés et composer un calendrier de voyage sur mesure.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,439 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React, { useState, useEffect, useMemo } from 'react';
+import { HiddenSpot, SecretCategory, SecretLevel, UserTripCalendar, TimeSlot } from './types';
+import { INITIAL_HIDDEN_SPOTS } from './data/hiddenSpots';
+import { filterSpots } from './lib/filter';
+import { Header } from './components/Header';
+import { FilterBar } from './components/FilterBar';
+import { MapExplorer } from './components/MapExplorer';
+import { SpotCard } from './components/SpotCard';
+import { CalendarItineraryView } from './components/CalendarItineraryView';
+import { AIAssistantModal } from './components/AIAssistantModal';
+import { SpotDetailModal } from './components/SpotDetailModal';
+import { AddSpotModal } from './components/AddSpotModal';
+import { ServicesView } from './components/ServicesView';
+import { ContactView } from './components/ContactView';
+import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-react';
+
+export default function App() {
+  // Navigation tab state
+  const [activeTab, setActiveTab] = useState<'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact'>('map');
+  const [viewMode, setViewMode] = useState<'map' | 'grid'>('map');
+
+  // Spots dataset
+  const [spots, setSpots] = useState<HiddenSpot[]>(() => {
+    const saved = localStorage.getItem('secretscape_spots');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        return [...parsed, ...INITIAL_HIDDEN_SPOTS.filter(s => !parsed.some((p: any) => p.id === s.id))];
+      } catch (e) {
+        return INITIAL_HIDDEN_SPOTS;
+      }
+    }
+    return INITIAL_HIDDEN_SPOTS;
+  });
+
+  // Filter state
+  const [selectedCity, setSelectedCity] = useState<string>('ALL');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedCategory, setSelectedCategory] = useState<SecretCategory | 'ALL'>('ALL');
+  const [selectedSecretLevel, setSelectedSecretLevel] = useState<SecretLevel | 'ALL'>('ALL');
+
+  // Favorites state
+  const [favorites, setFavorites] = useState<string[]>(() => {
+    const saved = localStorage.getItem('secretscape_favorites');
+    return saved ? JSON.parse(saved) : ['spot-ganvie-1', 'spot-ouidah-pythons'];
+  });
+
+  // Trip Calendar State
+  const [calendar, setCalendar] = useState<UserTripCalendar>(() => {
+    const saved = localStorage.getItem('secretscape_calendar');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) {}
+    }
+    return {
+      title: "Mon Escapade aux Secrets du Bénin",
+      destinationCity: "Bénin (Cotonou & Ouidah)",
+      startDate: new Date().toISOString().split('T')[0],
+      days: [
+        {
+          dayNumber: 1,
+          title: "Jour 1: Cotonou & Secrets Urbains",
+          items: [
+            {
+              id: "item-init-1",
+              spotId: "spot-cotonou-fetiches",
+              spot: INITIAL_HIDDEN_SPOTS[9],
+              timeSlot: "morning",
+              timeString: "09:30"
+            },
+            {
+              id: "item-init-2",
+              spotId: "spot-cotonou-zinsou",
+              spot: INITIAL_HIDDEN_SPOTS[11],
+              timeSlot: "afternoon",
+              timeString: "15:00"
+            }
+          ]
+        },
+        {
+          dayNumber: 2,
+          title: "Jour 2: Ouidah, Pythons & Mémoire",
+          items: [
+            {
+              id: "item-init-3",
+              spotId: "spot-ouidah-pythons",
+              spot: INITIAL_HIDDEN_SPOTS[7],
+              timeSlot: "morning",
+              timeString: "09:30"
+            }
+          ]
+        }
+      ]
+    };
+  });
+
+  // Selected spot modal & toast state
+  const [selectedSpot, setSelectedSpot] = useState<HiddenSpot | null>(null);
+  const [selectedSpotModal, setSelectedSpotModal] = useState<HiddenSpot | null>(null);
+  const [isAiModalOpen, setIsAiModalOpen] = useState<boolean>(false);
+  const [isAddSpotModalOpen, setIsAddSpotModalOpen] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [isAiSearching, setIsAiSearching] = useState<boolean>(false);
+
+  // Save to LocalStorage
+  useEffect(() => {
+    localStorage.setItem('secretscape_favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  useEffect(() => {
+    localStorage.setItem('secretscape_calendar', JSON.stringify(calendar));
+  }, [calendar]);
+
+  useEffect(() => {
+    const initialIds = new Set(INITIAL_HIDDEN_SPOTS.map(s => s.id));
+    const customSpots = spots.filter(s => !initialIds.has(s.id));
+    localStorage.setItem('secretscape_spots', JSON.stringify(customSpots));
+  }, [spots]);
+
+  // Extract unique cities
+  const cities = useMemo(() => {
+    const set = new Set(spots.map(s => s.city));
+    return Array.from(set).sort();
+  }, [spots]);
+
+  // Filtered spots list
+  const filteredSpots = useMemo(() => {
+    return filterSpots(spots, {
+      city: selectedCity,
+      category: selectedCategory,
+      secretLevel: selectedSecretLevel,
+      searchQuery,
+    });
+  }, [spots, selectedCity, selectedCategory, selectedSecretLevel, searchQuery]);
+
+  // Toggle favorite
+  const handleToggleFavorite = (spot: HiddenSpot) => {
+    setFavorites(prev => {
+      if (prev.includes(spot.id)) {
+        showToast(`Retiré des favoris: ${spot.title}`);
+        return prev.filter(id => id !== spot.id);
+      } else {
+        showToast(`Ajouté aux favoris: ${spot.title}`);
+        return [...prev, spot.id];
+      }
+    });
+  };
+
+  // Add spot to trip calendar
+  const handleAddToCalendar = (spot: HiddenSpot, dayNumber = 1, timeSlot: TimeSlot = 'afternoon') => {
+    setCalendar(prev => {
+      const days = [...prev.days];
+      let targetDayIndex = days.findIndex(d => d.dayNumber === dayNumber);
+      if (targetDayIndex === -1) targetDayIndex = 0;
+
+      const newItem = {
+        id: `item-${spot.id}-${Date.now()}`,
+        spotId: spot.id,
+        spot,
+        timeSlot,
+        timeString: timeSlot === 'morning' ? '10:00' : timeSlot === 'noon' ? '12:30' : '15:00'
+      };
+
+      days[targetDayIndex] = {
+        ...days[targetDayIndex],
+        items: [...days[targetDayIndex].items, newItem]
+      };
+
+      return { ...prev, days };
+    });
+
+    showToast(`📍 ${spot.title} ajouté à votre calendrier !`);
+  };
+
+  // Handle new user spot submission
+  const handleAddUserSpot = (newSpot: HiddenSpot) => {
+    setSpots(prev => [newSpot, ...prev]);
+    showToast(`✨ Nouveau lieu secret publié !`);
+  };
+
+  // AI Discover Spots dynamically
+  const handleAiDiscoverSpots = async () => {
+    setIsAiSearching(true);
+    try {
+      const res = await fetch('/api/gemini/discover-spots', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          city: selectedCity !== 'ALL' ? selectedCity : searchQuery || 'Cotonou',
+          query: searchQuery || 'lieux secrets insolites et cachés'
+        })
+      });
+
+      if (!res.ok) throw new Error('Erreur recherche IA');
+
+      const data = await res.json();
+      if (data.spots && data.spots.length > 0) {
+        setSpots(prev => {
+          const newSpots = data.spots.filter((s: HiddenSpot) => !prev.some(p => p.title === s.title));
+          return [...newSpots, ...prev];
+        });
+        showToast(`🤖 ${data.spots.length} nouvelles pépites trouvées par l'IA !`);
+      }
+    } catch (e) {
+      showToast('❌ Erreur lors de la recherche IA.');
+    } finally {
+      setIsAiSearching(false);
+    }
+  };
+
+  // Toast notification trigger
+  const showToast = (msg: string) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 3000);
+  };
+
+  const calendarItemsCount = calendar.days.reduce((acc, d) => acc + d.items.length, 0);
+
+  return (
+    <div className="min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans">
+      
+      {/* Toast Floating Notification */}
+      {toastMessage && (
+        <div className="fixed bottom-6 right-6 z-[700] bg-stone-900 text-stone-100 px-4 py-3 rounded-2xl shadow-2xl border border-stone-700 flex items-center gap-2 text-xs font-semibold animate-in fade-in slide-in-from-bottom-5">
+          <Sparkles className="w-4 h-4 text-amber-400" />
+          <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* Header */}
+      <Header
+        activeTab={activeTab}
+        setActiveTab={(tab) => {
+          if (tab === 'ai') {
+            setIsAiModalOpen(true);
+          } else if (tab === 'addSpot') {
+            setIsAddSpotModalOpen(true);
+          } else {
+            setActiveTab(tab);
+          }
+        }}
+        calendarItemsCount={calendarItemsCount}
+        favoritesCount={favorites.length}
+        selectedCity={selectedCity}
+        setSelectedCity={setSelectedCity}
+        cities={cities}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        isAiModalOpen={isAiModalOpen}
+        isAddSpotModalOpen={isAddSpotModalOpen}
+      />
+
+      {/* Main View Area */}
+      <main className="flex-1 flex flex-col">
+        {activeTab === 'map' && (
+          <div className="flex-1 flex flex-col">
+            <FilterBar
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedSecretLevel={selectedSecretLevel}
+              setSelectedSecretLevel={setSelectedSecretLevel}
+              viewMode={viewMode}
+              setViewMode={setViewMode}
+              totalSpotsCount={filteredSpots.length}
+            />
+
+            {/* AI Search Bar Banner if results are few or user wants more */}
+            <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 flex items-center justify-between gap-2 text-xs">
+              <span className="text-amber-950 font-medium">
+                Vous cherchez encore plus de pépites à <strong>{selectedCity !== 'ALL' ? selectedCity : 'proximité'}</strong> ?
+              </span>
+              <button
+                onClick={handleAiDiscoverSpots}
+                disabled={isAiSearching}
+                className="bg-stone-900 hover:bg-stone-800 text-amber-300 font-bold px-3 py-1 rounded-lg text-xs flex items-center gap-1.5 transition-colors"
+              >
+                {isAiSearching ? (
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    <span>Recherche en cours...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                    <span>Découvrir par IA</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            {viewMode === 'map' ? (
+              <MapExplorer
+                spots={filteredSpots}
+                selectedSpot={selectedSpot}
+                onSelectSpot={(spot) => setSelectedSpot(spot)}
+                onOpenSpotDetail={(spot) => setSelectedSpotModal(spot)}
+                onClosePanel={() => setSelectedSpot(null)}
+                onAddToCalendar={(spot) => handleAddToCalendar(spot)}
+                onToggleFavorite={handleToggleFavorite}
+                favorites={favorites}
+              />
+            ) : (
+              /* Grid / Catalog View */
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+                {filteredSpots.length === 0 ? (
+                  <div className="text-center py-20 bg-white rounded-3xl border border-stone-200 p-8 space-y-4">
+                    <Compass className="w-12 h-12 text-stone-300 mx-auto" />
+                    <h3 className="font-display font-bold text-lg text-stone-800">Aucun lieu secret ne correspond à vos filtres</h3>
+                    <p className="text-stone-500 text-xs">Essayez d'élargir votre recherche ou demandez à l'IA de révéler de nouveaux lieux.</p>
+                    <button
+                      onClick={handleAiDiscoverSpots}
+                      className="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-4 py-2 rounded-xl text-xs"
+                    >
+                      Lancer la recherche par IA
+                    </button>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredSpots.map(spot => (
+                      <SpotCard
+                        key={spot.id}
+                        spot={spot}
+                        onSelectSpot={(s) => setSelectedSpotModal(s)}
+                        onAddToCalendar={(s) => handleAddToCalendar(s)}
+                        onToggleFavorite={handleToggleFavorite}
+                        isFavorite={favorites.includes(spot.id)}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Calendar View */}
+        {activeTab === 'calendar' && (
+          <CalendarItineraryView
+            calendar={calendar}
+            setCalendar={setCalendar}
+            onOpenSpotModal={(spot) => setSelectedSpotModal(spot)}
+            onNavigateToMap={() => setActiveTab('map')}
+            onOpenAiGenerator={() => setIsAiModalOpen(true)}
+          />
+        )}
+
+        {/* Favorites View */}
+        {activeTab === 'favorites' && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-6">
+            <div className="border-b border-stone-200 pb-4">
+              <h1 className="font-display font-bold text-2xl text-stone-900 flex items-center gap-2">
+                <Bookmark className="w-6 h-6 text-rose-500 fill-current" />
+                <span>Mes Lieux Secrets Favoris ({favorites.length})</span>
+              </h1>
+              <p className="text-stone-500 text-xs mt-1">Vos pépites sauvegardées à garder précieusement.</p>
+            </div>
+
+            {favorites.length === 0 ? (
+              <div className="text-center py-20 bg-white rounded-3xl border border-stone-200 p-8 space-y-3">
+                <Bookmark className="w-10 h-10 text-stone-300 mx-auto" />
+                <h3 className="font-display font-bold text-base text-stone-800">Aucun favori pour le moment</h3>
+                <p className="text-stone-500 text-xs">Cliquez sur l'icône marque-page sur un lieu secret pour le retrouver ici.</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {spots.filter(s => favorites.includes(s.id)).map(spot => (
+                  <SpotCard
+                    key={spot.id}
+                    spot={spot}
+                    onSelectSpot={(s) => setSelectedSpotModal(s)}
+                    onAddToCalendar={(s) => handleAddToCalendar(s)}
+                    onToggleFavorite={handleToggleFavorite}
+                    isFavorite={true}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Services View */}
+        {activeTab === 'services' && (
+          <ServicesView onNavigateToContact={() => setActiveTab('contact')} />
+        )}
+
+        {/* Contact View */}
+        {activeTab === 'contact' && (
+          <ContactView />
+        )}
+      </main>
+
+      {/* Spot Detail Modal */}
+      <SpotDetailModal
+        spot={selectedSpotModal}
+        onClose={() => setSelectedSpotModal(null)}
+        onAddToCalendar={(spot) => handleAddToCalendar(spot)}
+        onToggleFavorite={handleToggleFavorite}
+        isFavorite={selectedSpotModal ? favorites.includes(selectedSpotModal.id) : false}
+      />
+
+      {/* AI Assistant Modal */}
+      <AIAssistantModal
+        isOpen={isAiModalOpen}
+        onClose={() => setIsAiModalOpen(false)}
+        onImportPlan={(newCalendar) => {
+          setCalendar(newCalendar);
+          setActiveTab('calendar');
+          showToast('🎉 Calendrier secret importé avec succès !');
+        }}
+      />
+
+      {/* Add Spot Submission Modal */}
+      <AddSpotModal
+        isOpen={isAddSpotModalOpen}
+        onClose={() => setIsAddSpotModalOpen(false)}
+        onAddSpot={handleAddUserSpot}
+      />
+
+      {/* Footer */}
+      <footer className="bg-stone-900 text-stone-400 border-t border-stone-800 py-6 text-xs text-center mt-auto">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <Compass className="w-4 h-4 text-amber-500" />
+            <span className="font-display font-bold text-stone-200">SecretScape</span>
+            <span>— Tourism & Secret Itineraries</span>
+          </div>
+          <p className="text-stone-500">
+            Conçu pour les explorateurs de lieux cachés et de pépites méconnues.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  );
+}
