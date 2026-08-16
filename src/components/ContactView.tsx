@@ -14,6 +14,16 @@ const initialForm = {
   email: '',
   city: '',
   subject: '',
+  arrivalDate: '',
+  tripDuration: '',
+  adults: '',
+  children: '',
+  budget: '',
+  tripType: '',
+  accommodation: '',
+  transport: '',
+  guide: '',
+  foodPreferences: '',
   message: '',
 };
 
@@ -172,11 +182,127 @@ export const ContactView: React.FC = () => {
                   Choisissez un sujet
                 </option>
                 <option>Réservation d'un service</option>
+                <option>Demande de voyage / circuit</option>
                 <option>Circuit ou excursion</option>
                 <option>Hébergement</option>
                 <option>Transport</option>
                 <option>Autre demande</option>
               </select>
+            </div>
+
+            <div className="border-t border-stone-200 pt-4">
+              <p className="text-xs font-bold text-stone-800 mb-3">Détails de votre voyage (optionnel)</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Date d'arrivée</label>
+                  <input
+                    type="date"
+                    name="arrivalDate"
+                    value={form.arrivalDate}
+                    onChange={handleChange}
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Durée du séjour</label>
+                  <input
+                    type="number"
+                    min="1"
+                    name="tripDuration"
+                    value={form.tripDuration}
+                    onChange={handleChange}
+                    placeholder="Nombre de jours"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Nombre d'adultes</label>
+                  <input
+                    type="number"
+                    min="1"
+                    name="adults"
+                    value={form.adults}
+                    onChange={handleChange}
+                    placeholder="Ex. 2"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Nombre d'enfants</label>
+                  <input
+                    type="number"
+                    min="0"
+                    name="children"
+                    value={form.children}
+                    onChange={handleChange}
+                    placeholder="Ex. 1"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Budget indicatif (FCFA)</label>
+                  <input
+                    type="text"
+                    name="budget"
+                    value={form.budget}
+                    onChange={handleChange}
+                    placeholder="Ex. 200 000"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Type de voyage</label>
+                  <select name="tripType" value={form.tripType} onChange={handleChange} className={inputClass}>
+                    <option value="">Choisir...</option>
+                    <option>Détente</option>
+                    <option>Culture & histoire</option>
+                    <option>Nature & découverte</option>
+                    <option>Spiritualité</option>
+                    <option>Gastronomie</option>
+                    <option>Affaires</option>
+                    <option>Autre</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Hébergement souhaité</label>
+                  <select name="accommodation" value={form.accommodation} onChange={handleChange} className={inputClass}>
+                    <option value="">Choisir...</option>
+                    <option>Hôtel</option>
+                    <option>Écolodge</option>
+                    <option>Chez l'habitant</option>
+                    <option>Peu importe</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Transport</label>
+                  <select name="transport" value={form.transport} onChange={handleChange} className={inputClass}>
+                    <option value="">Choisir...</option>
+                    <option>Transfert aéroport</option>
+                    <option>Voiture avec chauffeur</option>
+                    <option>Zémidjan</option>
+                    <option>Pas besoin</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1.5">Guide local</label>
+                  <select name="guide" value={form.guide} onChange={handleChange} className={inputClass}>
+                    <option value="">Choisir...</option>
+                    <option>Oui, je veux un guide</option>
+                    <option>Non, je préfère en autonomie</option>
+                  </select>
+                </div>
+              </div>
+              <div className="mt-4">
+                <label className="block text-xs font-semibold text-stone-700 mb-1.5">Préférences alimentaires ou besoins particuliers</label>
+                <input
+                  type="text"
+                  name="foodPreferences"
+                  value={form.foodPreferences}
+                  onChange={handleChange}
+                  placeholder="Végétarien, allergie, accessibilité..."
+                  className={inputClass}
+                />
+              </div>
             </div>
 
             <div>
