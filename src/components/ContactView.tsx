@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
 const AGENCY_CONTACT = {
-  phone: '+229 01 00 00 00 00',
-  email: 'contact@secretscape.bj',
+  phone: '+229 01 91 72 29 07',
+  email: 'ajefnel@gmail.com',
   address: 'Cotonou, Bénin',
-  hours: 'Lundi – Samedi : 8h à 20h',
+  hours: 'Lundi – Dimanche : 8h à 22h',
 };
 
 const initialForm = {
