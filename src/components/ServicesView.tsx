@@ -7,38 +7,47 @@ interface Service {
   icon: React.ReactNode;
   title: string;
   description: string;
+  whatsappMessage: string;
 }
+
+const AGENCY_PHONE = '2290191722907';
 
 const SERVICES: Service[] = [
   {
     icon: <ConciergeBell className="w-6 h-6" />,
     title: 'Guides touristiques',
     description: 'Des guides locaux passionnés qui vous font découvrir les pépites cachées du Bénin, hors des sentiers battus.',
+    whatsappMessage: 'Bonjour, je suis intéressé par le service de guide touristique. Pouvez-vous me donner plus d\'informations ?',
   },
   {
     icon: <Car className="w-6 h-6" />,
     title: 'Transport & Transferts',
     description: 'Zémidjan, taxi, voiture avec chauffeur ou minibus : nous organisons vos déplacements en toute sécurité.',
+    whatsappMessage: 'Bonjour, je suis intéressé par le service de transport et transferts. Pouvez-vous me donner plus d\'informations ?',
   },
   {
     icon: <BedDouble className="w-6 h-6" />,
     title: 'Hébergements & Hôtels',
     description: 'Réservation de chambres, hôtels et écolodges au meilleur tarif, selon votre budget et vos envies.',
+    whatsappMessage: 'Bonjour, je suis intéressé par le service d\'hébergement. Pouvez-vous me donner plus d\'informations ?',
   },
   {
     icon: <Ship className="w-6 h-6" />,
     title: 'Excursions & Circuits',
     description: 'Ganvié, Pendjari, Ouidah, Abomey : des circuits clés en main ou sur mesure pour explorer chaque région.',
+    whatsappMessage: 'Bonjour, je suis intéressé par les excursions et circuits. Pouvez-vous me donner plus d\'informations ?',
   },
   {
     icon: <Utensils className="w-6 h-6" />,
     title: 'Restaurants & Gastronomie',
     description: 'Tables typiques et adresses gourmandes pour goûter à la vraie cuisine béninoise, en toute confiance.',
+    whatsappMessage: 'Bonjour, je suis intéressé par les adresses restaurants et la gastronomie béninoise. Pouvez-vous me donner plus d\'informations ?',
   },
   {
     icon: <CalendarDays className="w-6 h-6" />,
     title: 'Événements & Groupes',
     description: 'Organisation de sorties en groupe, séminaires, anniversaires et visites privées entièrement personnalisées.',
+    whatsappMessage: 'Bonjour, je suis intéressé par l\'organisation d\'un événement ou d\'un groupe. Pouvez-vous me donner plus d\'informations ?',
   },
 ];
 
@@ -61,16 +70,22 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {SERVICES.map((service) => (
-          <div
+          <a
             key={service.title}
-            className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm hover:shadow-md hover:border-amber-300 transition-all"
+            href={`https://wa.me/${AGENCY_PHONE}?text=${encodeURIComponent(service.whatsappMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm hover:shadow-md hover:border-amber-300 transition-all cursor-pointer block"
           >
             <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-4">
               {service.icon}
             </div>
             <h3 className="font-display font-bold text-base text-stone-900 mb-1.5">{service.title}</h3>
             <p className="text-xs text-stone-500 leading-relaxed">{service.description}</p>
-          </div>
+            <span className="inline-flex items-center gap-1 text-xs text-amber-600 font-semibold mt-3">
+              Contacter via WhatsApp <ArrowRight className="w-3 h-3" />
+            </span>
+          </a>
         ))}
       </div>
 
