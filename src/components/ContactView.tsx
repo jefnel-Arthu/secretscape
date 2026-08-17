@@ -37,17 +37,16 @@ export const ContactView: React.FC = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const messages = JSON.parse(localStorage.getItem('secretscape_contact_messages') || '[]');
-      messages.push({ ...form, date: new Date().toISOString() });
-      localStorage.setItem('secretscape_contact_messages', JSON.stringify(messages));
-    } catch (err) {
-      localStorage.setItem(
-        'secretscape_contact_messages',
-        JSON.stringify([{ ...form, date: new Date().toISOString() }])
-      );
+      await fetch('https://formspree.io/f/xppaydyr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+    } catch {
+      // silencieux
     }
     setSubmitted(true);
   };
