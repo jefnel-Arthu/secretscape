@@ -13,7 +13,6 @@ import {
   Printer, 
   Share2, 
   Compass, 
-  Sparkles, 
   ArrowRight,
   Edit2,
   Check,
@@ -49,7 +48,6 @@ interface CalendarItineraryViewProps {
   setCalendar: React.Dispatch<React.SetStateAction<UserTripCalendar>>;
   onOpenSpotModal: (spot: HiddenSpot) => void;
   onNavigateToMap: () => void;
-  onOpenAiGenerator: () => void;
 }
 
 const TIME_SLOT_LABELS: Record<TimeSlot, { label: string; time: string; bg: string; border: string }> = {
@@ -65,7 +63,6 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
   setCalendar,
   onOpenSpotModal,
   onNavigateToMap,
-  onOpenAiGenerator,
 }) => {
   const [selectedDayIndex, setSelectedDayIndex] = useState<number>(0);
   const [isEditingTitle, setIsEditingTitle] = useState<boolean>(false);
@@ -298,13 +295,6 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
               <span>{copiedLink ? 'Copié !' : 'Partager'}</span>
             </button>
 
-            <button
-              onClick={onOpenAiGenerator}
-              className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-stone-950 font-bold text-xs py-2.5 px-4 rounded-xl shadow-lg flex items-center gap-1.5 transition-all"
-            >
-              <Sparkles className="w-4 h-4 text-stone-950" />
-              <span>Générer par IA</span>
-            </button>
           </div>
         </div>
 
@@ -422,13 +412,6 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
               >
                 <Compass className="w-4 h-4" />
                 <span>Découvrir la carte</span>
-              </button>
-              <button
-                onClick={onOpenAiGenerator}
-                className="bg-stone-900 hover:bg-stone-800 text-stone-100 text-xs font-bold py-2.5 px-4 rounded-xl flex items-center gap-1.5"
-              >
-                <Sparkles className="w-4 h-4 text-amber-400" />
-                <span>Générer par IA</span>
               </button>
             </div>
           </div>

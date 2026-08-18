@@ -133,11 +133,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
                 Explorer les lieux secrets
               </button>
               <button
-                onClick={() => onNavigate('ai')}
+                onClick={() => onNavigate('calendar')}
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold text-sm py-3.5 px-6 rounded-xl flex items-center gap-2 border border-white/20 transition-all hover:scale-[1.02] active:scale-95"
               >
-                <Sparkles className="w-5 h-5 text-amber-400" />
-                Générer mon itinéraire IA
+                <CalendarIcon className="w-5 h-5 text-amber-400" />
+                Planifier mon voyage
               </button>
             </div>
           </div>
@@ -288,9 +288,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
                 desc: 'Parcourez notre carte interactive des lieux cachés ou laissez-vous surprendre par la grille de pépites.',
               },
               {
-                icon: Sparkles,
+                icon: CalendarIcon,
                 title: 'Planifiez',
-                desc: 'Laissez notre IA générer un itinéraire personnalisé ou créez votre propre calendrier jour par jour.',
+                desc: 'Organisez votre propre calendrier jour par jour ou partagez vos envies avec notre équipe.',
               },
               {
                 icon: Ticket,

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Home, Compass, Calendar as CalendarIcon, Sparkles, PlusCircle, Bookmark, MapPin, Search, ConciergeBell, Phone, Lock } from 'lucide-react';
+import { Home, Compass, Calendar as CalendarIcon, PlusCircle, Bookmark, MapPin, Search, ConciergeBell, Phone, Lock } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'home' | 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
-  setActiveTab: (tab: 'home' | 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin') => void;
+  activeTab: 'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
+  setActiveTab: (tab: 'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin') => void;
   calendarItemsCount: number;
   favoritesCount: number;
   selectedCity: string;
@@ -11,7 +11,6 @@ interface HeaderProps {
   cities: string[];
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  isAiModalOpen: boolean;
   isAddSpotModalOpen: boolean;
 }
 
@@ -25,7 +24,6 @@ export const Header: React.FC<HeaderProps> = ({
   cities,
   searchQuery,
   setSearchQuery,
-  isAiModalOpen,
   isAddSpotModalOpen,
 }) => {
   return (
@@ -121,19 +119,6 @@ export const Header: React.FC<HeaderProps> = ({
                   {calendarItemsCount}
                 </span>
               )}
-            </button>
-
-            <button
-              onClick={() => setActiveTab('ai')}
-              className={`px-3 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
-                activeTab === 'ai' || isAiModalOpen
-                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-md shadow-amber-500/20'
-                  : 'text-amber-300 hover:bg-stone-800 hover:text-amber-200'
-              }`}
-              id="nav-ai-btn"
-            >
-              <Sparkles className="w-4 h-4 text-amber-300 group-hover:text-amber-200" />
-              <span className="hidden sm:inline">Itinéraire IA</span>
             </button>
 
             <button

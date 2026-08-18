@@ -13,7 +13,6 @@ import { FilterBar } from './components/FilterBar';
 import { MapExplorer } from './components/MapExplorer';
 import { SpotCard } from './components/SpotCard';
 import { CalendarItineraryView } from './components/CalendarItineraryView';
-import { AIAssistantModal } from './components/AIAssistantModal';
 import { SpotDetailModal } from './components/SpotDetailModal';
 import { AddSpotModal } from './components/AddSpotModal';
 import { ServicesView } from './components/ServicesView';
@@ -23,7 +22,7 @@ import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-r
 
 export default function App() {
   // Navigation tab state
-  const [activeTab, setActiveTab] = useState<'home' | 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
 
   // Spots dataset
@@ -103,7 +102,6 @@ export default function App() {
   // Selected spot modal & toast state
   const [selectedSpot, setSelectedSpot] = useState<HiddenSpot | null>(null);
   const [selectedSpotModal, setSelectedSpotModal] = useState<HiddenSpot | null>(null);
-  const [isAiModalOpen, setIsAiModalOpen] = useState<boolean>(false);
   const [isAddSpotModalOpen, setIsAddSpotModalOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -226,9 +224,7 @@ export default function App() {
       <Header
         activeTab={activeTab}
         setActiveTab={(tab) => {
-          if (tab === 'ai') {
-            setIsAiModalOpen(true);
-          } else if (tab === 'addSpot') {
+          if (tab === 'addSpot') {
             setIsAddSpotModalOpen(true);
           } else if (tab === 'admin') {
             setActiveTab('admin');
@@ -243,7 +239,6 @@ export default function App() {
         cities={cities}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        isAiModalOpen={isAiModalOpen}
         isAddSpotModalOpen={isAddSpotModalOpen}
       />
 
@@ -315,7 +310,7 @@ export default function App() {
             setCalendar={setCalendar}
             onOpenSpotModal={(spot) => setSelectedSpotModal(spot)}
             onNavigateToMap={() => setActiveTab('map')}
-            onOpenAiGenerator={() => setIsAiModalOpen(true)}
+
           />
         )}
 
@@ -371,17 +366,6 @@ export default function App() {
         onAddToCalendar={(spot) => handleAddToCalendar(spot)}
         onToggleFavorite={handleToggleFavorite}
         isFavorite={selectedSpotModal ? favorites.includes(selectedSpotModal.id) : false}
-      />
-
-      {/* AI Assistant Modal */}
-      <AIAssistantModal
-        isOpen={isAiModalOpen}
-        onClose={() => setIsAiModalOpen(false)}
-        onImportPlan={(newCalendar) => {
-          setCalendar(newCalendar);
-          setActiveTab('calendar');
-          showToast('🎉 Calendrier secret importé avec succès !');
-        }}
       />
 
         {/* Add Spot Submission Modal */}
