@@ -287,16 +287,6 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
           {/* Export & Action Buttons */}
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 shrink-0">
             <button
-              onClick={handleExportICS}
-              disabled={totalSpotsScheduled === 0}
-              className="bg-amber-500 hover:bg-amber-400 disabled:opacity-40 text-stone-950 text-xs font-bold py-2.5 px-4 rounded-xl flex items-center gap-2 shadow-md transition-all active:scale-95 cursor-pointer"
-              title="Exporter vers Google Calendar / Apple iCal"
-            >
-              <Download className="w-4 h-4" />
-              <span>Exporter iCal (.ics)</span>
-            </button>
-
-            <button
               onClick={() => setShowTicket(true)}
               disabled={totalSpotsScheduled === 0}
               className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 disabled:opacity-40 text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center gap-2 shadow-md transition-all active:scale-95 cursor-pointer"
