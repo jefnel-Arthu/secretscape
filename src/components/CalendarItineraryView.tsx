@@ -4,6 +4,7 @@ import { CATEGORY_LABELS, INITIAL_HIDDEN_SPOTS } from '../data/hiddenSpots';
 import { calculateDistanceKm } from '../lib/geo';
 import { buildICS } from '../lib/ical';
 import { TRANSPORT_OPTIONS, getTransportOption, estimateTravelMinutes } from '../lib/transport';
+import { TripTicket } from './TripTicket';
 import { 
   Calendar as CalendarIcon, 
   Clock, 
@@ -24,7 +25,8 @@ import {
   Car,
   Ship,
   Bus,
-  Navigation
+  Navigation,
+  Ticket
 } from 'lucide-react';
 
 const TRANSPORT_ICONS: Record<string, React.ElementType> = {
@@ -75,6 +77,7 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
   const [draft, setDraft] = useState<EditableItemDraft | null>(null);
+  const [showTicket, setShowTicket] = useState<boolean>(false);
 
   const currentDay = calendar.days[selectedDayIndex] || calendar.days[0];
 
@@ -291,6 +294,16 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
             >
               <Download className="w-4 h-4" />
               <span>Exporter iCal (.ics)</span>
+            </button>
+
+            <button
+              onClick={() => setShowTicket(true)}
+              disabled={totalSpotsScheduled === 0}
+              className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 disabled:opacity-40 text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center gap-2 shadow-md transition-all active:scale-95 cursor-pointer"
+              title="Télécharger mon billet de voyage"
+            >
+              <Ticket className="w-4 h-4" />
+              <span>Mon billet</span>
             </button>
 
             <button
@@ -738,6 +751,10 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
 
       </div>
 
+      {/* Ticket Modal */}
+      {showTicket && (
+        <TripTicket calendar={calendar} onClose={() => setShowTicket(false)} />
+      )}
     </div>
   );
 };
