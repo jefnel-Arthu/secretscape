@@ -23,7 +23,7 @@ import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-r
 export default function App() {
   // Navigation tab state
   const [activeTab, setActiveTab] = useState<'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('map');
-  const [viewMode, setViewMode] = useState<'map' | 'grid'>('map');
+  const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
 
   // Spots dataset
   const [spots, setSpots] = useState<HiddenSpot[]>(() => {
