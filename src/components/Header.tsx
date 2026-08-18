@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
               id="nav-map-btn"
             >
               <Compass className="w-4 h-4" />
-              <span className="hidden sm:inline">Lieux Cachés</span>
+              <span className="hidden sm:inline">Lieux</span>
             </button>
 
             <button
