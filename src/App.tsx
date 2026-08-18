@@ -381,16 +381,33 @@ export default function App() {
         )}
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-stone-400 border-t border-stone-800 py-6 text-xs text-center mt-auto">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <Compass className="w-4 h-4 text-amber-500" />
-            <span className="font-display font-bold text-stone-200">SecretScape</span>
-            <span>— Tourism & Secret Itineraries</span>
+      <footer className="bg-stone-900 border-t border-stone-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-stone-900">
+                <Compass className="w-5 h-5 stroke-[2.2]" />
+              </div>
+              <div>
+                <span className="font-display text-lg font-bold text-stone-100 block leading-none">
+                  Secret<span className="text-amber-400">Scape</span>
+                </span>
+                <span className="text-[10px] text-stone-500 font-medium tracking-wider uppercase block mt-0.5">
+                  Lieux Cachés & Itinéraires
+                </span>
+              </div>
+            </div>
+            <p className="text-stone-500 text-xs text-center sm:text-right max-w-xs leading-relaxed">
+              Conçu pour les explorateurs de lieux cachés et de pépites méconnues du Bénin.
+            </p>
           </div>
-          <p className="text-stone-500">
-            Conçu pour les explorateurs de lieux cachés et de pépites méconnues.
-          </p>
+          <div className="mt-6 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-stone-600">
+            <span>&copy; {new Date().getFullYear()} SecretScape. Tous droits réservés.</span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              Site opérationnel
+            </span>
+          </div>
         </div>
       </footer>
 
