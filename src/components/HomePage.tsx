@@ -18,7 +18,6 @@ import {
   Heart,
   Quote,
   ArrowDown,
-  Play,
 } from 'lucide-react';
 
 interface HomePageProps {
@@ -26,32 +25,7 @@ interface HomePageProps {
   onOpenSpot: (spot: HiddenSpot) => void;
 }
 
-const HERO_SLIDES = [
-  {
-    image: '/images/new-land-beach.jpg',
-    tag: 'Côte Atlantique',
-    title: ['Découvrez les', 'Lieux Cachés', 'du Bénin'],
-    subtitle: 'Plages secrètes, temples vodoun, villages sur pilotis — explorez le Bénin autrement.',
-  },
-  {
-    image: '/images/babs-dock.jpg',
-    tag: 'Vie Nocturne',
-    title: ['Les Adresses', 'Secrets', 'de la Nuit'],
-    subtitle: 'Clubs exclusifs, restaurants cachés et soirées inoubliables à Cotonou et au-delà.',
-  },
-  {
-    image: '/images/bambou-beach.jpg',
-    tag: 'Aventure',
-    title: ['Votre Prochain', 'Voyage', 'Commence Ici'],
-    subtitle: 'Des itinéraires uniques, des pépites méconnues, des souvenirs gravés à jamais.',
-  },
-  {
-    image: '/images/atlantic-beach.jpg',
-    tag: 'Exploration',
-    title: ['Le Bénin', 'Vous Attend', 'Partout'],
-    subtitle: 'De Cotonou à Natitingou, chaque ville recèle des trésors cachés.',
-  },
-];
+const HERO_IMAGE = '/images/hero-benin.jpg';
 
 const CATEGORY_CARDS = [
   {
@@ -138,19 +112,11 @@ const FEATURED_SPOT_IDS = [
 ];
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) => {
-  const [heroIdx, setHeroIdx] = React.useState(0);
   const [heroReady, setHeroReady] = React.useState(false);
 
   React.useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
     return () => clearTimeout(t);
-  }, []);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroIdx((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
   }, []);
 
   const featuredSpots = FEATURED_SPOT_IDS.map((id) =>
@@ -169,20 +135,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
     <div className="min-h-screen">
 
       {/* ═══════════════════════════════════════════════ HERO ═══ */}
-      <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-        {/* Slides */}
-        {HERO_SLIDES.map((slide, i) => (
-          <div
-            key={i}
-            className="absolute inset-0 transition-all duration-[2500ms] ease-in-out"
-            style={{ opacity: heroIdx === i ? 1 : 0, transform: heroIdx === i ? 'scale(1)' : 'scale(1.08)' }}
-          >
-            <img src={slide.image} alt="" className="w-full h-full object-cover" />
-          </div>
-        ))}
+      <section className="relative h-[85vh] min-h-[650px] flex items-end overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img src={HERO_IMAGE} alt="" className="w-full h-full object-cover" />
+        </div>
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/60 to-stone-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-stone-950/70 via-transparent to-transparent" />
 
         {/* Content */}
@@ -194,31 +154,29 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
             >
               <span className="inline-flex items-center gap-2 text-amber-400 text-xs font-bold tracking-[4px] uppercase bg-amber-500/10 border border-amber-500/20 px-4 py-2 rounded-full backdrop-blur-sm">
                 <Sparkles className="w-3.5 h-3.5" />
-                {HERO_SLIDES[heroIdx].tag}
+                SecretScape — Bénin
               </span>
             </div>
 
             {/* Title */}
             <div className={`space-y-1 transition-all duration-1000 delay-500 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              {HERO_SLIDES[heroIdx].title.map((line, li) => (
-                <h1
-                  key={`${heroIdx}-${li}`}
-                  className={`font-display font-black leading-[1.05] tracking-tight ${
-                    li === 1
-                      ? 'text-4xl sm:text-5xl lg:text-7xl text-amber-400'
-                      : 'text-3xl sm:text-4xl lg:text-6xl text-white'
-                  }`}
-                >
-                  {line}
-                </h1>
-              ))}
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
+                Découvrez les
+              </h1>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-amber-400 leading-[1.05] tracking-tight">
+                Lieux Cachés
+              </h1>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
+                du Bénin
+              </h1>
             </div>
 
             {/* Subtitle */}
             <p
               className={`text-stone-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl transition-all duration-1000 delay-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
-              {HERO_SLIDES[heroIdx].subtitle}
+              Plages secrètes, temples vodoun, villages sur pilotis, forêts sacrées —
+              explorez le Bénin autrement avec des itinéraires uniques.
             </p>
 
             {/* CTA */}
@@ -241,28 +199,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
           </div>
         </div>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10">
-          {HERO_SLIDES.map((slide, i) => (
-            <button
-              key={i}
-              onClick={() => setHeroIdx(i)}
-              className="group relative"
-            >
-              <div className={`h-1 rounded-full transition-all duration-500 ${
-                heroIdx === i ? 'bg-amber-400 w-10' : 'bg-white/30 w-6 hover:bg-white/50'
-              }`} />
-              {heroIdx === i && (
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] text-amber-400 font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  {slide.tag}
-                </div>
-              )}
-            </button>
-          ))}
-        </div>
-
         {/* Scroll indicator */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 hidden sm:block">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:block">
           <div className="flex flex-col items-center gap-1 text-white/30 animate-bounce">
             <span className="text-[9px] font-bold tracking-widest uppercase">Scroll</span>
             <ArrowDown className="w-4 h-4" />
@@ -275,14 +213,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
         <div className="bg-stone-900/95 backdrop-blur-xl rounded-3xl border border-stone-800 shadow-2xl shadow-stone-900/50 p-6 sm:p-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
-              { icon: MapPin, value: `${INITIAL_HIDDEN_SPOTS.length}+`, label: 'Lieux secrets', color: 'text-amber-400' },
-              { icon: Globe, value: '15+', label: 'Villes couvertes', color: 'text-cyan-400' },
-              { icon: Users, value: '1000+', label: 'Explorateurs', color: 'text-emerald-400' },
-              { icon: Star, value: '4.8', label: 'Note moyenne', color: 'text-yellow-400' },
-            ].map(({ icon: Icon, value, label, color }) => (
+              { icon: MapPin, value: `${INITIAL_HIDDEN_SPOTS.length}+`, label: 'Lieux secrets', gradient: 'from-amber-500 to-orange-500' },
+              { icon: Globe, value: '15+', label: 'Villes couvertes', gradient: 'from-cyan-500 to-blue-500' },
+              { icon: Users, value: '1000+', label: 'Explorateurs', gradient: 'from-emerald-500 to-teal-500' },
+              { icon: Star, value: '4.8', label: 'Note moyenne', gradient: 'from-yellow-500 to-amber-500' },
+            ].map(({ icon: Icon, value, label, gradient }) => (
               <div key={label} className="text-center space-y-2">
-                <div className={`w-10 h-10 rounded-xl bg-stone-800 flex items-center justify-center mx-auto`}>
-                  <Icon className={`w-5 h-5 ${color}`} />
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto shadow-lg`}>
+                  <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-2xl font-black text-white">{value}</div>
                 <div className="text-[11px] text-stone-500 font-semibold uppercase tracking-wider">{label}</div>
@@ -487,8 +425,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
               <div key={title} className="relative text-center space-y-5 px-4">
                 {/* Step number */}
                 <div className="relative mx-auto w-20 h-20">
-                  <div className="absolute inset-0 bg-amber-500/10 rounded-2xl rotate-6" />
-                  <div className="relative w-20 h-20 rounded-2xl bg-stone-800 border border-amber-500/20 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl rotate-6 opacity-20" />
+                  <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-500/30 flex items-center justify-center shadow-xl shadow-amber-500/10">
                     <Icon className="w-9 h-9 text-amber-400" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-amber-500 text-stone-950 text-xs font-black flex items-center justify-center shadow-lg shadow-amber-500/30">
@@ -541,7 +479,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
       {/* ═══════════════════════════════════════════════ CTA ═══ */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-amber-600 to-orange-500" />
-        <div className="absolute inset-0 bg-[url('/images/new-land-beach.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-[url('/images/hero-benin.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-stone-950 text-xs font-bold px-4 py-2 rounded-full border border-white/20">

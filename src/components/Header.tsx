@@ -77,13 +77,13 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Navigation Tabs */}
-          <nav className="flex items-center gap-1 sm:gap-2">
+          <nav className="flex items-center gap-1 sm:gap-1.5">
             <button
               onClick={() => setActiveTab('home')}
-              className={`px-3 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-200 ${
                 activeTab === 'home'
-                  ? 'bg-amber-500 text-stone-950 shadow-sm'
-                  : 'text-stone-300 hover:bg-stone-800 hover:text-stone-100'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-300 hover:bg-stone-800 hover:text-white'
               }`}
             >
               <Home className="w-4 h-4" />
@@ -92,10 +92,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab('map')}
-              className={`px-3 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-200 ${
                 activeTab === 'map'
-                  ? 'bg-amber-500 text-stone-950 shadow-sm'
-                  : 'text-stone-300 hover:bg-stone-800 hover:text-stone-100'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-300 hover:bg-stone-800 hover:text-white'
               }`}
               id="nav-map-btn"
             >
@@ -105,15 +105,15 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab('calendar')}
-              className={`px-3 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all relative ${
+              className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-200 relative ${
                 activeTab === 'calendar'
-                  ? 'bg-amber-500 text-stone-950 shadow-sm'
-                  : 'text-stone-300 hover:bg-stone-800 hover:text-stone-100'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-300 hover:bg-stone-800 hover:text-white'
               }`}
               id="nav-calendar-btn"
             >
               <CalendarIcon className="w-4 h-4" />
-              <span className="hidden sm:inline">Mon Calendrier</span>
+              <span className="hidden sm:inline">Calendrier</span>
               {calendarItemsCount > 0 && (
                 <span className="ml-0.5 bg-amber-900 text-amber-200 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-amber-500/40">
                   {calendarItemsCount}
@@ -123,10 +123,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab('favorites')}
-              className={`px-2.5 py-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all relative ${
+              className={`px-2.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-200 relative ${
                 activeTab === 'favorites'
-                  ? 'bg-stone-800 text-amber-400 border border-amber-500/30'
-                  : 'text-stone-400 hover:bg-stone-800 hover:text-stone-200'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-400 hover:bg-stone-800 hover:text-white'
               }`}
               title="Mes Favoris"
             >
@@ -140,10 +140,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab('addSpot')}
-              className={`px-2.5 py-2 rounded-lg text-xs font-medium flex items-center gap-1 transition-all ${
+              className={`px-2.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1 transition-all duration-200 ${
                 activeTab === 'addSpot' || isAddSpotModalOpen
-                  ? 'bg-stone-800 text-stone-100 border border-amber-500/40'
-                  : 'text-stone-400 hover:bg-stone-800 hover:text-stone-200'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-400 hover:bg-stone-800 hover:text-white'
               }`}
               title="Proposer un lieu secret"
             >
@@ -152,10 +152,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab('services')}
-              className={`px-2.5 py-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all ${
+              className={`px-2.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-200 ${
                 activeTab === 'services'
-                  ? 'bg-stone-800 text-stone-100 border border-amber-500/40'
-                  : 'text-stone-400 hover:bg-stone-800 hover:text-stone-200'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-400 hover:bg-stone-800 hover:text-white'
               }`}
               title="Espace Services"
             >
@@ -165,10 +165,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab('contact')}
-              className={`px-2.5 py-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all ${
+              className={`px-2.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-200 ${
                 activeTab === 'contact'
-                  ? 'bg-stone-800 text-stone-100 border border-amber-500/40'
-                  : 'text-stone-400 hover:bg-stone-800 hover:text-stone-200'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-400 hover:bg-stone-800 hover:text-white'
               }`}
               title="Contact"
             >
@@ -178,10 +178,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab('admin')}
-              className={`px-2.5 py-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all ${
+              className={`px-2.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-200 ${
                 activeTab === 'admin'
-                  ? 'bg-stone-800 text-stone-100 border border-amber-500/40'
-                  : 'text-stone-400 hover:bg-stone-800 hover:text-stone-200'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 shadow-lg shadow-amber-500/25'
+                  : 'text-stone-400 hover:bg-stone-800 hover:text-white'
               }`}
               title="Admin"
             >
