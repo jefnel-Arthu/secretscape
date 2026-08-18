@@ -104,7 +104,6 @@ export default function App() {
   const [isAiModalOpen, setIsAiModalOpen] = useState<boolean>(false);
   const [isAddSpotModalOpen, setIsAddSpotModalOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const [isAiSearching, setIsAiSearching] = useState<boolean>(false);
 
   // Save to LocalStorage
   useEffect(() => {
@@ -182,36 +181,6 @@ export default function App() {
     showToast(`✨ Nouveau lieu secret publié !`);
   };
 
-  // AI Discover Spots dynamically
-  const handleAiDiscoverSpots = async () => {
-    setIsAiSearching(true);
-    try {
-      const res = await fetch('/api/gemini/discover-spots', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          city: selectedCity !== 'ALL' ? selectedCity : searchQuery || 'Cotonou',
-          query: searchQuery || 'lieux secrets insolites et cachés'
-        })
-      });
-
-      if (!res.ok) throw new Error('Erreur recherche IA');
-
-      const data = await res.json();
-      if (data.spots && data.spots.length > 0) {
-        setSpots(prev => {
-          const newSpots = data.spots.filter((s: HiddenSpot) => !prev.some(p => p.title === s.title));
-          return [...newSpots, ...prev];
-        });
-        showToast(`🤖 ${data.spots.length} nouvelles pépites trouvées par l'IA !`);
-      }
-    } catch (e) {
-      showToast('❌ Erreur lors de la recherche IA.');
-    } finally {
-      setIsAiSearching(false);
-    }
-  };
-
   // Toast notification trigger
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -268,30 +237,6 @@ export default function App() {
               totalSpotsCount={filteredSpots.length}
             />
 
-            {/* AI Search Bar Banner if results are few or user wants more */}
-            <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 flex items-center justify-between gap-2 text-xs">
-              <span className="text-amber-950 font-medium">
-                Vous cherchez encore plus de pépites à <strong>{selectedCity !== 'ALL' ? selectedCity : 'proximité'}</strong> ?
-              </span>
-              <button
-                onClick={handleAiDiscoverSpots}
-                disabled={isAiSearching}
-                className="bg-stone-900 hover:bg-stone-800 text-amber-300 font-bold px-3 py-1 rounded-lg text-xs flex items-center gap-1.5 transition-colors"
-              >
-                {isAiSearching ? (
-                  <>
-                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                    <span>Recherche en cours...</span>
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Découvrir par IA</span>
-                  </>
-                )}
-              </button>
-            </div>
-
             {viewMode === 'map' ? (
               <MapExplorer
                 spots={filteredSpots}
@@ -310,13 +255,7 @@ export default function App() {
                   <div className="text-center py-20 bg-white rounded-3xl border border-stone-200 p-8 space-y-4">
                     <Compass className="w-12 h-12 text-stone-300 mx-auto" />
                     <h3 className="font-display font-bold text-lg text-stone-800">Aucun lieu secret ne correspond à vos filtres</h3>
-                    <p className="text-stone-500 text-xs">Essayez d'élargir votre recherche ou demandez à l'IA de révéler de nouveaux lieux.</p>
-                    <button
-                      onClick={handleAiDiscoverSpots}
-                      className="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-4 py-2 rounded-xl text-xs"
-                    >
-                      Lancer la recherche par IA
-                    </button>
+                    <p className="text-stone-500 text-xs">Essayez d'élargir votre recherche.</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
