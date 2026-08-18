@@ -3690,7 +3690,7 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-plage-agoue': 'https://upload.wikimedia.org/wikipedia/commons/3/35/La_cote_de_la_mer_%C3%A0_agou%C3%A9.jpg',
   'spot-lac-ahomey': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Le_lac_Ah%C3%A9m%C3%A9.jpg/1280px-Le_lac_Ah%C3%A9m%C3%A9.jpg',
   'spot-mosquee-cotonou': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mosqu%C3%A9e_de_Zongo_-_Vue_de_Face_2.jpg/1280px-Mosqu%C3%A9e_de_Zongo_-_Vue_de_Face_2.jpg',
-  'spot-babs-dock': 'https://visitbeninrepublic.com/wp-content/uploads/2017/01/Explore-the-Babs-dock.webp',
+  'spot-babs-dock': '/images/babs-dock.jpg',
   'spot-face-a-la-mer': 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/29/50/16/fam.jpg?w=500&h=-1&s=1',
   'spot-cabane-pecheur': 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/84/34/26/palabres-sur-la-terasse.jpg?w=900&h=500&s=1',
   'spot-jaaba': 'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/21/02/e0/un-cadre-relax-pour-partager.jpg',
