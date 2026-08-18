@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { UserTripCalendar, CalendarDayPlan, ItinerarySlotItem, TimeSlot, HiddenSpot, TransportMode } from '../types';
 import { CATEGORY_LABELS, INITIAL_HIDDEN_SPOTS } from '../data/hiddenSpots';
 import { calculateDistanceKm } from '../lib/geo';
-import { buildICS } from '../lib/ical';
 import { TRANSPORT_OPTIONS, getTransportOption, estimateTravelMinutes } from '../lib/transport';
 import { TripTicket } from './TripTicket';
 import { 
@@ -11,7 +10,6 @@ import {
   MapPin, 
   Plus, 
   Trash2, 
-  Download, 
   Printer, 
   Share2, 
   Compass, 
@@ -201,20 +199,6 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
   const handleSaveTitle = () => {
     setCalendar((prev) => ({ ...prev, title: titleInput }));
     setIsEditingTitle(false);
-  };
-
-  // Export as ICS iCal file for Google Calendar / Apple Calendar
-  const handleExportICS = () => {
-    const ics = buildICS(calendar);
-
-    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', `${calendar.title.toLowerCase().replace(/\s+/g, '-')}-secretscape.ics`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   // Print view
