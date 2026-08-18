@@ -1,9 +1,9 @@
 import React from 'react';
-import { Compass, Calendar as CalendarIcon, Sparkles, PlusCircle, Bookmark, MapPin, Search, ConciergeBell, Phone, Lock } from 'lucide-react';
+import { Home, Compass, Calendar as CalendarIcon, Sparkles, PlusCircle, Bookmark, MapPin, Search, ConciergeBell, Phone, Lock } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
-  setActiveTab: (tab: 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin') => void;
+  activeTab: 'home' | 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
+  setActiveTab: (tab: 'home' | 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin') => void;
   calendarItemsCount: number;
   favoritesCount: number;
   selectedCity: string;
@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Logo & Brand */}
           <div 
             className="flex items-center gap-3 cursor-pointer group shrink-0"
-            onClick={() => setActiveTab('map')}
+            onClick={() => setActiveTab('home')}
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-stone-900 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
               <Compass className="w-6 h-6 stroke-[2.2]" />
@@ -80,6 +80,18 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Navigation Tabs */}
           <nav className="flex items-center gap-1 sm:gap-2">
+            <button
+              onClick={() => setActiveTab('home')}
+              className={`px-3 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                activeTab === 'home'
+                  ? 'bg-amber-500 text-stone-950 shadow-sm'
+                  : 'text-stone-300 hover:bg-stone-800 hover:text-stone-100'
+              }`}
+            >
+              <Home className="w-4 h-4" />
+              <span className="hidden sm:inline">Accueil</span>
+            </button>
+
             <button
               onClick={() => setActiveTab('map')}
               className={`px-3 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${

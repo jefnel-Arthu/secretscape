@@ -8,6 +8,7 @@ import { HiddenSpot, SecretCategory, SecretLevel, UserTripCalendar, TimeSlot } f
 import { INITIAL_HIDDEN_SPOTS } from './data/hiddenSpots';
 import { filterSpots } from './lib/filter';
 import { Header } from './components/Header';
+import { HomePage } from './components/HomePage';
 import { FilterBar } from './components/FilterBar';
 import { MapExplorer } from './components/MapExplorer';
 import { SpotCard } from './components/SpotCard';
@@ -22,7 +23,7 @@ import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-r
 
 export default function App() {
   // Navigation tab state
-  const [activeTab, setActiveTab] = useState<'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('map');
+  const [activeTab, setActiveTab] = useState<'home' | 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
 
   // Spots dataset
@@ -248,6 +249,14 @@ export default function App() {
 
       {/* Main View Area */}
       <main className="flex-1 flex flex-col">
+        {/* Home / Landing Page */}
+        {activeTab === 'home' && (
+          <HomePage
+            onNavigate={(tab) => setActiveTab(tab as any)}
+            onOpenSpot={(spot) => setSelectedSpotModal(spot)}
+          />
+        )}
+
         {activeTab === 'map' && (
           <div className="flex-1 flex flex-col">
             <FilterBar
@@ -384,7 +393,7 @@ export default function App() {
 
         {/* Admin Panel */}
         {activeTab === 'admin' && (
-          <AdminPanel onClose={() => setActiveTab('map')} />
+          <AdminPanel onClose={() => setActiveTab('home')} />
         )}
 
       {/* Footer */}
