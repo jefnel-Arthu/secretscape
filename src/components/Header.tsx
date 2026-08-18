@@ -1,9 +1,9 @@
 import React from 'react';
-import { Compass, Calendar as CalendarIcon, Sparkles, PlusCircle, Bookmark, MapPin, Search, ConciergeBell, Phone } from 'lucide-react';
+import { Compass, Calendar as CalendarIcon, Sparkles, PlusCircle, Bookmark, MapPin, Search, ConciergeBell, Phone, Lock } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact';
-  setActiveTab: (tab: 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact') => void;
+  activeTab: 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
+  setActiveTab: (tab: 'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin') => void;
   calendarItemsCount: number;
   favoritesCount: number;
   selectedCity: string;
@@ -177,6 +177,18 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Phone className="w-4 h-4" />
               <span className="hidden sm:inline">Contact</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('admin')}
+              className={`px-2.5 py-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all ${
+                activeTab === 'admin'
+                  ? 'bg-stone-800 text-stone-100 border border-amber-500/40'
+                  : 'text-stone-400 hover:bg-stone-800 hover:text-stone-200'
+              }`}
+              title="Admin"
+            >
+              <Lock className="w-4 h-4" />
             </button>
           </nav>
 

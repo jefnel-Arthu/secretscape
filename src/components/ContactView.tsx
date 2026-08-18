@@ -48,6 +48,15 @@ export const ContactView: React.FC = () => {
     } catch {
       // silencieux
     }
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+    } catch {
+      // silencieux
+    }
     setSubmitted(true);
   };
 

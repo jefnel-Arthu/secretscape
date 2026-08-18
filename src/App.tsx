@@ -17,11 +17,12 @@ import { SpotDetailModal } from './components/SpotDetailModal';
 import { AddSpotModal } from './components/AddSpotModal';
 import { ServicesView } from './components/ServicesView';
 import { ContactView } from './components/ContactView';
+import { AdminPanel } from './components/AdminPanel';
 import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-react';
 
 export default function App() {
   // Navigation tab state
-  const [activeTab, setActiveTab] = useState<'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact'>('map');
+  const [activeTab, setActiveTab] = useState<'map' | 'calendar' | 'ai' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('map');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('map');
 
   // Spots dataset
@@ -136,19 +137,6 @@ export default function App() {
     });
   }, [spots, selectedCity, selectedCategory, selectedSecretLevel, searchQuery]);
 
-  // Toggle favorite
-  const handleToggleFavorite = (spot: HiddenSpot) => {
-    setFavorites(prev => {
-      if (prev.includes(spot.id)) {
-        showToast(`Retiré des favoris: ${spot.title}`);
-        return prev.filter(id => id !== spot.id);
-      } else {
-        showToast(`Ajouté aux favoris: ${spot.title}`);
-        return [...prev, spot.id];
-      }
-    });
-  };
-
   // Add spot to trip calendar
   const handleAddToCalendar = (spot: HiddenSpot, dayNumber = 1, timeSlot: TimeSlot = 'afternoon') => {
     setCalendar(prev => {
@@ -187,6 +175,39 @@ export default function App() {
     setTimeout(() => setToastMessage(null), 3000);
   };
 
+  // Track page view on mount
+  useEffect(() => {
+    fetch('/api/track/pageview', { method: 'POST' }).catch(() => {});
+  }, []);
+
+  // Track spot views
+  const trackSpotView = (spotId: string) => {
+    fetch('/api/track/spot-view', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ spotId }),
+    }).catch(() => {});
+  };
+
+  // Track favorites
+  const handleToggleFavorite = (spot: HiddenSpot) => {
+    const wasFavorite = favorites.includes(spot.id);
+    setFavorites(prev => {
+      if (prev.includes(spot.id)) {
+        showToast(`Retiré des favoris: ${spot.title}`);
+        return prev.filter(id => id !== spot.id);
+      } else {
+        showToast(`Ajouté aux favoris: ${spot.title}`);
+        return [...prev, spot.id];
+      }
+    });
+    fetch('/api/track/favorite', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ spotId: spot.id, action: wasFavorite ? 'remove' : 'add' }),
+    }).catch(() => {});
+  };
+
   const calendarItemsCount = calendar.days.reduce((acc, d) => acc + d.items.length, 0);
 
   return (
@@ -208,6 +229,8 @@ export default function App() {
             setIsAiModalOpen(true);
           } else if (tab === 'addSpot') {
             setIsAddSpotModalOpen(true);
+          } else if (tab === 'admin') {
+            setActiveTab('admin');
           } else {
             setActiveTab(tab);
           }
@@ -352,12 +375,17 @@ export default function App() {
         }}
       />
 
-      {/* Add Spot Submission Modal */}
-      <AddSpotModal
-        isOpen={isAddSpotModalOpen}
-        onClose={() => setIsAddSpotModalOpen(false)}
-        onAddSpot={handleAddUserSpot}
-      />
+        {/* Add Spot Submission Modal */}
+        <AddSpotModal
+          isOpen={isAddSpotModalOpen}
+          onClose={() => setIsAddSpotModalOpen(false)}
+          onAddSpot={handleAddUserSpot}
+        />
+
+        {/* Admin Panel */}
+        {activeTab === 'admin' && (
+          <AdminPanel onClose={() => setActiveTab('map')} />
+        )}
 
       {/* Footer */}
       <footer className="bg-stone-900 text-stone-400 border-t border-stone-800 py-6 text-xs text-center mt-auto">

@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import fs from "fs";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 
@@ -24,6 +25,173 @@ async function startServer() {
   // Health check
   app.get("/api/health", (_req, res) => {
     res.json({ status: "ok", service: "SecretScape Tourism API" });
+  });
+
+  // ─── Admin Data Storage ──────────────────────────────────────────────
+  const DATA_DIR = path.join(process.cwd(), 'data');
+  const DATA_FILE = path.join(DATA_DIR, 'admin-data.json');
+  const ADMIN_PASSWORD = 'Jefnela2026@';
+
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
+  interface AdminData {
+    pageViews: number;
+    spotViews: Record<string, number>;
+    favorites: Record<string, number>;
+    messages: Array<{ id: string; name: string; phone: string; email: string; city: string; subject: string; arrivalDate: string; tripDuration: string; adults: string; children: string; budget: string; tripType: string; accommodation: string; transport: string; guide: string; foodPreferences: string; message: string; date: string; read: boolean }>;
+    customSpots: any[];
+  }
+
+  function loadAdminData(): AdminData {
+    try {
+      if (fs.existsSync(DATA_FILE)) {
+        return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+      }
+    } catch {}
+    return { pageViews: 0, spotViews: {}, favorites: {}, messages: [], customSpots: [] };
+  }
+
+  function saveAdminData(data: AdminData) {
+    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+  }
+
+  let adminData = loadAdminData();
+
+  // Tracking: page view
+  app.post("/api/track/pageview", (_req, res) => {
+    adminData.pageViews++;
+    saveAdminData(adminData);
+    res.json({ ok: true });
+  });
+
+  // Tracking: spot view
+  app.post("/api/track/spot-view", (req, res) => {
+    const { spotId } = req.body;
+    if (spotId) {
+      adminData.spotViews[spotId] = (adminData.spotViews[spotId] || 0) + 1;
+      saveAdminData(adminData);
+    }
+    res.json({ ok: true });
+  });
+
+  // Tracking: favorite toggle
+  app.post("/api/track/favorite", (req, res) => {
+    const { spotId, action } = req.body;
+    if (spotId) {
+      adminData.favorites[spotId] = (adminData.favorites[spotId] || 0) + (action === 'add' ? 1 : -1);
+      if (adminData.favorites[spotId] < 0) adminData.favorites[spotId] = 0;
+      saveAdminData(adminData);
+    }
+    res.json({ ok: true });
+  });
+
+  // Admin: login
+  app.post("/api/admin/login", (req, res) => {
+    const { password } = req.body;
+    if (password === ADMIN_PASSWORD) {
+      res.json({ ok: true, token: 'secretscape-admin-2026' });
+    } else {
+      res.status(401).json({ error: 'Mot de passe incorrect' });
+    }
+  });
+
+  // Admin: stats
+  app.get("/api/admin/stats", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    const topSpots = Object.entries(adminData.spotViews)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 10)
+      .map(([id, views]) => ({ id, views }));
+    const topFavs = Object.entries(adminData.favorites)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 10)
+      .map(([id, count]) => ({ id, count }));
+    res.json({
+      pageViews: adminData.pageViews,
+      totalSpotViews: Object.values(adminData.spotViews).reduce((a, b) => a + b, 0),
+      totalFavorites: Object.values(adminData.favorites).reduce((a, b) => a + b, 0),
+      totalMessages: adminData.messages.length,
+      unreadMessages: adminData.messages.filter(m => !m.read).length,
+      totalSpots: adminData.customSpots.length,
+      topSpots,
+      topFavs,
+    });
+  });
+
+  // Admin: messages
+  app.get("/api/admin/messages", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    res.json({ messages: adminData.messages.reverse() });
+  });
+
+  app.post("/api/admin/messages/read", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    const { id } = req.body;
+    const msg = adminData.messages.find(m => m.id === id);
+    if (msg) { msg.read = true; saveAdminData(adminData); }
+    res.json({ ok: true });
+  });
+
+  app.delete("/api/admin/messages/:id", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    adminData.messages = adminData.messages.filter(m => m.id !== req.params.id);
+    saveAdminData(adminData);
+    res.json({ ok: true });
+  });
+
+  // Admin: spots CRUD
+  app.get("/api/admin/spots", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    res.json({ spots: adminData.customSpots });
+  });
+
+  app.post("/api/admin/spots", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    const spot = { ...req.body, id: req.body.id || `custom-${Date.now()}` };
+    adminData.customSpots.push(spot);
+    saveAdminData(adminData);
+    res.json({ ok: true, spot });
+  });
+
+  app.put("/api/admin/spots/:id", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    const idx = adminData.customSpots.findIndex(s => s.id === req.params.id);
+    if (idx >= 0) {
+      adminData.customSpots[idx] = { ...adminData.customSpots[idx], ...req.body };
+      saveAdminData(adminData);
+    }
+    res.json({ ok: true });
+  });
+
+  app.delete("/api/admin/spots/:id", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    adminData.customSpots = adminData.customSpots.filter(s => s.id !== req.params.id);
+    saveAdminData(adminData);
+    res.json({ ok: true });
+  });
+
+  // Contact form: saves to admin data (used by Formspree fallback + direct API)
+  app.post("/api/contact", (req, res) => {
+    const msg = { ...req.body, id: `msg-${Date.now()}`, date: new Date().toISOString(), read: false };
+    adminData.messages.push(msg);
+    saveAdminData(adminData);
+    res.json({ ok: true });
   });
 
   // Gemini Route 1: Discover AI Hidden Spots for a city / query
