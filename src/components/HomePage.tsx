@@ -52,7 +52,7 @@ const CATEGORY_CARDS = [
   },
   {
     key: 'boites',
-    name: 'Vie Nocturne',
+    name: 'Virée Nocturne',
     desc: 'Clubs et soirées exclusives',
     image: '/images/club-vip.jpg',
     color: 'from-violet-500 to-purple-600',
