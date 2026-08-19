@@ -200,8 +200,9 @@ async function startServer() {
       const { query, city } = req.body;
       const targetCity = city || query || "Cotonou";
 
-      const prompt = `Génère une liste de 4 à 5 lieux touristiques vraiment cachés, méconnus ou insolites pour la ville/région: "${targetCity}".
+        const prompt = `Génère une liste de 4 à 5 lieux touristiques vraiment cachés, méconnus ou insolites pour la ville/région: "${targetCity}".
 Chaque lieu doit être une pépite secrète authentique avec des informations précises (coordonnées GPS réelles approximatives, astuce secrète pour y accéder, meilleur moment de la journée, niveau de secret).
+Ne génère JAMAIS de spots de transport (pas de taxis, motos, VTC, pirogues de transport).
 Prompt utilisateur spécifique: "${query || "lieux cachés et secrets à visiter"}".`;
 
       const response = await ai.models.generateContent({
@@ -218,7 +219,7 @@ Prompt utilisateur spécifique: "${query || "lieux cachés et secrets à visiter
                 id: { type: Type.STRING },
                 title: { type: Type.STRING },
                 subtitle: { type: Type.STRING },
-                category: { type: Type.STRING, description: "Un parmi: plages, restaurants, boites, distractions, transports, sites, hotels" },
+                category: { type: Type.STRING, description: "Un parmi: plages, restaurants, boites, distractions, sites, hotels" },
                 city: { type: Type.STRING },
                 region: { type: Type.STRING },
                 lat: { type: Type.NUMBER },
@@ -260,7 +261,7 @@ Prompt utilisateur spécifique: "${query || "lieux cachés et secrets à visiter
         id: item.id || `ai-spot-${Date.now()}-${idx}`,
         title: item.title,
         subtitle: item.subtitle || "Lieu secret révélé par l'IA",
-        category: ['plages', 'restaurants', 'boites', 'distractions', 'transports', 'sites', 'hotels'].includes(item.category)
+        category: ['plages', 'restaurants', 'boites', 'distractions', 'sites', 'hotels'].includes(item.category)
           ? item.category
           : 'sites',
         city: item.city || targetCity,
