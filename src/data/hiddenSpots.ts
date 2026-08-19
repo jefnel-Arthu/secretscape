@@ -3594,8 +3594,8 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-tanougou-cascade': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Jeune_homme_sautant_des_cascades_de_Tanougou_2_%28B%C3%A9nin%29.jpg/1280px-Jeune_homme_sautant_des_cascades_de_Tanougou_2_%28B%C3%A9nin%29.jpg',
   'spot-pendjari-1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Parc_national_de_la_Pendjari.JPG/1280px-Parc_national_de_la_Pendjari.JPG',
   'spot-abomey-1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Abomey-K%C3%B6nigspalast2.jpg/1280px-Abomey-K%C3%B6nigspalast2.jpg',
-  'spot-ouidah-pythons': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Entr%C3%A9e_du_Temple_des_Pythons_%28Ouidah%29.jpg/1280px-Entr%C3%A9e_du_Temple_des_Pythons_%28Ouidah%29.jpg',
-  'spot-ouidah-porte': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Porte_du_non_retour_11.jpg/1280px-Porte_du_non_retour_11.jpg',
+  'spot-ouidah-pythons': 'https://culturesetpatrimoines.bj/wp-content/uploads/2024/03/python.png',
+  'spot-ouidah-porte': 'https://waafrica.travel/wp-content/uploads/2025/05/porte-_de-_non_retour_benin-1024x768.jpg',
   'spot-cotonou-fetiches': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/March%C3%A9_Dantokpa_%28vue_arri%C3%A8re%29.jpg/1280px-March%C3%A9_Dantokpa_%28vue_arri%C3%A8re%29.jpg',
   'spot-dassa-1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg/1280px-Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg',
   'spot-cotonou-zinsou': 'https://upload.wikimedia.org/wikipedia/commons/4/49/Fondation_Zinsou_in_Cotonou_2015.jpg',
@@ -3684,7 +3684,7 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-hotel-ibis': '/images/ibis-cotonou.jpg',
   'spot-hotel-nobila': '/images/nobila.jpg',
   'spot-hotel-atlantic-beach': '/images/atlantic-beach.jpg',
-  'spot-hotel-du-lac': '/images/hotel-du-lac.jpg',
+  'spot-hotel-du-lac': 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/b9/39/22/pool-side.jpg?w=900&h=500&s=1',
   'spot-hotel-orchidees': '/images/orchidees.jpg',
   'spot-hotel-tahiti': '/images/tahiti.jpg',
   'spot-hotel-villa-saint-jean': '/images/villa-saint-jean.jpg',
@@ -3727,12 +3727,12 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-new-land-beach': '/images/new-land-beach.jpg',
   'spot-ouidah-jardin-memoire': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/M%C3%A9morial_de_Zoungbodji_%282%29.jpg/1280px-M%C3%A9morial_de_Zoungbodji_%282%29.jpg',
   'spot-ouidah-souza': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Maison_de_la_famille_de_Souza%2C_%C3%A0_Ouidah.jpg/1280px-Maison_de_la_famille_de_Souza%2C_%C3%A0_Ouidah.jpg',
-  'spot-family-beach': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Fidjross%C3%A8_Plage_%28Cotonou%29.jpg/1280px-Fidjross%C3%A8_Plage_%28Cotonou%29.jpg',
-  'spot-eldorado-beach': 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Pirogue_sur_la_plage_de_la_route_des_p%C3%AAcheurs_%C3%A0_Cotonou.jpg',
+  'spot-family-beach': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLZdossUso6z-XxIe5oMgX6k4xP53HqNlSNNgBfLYSsOVQNT0shkVkn24&s=10',
+  'spot-eldorado-beach': 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/c1/82/99/eldorado-beach.jpg?w=900&h=-1&s=1',
   'spot-hotel-novotel': 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Boulevard_de_la_Marina.jpg',
   'spot-hotel-cote': 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Plage_de_Fidjross%C3%A9.jpg',
   'spot-code-bar': '/images/club-code-bar.jpg',
-  'spot-casino-partouche': '/images/club-casino.jpg',
+  'spot-casino-partouche': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkyChZMMrBiu2xrloU1HvR2vHtw1wOmQ3wPaOgGi7lTG0Vzhbrd99Kd1Vb&s=10',
   'spot-le-black': '/images/club-le-black.jpg',
   'spot-vip-club': '/images/club-vip.jpg',
   'spot-le-loft': '/images/club-le-loft.jpg',
@@ -3743,7 +3743,7 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-le-seven': '/images/club-le-seven.jpg',
   'spot-crystal-palace': '/images/club-crystal-palace.jpg',
   'spot-le-tabou': '/images/club-le-tabou.jpg',
-  'spot-314-club': '/images/club-314.jpg'
+  'spot-314-club': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSwOSsn78yn_MpkDIHlSJQdYzi4dtGlOh8-2NFCIBRtYAWm1wTy97K21k&s=10'
 };
 
 export const INITIAL_HIDDEN_SPOTS: HiddenSpot[] = RAW_SPOTS.map((spot) =>
