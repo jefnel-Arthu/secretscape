@@ -154,7 +154,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
             </div>
 
             <div>
-              <span className="text-[9px] text-stone-400 font-bold uppercase tracking-wider block">PASSAGER</span>
+              <span className="text-[9px] text-stone-400 font-bold uppercase tracking-wider block">TOURISTE</span>
               <span className="font-bold text-stone-800 block truncate mt-0.5">{data.passengerName}</span>
             </div>
 
@@ -270,7 +270,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
 
             <div className="space-y-2 text-xs">
               <div>
-                <span className="text-[9px] text-stone-400 uppercase font-bold block">PASSAGER</span>
+                <span className="text-[9px] text-stone-400 uppercase font-bold block">TOURISTE</span>
                 <span className="font-bold text-stone-900 block truncate">{data.passengerName}</span>
               </div>
               <div className="grid grid-cols-2 gap-2">

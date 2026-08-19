@@ -50,7 +50,7 @@ function mapCalendarToTicketData(calendar: UserTripCalendar): FlightTicketData {
   return {
     airlineName: 'SECRETSCAPE',
     flightNumber: ticketCode,
-    passengerName: 'VOYAGEUR',
+    passengerName: 'TOURISTE',
     originCode: 'BJI',
     originName: 'Bénin International',
     destCode: calendar.destinationCity.slice(0, 3).toUpperCase(),
