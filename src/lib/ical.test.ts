@@ -149,7 +149,7 @@ describe('buildICS', () => {
               spot,
               timeSlot: 'morning',
               timeString: '09:30',
-              transportMode: 'zemidjan',
+              transportMode: 'gozem',
             },
           ],
         },

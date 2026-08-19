@@ -37,14 +37,8 @@ export interface HiddenSpot {
 export type TimeSlot = 'morning' | 'noon' | 'afternoon' | 'sunset' | 'evening';
 
 export type TransportMode =
-  | 'a-pied'
-  | 'zemidjan'
-  | 'taxi'
   | 'gozem'
-  | 'yango'
-  | 'pirogue'
-  | 'voiture'
-  | 'bus';
+  | 'yango';
 
 export interface ItinerarySlotItem {
   id: string; // unique item id in calendar
