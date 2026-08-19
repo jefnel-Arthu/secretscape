@@ -20,7 +20,20 @@ import { ContactView } from './components/ContactView';
 import { AdminPanel } from './components/AdminPanel';
 import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-react';
 
+const APP_VERSION = '2.1';
+
+function migrateStorage() {
+  const stored = localStorage.getItem('secretscape_version');
+  if (stored !== APP_VERSION) {
+    localStorage.removeItem('secretscape_spots');
+    localStorage.removeItem('secretscape_favorites');
+    localStorage.removeItem('secretscape_calendar');
+    localStorage.setItem('secretscape_version', APP_VERSION);
+  }
+}
+
 export default function App() {
+  migrateStorage();
   // Navigation tab state
   const [activeTab, setActiveTab] = useState<'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
