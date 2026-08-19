@@ -67,7 +67,7 @@ const CATEGORY_CARDS = [
   {
     key: 'transports',
     name: 'Transport & Access',
-    desc: 'Zémidjan, taxi, transferts',
+    desc: 'Gozem & Yango, transferts',
     image: '/images/benin-taxi.jpg',
     color: 'from-yellow-500 to-amber-600',
   },

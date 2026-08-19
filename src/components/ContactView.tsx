@@ -496,9 +496,8 @@ export const ContactView: React.FC = () => {
                       className={inputBase}
                     >
                       <option value="">Choisir...</option>
-                      <option>Transfert aeroport</option>
-                      <option>Voiture avec chauffeur</option>
-                      <option>Zemidjan</option>
+                      <option>Gozem</option>
+                      <option>Yango</option>
                       <option>Pas besoin</option>
                     </select>
                   </div>
