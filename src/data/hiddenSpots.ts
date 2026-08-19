@@ -2497,7 +2497,7 @@ const RAW_SPOTS: HiddenSpot[] = [
     estimatedDurationMinutes: 15,
     imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80',
     tags: ['Gozem', 'VTC', 'Moto-taxi', 'Application', 'Transport'],
-    websiteUrl: 'https://www.gozem.africa/',
+    websiteUrl: 'https://gozem.co/bj/fr/',
     rating: 4.3,
     reviewCount: 120,
     crowdLevel: 'élevé'
