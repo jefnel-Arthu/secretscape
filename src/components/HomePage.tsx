@@ -22,6 +22,7 @@ import {
 
 interface HomePageProps {
   onNavigate: (tab: string) => void;
+  onNavigateToCategory: (category: string) => void;
   onOpenSpot: (spot: HiddenSpot) => void;
 }
 
@@ -111,7 +112,7 @@ const FEATURED_SPOT_IDS = [
   'spot-abomey-1',
 ];
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCategory, onOpenSpot }) => {
   const [heroReady, setHeroReady] = React.useState(false);
 
   React.useEffect(() => {
@@ -247,7 +248,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSpot }) =>
             {CATEGORY_CARDS.map((cat) => (
               <button
                 key={cat.key}
-                onClick={() => onNavigate('map')}
+                onClick={() => onNavigateToCategory(cat.key)}
                 className="group relative rounded-2xl overflow-hidden aspect-[3/4] bg-stone-200 text-left"
               >
                 <img

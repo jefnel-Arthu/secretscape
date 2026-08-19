@@ -248,6 +248,10 @@ export default function App() {
         {activeTab === 'home' && (
           <HomePage
             onNavigate={(tab) => setActiveTab(tab as any)}
+            onNavigateToCategory={(category) => {
+              setSelectedCategory(category as any);
+              setActiveTab('map');
+            }}
             onOpenSpot={(spot) => setSelectedSpotModal(spot)}
           />
         )}
