@@ -32,6 +32,7 @@ export interface HiddenSpot {
   reviewCount: number;
   crowdLevel: 'faible' | 'modéré' | 'élevé';
   isUserSubmitted?: boolean;
+  websiteUrl?: string;
 }
 
 export type TimeSlot = 'morning' | 'noon' | 'afternoon' | 'sunset' | 'evening';

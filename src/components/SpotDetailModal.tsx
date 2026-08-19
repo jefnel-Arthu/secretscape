@@ -14,6 +14,7 @@ import {
   Users,
   Star,
   Sun,
+  ExternalLink,
 } from 'lucide-react';
 
 interface SpotDetailModalProps {
@@ -256,6 +257,19 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
               <span>{copiedGps ? 'GPS Copie !' : 'Copier Coordonnees GPS'}</span>
             </button>
           </div>
+
+          {/* Website Link */}
+          {spot.websiteUrl && (
+            <a
+              href={spot.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-3 px-5 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>Visiter le site</span>
+            </a>
+          )}
 
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 pt-1">

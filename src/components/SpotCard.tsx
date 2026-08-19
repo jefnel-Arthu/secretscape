@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiddenSpot } from '../types';
 import { CATEGORY_LABELS, SECRET_LEVEL_LABELS } from '../data/hiddenSpots';
-import { CalendarPlus, Bookmark, MapPin, Clock, Eye, Sparkles, Star, Footprints } from 'lucide-react';
+import { CalendarPlus, Bookmark, MapPin, Clock, Eye, Sparkles, Star, Footprints, ExternalLink } from 'lucide-react';
 
 interface SpotCardProps {
   spot: HiddenSpot;
@@ -114,17 +114,32 @@ export const SpotCard: React.FC<SpotCardProps> = ({
 
         {/* Card Footer Actions */}
         <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onAddToCalendar(spot);
-            }}
-            className="bg-amber-500 hover:bg-amber-400 text-stone-950 text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm shadow-amber-500/20 transition-all active:scale-95 hover:shadow-md hover:shadow-amber-500/25"
-            title="Ajouter au calendrier de voyage"
-          >
-            <CalendarPlus className="w-3.5 h-3.5" />
-            <span>+ Calendrier</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onAddToCalendar(spot);
+              }}
+              className="bg-amber-500 hover:bg-amber-400 text-stone-950 text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm shadow-amber-500/20 transition-all active:scale-95 hover:shadow-md hover:shadow-amber-500/25"
+              title="Ajouter au calendrier de voyage"
+            >
+              <CalendarPlus className="w-3.5 h-3.5" />
+              <span>+ Calendrier</span>
+            </button>
+            {spot.websiteUrl && (
+              <a
+                href={spot.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all active:scale-95 hover:shadow-md"
+                title="Visiter le site"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Site web</span>
+              </a>
+            )}
+          </div>
 
           <span className="text-[10px] text-stone-400 font-medium flex items-center gap-1">
             <Eye className="w-3 h-3" />

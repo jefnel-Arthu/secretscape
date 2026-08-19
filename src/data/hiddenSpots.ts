@@ -2497,6 +2497,7 @@ const RAW_SPOTS: HiddenSpot[] = [
     estimatedDurationMinutes: 15,
     imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80',
     tags: ['Gozem', 'VTC', 'Moto-taxi', 'Application', 'Transport'],
+    websiteUrl: 'https://www.gozem.africa/',
     rating: 4.3,
     reviewCount: 120,
     crowdLevel: 'élevé'
@@ -2517,6 +2518,7 @@ const RAW_SPOTS: HiddenSpot[] = [
     estimatedDurationMinutes: 20,
     imageUrl: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80',
     tags: ['Yango', 'VTC', 'Voiture', 'Application', 'Transport'],
+    websiteUrl: 'https://yango.com/',
     rating: 4.2,
     reviewCount: 90,
     crowdLevel: 'modéré'
