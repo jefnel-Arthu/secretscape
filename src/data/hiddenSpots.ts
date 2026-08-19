@@ -2518,7 +2518,7 @@ const RAW_SPOTS: HiddenSpot[] = [
     estimatedDurationMinutes: 20,
     imageUrl: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80',
     tags: ['Yango', 'VTC', 'Voiture', 'Application', 'Transport'],
-    websiteUrl: 'https://yango.com/',
+    websiteUrl: 'https://yango.com/fr_bj/',
     rating: 4.2,
     reviewCount: 90,
     crowdLevel: 'modéré'
