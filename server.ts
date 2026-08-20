@@ -194,6 +194,47 @@ async function startServer() {
     res.json({ ok: true });
   });
 
+  // LiveOps: real-time dashboard data
+  app.get("/api/admin/liveops", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    const totalSpotViews = Object.values(adminData.spotViews).reduce((a, b) => a + b, 0);
+    const totalFavorites = Object.values(adminData.favorites).reduce((a, b) => a + b, 0);
+    const unreadMessages = adminData.messages.filter(m => !m.read).length;
+    const totalMessages = adminData.messages.length;
+
+    const recentMessages = adminData.messages.slice(-10).reverse().map(m => ({
+      id: m.id,
+      name: m.name,
+      email: m.email,
+      phone: m.phone,
+      city: m.city,
+      subject: m.subject,
+      message: m.message,
+      date: m.date,
+      read: m.read,
+    }));
+
+    const topSpots = Object.entries(adminData.spotViews)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 10)
+      .map(([id, views]) => ({ id, views }));
+
+    res.json({
+      pageViews: adminData.pageViews,
+      totalSpotViews,
+      totalFavorites,
+      totalMessages,
+      unreadMessages,
+      customSpotsCount: adminData.customSpots.length,
+      recentMessages,
+      topSpots,
+      uptime: process.uptime(),
+      serverTime: new Date().toISOString(),
+    });
+  });
+
   // Gemini Route 1: Discover AI Hidden Spots for a city / query
   app.post("/api/gemini/discover-spots", async (req, res) => {
     try {
