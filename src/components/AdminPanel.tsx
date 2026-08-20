@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Lock, BarChart3, Mail, Bookmark, Map, Eye, CheckCircle, Trash2, LogOut, Loader2
+  Lock, BarChart3, Mail, Bookmark, Map, Eye, CheckCircle, Trash2, LogOut, Loader2, Activity
 } from 'lucide-react';
+import SecretScapeDashboard from './SecretScapeDashboard';
 
 interface AdminPanelProps {
   onClose: () => void;
@@ -40,7 +41,7 @@ interface Message {
   read: boolean;
 }
 
-type AdminTab = 'stats' | 'messages' | 'favorites' | 'spots';
+type AdminTab = 'stats' | 'messages' | 'favorites' | 'spots' | 'liveops';
 
 export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   const [token, setToken] = useState<string | null>(null);
@@ -166,6 +167,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
 
   const tabs: { key: AdminTab; label: string; icon: React.ReactNode }[] = [
     { key: 'stats', label: 'Statistiques', icon: <BarChart3 className="w-4 h-4" /> },
+    { key: 'liveops', label: 'Live Ops', icon: <Activity className="w-4 h-4" /> },
     { key: 'messages', label: `Messages${stats?.unreadMessages ? ` (${stats.unreadMessages})` : ''}`, icon: <Mail className="w-4 h-4" /> },
     { key: 'favorites', label: 'Favoris', icon: <Bookmark className="w-4 h-4" /> },
     { key: 'spots', label: 'Lieux', icon: <Map className="w-4 h-4" /> },
@@ -259,6 +261,11 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
               </div>
             )}
           </div>
+        )}
+
+        {/* ── Live Ops Tab ── */}
+        {activeTab === 'liveops' && (
+          <SecretScapeDashboard />
         )}
 
         {/* ── Messages Tab ── */}
