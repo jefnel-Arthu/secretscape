@@ -34,6 +34,22 @@ async function startServer() {
 
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
+  // ─── Active Visitors Tracking ────────────────────────────────────────
+  const activeVisitors = new Map<string, number>(); // sessionId -> lastPing timestamp
+  const SESSION_TIMEOUT = 30000; // 30 seconds
+
+  function cleanExpiredSessions() {
+    const now = Date.now();
+    for (const [id, lastPing] of activeVisitors) {
+      if (now - lastPing > SESSION_TIMEOUT) activeVisitors.delete(id);
+    }
+  }
+
+  function getActiveVisitorCount(): number {
+    cleanExpiredSessions();
+    return activeVisitors.size;
+  }
+
   interface AdminData {
     pageViews: number;
     spotViews: Record<string, number>;
@@ -62,6 +78,15 @@ async function startServer() {
     adminData.pageViews++;
     saveAdminData(adminData);
     res.json({ ok: true });
+  });
+
+  // Tracking: heartbeat (visitor alive ping)
+  app.post("/api/track/heartbeat", (req, res) => {
+    const { sessionId } = req.body;
+    if (sessionId) {
+      activeVisitors.set(sessionId, Date.now());
+    }
+    res.json({ ok: true, activeVisitors: getActiveVisitorCount() });
   });
 
   // Tracking: spot view
@@ -228,6 +253,7 @@ async function startServer() {
       totalMessages,
       unreadMessages,
       customSpotsCount: adminData.customSpots.length,
+      activeVisitors: getActiveVisitorCount(),
       recentMessages,
       topSpots,
       uptime: process.uptime(),

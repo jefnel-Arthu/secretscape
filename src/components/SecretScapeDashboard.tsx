@@ -30,6 +30,7 @@ interface LiveOpsData {
   totalMessages: number;
   unreadMessages: number;
   customSpotsCount: number;
+  activeVisitors: number;
   recentMessages: {
     id: string;
     name: string;
@@ -108,6 +109,11 @@ export default function SecretScapeDashboard() {
   const currentMetric = metrics[metrics.length - 1] || metrics[0];
   const prevMetric = metrics.length > 1 ? metrics[metrics.length - 2] : undefined;
 
+  // Override simulated activeUsers with real server count
+  const realCurrentMetric: MetricDataPoint = liveOps
+    ? { ...currentMetric, activeUsers: liveOps.activeVisitors }
+    : currentMetric;
+
   const fetchLiveData = useCallback(async () => {
     setLiveOpsLoading(true);
     setLiveOpsError(null);
@@ -133,7 +139,26 @@ export default function SecretScapeDashboard() {
 
   useEffect(() => {
     fetchLiveData();
+    const poll = setInterval(fetchLiveData, 10000);
+    return () => clearInterval(poll);
   }, [fetchLiveData]);
+
+  // Heartbeat: ping server every 15s with unique session ID
+  useEffect(() => {
+    const sessionId = `sess-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const sendHeartbeat = async () => {
+      try {
+        await fetch('/api/track/heartbeat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId }),
+        });
+      } catch {}
+    };
+    sendHeartbeat();
+    const hb = setInterval(sendHeartbeat, 15000);
+    return () => clearInterval(hb);
+  }, []);
 
   useEffect(() => {
     const clockTimer = setInterval(() => {
@@ -201,7 +226,7 @@ export default function SecretScapeDashboard() {
 
       <div className="px-4 lg:px-8 py-4">
         <MetricCards
-          current={currentMetric}
+          current={realCurrentMetric}
           prev={prevMetric}
           totalBookingsToday={liveOps?.totalMessages ?? 0}
           totalRevenueToday={liveOps?.totalFavorites ?? 0}

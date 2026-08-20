@@ -133,6 +133,17 @@ export default function App() {
     localStorage.setItem('secretscape_spots', JSON.stringify(customSpots));
   }, [spots]);
 
+  // Heartbeat: track active visitors on server
+  useEffect(() => {
+    const sessionId = `sess-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const sendHeartbeat = async () => {
+      try { await fetch('/api/track/heartbeat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sessionId }) }); } catch {}
+    };
+    sendHeartbeat();
+    const hb = setInterval(sendHeartbeat, 15000);
+    return () => clearInterval(hb);
+  }, []);
+
   // Extract unique cities
   const cities = useMemo(() => {
     const set = new Set(spots.map(s => s.city));
