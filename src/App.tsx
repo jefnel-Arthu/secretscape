@@ -133,9 +133,12 @@ export default function App() {
     localStorage.setItem('secretscape_spots', JSON.stringify(customSpots));
   }, [spots]);
 
+  // Session ID — shared between heartbeat and trackAction
+  const sessionIdRef = useRef(`sess-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`);
+
   // Heartbeat: track active visitors on server
   useEffect(() => {
-    const sessionId = `sess-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const sessionId = sessionIdRef.current;
     const sendHeartbeat = async () => {
       try { await fetch('/api/track/heartbeat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sessionId }) }); } catch {}
     };
@@ -205,7 +208,7 @@ export default function App() {
     fetch('/api/track/action', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type, detail, spotId }),
+      body: JSON.stringify({ type, detail, spotId, sessionId: sessionIdRef.current }),
     }).catch(() => {});
   }, []);
 

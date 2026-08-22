@@ -56,6 +56,7 @@ async function startServer() {
     detail: string;
     spotId?: string;
     timestamp: string;
+    sessionId?: string;
   }
 
   interface AdminData {
@@ -121,16 +122,17 @@ async function startServer() {
 
   // Tracking: generic user action
   app.post("/api/track/action", (req, res) => {
-    const { type, detail, spotId } = req.body;
+    const { type, detail, spotId, sessionId } = req.body;
     const action: UserAction = {
       id: `act-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
       type: type || 'unknown',
       detail: detail || '',
       spotId,
       timestamp: new Date().toISOString(),
+      sessionId: sessionId || undefined,
     };
     adminData.recentActions.unshift(action);
-    if (adminData.recentActions.length > 200) adminData.recentActions = adminData.recentActions.slice(0, 200);
+    if (adminData.recentActions.length > 500) adminData.recentActions = adminData.recentActions.slice(0, 500);
     saveAdminData(adminData);
     res.json({ ok: true });
   });
@@ -278,6 +280,37 @@ async function startServer() {
       .slice(0, 10)
       .map(([id, views]) => ({ id, views }));
 
+    // Group actions by sessionId for visitor sessions
+    const sessionMap = new Map<string, { actions: UserAction[]; lastSeen: string; firstSeen: string }>();
+    for (const action of adminData.recentActions) {
+      const sid = action.sessionId || 'anonymous';
+      const existing = sessionMap.get(sid);
+      if (existing) {
+        existing.actions.push(action);
+      } else {
+        sessionMap.set(sid, { actions: [action], lastSeen: action.timestamp, firstSeen: action.timestamp });
+      }
+      if (action.timestamp > existing?.lastSeen || !existing) {
+        const e = sessionMap.get(sid)!;
+        e.lastSeen = action.timestamp;
+      }
+      if (action.timestamp < existing?.firstSeen || !existing) {
+        const e = sessionMap.get(sid)!;
+        e.firstSeen = action.timestamp;
+      }
+    }
+
+    const sessions = Array.from(sessionMap.entries())
+      .map(([sid, data]) => ({
+        sessionId: sid,
+        actionCount: data.actions.length,
+        firstSeen: data.firstSeen,
+        lastSeen: data.lastSeen,
+        isActive: activeVisitors.has(sid),
+      }))
+      .sort((a, b) => b.lastSeen.localeCompare(a.lastSeen))
+      .slice(0, 50);
+
     res.json({
       pageViews: adminData.pageViews,
       totalSpotViews,
@@ -288,7 +321,8 @@ async function startServer() {
       activeVisitors: getActiveVisitorCount(),
       recentMessages,
       topSpots,
-      recentActions: adminData.recentActions.slice(0, 50),
+      recentActions: adminData.recentActions.slice(0, 100),
+      sessions,
       uptime: process.uptime(),
       serverTime: new Date().toISOString(),
     });

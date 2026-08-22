@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Activity, Network, Server, Layers, ShieldAlert
+  Activity, Network, Server, Layers, ShieldAlert, Users
 } from 'lucide-react';
 import {
   MetricDataPoint, UserAction, TrafficPreset, SecurityAlert,
@@ -18,6 +18,7 @@ import { NetworkTrafficView } from './dashboard/NetworkTrafficView';
 import { SystemPerformanceView } from './dashboard/SystemPerformanceView';
 import { LiveActionsFeed } from './dashboard/LiveActionsFeed';
 import { SecurityAlertsPanel } from './dashboard/SecurityAlertsPanel';
+import { SessionTimeline } from './dashboard/SessionTimeline';
 import { ActionDetailModal } from './dashboard/ActionDetailModal';
 import { AiOpsAssistantModal } from './dashboard/AiOpsAssistantModal';
 import { CodeExportModal } from './dashboard/CodeExportModal';
@@ -42,7 +43,8 @@ interface LiveOpsData {
     read: boolean;
   }[];
   topSpots: { id: string; views: number }[];
-  recentActions: { id: string; type: string; detail: string; spotId?: string; timestamp: string }[];
+  recentActions: { id: string; type: string; detail: string; spotId?: string; timestamp: string; sessionId?: string }[];
+  sessions: { sessionId: string; actionCount: number; firstSeen: string; lastSeen: string; isActive: boolean }[];
   uptime: number;
   serverTime: string;
 }
@@ -122,7 +124,7 @@ export default function SecretScapeDashboard() {
   const [preset, setPreset] = useState<TrafficPreset>('normal');
   const [refreshInterval, setRefreshInterval] = useState<number>(2000);
   const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
-  const [activeMainTab, setActiveMainTab] = useState<'overview' | 'network' | 'system' | 'actions' | 'security'>('overview');
+  const [activeMainTab, setActiveMainTab] = useState<'overview' | 'network' | 'system' | 'actions' | 'visitors' | 'security'>('overview');
 
   const [selectedAction, setSelectedAction] = useState<UserAction | null>(null);
   const [isAiModalOpen, setIsAiModalOpen] = useState<boolean>(false);
@@ -237,9 +239,10 @@ export default function SecretScapeDashboard() {
 
   const mainTabs: { key: typeof activeMainTab; label: string; icon: React.ReactNode }[] = [
     { key: 'overview', label: 'Vue d\'ensemble', icon: <Activity className="w-4 h-4" /> },
+    { key: 'visitors', label: 'Visiteurs', icon: <Users className="w-4 h-4" /> },
+    { key: 'actions', label: 'Actions', icon: <Layers className="w-4 h-4" /> },
     { key: 'network', label: 'Réseau', icon: <Network className="w-4 h-4" /> },
     { key: 'system', label: 'Système', icon: <Server className="w-4 h-4" /> },
-    { key: 'actions', label: 'Actions', icon: <Layers className="w-4 h-4" /> },
     { key: 'security', label: 'Sécurité', icon: <ShieldAlert className="w-4 h-4" /> },
   ];
 
@@ -353,6 +356,10 @@ export default function SecretScapeDashboard() {
 
         {activeMainTab === 'actions' && (
           <LiveActionsFeed actions={actions} onSelectAction={setSelectedAction} />
+        )}
+
+        {activeMainTab === 'visitors' && liveOps && (
+          <SessionTimeline sessions={liveOps.sessions || []} allActions={liveOps.recentActions || []} />
         )}
 
         {activeMainTab === 'security' && (
