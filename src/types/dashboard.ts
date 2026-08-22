@@ -20,7 +20,8 @@ export type ActionCategory =
   | 'auth'
   | 'payment'
   | 'navigation'
-  | 'security';
+  | 'security'
+  | 'page_view';
 
 export type ActionSeverity = 'info' | 'success' | 'warning' | 'critical';
 

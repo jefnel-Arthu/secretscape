@@ -50,12 +50,21 @@ async function startServer() {
     return activeVisitors.size;
   }
 
+  interface UserAction {
+    id: string;
+    type: string;
+    detail: string;
+    spotId?: string;
+    timestamp: string;
+  }
+
   interface AdminData {
     pageViews: number;
     spotViews: Record<string, number>;
     favorites: Record<string, number>;
     messages: Array<{ id: string; name: string; phone: string; email: string; city: string; subject: string; arrivalDate: string; tripDuration: string; adults: string; children: string; budget: string; tripType: string; accommodation: string; transport: string; guide: string; foodPreferences: string; message: string; date: string; read: boolean }>;
     customSpots: any[];
+    recentActions: UserAction[];
   }
 
   function loadAdminData(): AdminData {
@@ -64,7 +73,7 @@ async function startServer() {
         return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
       }
     } catch {}
-    return { pageViews: 0, spotViews: {}, favorites: {}, messages: [], customSpots: [] };
+    return { pageViews: 0, spotViews: {}, favorites: {}, messages: [], customSpots: [], recentActions: [] };
   }
 
   function saveAdminData(data: AdminData) {
@@ -107,6 +116,22 @@ async function startServer() {
       if (adminData.favorites[spotId] < 0) adminData.favorites[spotId] = 0;
       saveAdminData(adminData);
     }
+    res.json({ ok: true });
+  });
+
+  // Tracking: generic user action
+  app.post("/api/track/action", (req, res) => {
+    const { type, detail, spotId } = req.body;
+    const action: UserAction = {
+      id: `act-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+      type: type || 'unknown',
+      detail: detail || '',
+      spotId,
+      timestamp: new Date().toISOString(),
+    };
+    adminData.recentActions.unshift(action);
+    if (adminData.recentActions.length > 200) adminData.recentActions = adminData.recentActions.slice(0, 200);
+    saveAdminData(adminData);
     res.json({ ok: true });
   });
 
@@ -215,6 +240,13 @@ async function startServer() {
   app.post("/api/contact", (req, res) => {
     const msg = { ...req.body, id: `msg-${Date.now()}`, date: new Date().toISOString(), read: false };
     adminData.messages.push(msg);
+    adminData.recentActions.unshift({
+      id: `act-${Date.now()}-msg`,
+      type: 'message',
+      detail: `${msg.name} (${msg.email}) — ${msg.subject}`,
+      timestamp: new Date().toISOString(),
+    });
+    if (adminData.recentActions.length > 200) adminData.recentActions = adminData.recentActions.slice(0, 200);
     saveAdminData(adminData);
     res.json({ ok: true });
   });
@@ -256,6 +288,7 @@ async function startServer() {
       activeVisitors: getActiveVisitorCount(),
       recentMessages,
       topSpots,
+      recentActions: adminData.recentActions.slice(0, 50),
       uptime: process.uptime(),
       serverTime: new Date().toISOString(),
     });

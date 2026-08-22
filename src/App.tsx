@@ -184,12 +184,14 @@ export default function App() {
     });
 
     showToast(`📍 ${spot.title} ajouté à votre calendrier !`);
+    trackAction('calendar_add', `${spot.title} ajouté au planning`, spot.id);
   };
 
   // Handle new user spot submission
   const handleAddUserSpot = (newSpot: HiddenSpot) => {
     setSpots(prev => [newSpot, ...prev]);
     showToast(`✨ Nouveau lieu secret publié !`);
+    trackAction('spot_proposal', `Nouveau lieu proposé: ${newSpot.title}`, newSpot.id);
   };
 
   // Toast notification trigger
@@ -198,9 +200,19 @@ export default function App() {
     setTimeout(() => setToastMessage(null), 3000);
   };
 
+  // Generic action tracker — sends to dashboard live feed
+  const trackAction = (type: string, detail: string, spotId?: string) => {
+    fetch('/api/track/action', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type, detail, spotId }),
+    }).catch(() => {});
+  };
+
   // Track page view on mount
   useEffect(() => {
     fetch('/api/track/pageview', { method: 'POST' }).catch(() => {});
+    trackAction('visit', 'Nouveau visiteur sur le site');
   }, []);
 
   // Track spot views
@@ -210,6 +222,8 @@ export default function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ spotId }),
     }).catch(() => {});
+    const spot = spots.find(s => s.id === spotId);
+    trackAction('spot_view', spot ? `Consultation: ${spot.title}` : `Consultation: ${spotId}`, spotId);
   };
 
   // Track favorites
@@ -229,6 +243,7 @@ export default function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ spotId: spot.id, action: wasFavorite ? 'remove' : 'add' }),
     }).catch(() => {});
+    trackAction(wasFavorite ? 'favorite_remove' : 'favorite_add', `${wasFavorite ? 'Retiré des favoris' : 'Ajouté aux favoris'}: ${spot.title}`, spot.id);
   };
 
   const calendarItemsCount = calendar.days.reduce((acc, d) => acc + d.items.length, 0);

@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Activity, Network, Server, Layers, Gamepad2, ShieldAlert
+  Activity, Network, Server, Layers, ShieldAlert
 } from 'lucide-react';
 import {
   MetricDataPoint, UserAction, TrafficPreset, SecurityAlert,
-  EscapeRoomPerformance, SystemNode, EndpointStat
+  SystemNode, EndpointStat
 } from '../types/dashboard';
 import {
   generateInitialMetrics, generateNextMetricPoint, generateInitialActions,
-  generateRandomUserAction, ESCAPE_ROOMS, INITIAL_SYSTEM_NODES,
+  generateRandomUserAction, INITIAL_SYSTEM_NODES,
   INITIAL_ENDPOINTS, INITIAL_ALERTS
 } from '../data/mockEngine';
 import { playSound } from '../utils/audio';
@@ -17,7 +17,6 @@ import { MetricCards } from './dashboard/MetricCards';
 import { NetworkTrafficView } from './dashboard/NetworkTrafficView';
 import { SystemPerformanceView } from './dashboard/SystemPerformanceView';
 import { LiveActionsFeed } from './dashboard/LiveActionsFeed';
-import { VisitorAnalytics } from './dashboard/VisitorAnalytics';
 import { SecurityAlertsPanel } from './dashboard/SecurityAlertsPanel';
 import { ActionDetailModal } from './dashboard/ActionDetailModal';
 import { AiOpsAssistantModal } from './dashboard/AiOpsAssistantModal';
@@ -43,6 +42,7 @@ interface LiveOpsData {
     read: boolean;
   }[];
   topSpots: { id: string; views: number }[];
+  recentActions: { id: string; type: string; detail: string; spotId?: string; timestamp: string }[];
   uptime: number;
   serverTime: string;
 }
@@ -73,6 +73,37 @@ function messageToAction(msg: LiveOpsData['recentMessages'][number]): UserAction
   };
 }
 
+const ACTION_ICON: Record<string, { category: UserAction['category']; severity: UserAction['severity']; endpoint: string }> = {
+  visit:            { category: 'page_view', severity: 'info',    endpoint: '/' },
+  spot_view:        { category: 'page_view', severity: 'info',    endpoint: '/spots' },
+  favorite_add:     { category: 'booking',  severity: 'success', endpoint: '/api/track/favorite' },
+  favorite_remove:  { category: 'page_view', severity: 'info',    endpoint: '/api/track/favorite' },
+  calendar_add:     { category: 'booking',  severity: 'success', endpoint: '/api/calendar' },
+  spot_proposal:    { category: 'booking',  severity: 'success', endpoint: '/api/spots' },
+  message:          { category: 'booking',  severity: 'success', endpoint: '/api/contact' },
+  search:           { category: 'page_view', severity: 'info',    endpoint: '/search' },
+};
+
+function serverActionToUserAction(a: LiveOpsData['recentActions'][number]): UserAction {
+  const meta = ACTION_ICON[a.type] || { category: 'page_view' as const, severity: 'info' as const, endpoint: '/' };
+  return {
+    id: a.id,
+    timestamp: new Date(a.timestamp).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+    isoTime: a.timestamp,
+    userId: `usr-${a.id}`,
+    userName: a.detail.split(':')[0] || 'Visiteur',
+    userLocation: { city: 'Cotonou', country: 'Bénin', countryCode: 'BJ', flag: '🇧🇯', lat: 6.37, lng: 2.39 },
+    ipAddress: '0.0.0.0',
+    action: a.detail,
+    details: a.detail,
+    category: meta.category,
+    severity: meta.severity,
+    endpoint: meta.endpoint,
+    statusCode: 200,
+    durationMs: 0,
+  };
+}
+
 function formatUptime(seconds: number): string {
   const days = Math.floor(seconds / 86400);
   const hours = Math.floor((seconds % 86400) / 3600);
@@ -85,14 +116,13 @@ export default function SecretScapeDashboard() {
   const [actions, setActions] = useState<UserAction[]>(() => generateInitialActions(20));
   const [nodes] = useState<SystemNode[]>(INITIAL_SYSTEM_NODES);
   const [endpoints, setEndpoints] = useState<EndpointStat[]>(INITIAL_ENDPOINTS);
-  const [escapeRooms] = useState<EscapeRoomPerformance[]>(ESCAPE_ROOMS);
   const [alerts] = useState<SecurityAlert[]>(INITIAL_ALERTS);
 
   const [isStreaming, setIsStreaming] = useState<boolean>(true);
   const [preset, setPreset] = useState<TrafficPreset>('normal');
   const [refreshInterval, setRefreshInterval] = useState<number>(2000);
   const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
-  const [activeMainTab, setActiveMainTab] = useState<'overview' | 'network' | 'system' | 'actions' | 'rooms' | 'security'>('overview');
+  const [activeMainTab, setActiveMainTab] = useState<'overview' | 'network' | 'system' | 'actions' | 'security'>('overview');
 
   const [selectedAction, setSelectedAction] = useState<UserAction | null>(null);
   const [isAiModalOpen, setIsAiModalOpen] = useState<boolean>(false);
@@ -126,9 +156,16 @@ export default function SecretScapeDashboard() {
       const data: LiveOpsData = await res.json();
       setLiveOps(data);
 
-      if (data.recentMessages?.length) {
-        const msgActions = data.recentMessages.map(messageToAction);
-        setActions(msgActions);
+      if (data.recentActions?.length) {
+        const realActions = data.recentActions.map(serverActionToUserAction);
+        if (data.recentMessages?.length) {
+          const msgActions = data.recentMessages.map(messageToAction);
+          setActions([...realActions, ...msgActions]);
+        } else {
+          setActions(realActions);
+        }
+      } else if (data.recentMessages?.length) {
+        setActions(data.recentMessages.map(messageToAction));
       }
     } catch (err) {
       setLiveOpsError(err instanceof Error ? err.message : 'Erreur inconnue');
@@ -203,7 +240,6 @@ export default function SecretScapeDashboard() {
     { key: 'network', label: 'Réseau', icon: <Network className="w-4 h-4" /> },
     { key: 'system', label: 'Système', icon: <Server className="w-4 h-4" /> },
     { key: 'actions', label: 'Actions', icon: <Layers className="w-4 h-4" /> },
-    { key: 'rooms', label: 'Escape Rooms', icon: <Gamepad2 className="w-4 h-4" /> },
     { key: 'security', label: 'Sécurité', icon: <ShieldAlert className="w-4 h-4" /> },
   ];
 
@@ -226,10 +262,14 @@ export default function SecretScapeDashboard() {
 
       <div className="px-4 lg:px-8 py-4">
         <MetricCards
-          current={realCurrentMetric}
-          prev={prevMetric}
-          totalBookingsToday={liveOps?.totalMessages ?? 0}
-          totalRevenueToday={liveOps?.totalFavorites ?? 0}
+          activeVisitors={liveOps?.activeVisitors ?? 0}
+          pageViews={liveOps?.pageViews ?? 0}
+          totalSpotViews={liveOps?.totalSpotViews ?? 0}
+          totalFavorites={liveOps?.totalFavorites ?? 0}
+          totalMessages={liveOps?.totalMessages ?? 0}
+          unreadMessages={liveOps?.unreadMessages ?? 0}
+          customSpotsCount={liveOps?.customSpotsCount ?? 0}
+          uptime={liveOps?.uptime ?? 0}
         />
       </div>
 
@@ -313,10 +353,6 @@ export default function SecretScapeDashboard() {
 
         {activeMainTab === 'actions' && (
           <LiveActionsFeed actions={actions} onSelectAction={setSelectedAction} />
-        )}
-
-        {activeMainTab === 'rooms' && (
-          <VisitorAnalytics escapeRooms={escapeRooms} metrics={metrics} />
         )}
 
         {activeMainTab === 'security' && (

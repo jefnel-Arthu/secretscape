@@ -41,7 +41,7 @@ interface Message {
   read: boolean;
 }
 
-type AdminTab = 'stats' | 'messages' | 'favorites' | 'spots' | 'liveops';
+type AdminTab = 'dashboard' | 'stats' | 'messages' | 'favorites' | 'spots';
 
 export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   const [token, setToken] = useState<string | null>(null);
@@ -49,7 +49,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   const [loginError, setLoginError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const [activeTab, setActiveTab] = useState<AdminTab>('stats');
+  const [activeTab, setActiveTab] = useState<AdminTab>('dashboard');
   const [stats, setStats] = useState<Stats | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -166,8 +166,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   }
 
   const tabs: { key: AdminTab; label: string; icon: React.ReactNode }[] = [
+    { key: 'dashboard', label: 'Dashboard', icon: <Activity className="w-4 h-4" /> },
     { key: 'stats', label: 'Statistiques', icon: <BarChart3 className="w-4 h-4" /> },
-    { key: 'liveops', label: 'Live Ops', icon: <Activity className="w-4 h-4" /> },
     { key: 'messages', label: `Messages${stats?.unreadMessages ? ` (${stats.unreadMessages})` : ''}`, icon: <Mail className="w-4 h-4" /> },
     { key: 'favorites', label: 'Favoris', icon: <Bookmark className="w-4 h-4" /> },
     { key: 'spots', label: 'Lieux', icon: <Map className="w-4 h-4" /> },
@@ -210,6 +210,11 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
 
       {/* Content */}
       <div className="flex-1 p-4 sm:p-6 overflow-auto">
+
+        {/* ── Dashboard Tab ── */}
+        {activeTab === 'dashboard' && (
+          <SecretScapeDashboard />
+        )}
 
         {/* ── Stats Tab ── */}
         {activeTab === 'stats' && stats && (
@@ -261,11 +266,6 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
               </div>
             )}
           </div>
-        )}
-
-        {/* ── Live Ops Tab ── */}
-        {activeTab === 'liveops' && (
-          <SecretScapeDashboard />
         )}
 
         {/* ── Messages Tab ── */}

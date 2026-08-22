@@ -15,6 +15,7 @@ const categoryBadge: Record<ActionCategory, string> = {
   payment: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
   navigation: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
   security: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+  page_view: 'bg-slate-500/20 text-slate-300 border-slate-500/30',
 };
 
 const severityBadge: Record<ActionSeverity, string> = {

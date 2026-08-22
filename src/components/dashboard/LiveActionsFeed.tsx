@@ -21,6 +21,7 @@ const categoryBadge: Record<ActionCategory, string> = {
   payment: 'bg-emerald-500/20 text-emerald-300',
   navigation: 'bg-amber-500/20 text-amber-300',
   security: 'bg-rose-500/20 text-rose-300',
+  page_view: 'bg-slate-500/20 text-slate-300',
 };
 
 export const LiveActionsFeed: React.FC<LiveActionsFeedProps> = ({
