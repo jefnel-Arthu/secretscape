@@ -104,6 +104,14 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
   // Remove item from day
   const handleRemoveItem = (dayIndex: number, itemId: string) => {
     setCalendar((prev) => {
+      const removedItem = prev.days[dayIndex]?.items.find(i => i.id === itemId);
+      if (removedItem) {
+        fetch('/api/track/action', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: 'calendar_remove', detail: `Retiré du planning: ${removedItem.spot.title}`, spotId: removedItem.spotId }),
+        }).catch(() => {});
+      }
       const newDays = [...prev.days];
       newDays[dayIndex] = {
         ...newDays[dayIndex],

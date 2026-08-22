@@ -62,6 +62,11 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
       const data = await res.json();
       if (data.plan) {
         setGeneratedPlan(data.plan);
+        fetch('/api/track/action', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: 'ai_itinerary', detail: `Itinéraire IA généré: ${destination} (${durationDays} jours, ${selectedVibes.join(', ')})` }),
+        }).catch(() => {});
       } else {
         throw new Error('Données incomplètes reçues.');
       }

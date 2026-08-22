@@ -131,7 +131,14 @@ export const SpotCard: React.FC<SpotCardProps> = ({
                 href={spot.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  fetch('/api/track/action', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ type: 'external_link', detail: `Clic site externe: ${spot.title} → ${spot.websiteUrl}`, spotId: spot.id }),
+                  }).catch(() => {});
+                }}
                 className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all active:scale-95 hover:shadow-md"
                 title="Visiter le site"
               >

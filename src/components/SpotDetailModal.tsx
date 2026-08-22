@@ -264,6 +264,13 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
               href={spot.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                fetch('/api/track/action', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ type: 'external_link', detail: `Clic site externe: ${spot.title} → ${spot.websiteUrl}`, spotId: spot.id }),
+                }).catch(() => {});
+              }}
               className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-3 px-5 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <ExternalLink className="w-4 h-4" />

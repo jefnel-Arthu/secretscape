@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { HiddenSpot, SecretCategory, SecretLevel, UserTripCalendar, TimeSlot } from './types';
 import { INITIAL_HIDDEN_SPOTS } from './data/hiddenSpots';
 import { filterSpots } from './lib/filter';
@@ -201,22 +201,89 @@ export default function App() {
   };
 
   // Generic action tracker — sends to dashboard live feed
-  const trackAction = (type: string, detail: string, spotId?: string) => {
+  const trackAction = useCallback((type: string, detail: string, spotId?: string) => {
     fetch('/api/track/action', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type, detail, spotId }),
     }).catch(() => {});
-  };
+  }, []);
 
   // Track page view on mount
   useEffect(() => {
     fetch('/api/track/pageview', { method: 'POST' }).catch(() => {});
     trackAction('visit', 'Nouveau visiteur sur le site');
-  }, []);
+  }, [trackAction]);
+
+  // Track tab navigation
+  const prevTab = useRef(activeTab);
+  useEffect(() => {
+    if (prevTab.current !== activeTab) {
+      trackAction('navigate', `Navigation: ${activeTab}`);
+      prevTab.current = activeTab;
+    }
+  }, [activeTab, trackAction]);
+
+  // Track time spent on each tab when leaving
+  const tabEntryTime = useRef(Date.now());
+  useEffect(() => {
+    tabEntryTime.current = Date.now();
+    return () => {
+      const spent = Math.round((Date.now() - tabEntryTime.current) / 1000);
+      if (spent > 2) {
+        trackAction('time_spent', `${prevTab.current}: ${spent}s`);
+      }
+    };
+  }, [activeTab, trackAction]);
+
+  // Track search queries (debounced)
+  const searchDebounce = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => {
+    if (searchQuery.length >= 2) {
+      clearTimeout(searchDebounce.current);
+      searchDebounce.current = setTimeout(() => {
+        trackAction('search', `Recherche: "${searchQuery}"`);
+      }, 1500);
+    }
+    return () => clearTimeout(searchDebounce.current);
+  }, [searchQuery, trackAction]);
+
+  // Track filter changes
+  const prevCity = useRef(selectedCity);
+  useEffect(() => {
+    if (prevCity.current !== selectedCity) {
+      trackAction('filter_city', `Filtre ville: ${selectedCity === 'ALL' ? 'Toutes' : selectedCity}`);
+      prevCity.current = selectedCity;
+    }
+  }, [selectedCity, trackAction]);
+
+  const prevCategory = useRef(selectedCategory);
+  useEffect(() => {
+    if (prevCategory.current !== selectedCategory) {
+      trackAction('filter_category', `Filtre catégorie: ${selectedCategory === 'ALL' ? 'Toutes' : selectedCategory}`);
+      prevCategory.current = selectedCategory;
+    }
+  }, [selectedCategory, trackAction]);
+
+  const prevSecretLevel = useRef(selectedSecretLevel);
+  useEffect(() => {
+    if (prevSecretLevel.current !== selectedSecretLevel) {
+      trackAction('filter_secret', `Filtre secret: ${selectedSecretLevel === 'ALL' ? 'Tous' : selectedSecretLevel}`);
+      prevSecretLevel.current = selectedSecretLevel;
+    }
+  }, [selectedSecretLevel, trackAction]);
+
+  // Track view mode switch (map vs grid)
+  const prevViewMode = useRef(viewMode);
+  useEffect(() => {
+    if (prevViewMode.current !== viewMode) {
+      trackAction('view_mode', `Mode d'affichage: ${viewMode}`);
+      prevViewMode.current = viewMode;
+    }
+  }, [viewMode, trackAction]);
 
   // Track spot views
-  const trackSpotView = (spotId: string) => {
+  const trackSpotView = useCallback((spotId: string) => {
     fetch('/api/track/spot-view', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -224,10 +291,17 @@ export default function App() {
     }).catch(() => {});
     const spot = spots.find(s => s.id === spotId);
     trackAction('spot_view', spot ? `Consultation: ${spot.title}` : `Consultation: ${spotId}`, spotId);
-  };
+  }, [spots, trackAction]);
+
+  // Track spot modal opens
+  useEffect(() => {
+    if (selectedSpotModal) {
+      trackSpotView(selectedSpotModal.id);
+    }
+  }, [selectedSpotModal, trackSpotView]);
 
   // Track favorites
-  const handleToggleFavorite = (spot: HiddenSpot) => {
+  const handleToggleFavorite = useCallback((spot: HiddenSpot) => {
     const wasFavorite = favorites.includes(spot.id);
     setFavorites(prev => {
       if (prev.includes(spot.id)) {
@@ -244,7 +318,7 @@ export default function App() {
       body: JSON.stringify({ spotId: spot.id, action: wasFavorite ? 'remove' : 'add' }),
     }).catch(() => {});
     trackAction(wasFavorite ? 'favorite_remove' : 'favorite_add', `${wasFavorite ? 'Retiré des favoris' : 'Ajouté aux favoris'}: ${spot.title}`, spot.id);
-  };
+  }, [favorites, trackAction]);
 
   const calendarItemsCount = calendar.days.reduce((acc, d) => acc + d.items.length, 0);
 
@@ -286,12 +360,19 @@ export default function App() {
         {/* Home / Landing Page */}
         {activeTab === 'home' && (
           <HomePage
-            onNavigate={(tab) => setActiveTab(tab as any)}
+            onNavigate={(tab) => {
+              trackAction('homepage_click', `Clic homepage: ${tab}`);
+              setActiveTab(tab as any);
+            }}
             onNavigateToCategory={(category) => {
+              trackAction('category_click', `Clic catégorie homepage: ${category}`);
               setSelectedCategory(category as any);
               setActiveTab('map');
             }}
-            onOpenSpot={(spot) => setSelectedSpotModal(spot)}
+            onOpenSpot={(spot) => {
+              trackAction('spot_preview', `Aperçu lieu: ${spot.title}`, spot.id);
+              setSelectedSpotModal(spot);
+            }}
           />
         )}
 
@@ -393,7 +474,10 @@ export default function App() {
 
         {/* Services View */}
         {activeTab === 'services' && (
-          <ServicesView onNavigateToContact={() => setActiveTab('contact')} />
+          <ServicesView onNavigateToContact={() => {
+            trackAction('services_to_contact', 'Navigation services → contact');
+            setActiveTab('contact');
+          }} />
         )}
 
         {/* Contact View */}
