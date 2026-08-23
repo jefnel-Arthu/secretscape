@@ -38,14 +38,14 @@ export const MetricCards = ({
   uptime,
 }: MetricCardsProps) => {
   const cards = [
-    { label: 'VISITEURS LIVE', value: activeVisitors.toLocaleString(), icon: Users, color: 'text-blue-400' },
-    { label: 'PAGES VUES', value: pageViews.toLocaleString(), icon: Eye, color: 'text-amber-400' },
-    { label: 'VUES LIEUX', value: totalSpotViews.toLocaleString(), icon: MapPin, color: 'text-emerald-400' },
-    { label: 'FAVORIS', value: totalFavorites.toLocaleString(), icon: Heart, color: 'text-rose-400' },
-    { label: 'MESSAGES', value: totalMessages.toLocaleString(), icon: Mail, color: 'text-violet-400' },
-    { label: 'NON LUS', value: unreadMessages.toLocaleString(), icon: EyeOff, color: unreadMessages > 0 ? 'text-red-400' : 'text-slate-500' },
-    { label: 'LIEUX CUSTOM', value: customSpotsCount.toLocaleString(), icon: Activity, color: 'text-cyan-400' },
-    { label: 'UPTIME', value: formatUptime(uptime), icon: Clock, color: 'text-emerald-400' },
+    { label: 'VISITEURS LIVE', value: activeVisitors.toLocaleString(), icon: Users, color: 'text-blue-600' },
+    { label: 'PAGES VUES', value: pageViews.toLocaleString(), icon: Eye, color: 'text-amber-600' },
+    { label: 'VUES LIEUX', value: totalSpotViews.toLocaleString(), icon: MapPin, color: 'text-emerald-600' },
+    { label: 'FAVORIS', value: totalFavorites.toLocaleString(), icon: Heart, color: 'text-rose-500' },
+    { label: 'MESSAGES', value: totalMessages.toLocaleString(), icon: Mail, color: 'text-violet-600' },
+    { label: 'NON LUS', value: unreadMessages.toLocaleString(), icon: EyeOff, color: unreadMessages > 0 ? 'text-red-500' : 'text-gray-400' },
+    { label: 'LIEUX CUSTOM', value: customSpotsCount.toLocaleString(), icon: Activity, color: 'text-cyan-600' },
+    { label: 'UPTIME', value: formatUptime(uptime), icon: Clock, color: 'text-emerald-600' },
   ];
 
   return (
@@ -55,13 +55,13 @@ export const MetricCards = ({
         return (
           <div
             key={card.label}
-            className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 flex flex-col gap-1.5"
+            className="bg-white border border-gray-200 rounded-xl p-3 flex flex-col gap-1.5"
           >
             <Icon className={`w-4 h-4 ${card.color}`} />
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-medium">
+            <span className="text-[10px] uppercase tracking-wider text-gray-400 font-medium">
               {card.label}
             </span>
-            <span className="text-2xl font-bold text-slate-100 leading-tight">
+            <span className="text-2xl font-bold text-gray-900 leading-tight">
               {card.value}
             </span>
           </div>

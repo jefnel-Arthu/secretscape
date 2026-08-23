@@ -15,13 +15,13 @@ const severityDot: Record<ActionSeverity, string> = {
 };
 
 const categoryBadge: Record<ActionCategory, string> = {
-  booking: 'bg-blue-500/20 text-blue-300',
-  gameplay: 'bg-purple-500/20 text-purple-300',
-  auth: 'bg-cyan-500/20 text-cyan-300',
-  payment: 'bg-emerald-500/20 text-emerald-300',
-  navigation: 'bg-amber-500/20 text-amber-300',
-  security: 'bg-rose-500/20 text-rose-300',
-  page_view: 'bg-slate-500/20 text-slate-300',
+  booking: 'bg-blue-50 text-blue-700',
+  gameplay: 'bg-purple-50 text-purple-700',
+  auth: 'bg-cyan-50 text-cyan-700',
+  payment: 'bg-emerald-50 text-emerald-700',
+  navigation: 'bg-amber-50 text-amber-700',
+  security: 'bg-rose-50 text-rose-700',
+  page_view: 'bg-gray-100 text-gray-600',
 };
 
 export const LiveActionsFeed: React.FC<LiveActionsFeedProps> = ({
@@ -29,12 +29,12 @@ export const LiveActionsFeed: React.FC<LiveActionsFeedProps> = ({
   onSelectAction,
 }) => {
   return (
-    <div className="flex flex-col bg-slate-900 rounded-xl border border-slate-700/50 overflow-hidden">
+    <div className="flex flex-col bg-white rounded-xl border border-gray-200 overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700/50">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
         <div className="flex items-center gap-2">
-          <Activity size={16} className="text-emerald-400" />
-          <h2 className="text-sm font-semibold text-slate-100">
+          <Activity size={16} className="text-emerald-500" />
+          <h2 className="text-sm font-semibold text-gray-900">
             Journal d'Activité en Direct
           </h2>
           <span className="relative flex h-2.5 w-2.5">
@@ -42,16 +42,16 @@ export const LiveActionsFeed: React.FC<LiveActionsFeedProps> = ({
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
           </span>
         </div>
-        <span className="text-xs text-slate-500">{actions.length} actions</span>
+        <span className="text-xs text-gray-500">{actions.length} actions</span>
       </div>
 
       {/* Scrollable list */}
-      <div className="flex-1 overflow-y-auto max-h-[520px] divide-y divide-slate-800/60">
+      <div className="flex-1 overflow-y-auto max-h-[520px] divide-y divide-gray-100">
         {actions.map((action) => (
           <button
             key={action.id}
             onClick={() => onSelectAction(action)}
-            className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-slate-800/40 transition-colors group"
+            className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors group"
           >
             {/* Severity dot */}
             <span
@@ -61,11 +61,11 @@ export const LiveActionsFeed: React.FC<LiveActionsFeedProps> = ({
             {/* Main content */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-sm font-bold text-slate-100 truncate">
+                <span className="text-sm font-bold text-gray-900 truncate">
                   {action.action}
                 </span>
                 {action.roomName && (
-                  <span className="text-xs text-slate-500 truncate">
+                  <span className="text-xs text-gray-500 truncate">
                     · {action.roomName}
                   </span>
                 )}
@@ -75,18 +75,18 @@ export const LiveActionsFeed: React.FC<LiveActionsFeedProps> = ({
                   {action.category}
                 </span>
               </div>
-              <p className="text-xs text-slate-400 truncate mt-0.5">
+              <p className="text-xs text-gray-500 truncate mt-0.5">
                 {action.details}
               </p>
             </div>
 
             {/* Right side: timestamp + location */}
             <div className="flex-shrink-0 flex flex-col items-end gap-1">
-              <div className="flex items-center gap-1 text-[11px] text-slate-500">
+              <div className="flex items-center gap-1 text-[11px] text-gray-500">
                 <Clock size={10} />
                 <span className="font-mono tabular-nums">{action.timestamp}</span>
               </div>
-              <div className="flex items-center gap-1 text-[11px] text-slate-500">
+              <div className="flex items-center gap-1 text-[11px] text-gray-500">
                 <span>{action.userLocation.flag}</span>
                 <span>{action.userLocation.city}</span>
               </div>
@@ -95,7 +95,7 @@ export const LiveActionsFeed: React.FC<LiveActionsFeedProps> = ({
             {/* Chevron */}
             <ChevronRight
               size={14}
-              className="flex-shrink-0 text-slate-600 group-hover:text-slate-400 transition-colors"
+              className="flex-shrink-0 text-gray-400 group-hover:text-gray-600 transition-colors"
             />
           </button>
         ))}
