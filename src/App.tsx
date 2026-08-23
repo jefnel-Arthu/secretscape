@@ -18,6 +18,7 @@ import { AddSpotModal } from './components/AddSpotModal';
 import { ServicesView } from './components/ServicesView';
 import { ContactView } from './components/ContactView';
 import { AdminPanel } from './components/AdminPanel';
+import { NavigationModal } from './components/NavigationModal';
 import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-react';
 
 const APP_VERSION = '2.1';
@@ -116,6 +117,7 @@ export default function App() {
   const [selectedSpot, setSelectedSpot] = useState<HiddenSpot | null>(null);
   const [selectedSpotModal, setSelectedSpotModal] = useState<HiddenSpot | null>(null);
   const [isAddSpotModalOpen, setIsAddSpotModalOpen] = useState<boolean>(false);
+  const [navigationSpot, setNavigationSpot] = useState<HiddenSpot | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Save to LocalStorage
@@ -420,6 +422,7 @@ export default function App() {
                         onSelectSpot={(s) => setSelectedSpotModal(s)}
                         onAddToCalendar={(s) => handleAddToCalendar(s)}
                         onToggleFavorite={handleToggleFavorite}
+                        onNavigate={(s) => { setNavigationSpot(s); trackAction('navigate_to', `Navigation vers: ${s.title}`, s.id); }}
                         isFavorite={favorites.includes(spot.id)}
                       />
                     ))}
@@ -467,6 +470,7 @@ export default function App() {
                     onSelectSpot={(s) => setSelectedSpotModal(s)}
                     onAddToCalendar={(s) => handleAddToCalendar(s)}
                     onToggleFavorite={handleToggleFavorite}
+                    onNavigate={(s) => { setNavigationSpot(s); trackAction('navigate_to', `Navigation vers: ${s.title}`, s.id); }}
                     isFavorite={true}
                   />
                 ))}
@@ -495,7 +499,14 @@ export default function App() {
         onClose={() => setSelectedSpotModal(null)}
         onAddToCalendar={(spot) => handleAddToCalendar(spot)}
         onToggleFavorite={handleToggleFavorite}
+        onNavigate={(spot) => { setNavigationSpot(spot); trackAction('navigate_to', `Navigation vers: ${spot.title}`, spot.id); }}
         isFavorite={selectedSpotModal ? favorites.includes(selectedSpotModal.id) : false}
+      />
+
+      {/* Navigation Modal */}
+      <NavigationModal
+        onClose={() => setNavigationSpot(null)}
+        spot={navigationSpot}
       />
 
         {/* Add Spot Submission Modal */}

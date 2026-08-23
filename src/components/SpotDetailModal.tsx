@@ -22,6 +22,7 @@ interface SpotDetailModalProps {
   onClose: () => void;
   onAddToCalendar: (spot: HiddenSpot) => void;
   onToggleFavorite: (spot: HiddenSpot) => void;
+  onNavigate?: (spot: HiddenSpot) => void;
   isFavorite: boolean;
 }
 
@@ -30,6 +31,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
   onClose,
   onAddToCalendar,
   onToggleFavorite,
+  onNavigate,
   isFavorite,
 }) => {
   const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
@@ -317,6 +319,16 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
           >
             Fermer
           </button>
+
+          {onNavigate && (
+            <button
+              onClick={() => { onNavigate(spot); onClose(); }}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-5 rounded-xl flex items-center gap-2 shadow-md shadow-blue-500/25 hover:shadow-lg transition-all duration-200"
+            >
+              <Navigation className="w-4 h-4" />
+              <span>Y aller</span>
+            </button>
+          )}
 
           <button
             onClick={() => {

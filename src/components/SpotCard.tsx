@@ -1,13 +1,14 @@
 import React from 'react';
 import { HiddenSpot } from '../types';
 import { CATEGORY_LABELS, SECRET_LEVEL_LABELS } from '../data/hiddenSpots';
-import { CalendarPlus, Bookmark, MapPin, Clock, Eye, Sparkles, Star, Footprints, ExternalLink } from 'lucide-react';
+import { CalendarPlus, Bookmark, MapPin, Clock, Eye, Sparkles, Star, Footprints, ExternalLink, Navigation } from 'lucide-react';
 
 interface SpotCardProps {
   spot: HiddenSpot;
   onSelectSpot: (spot: HiddenSpot) => void;
   onAddToCalendar: (spot: HiddenSpot) => void;
   onToggleFavorite: (spot: HiddenSpot) => void;
+  onNavigate?: (spot: HiddenSpot) => void;
   isFavorite: boolean;
 }
 
@@ -16,6 +17,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
   onSelectSpot,
   onAddToCalendar,
   onToggleFavorite,
+  onNavigate,
   isFavorite,
 }) => {
   const categoryInfo = CATEGORY_LABELS[spot.category] || {
@@ -115,6 +117,16 @@ export const SpotCard: React.FC<SpotCardProps> = ({
         {/* Card Footer Actions */}
         <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
+            {onNavigate && (
+              <button
+                onClick={(e) => { e.stopPropagation(); onNavigate(spot); }}
+                className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all active:scale-95"
+                title="Y aller"
+              >
+                <Navigation className="w-3.5 h-3.5" />
+                <span>Y aller</span>
+              </button>
+            )}
             <button
               onClick={(e) => {
                 e.stopPropagation();
