@@ -3655,7 +3655,7 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-chez-jb': 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Riz_gras_%C3%A0_la_viande_de_boeuf.JPG',
   'spot-chill-n-grill': 'https://media-cdn.tripadvisor.com/media/photo-o/1a/a9/51/d5/chill-n-grill-by-night.jpg',
   'spot-rin-restaurant': 'https://media.evendo.com/locations-resized/RestaurantImages/1920x466/76525e63-0b36-4773-b371-3847cc0fde3c',
-  'spot-le-teranga': 'https://media.evendo.com/locations-resized/RestaurantImages/1920x466/36de9550-6b50-4157-b9b8-5eb6f3579c8d',
+  'spot-le-teranga': 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl6Dq2T7X9qhyRVoSnjb0T-Fp99FPFepjx3XVfIF0dCe89GM2W0dHNgrPOi203BHLOQxvHnnWoM8rl9O5znE2YWPEcGOGpl-0XSOvJHuJR77l1cv4C3hxMGf6WrmZCaVVW7D-q6Qg=s1360-w1360-h1020-rw',
   'spot-la-villa-classic': '/images/villa-classic.jpg',
   'spot-314-atelier': '/images/314-atelier.jpg',
   'spot-nouveaux-alizes': '/images/nouveaux-alizes.jpg',
