@@ -1,11 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { X, Navigation, MapPin, Clock, Footprints, Car, ExternalLink, Loader2, AlertTriangle } from 'lucide-react';
+import { X, Navigation, MapPin, Clock, Footprints, Car, ExternalLink, Loader2, AlertTriangle, ChevronRight, RotateCcw, ChevronUp, ChevronDown } from 'lucide-react';
 import L from 'leaflet';
 import type { HiddenSpot } from '../../types';
 
 interface NavigationModalProps {
   spot: HiddenSpot | null;
   onClose: () => void;
+}
+
+interface RouteStep {
+  instruction: string;
+  distance: number;
+  duration: number;
+  modifier?: string;
+  type: string;
+}
+
+interface RouteData {
+  geometry: [number, number][];
+  distance: number;
+  duration: number;
+  steps: RouteStep[];
 }
 
 function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
@@ -19,22 +34,139 @@ function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: numbe
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-function getBearing(lat1: number, lng1: number, lat2: number, lng2: number): string {
-  const dLng = ((lng2 - lng1) * Math.PI) / 180;
-  const y = Math.sin(dLng) * Math.cos((lat2 * Math.PI) / 180);
-  const x = Math.cos((lat1 * Math.PI) / 180) * Math.sin((lat2 * Math.PI) / 180) -
-    Math.sin((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.cos(dLng);
-  let brng = ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
-  const dirs = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
-  return dirs[Math.round(brng / 45) % 8];
-}
-
 function formatTime(minutes: number): string {
   if (minutes < 1) return '<1 min';
   if (minutes < 60) return `${Math.round(minutes)} min`;
   const h = Math.floor(minutes / 60);
   const m = Math.round(minutes % 60);
   return `${h}h${m > 0 ? ` ${m}min` : ''}`;
+}
+
+function formatDistance(meters: number): string {
+  if (meters < 1000) return `${Math.round(meters)} m`;
+  return `${(meters / 1000).toFixed(1)} km`;
+}
+
+const STEP_ICONS: Record<string, string> = {
+  depart: '🏁',
+  arrive: '🎯',
+  turn: '↗️',
+  new_name: '➡️',
+  merge: '↗️',
+  on_ramp: '↗️',
+  off_ramp: '↘️',
+  fork: '↗️',
+  end_of_road: '↘️',
+  continue: '⬆️',
+  roundabout: '🔄',
+  rotary: '🔄',
+  roundabout_turn: '🔄',
+  notification: 'ℹ️',
+  depart_roundabout: '🔄',
+};
+
+function getStepIcon(type: string, modifier?: string): string {
+  if (type === 'depart') return '🏁';
+  if (type === 'arrive') return '🎯';
+  if (type === 'roundabout' || type === 'rotary' || type === 'roundabout_turn' || type === 'depart_roundabout') return '🔄';
+  if (modifier === 'left' || modifier === 'slight left' || modifier === 'sharp left') return '⬅️';
+  if (modifier === 'right' || modifier === 'slight right' || modifier === 'sharp right') return '➡️';
+  return STEP_ICONS[type] || '⬆️';
+}
+
+async function fetchOSRMRoute(
+  from: [number, number],
+  to: [number, number]
+): Promise<RouteData | null> {
+  try {
+    const url = `https://router.project-osrm.org/route/v1/foot/${from[1]},${from[0]};${to[1]},${to[0]}?overview=full&geometries=geojson&steps=true`;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.routes || data.routes.length === 0) return null;
+
+    const route = data.routes[0];
+    const coords: [number, number][] = route.geometry.coordinates.map(
+      (c: [number, number]) => [c[1], c[0]]
+    );
+
+    const steps: RouteStep[] = [];
+    for (const leg of route.legs) {
+      for (const step of leg.steps) {
+        steps.push({
+          instruction: step.maneuver?.type === 'arrive'
+            ? 'Arrivez a destination'
+            : step.name
+              ? `${step.maneuver?.modifier ? traduireModifier(step.maneuver.modifier) : ''} sur ${step.name}`
+              : traduireType(step.maneuver?.type || 'continue'),
+          distance: step.distance,
+          duration: step.duration,
+          modifier: step.maneuver?.modifier,
+          type: step.maneuver?.type || 'continue',
+        });
+      }
+    }
+
+    return {
+      geometry: coords,
+      distance: route.distance,
+      duration: route.duration / 60,
+      steps,
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function fetchOSRMRouteDriving(
+  from: [number, number],
+  to: [number, number]
+): Promise<{ distance: number; duration: number } | null> {
+  try {
+    const url = `https://router.project-osrm.org/route/v1/car/${from[1]},${from[0]};${to[1]},${to[0]}?overview=false`;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.routes || data.routes.length === 0) return null;
+    const route = data.routes[0];
+    return { distance: route.distance, duration: route.duration / 60 };
+  } catch {
+    return null;
+  }
+}
+
+function traduireType(type: string): string {
+  const map: Record<string, string> = {
+    depart: 'Partez',
+    arrive: 'Arrivez',
+    turn: 'Tournez',
+    new_name: 'Continuez sur',
+    merge: 'Suivez',
+    on_ramp: 'Prenez la bretelle',
+    off_ramp: 'Sortez',
+    fork: 'Gardez a',
+    end_of_road: 'Au bout de la route',
+    continue: 'Continuez tout droit',
+    roundabout: 'Dans le rond-point',
+    rotary: 'Dans le giratoire',
+    roundabout_turn: 'Prenez la sortie du rond-point',
+    notification: 'Info',
+  };
+  return map[type] || type;
+}
+
+function traduireModifier(modifier: string): string {
+  const map: Record<string, string> = {
+    left: 'a gauche',
+    right: 'a droite',
+    slight_left: 'legèrement a gauche',
+    slight_right: 'legèrement a droite',
+    sharp_left: 'fortement a gauche',
+    sharp_right: 'fortement a droite',
+    straight: 'tout droit',
+    uturn: 'faites demi-tour',
+  };
+  return map[modifier] || modifier;
 }
 
 export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose }) => {
@@ -47,6 +179,12 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [locating, setLocating] = useState(true);
+  const [route, setRoute] = useState<RouteData | null>(null);
+  const [routeLoading, setRouteLoading] = useState(false);
+  const [walkingRoute, setWalkingRoute] = useState(true);
+  const [drivingRoute, setDrivingRoute] = useState<{ distance: number; duration: number } | null>(null);
+  const [stepsExpanded, setStepsExpanded] = useState(true);
+  const lastRouteFetch = useRef<string>('');
 
   const destPos: [number, number] = spot ? [spot.coordinates.lat, spot.coordinates.lng] : [0, 0];
 
@@ -56,7 +194,7 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
 
     const map = L.map(mapRef.current, {
       center: destPos,
-      zoom: 14,
+      zoom: 15,
       zoomControl: false,
       attributionControl: true,
     });
@@ -70,14 +208,13 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
 
     leafletMap.current = map;
 
-    // Destination marker
     const destIcon = L.divIcon({
       className: '',
-      html: `<div style="width:36px;height:36px;border-radius:50%;background:#ef4444;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);border:3px solid white">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      html: `<div style="width:40px;height:40px;border-radius:50%;background:#ef4444;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.35);border:3px solid white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>`,
-      iconSize: [36, 36],
-      iconAnchor: [18, 18],
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
     });
 
     destMarker.current = L.marker(destPos, { icon: destIcon }).addTo(map);
@@ -91,12 +228,12 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
     };
   }, [spot]);
 
-  // Get user position
+  // Get user position + fetch route
   useEffect(() => {
     if (!spot) return;
 
     if (!navigator.geolocation) {
-      setError('Géolocalisation non supportée par votre navigateur');
+      setError('Geolocalisation non supportee par votre navigateur');
       setLocating(false);
       return;
     }
@@ -117,38 +254,57 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
         } else {
           const userIcon = L.divIcon({
             className: '',
-            html: `<div style="width:20px;height:20px;border-radius:50%;background:#3b82f6;border:3px solid white;box-shadow:0 0 0 4px rgba(59,130,246,.3),0 2px 6px rgba(0,0,0,.2)">
+            html: `<div style="width:22px;height:22px;border-radius:50%;background:#3b82f6;border:3px solid white;box-shadow:0 0 0 4px rgba(59,130,246,.3),0 2px 6px rgba(0,0,0,.2)">
               <div style="width:100%;height:100%;border-radius:50%;background:#3b82f6;animation:pulse 2s infinite"></div>
             </div>
             <style>@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,.4)}50%{box-shadow:0 0 0 8px rgba(59,130,246,0)}}</style>`,
-            iconSize: [20, 20],
-            iconAnchor: [10, 10],
+            iconSize: [22, 22],
+            iconAnchor: [11, 11],
           });
           userMarker.current = L.marker(newPos, { icon: userIcon }).addTo(map);
           userMarker.current.bindPopup('<b>Votre position</b>');
         }
 
-        // Route line
-        if (routeLine.current) {
-          routeLine.current.setLatLngs([newPos, destPos]);
-        } else {
-          routeLine.current = L.polyline([newPos, destPos], {
-            color: '#3b82f6',
-            weight: 3,
-            opacity: 0.7,
-            dashArray: '8, 8',
-          }).addTo(map);
+        // Fetch real route if position changed significantly
+        const key = `${newPos[0].toFixed(4)},${newPos[1].toFixed(4)}->${destPos[0].toFixed(4)},${destPos[1].toFixed(4)}`;
+        if (key !== lastRouteFetch.current && !routeLoading) {
+          lastRouteFetch.current = key;
+          setRouteLoading(true);
+
+          fetchOSRMRoute(newPos, destPos).then((data) => {
+            setRoute(data);
+            setRouteLoading(false);
+
+            if (data && routeLine.current) {
+              routeLine.current.setLatLngs(data.geometry);
+            } else if (data) {
+              routeLine.current = L.polyline(data.geometry, {
+                color: '#3b82f6',
+                weight: 5,
+                opacity: 0.85,
+              }).addTo(map);
+            }
+
+            if (data) {
+              const bounds = L.latLngBounds(data.geometry);
+              map.fitBounds(bounds, { padding: [50, 50], maxZoom: 17 });
+            }
+          });
+
+          fetchOSRMRouteDriving(newPos, destPos).then(setDrivingRoute);
         }
 
-        // Fit bounds
-        const bounds = L.latLngBounds([newPos, destPos]);
-        map.fitBounds(bounds, { padding: [60, 60], maxZoom: 15 });
+        // Fit bounds if no route yet
+        if (!route && !routeLoading) {
+          const bounds = L.latLngBounds([newPos, destPos]);
+          map.fitBounds(bounds, { padding: [60, 60], maxZoom: 15 });
+        }
       },
       (err) => {
         setLocating(false);
-        if (err.code === 1) setError('Permission de localisation refusée');
+        if (err.code === 1) setError('Permission de localisation refusee');
         else if (err.code === 2) setError('Position inaccessible');
-        else setError('Délai de localisation dépassé');
+        else setError('Delai de localisation depasse');
       },
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 5000 }
     );
@@ -159,11 +315,15 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
   if (!spot) return null;
 
   const distance = userPos ? haversineDistance(userPos[0], userPos[1], destPos[0], destPos[1]) : null;
-  const bearing = userPos ? getBearing(userPos[0], userPos[1], destPos[0], destPos[1]) : null;
-  const walkTime = distance ? (distance / 5) * 60 : null;
-  const driveTime = distance ? (distance / 30) * 60 : null;
 
-  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userPos ? `${userPos[0]},${userPos[1]}` : ''}&destination=${destPos[0]},${destPos[1]}&travelmode=driving`;
+  const walkDist = route?.distance ?? (distance ? distance * 1000 : null);
+  const walkDur = route?.duration ?? (distance ? (distance / 5) * 60 : null);
+  const driveDist = drivingRoute?.distance ?? (distance ? distance * 1000 : null);
+  const driveDur = drivingRoute?.duration ?? (distance ? (distance / 30) * 60 : null);
+
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userPos ? `${userPos[0]},${userPos[1]}` : ''}&destination=${destPos[0]},${destPos[1]}&travelmode=walking`;
+
+  const steps = route?.steps ?? [];
 
   return (
     <div className="fixed inset-0 z-[850] flex flex-col bg-white">
@@ -192,49 +352,105 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
       {/* Map */}
       <div ref={mapRef} className="flex-1 relative" />
 
+      {/* Route loading indicator */}
+      {routeLoading && (
+        <div className="absolute top-16 left-1/2 -translate-x-1/2 z-20 bg-white rounded-full px-4 py-2 shadow-lg border border-gray-200 flex items-center gap-2">
+          <Loader2 className="w-3.5 h-3.5 animate-spin text-blue-500" />
+          <span className="text-xs text-gray-600 font-medium">Calcul de l'itineraire...</span>
+        </div>
+      )}
+
       {/* Info panel */}
-      <div className="bg-white border-t border-gray-200 px-4 py-4 shrink-0">
+      <div className="bg-white border-t border-gray-200 shrink-0 max-h-[45vh] flex flex-col">
         {locating && (
-          <div className="flex items-center justify-center gap-2 text-gray-400 text-xs py-2">
+          <div className="flex items-center justify-center gap-2 text-gray-400 text-xs py-4">
             <Loader2 className="w-4 h-4 animate-spin" />
             Localisation en cours...
           </div>
         )}
 
         {error && (
-          <div className="flex items-center gap-2 text-amber-600 bg-amber-50 rounded-xl px-4 py-3 text-xs">
+          <div className="flex items-center gap-2 text-amber-600 bg-amber-50 rounded-xl px-4 py-3 text-xs mx-4 mt-3">
             <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>
         )}
 
-        {distance !== null && !error && (
-          <div className="grid grid-cols-4 gap-3">
-            <div className="bg-gray-50 rounded-xl px-3 py-2.5 text-center">
-              <MapPin className="w-4 h-4 text-red-500 mx-auto mb-1" />
-              <p className="text-base font-bold text-gray-900">{distance < 1 ? `${Math.round(distance * 1000)} m` : `${distance.toFixed(1)} km`}</p>
-              <p className="text-[9px] text-gray-400 uppercase">Distance</p>
+        {userPos && (
+          <div className="px-4 pt-3 pb-2">
+            {/* Mode selector + summary */}
+            <div className="flex gap-2 mb-3">
+              <button
+                onClick={() => setWalkingRoute(true)}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                  walkingRoute
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}
+              >
+                <Footprints className="w-4 h-4" />
+                <div className="text-left">
+                  <div>{walkDist !== null ? formatDistance(walkDist) : '...'}</div>
+                  <div className="text-[9px] font-normal opacity-80">{walkDur !== null ? formatTime(walkDur) : '...'}</div>
+                </div>
+              </button>
+              <button
+                onClick={() => setWalkingRoute(false)}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                  !walkingRoute
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}
+              >
+                <Car className="w-4 h-4" />
+                <div className="text-left">
+                  <div>{driveDist !== null ? formatDistance(driveDist) : '...'}</div>
+                  <div className="text-[9px] font-normal opacity-80">{driveDur !== null ? formatTime(driveDur) : '...'}</div>
+                </div>
+              </button>
             </div>
-            <div className="bg-gray-50 rounded-xl px-3 py-2.5 text-center">
-              <Navigation className="w-4 h-4 text-blue-500 mx-auto mb-1" />
-              <p className="text-base font-bold text-gray-900">{bearing}</p>
-              <p className="text-[9px] text-gray-400 uppercase">Direction</p>
-            </div>
-            <div className="bg-gray-50 rounded-xl px-3 py-2.5 text-center">
-              <Footprints className="w-4 h-4 text-emerald-500 mx-auto mb-1" />
-              <p className="text-base font-bold text-gray-900">{formatTime(walkTime!)}</p>
-              <p className="text-[9px] text-gray-400 uppercase">À pied</p>
-            </div>
-            <div className="bg-gray-50 rounded-xl px-3 py-2.5 text-center">
-              <Car className="w-4 h-4 text-violet-500 mx-auto mb-1" />
-              <p className="text-base font-bold text-gray-900">{formatTime(driveTime!)}</p>
-              <p className="text-[9px] text-gray-400 uppercase">En voiture</p>
-            </div>
+
+            {/* Steps */}
+            {steps.length > 0 && (
+              <div className="border border-gray-200 rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setStepsExpanded(!stepsExpanded)}
+                  className="w-full flex items-center justify-between px-3 py-2.5 bg-gray-50 text-xs font-bold text-gray-700"
+                >
+                  <span>Directions ({steps.length} etapes)</span>
+                  {stepsExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
+                </button>
+                {stepsExpanded && (
+                  <div className="max-h-[22vh] overflow-y-auto">
+                    {steps.map((step, i) => (
+                      <div key={i} className={`flex items-start gap-3 px-3 py-2.5 text-xs ${i < steps.length - 1 ? 'border-b border-gray-100' : ''}`}>
+                        <span className="text-base mt-0.5 shrink-0 w-6 text-center">{getStepIcon(step.type, step.modifier)}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-gray-800 font-medium leading-tight">{step.instruction}</p>
+                          <div className="flex items-center gap-2 mt-0.5">
+                            {step.distance > 0 && (
+                              <span className="text-gray-400 text-[10px]">{formatDistance(step.distance)}</span>
+                            )}
+                            {step.duration > 0 && (
+                              <span className="text-gray-400 text-[10px]">{formatTime(step.duration)}</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {!route && !routeLoading && !error && (
+              <p className="text-xs text-gray-400 text-center py-2">Activez la geolocalisation pour calculer l'itineraire</p>
+            )}
           </div>
         )}
 
         {!userPos && !locating && !error && (
-          <p className="text-xs text-gray-400 text-center">Activez la géolocalisation pour suivre votre itinéraire</p>
+          <p className="text-xs text-gray-400 text-center py-4">Activez la geolocalisation pour suivre votre itineraire</p>
         )}
       </div>
     </div>
