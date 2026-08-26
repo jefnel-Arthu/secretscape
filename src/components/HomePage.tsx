@@ -26,7 +26,7 @@ interface HomePageProps {
   onOpenSpot: (spot: HiddenSpot) => void;
 }
 
-const HERO_IMAGE = 'https://orizyavoyages.com/wp-content/uploads/2026/01/Design-sans-titre.webp';
+const HERO_IMAGE = 'https://circuit-voyage.com/wp-content/uploads/2025/08/Decouvrir-les-plus-belles-plages-du-Benin-pour-vos-vacances-en-2025.jpg';
 
 const CATEGORY_CARDS = [
   {
@@ -480,7 +480,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       {/* ═══════════════════════════════════════════════ CTA ═══ */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-amber-600 to-orange-500" />
-        <div className="absolute inset-0 bg-[url('https://orizyavoyages.com/wp-content/uploads/2026/01/Design-sans-titre.webp')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-[url('https://circuit-voyage.com/wp-content/uploads/2025/08/Decouvrir-les-plus-belles-plages-du-Benin-pour-vos-vacances-en-2025.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-stone-950 text-xs font-bold px-4 py-2 rounded-full border border-white/20">
