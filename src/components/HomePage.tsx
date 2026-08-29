@@ -162,13 +162,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
             {/* Title */}
             <div className={`space-y-1 transition-all duration-1000 delay-500 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
-                Découvrez les
+                Explorez le
               </h1>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-amber-400 leading-[1.05] tracking-tight">
-                Lieux Cachés
+                Bénin Autrement
               </h1>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
-                du Bénin
+                Bien Caché
               </h1>
             </div>
 
@@ -176,8 +176,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
             <p
               className={`text-stone-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl transition-all duration-1000 delay-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
-              Plages secrètes, temples vodoun, villages sur pilotis, forêts sacrées —
-              explorez le Bénin autrement avec des itinéraires uniques.
+              Partez à la découverte des merveilles méconnues du Bénin, avec des itinéraires pensés pour vous.
             </p>
 
             {/* CTA */}
