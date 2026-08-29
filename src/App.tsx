@@ -357,7 +357,6 @@ export default function App() {
         cities={cities}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        isAddSpotModalOpen={isAddSpotModalOpen}
       />
 
       {/* Main View Area */}
@@ -544,6 +543,13 @@ export default function App() {
           </div>
           <div className="mt-6 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-stone-600">
             <span>&copy; {new Date().getFullYear()} SecretScape. Tous droits réservés.</span>
+            <div className="flex items-center gap-4">
+              <button onClick={() => setActiveTab('services')} className="hover:text-amber-400 transition-colors font-medium">Services</button>
+              <span className="text-stone-800">•</span>
+              <button onClick={() => setActiveTab('contact')} className="hover:text-amber-400 transition-colors font-medium">Contact</button>
+              <span className="text-stone-800">•</span>
+              <button onClick={() => setActiveTab('addSpot')} className="hover:text-amber-400 transition-colors font-medium">Proposer un lieu</button>
+            </div>
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               Site opérationnel

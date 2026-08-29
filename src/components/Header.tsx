@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Compass, Calendar as CalendarIcon, PlusCircle, Bookmark, MapPin, Search, ConciergeBell, Phone, Lock } from 'lucide-react';
+import { Home, Compass, Calendar as CalendarIcon, Bookmark, MapPin, Search, Lock } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: 'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
@@ -11,7 +11,6 @@ interface HeaderProps {
   cities: string[];
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  isAddSpotModalOpen: boolean;
 }
 
 const NAV_ITEMS: {
@@ -23,8 +22,6 @@ const NAV_ITEMS: {
   { tab: 'map', icon: Compass, label: 'Lieux' },
   { tab: 'calendar', icon: CalendarIcon, label: 'Calendrier' },
   { tab: 'favorites', icon: Bookmark, label: 'Favoris' },
-  { tab: 'services', icon: ConciergeBell, label: 'Services' },
-  { tab: 'contact', icon: Phone, label: 'Contact' },
 ];
 
 export const Header: React.FC<HeaderProps> = ({
@@ -37,7 +34,6 @@ export const Header: React.FC<HeaderProps> = ({
   cities,
   searchQuery,
   setSearchQuery,
-  isAddSpotModalOpen,
 }) => {
   return (
     <header className="sticky top-0 z-40 bg-stone-900/95 backdrop-blur-md border-b border-stone-800/60 shadow-lg shadow-stone-950/30">
@@ -121,20 +117,6 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Divider */}
             <div className="w-px h-7 bg-stone-700/50 mx-1.5" />
-
-            {/* Add Spot */}
-            <button
-              onClick={() => setActiveTab('addSpot')}
-              title="Proposer un lieu"
-              aria-label="Proposer un lieu"
-              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
-                isAddSpotModalOpen
-                  ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
-                  : 'text-amber-400/80 hover:bg-amber-500/10 hover:text-amber-300 hover:scale-105'
-              }`}
-            >
-              <PlusCircle className="w-5 h-5" />
-            </button>
 
             {/* Admin */}
             <button
