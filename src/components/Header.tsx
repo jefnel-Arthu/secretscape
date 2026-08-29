@@ -40,46 +40,46 @@ export const Header: React.FC<HeaderProps> = ({
   isAddSpotModalOpen,
 }) => {
   return (
-    <header className="sticky top-0 z-40 bg-stone-900 border-b border-stone-800/80 shadow-lg shadow-stone-900/20">
+    <header className="sticky top-0 z-40 bg-stone-900/95 backdrop-blur-md border-b border-stone-800/60 shadow-lg shadow-stone-950/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-4">
+        <div className="flex items-center justify-between h-20 py-2 gap-6">
 
           {/* Logo */}
           <button
             onClick={() => setActiveTab('home')}
-            className="flex items-center gap-2.5 shrink-0 group"
+            className="flex items-center gap-3 shrink-0 group"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30 group-hover:shadow-amber-500/50 transition-shadow">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/30 group-hover:shadow-amber-500/50 transition-all group-hover:scale-105 group-hover:-rotate-3">
               <Compass className="w-5 h-5 text-stone-950 stroke-[2.5]" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-display text-lg font-black text-white block leading-none tracking-tight">
+              <span className="font-display text-xl font-black text-white block leading-none tracking-tight">
                 Secret<span className="text-amber-400">Scape</span>
               </span>
-              <span className="text-[9px] text-stone-500 font-semibold tracking-[2px] uppercase block mt-0.5">
+              <span className="text-[10px] text-stone-500 font-semibold tracking-[3px] uppercase block mt-1">
                 Bénin
               </span>
             </div>
           </button>
 
           {/* Search Bar — desktop */}
-          <div className="hidden md:flex items-center gap-2 flex-1 max-w-sm">
+          <div className="hidden md:flex items-center gap-3 flex-1 max-w-md justify-center">
             <div className="relative flex-1">
-              <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-stone-500" />
+              <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-stone-500" />
               <input
                 type="text"
-                placeholder="Rechercher un lieu..."
+                placeholder="Rechercher un lieu secret..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-stone-800/60 text-stone-200 placeholder-stone-500 text-xs pl-9 pr-3 py-2 rounded-xl border border-stone-700/50 focus:outline-none focus:border-amber-500/50 focus:bg-stone-800 focus:ring-1 focus:ring-amber-500/20 transition-all"
+                className="w-full bg-stone-800/80 text-stone-200 placeholder-stone-500 text-sm pl-11 pr-12 py-3 rounded-2xl border border-stone-700/40 focus:outline-none focus:border-amber-500/60 focus:bg-stone-800 focus:ring-2 focus:ring-amber-500/20 transition-all shadow-inner"
               />
             </div>
             <div className="relative shrink-0">
-              <MapPin className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-amber-500/70" />
+              <MapPin className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-amber-500/80" />
               <select
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
-                className="bg-stone-800/60 text-stone-300 text-xs pl-8 pr-5 py-2 rounded-xl border border-stone-700/50 focus:outline-none focus:border-amber-500/50 cursor-pointer appearance-none font-medium transition-all"
+                className="bg-stone-800/80 text-stone-300 text-sm pl-9 pr-8 py-3 rounded-2xl border border-stone-700/40 focus:outline-none focus:border-amber-500/60 cursor-pointer appearance-none font-medium transition-all hover:bg-stone-800"
               >
                 <option value="ALL">Toutes</option>
                 {cities.map((city) => (
@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Nav Icons */}
-          <nav className="flex items-center gap-0.5">
+          <nav className="flex items-center gap-2">
             {NAV_ITEMS.map(({ tab, icon: Icon, label }) => {
               const isActive = activeTab === tab;
               let badge = 0;
@@ -102,15 +102,16 @@ export const Header: React.FC<HeaderProps> = ({
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   title={label}
-                  className={`relative w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
+                  aria-label={label}
+                  className={`relative w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
                     isActive
-                      ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
-                      : 'text-stone-400 hover:bg-stone-800 hover:text-white'
+                      ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30 scale-105'
+                      : 'text-stone-400 hover:bg-stone-800 hover:text-white hover:scale-105'
                   }`}
                 >
-                  <Icon className="w-[18px] h-[18px]" strokeWidth={isActive ? 2.5 : 2} />
+                  <Icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
                   {badge > 0 && (
-                    <span className="absolute -top-1 -right-1 min-w-[16px] h-4 flex items-center justify-center bg-amber-500 text-stone-950 text-[9px] font-black rounded-full px-1 shadow-sm">
+                    <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] flex items-center justify-center bg-amber-500 text-stone-950 text-[10px] font-black rounded-full px-1 shadow-sm">
                       {badge}
                     </span>
                   )}
@@ -119,29 +120,31 @@ export const Header: React.FC<HeaderProps> = ({
             })}
 
             {/* Divider */}
-            <div className="w-px h-5 bg-stone-700/60 mx-1" />
+            <div className="w-px h-7 bg-stone-700/50 mx-1.5" />
 
             {/* Add Spot */}
             <button
               onClick={() => setActiveTab('addSpot')}
               title="Proposer un lieu"
-              className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
+              aria-label="Proposer un lieu"
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
                 isAddSpotModalOpen
                   ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
-                  : 'text-stone-400 hover:bg-stone-800 hover:text-white'
+                  : 'text-amber-400/80 hover:bg-amber-500/10 hover:text-amber-300 hover:scale-105'
               }`}
             >
-              <PlusCircle className="w-[18px] h-[18px]" />
+              <PlusCircle className="w-5 h-5" />
             </button>
 
             {/* Admin */}
             <button
               onClick={() => setActiveTab('admin')}
               title="Admin"
-              className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
+              aria-label="Admin"
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
                 activeTab === 'admin'
                   ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
-                  : 'text-stone-500 hover:bg-stone-800 hover:text-stone-300'
+                  : 'text-stone-500 hover:bg-stone-800 hover:text-stone-300 hover:scale-105'
               }`}
             >
               <Lock className="w-4 h-4" />
@@ -151,21 +154,21 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Mobile Search */}
-        <div className="md:hidden pb-3 flex items-center gap-2">
+        <div className="md:hidden pb-4 flex items-center gap-2">
           <div className="relative flex-1">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-stone-500" />
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500" />
             <input
               type="text"
               placeholder="Chercher un lieu..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-stone-800/60 text-stone-200 placeholder-stone-500 text-xs pl-9 pr-3 py-2 rounded-xl border border-stone-700/50 focus:outline-none focus:border-amber-500/50 transition-all"
+              className="w-full bg-stone-800/80 text-stone-200 placeholder-stone-500 text-sm pl-10 pr-4 py-2.5 rounded-2xl border border-stone-700/40 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/20 transition-all"
             />
           </div>
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="bg-stone-800/60 text-stone-300 text-xs px-3 py-2 rounded-xl border border-stone-700/50 appearance-none"
+            className="bg-stone-800/80 text-stone-300 text-sm px-4 py-2.5 rounded-2xl border border-stone-700/40 appearance-none"
           >
             <option value="ALL">Toutes</option>
             {cities.map((city) => (
