@@ -162,13 +162,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
             {/* Title */}
             <div className={`space-y-1 transition-all duration-1000 delay-500 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
-                Explorez le
+                Voyagez Au Cœur
               </h1>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-amber-400 leading-[1.05] tracking-tight">
-                Bénin Autrement
+                des Secrets
               </h1>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
-                Bien Caché
+                du Bénin
               </h1>
             </div>
 
