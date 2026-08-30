@@ -188,24 +188,54 @@ const BENIN_EVENTS: BeninEvent[] = [
   },
 ];
 
+interface EventPhoto {
+  id: string;
+  eventId: string;
+  src: string;
+  eventName: string;
+  emoji: string;
+  category: EventCategory;
+  date: string;
+  location: string;
+}
+
+const ALL_PHOTOS: EventPhoto[] = BENIN_EVENTS.flatMap((ev) => {
+  const photos = ev.images.length > 0 ? ev.images : (ev.image ? [ev.image] : []);
+  return photos.map((src, i) => ({
+    id: `${ev.id}-${i}`,
+    eventId: ev.id,
+    src,
+    eventName: ev.name,
+    emoji: ev.emoji,
+    category: ev.category,
+    date: ev.date,
+    location: ev.location,
+  }));
+});
+
 export const GalleryView: React.FC<GalleryViewProps> = () => {
   const [activeCategory, setActiveCategory] = useState<string>('ALL');
-  const [selected, setSelected] = useState<BeninEvent | null>(null);
-  const [photoIndex, setPhotoIndex] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const filtered = useMemo(
+    () => (activeCategory === 'ALL' ? ALL_PHOTOS : ALL_PHOTOS.filter((p) => p.category === activeCategory)),
+    [activeCategory]
+  );
 
   useEffect(() => {
-    setPhotoIndex(0);
-  }, [selected]);
-
-  const filtered = useMemo(() => {
-    const all = activeCategory === 'ALL' ? BENIN_EVENTS : BENIN_EVENTS.filter(e => e.category === activeCategory);
-    return all.map((ev) => {
-      const photos = ev.images.length > 0 ? ev.images : (ev.image ? [ev.image] : []);
-      return { ...ev, image: ev.image || (photos[0] || ''), images: photos };
-    });
-  }, [activeCategory]);
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowLeft') setLightboxIndex((i) => (i === null ? i : (i - 1 + filtered.length) % filtered.length));
+      if (e.key === 'ArrowRight') setLightboxIndex((i) => (i === null ? i : (i + 1) % filtered.length));
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightboxIndex === null, filtered.length]);
 
   const categories = Object.keys(CATEGORY_META) as EventCategory[];
+  const current = lightboxIndex !== null ? filtered[lightboxIndex] : null;
+  const activeEv = current ? BENIN_EVENTS.find((e) => e.id === current.eventId) : null;
 
   return (
     <div className="bg-stone-950 min-h-full">
@@ -214,16 +244,16 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-amber-600/10 via-transparent to-stone-950" />
         <Flame className="w-10 h-10 text-amber-400 mx-auto mb-4" />
         <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3">
-          Événements <span className="text-amber-400">du Bénin</span>
+          Galerie <span className="text-amber-400">du Bénin</span>
         </h1>
         <p className="text-stone-400 text-sm max-w-lg mx-auto">
-          Vodun Days, WeLovEya, FestiChill, festivals, fêtes traditionnelles… Restez au courant de tout ce qui fait vibrer le Bénin.
+          Vodun Days, WeLovEya, FestiChill, festivals, fêtes traditionnelles… Toutes les photos des événements qui font vibrer le Bénin.
         </p>
 
         {/* Category filter */}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
           <button
-            onClick={() => setActiveCategory('ALL')}
+            onClick={() => { setActiveCategory('ALL'); setLightboxIndex(null); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
               activeCategory === 'ALL'
                 ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
@@ -231,13 +261,17 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
             }`}
           >
             Tout
+            {activeCategory === 'ALL' && (
+              <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{filtered.length}</span>
+            )}
           </button>
           {categories.map((cat) => {
             const meta = CATEGORY_META[cat];
+            const count = ALL_PHOTOS.filter((p) => p.category === cat).length;
             return (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => { setActiveCategory(cat); setLightboxIndex(null); }}
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
                   activeCategory === cat
                     ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
@@ -246,75 +280,58 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
               >
                 <meta.icon className="w-3.5 h-3.5" />
                 {meta.label}
+                <span className="px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{count}</span>
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Events grid */}
+      {/* Photo grid — all photos visible at once */}
       {filtered.length === 0 ? (
         <div className="pb-24 text-center">
           <Images className="w-12 h-12 text-stone-700 mx-auto mb-3" />
-          <p className="text-stone-500 text-sm">Aucun événement dans cette catégorie.</p>
+          <p className="text-stone-500 text-sm">Aucune photo dans cette catégorie.</p>
         </div>
       ) : (
         <div className="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((ev) => {
-              const meta = CATEGORY_META[ev.category];
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+            {filtered.map((p, i) => {
+              const meta = CATEGORY_META[p.category];
               return (
                 <button
-                  key={ev.id}
-                  onClick={() => setSelected(ev)}
-                  className="group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 text-left hover:border-amber-500/40 transition-all hover:shadow-xl hover:shadow-amber-500/5"
+                  key={p.id}
+                  onClick={() => setLightboxIndex(i)}
+                  className="group relative w-full mb-4 break-inside-avoid rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 text-left hover:border-amber-500/40 transition-all hover:shadow-xl hover:shadow-amber-500/5"
                 >
-                  {ev.image ? (
-                    <img
-                      src={ev.image}
-                      alt={ev.name}
-                      loading="lazy"
-                      className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                    />
-                  ) : (
-                    <div className="w-full h-52 flex items-center justify-center bg-gradient-to-br from-stone-800 via-stone-900 to-stone-950">
-                      <span className="text-6xl transition-transform duration-700 group-hover:scale-125">{ev.emoji}</span>
-                    </div>
-                  )}
+                  <img
+                    src={p.src}
+                    alt={p.eventName}
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
 
-                  {ev.image && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  )}
-
-                  {ev.images.length > 1 && (
-                    <span className="absolute top-3 right-3 flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md bg-black/60 text-white">
-                      <Images className="w-3 h-3 text-amber-400" />
-                      {ev.images.length} photos
-                    </span>
-                  )}
-
-                  {/* Category badge */}
                   <span className={`absolute top-3 left-3 flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md bg-white/95 ${meta.color}`}>
                     <meta.icon className="w-3 h-3" />
                     {meta.label}
                   </span>
 
-                  <div className="p-4">
-                    <h3 className="font-display text-white font-bold text-lg leading-tight group-hover:text-amber-300 transition-colors">
-                      {ev.emoji}{' '}{ev.name}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-3 mt-2 text-stone-400 text-[11px]">
+                  <div className="absolute bottom-0 inset-x-0 p-3 text-left pointer-events-none">
+                    <p className="font-display text-white font-bold text-sm leading-tight">
+                      {p.emoji} {p.eventName}
+                    </p>
+                    <div className="flex items-center gap-2 mt-1 text-stone-300 text-[10px]">
                       <span className="flex items-center gap-1">
-                        <CalendarDays className="w-3.5 h-3.5 text-amber-400" />
-                        {ev.date}
+                        <CalendarDays className="w-3 h-3 text-amber-400" />
+                        {p.date}
                       </span>
                       <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-amber-400" />
-                        {ev.location}
+                        <MapPin className="w-3 h-3 text-amber-400" />
+                        {p.location}
                       </span>
                     </div>
-                    <p className="text-stone-400 text-xs leading-relaxed mt-3 line-clamp-2">{ev.description}</p>
                   </div>
                 </button>
               );
@@ -323,143 +340,80 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
         </div>
       )}
 
-      {/* Event detail modal */}
-      {selected && (() => {
-        const SelMeta = CATEGORY_META[selected.category];
-        const photos = selected.images.length > 0 ? selected.images : (selected.image ? [selected.image] : []);
-        const goPrev = () => setPhotoIndex((i) => (i - 1 + photos.length) % photos.length);
-        const goNext = () => setPhotoIndex((i) => (i + 1) % photos.length);
+      {/* Lightbox — single photo view with navigation */}
+      {current && (() => {
+        const SelMeta = CATEGORY_META[current.category];
+        const goPrev = () => setLightboxIndex((i) => (i === null ? i : (i - 1 + filtered.length) % filtered.length));
+        const goNext = () => setLightboxIndex((i) => (i === null ? i : (i + 1) % filtered.length));
         return (
-        <div className="fixed inset-0 z-[900] flex items-center justify-center p-4 sm:p-8 bg-black/90 overflow-y-auto">
-          <button
-            onClick={() => setSelected(null)}
-            className="absolute top-5 right-5 z-10 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-            aria-label="Fermer"
-          >
-            <X className="w-6 h-6" />
-          </button>
-
-          <div className="max-w-2xl w-full bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden">
-            {photos.length > 0 ? (
-              <div className="relative bg-black">
-                <div
-                  className="flex transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(-${Math.min(photoIndex, photos.length - 1) * 100}%)` }}
-                >
-                  {photos.map((src, idx) => (
-                    <img
-                      key={idx}
-                      src={src}
-                      alt={`${selected.name} ${idx + 1}`}
-                      loading="lazy"
-                      className="w-full shrink-0 h-72 sm:h-80 object-cover"
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                    />
-                  ))}
-                </div>
-
-                {photos.length > 1 && (
-                  <>
-                    <div className="absolute inset-x-0 bottom-16 flex justify-center">
-                      <span className="px-3 py-1 rounded-full bg-black/60 text-white text-[11px] font-bold backdrop-blur-md">
-                        {Math.min(photoIndex, photos.length - 1) + 1} / {photos.length}
-                      </span>
-                    </div>
-
-                    <button
-                      onClick={goPrev}
-                      className="absolute top-1/2 left-3 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
-                      aria-label="Photo précédente"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    <button
-                      onClick={goNext}
-                      className="absolute top-1/2 right-3 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
-                      aria-label="Photo suivante"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-
-                    <div className="absolute bottom-0 inset-x-0 flex gap-2 px-4 py-3 overflow-x-auto bg-gradient-to-t from-black/80 to-transparent justify-center">
-                      {photos.map((src, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setPhotoIndex(idx)}
-                          className={`w-14 h-10 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
-                            idx === Math.min(photoIndex, photos.length - 1)
-                              ? 'border-amber-400 scale-105'
-                              : 'border-transparent opacity-60 hover:opacity-100'
-                          }`}
-                          aria-label={`Voir la photo ${idx + 1}`}
-                        >
-                          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover" />
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-            ) : (
-              <div className="w-full h-56 flex items-center justify-center bg-gradient-to-br from-stone-800 to-stone-950">
-                <span className="text-8xl">{selected.emoji}</span>
-              </div>
-            )}
-
-            <div className="p-6 sm:p-8">
-              <div className="flex items-center gap-2 mb-2 text-[11px] font-bold">
-                <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 text-white">
-                  <SelMeta.icon className="w-3 h-3 text-amber-400" />
-                  {SelMeta.label}
-                </span>
-                <span className="px-3 py-1 rounded-full bg-white/10 text-stone-300">{selected.period}</span>
-              </div>
-
-              <h2 className="font-display text-2xl sm:text-3xl font-black text-white">{selected.emoji} {selected.name}</h2>
-
-              <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-stone-300">
-                <span className="flex items-center gap-2">
-                  <CalendarDays className="w-4 h-4 text-amber-400" />
-                  {selected.date}
-                </span>
-                <span className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-amber-400" />
-                  {selected.location}
-                </span>
-              </div>
-
-              <p className="text-stone-400 text-sm leading-relaxed mt-5">{selected.description}</p>
-
-              <div className="mt-6">
-                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3">Au programme</p>
-                <div className="space-y-2">
-                  {selected.highlights.map((h, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm text-stone-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
-                      {h}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={`https://www.google.com/search?q=${encodeURIComponent(selected.name + ' Bénin ' + selected.location)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-bold py-3 px-6 rounded-2xl transition-colors"
-                >
-                  <Eye className="w-4 h-4" />
-                  En savoir plus
-                </a>
-                <button
-                  onClick={() => setSelected(null)}
-                  className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-bold py-3 px-6 rounded-2xl transition-colors"
-                >
-                  Fermer
-                </button>
-              </div>
+        <div className="fixed inset-0 z-[900] flex flex-col bg-black/95" onClick={() => setLightboxIndex(null)}>
+          <div className="flex items-center justify-between px-5 py-4">
+            <div className="flex items-center gap-3 min-w-0">
+              <span className={`flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/10 ${SelMeta.color}`}>
+                <SelMeta.icon className="w-3 h-3" />
+                {SelMeta.label}
+              </span>
+              <p className="text-white font-bold text-sm truncate">{current.emoji} {current.eventName}</p>
             </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="text-stone-400 text-xs font-bold">
+                {lightboxIndex! + 1} / {filtered.length}
+              </span>
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightboxIndex(null); }}
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+                aria-label="Fermer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div className="flex-1 flex items-center justify-center px-4 sm:px-16 min-h-0" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={goPrev}
+              className="absolute left-3 sm:left-5 p-2.5 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
+              aria-label="Photo précédente"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <img
+              src={current.src}
+              alt={current.eventName}
+              className="max-h-[70vh] max-w-full object-contain rounded-2xl"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+            />
+
+            <button
+              onClick={goNext}
+              className="absolute right-3 sm:right-5 p-2.5 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
+              aria-label="Photo suivante"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 px-5 py-5" onClick={(e) => e.stopPropagation()}>
+            <span className="flex items-center gap-2 text-sm text-stone-300">
+              <CalendarDays className="w-4 h-4 text-amber-400" />
+              {activeEv ? activeEv.date : current.date}
+            </span>
+            <span className="flex items-center gap-2 text-sm text-stone-300">
+              <MapPin className="w-4 h-4 text-amber-400" />
+              {current.location}
+            </span>
+            {activeEv && (
+              <a
+                href={`https://www.google.com/search?q=${encodeURIComponent(activeEv.name + ' Bénin ' + activeEv.location)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-bold py-2 px-5 rounded-full transition-colors"
+              >
+                <Eye className="w-4 h-4" />
+                En savoir plus
+              </a>
+            )}
           </div>
         </div>
         );
