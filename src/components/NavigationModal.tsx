@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { X, Navigation, MapPin, Clock, Footprints, Car, ExternalLink, Loader2, AlertTriangle, ChevronRight, RotateCcw, ChevronUp, ChevronDown } from 'lucide-react';
 import L from 'leaflet';
-import type { HiddenSpot } from '../../types';
+import type { HiddenSpot } from '../types';
 
 interface NavigationModalProps {
   spot: HiddenSpot | null;

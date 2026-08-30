@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { Images, X, CalendarDays, MapPin, Sparkles, Music, Flame, Theater, Crown, Utensils, Eye } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Images, X, CalendarDays, MapPin, Sparkles, Music, Flame, Theater, Crown, Utensils, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
 
 type EventCategory = 'spiritualite' | 'musique' | 'traditions' | 'mode' | 'gastronomie';
 
@@ -13,6 +13,7 @@ interface BeninEvent {
   description: string;
   highlights: string[];
   image: string;
+  images: string[];
   emoji: string;
 }
 
@@ -38,7 +39,22 @@ const BENIN_EVENTS: BeninEvent[] = [
     location: 'Ouidah',
     description: 'Le plus grand rendez-vous mondial de la spiritualité Vodun. Cérémonies traditionnelles, sorties des couvents, processions de masques Egungun, parades de Zangbéto et grands concerts sur la plage pendant trois jours d\'immersion culturelle.',
     highlights: ['Procession des masques Egungun', 'Parades Zangbéto', 'Concerts géants sur la plage', 'Village artisanal & gastronomique'],
-    image: '',
+    image: 'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110509_0:0:3072:2048_1440x900_80_0_1_24b5b6404e2fe8a3e081700735f8ed53.jpg',
+    images: [
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110509_0:0:3072:2048_1440x900_80_0_1_24b5b6404e2fe8a3e081700735f8ed53.jpg',
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110704_0:0:3072:2048_1440x900_80_0_1_f56c02eb0367a1d0b20baff7b28b0bb7.jpg',
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110897_0:0:3072:2048_1440x900_80_0_1_299915f53269174d73160fde4ae4edff.jpg',
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111090_0:0:3072:2048_1440x900_80_0_1_443e3eb3e57ef4d1851d3d33e3e70626.jpg',
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111283_0:0:3072:2048_1440x900_80_0_1_4b21c541e42e71d7c8d5f45809496922.jpg',
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111476_0:0:3072:2048_1440x900_80_0_1_44de18b50f692a734f99c85a792e85be.jpg',
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111669_0:0:3072:2048_1440x900_80_0_1_7ab99b4899dd5667c240d3a823402ed6.jpg',
+      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111862_0:0:3072:2048_1440x900_80_0_1_540581c85e0981a4680baf6e0bec1989.jpg',
+      'https://myafricanmagazine.com/wp-content/uploads/2026/01/A-voodoo-worshipper-in-trance-1536x1024.jpg',
+      'https://myafricanmagazine.com/wp-content/uploads/2026/01/One-of-the-hundreds-of-dances-perforned-during-the-2026-Vodun-Days-1536x937.jpg',
+      'https://myafricanmagazine.com/wp-content/uploads/2026/01/Zangbeto.-Image-by-Thiani-Capo-chichi-for-The-African-1-2048x1089.jpg',
+      'https://myafricanmagazine.com/wp-content/uploads/2026/01/Ouidah.-Image-by-Thiani-Capo-chichi-for-The-African-1536x1024.jpg',
+      'https://www.afrik.com/wp-content/uploads/2026/01/patrice-talon-a-bord-dun-tricycle-aux-vodun-days-1200x675.jpg',
+    ],
     emoji: '🫧',
   },
   {
@@ -50,7 +66,8 @@ const BENIN_EVENTS: BeninEvent[] = [
     location: 'Cotonou — Place de l\'Amazone',
     description: 'Le festival des musiques urbaines et de l\'afrobeat, créé en 2022. Une plateforme pour la jeunesse et les communautés du Bénin, avec les plus grands artistes de la scène afro.',
     highlights: ['Afrobeat & musiques urbaines', 'Artistes de la scène africaine', 'Atmosphère festive en plein air'],
-    image: '',
+    image: 'https://blackmusics.com/wp-content/uploads/2025/01/IMG-20250103-WA0344.jpg',
+    images: ['https://blackmusics.com/wp-content/uploads/2025/01/IMG-20250103-WA0344.jpg'],
     emoji: '🎤',
   },
   {
@@ -62,7 +79,12 @@ const BENIN_EVENTS: BeninEvent[] = [
     location: 'Cotonou',
     description: 'Le plus grand festival lifestyle du Bénin. Une expérience inoubliable mêlant concerts, mode, jeux et frissons dans une ambiance unique, avec des artistes nationaux et internationaux.',
     highlights: ['Concerts & performances live', 'Expérience lifestyle immersive', 'Artistes invités internationaux'],
-    image: '',
+    image: 'https://www.festichill.com/_next/image?url=%2Fhf_20260624_153758_5503e980-398a-44e5-8255-7cd29f4d6700.avif&w=1200&q=75',
+    images: [
+      'https://www.festichill.com/_next/image?url=%2Fhf_20260624_153758_5503e980-398a-44e5-8255-7cd29f4d6700.avif&w=1200&q=75',
+      'https://www.festichill.com/_next/image?url=%2Fhf_20260624_161056_b83cf922-5e4c-4dc3-840c-70a6f99f9884.avif&w=1200&q=75',
+      'https://www.festichill.com/affiche_festichill_las_favelas.jpeg',
+    ],
     emoji: '⛱️',
   },
   {
@@ -74,7 +96,13 @@ const BENIN_EVENTS: BeninEvent[] = [
     location: 'Porto-Novo',
     description: 'Immersion dans l\'univers des masques sacrés et profanes : Gèlèdè, Zangbéto, Egungun, Kaléta. Colloque scientifique, démonstrations d\'artisans et grande procession de masques venus de toute l\'Afrique.',
     highlights: ['Grande procession des masques', 'Masques Gèlèdè & Zangbéto', 'Concerts tradi-modernes', 'Ateliers pour enfants'],
-    image: '',
+    image: 'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0129.jpg',
+    images: [
+      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0129.jpg',
+      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0131.jpg',
+      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0123.jpg',
+      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0119.jpg',
+    ],
     emoji: '🎭',
   },
   {
@@ -86,7 +114,14 @@ const BENIN_EVENTS: BeninEvent[] = [
     location: 'Cotonou — CNOA',
     description: 'Le festival panafricain de référence célébrant la musique africaine, la mode et la culture depuis 25 ans. Concerts live, défilés de mode, conférences et soirée de Gala avec remise de trophées.',
     highlights: ['Afro Musique & Musique Urbaine', 'SICA Fashion Show', 'Conférences & Master Class', 'Soirée de Gala'],
-    image: '',
+    image: 'https://festivalsica.com/assets/images/gala-laureats-groupe-2025.jpg',
+    images: [
+      'https://festivalsica.com/assets/images/gala-laureats-groupe-2025.jpg',
+      'https://festivalsica.com/assets/images/sica-2025/_X8A9678.jpg',
+      'https://festivalsica.com/assets/images/remise-trophee-scene.jpg',
+      'https://festivalsica.com/assets/images/portrait-couple-gala.jpg',
+      'https://festivalsica.com/assets/images/laureate-marie-louise-ouamono.jpg',
+    ],
     emoji: '👑',
   },
   {
@@ -98,7 +133,11 @@ const BENIN_EVENTS: BeninEvent[] = [
     location: 'Savalou',
     description: 'Célébration traditionnelle de la nouvelle igname, marquant la fin des récoltes. Rites ancestraux, danses, repas communautaires et dégustation des premières ignames de la saison.',
     highlights: ['Rites de la nouvelle récolte', 'Danses traditionnelles', 'Dégustations communautaires'],
-    image: '',
+    image: 'https://www.afrik.com/wp-content/uploads/2025/08/un-magasin-dignames-1200x675.jpg',
+    images: [
+      'https://www.afrik.com/wp-content/uploads/2025/08/un-magasin-dignames-1200x675.jpg',
+      'https://www.afrik.com/wp-content/uploads/2025/08/un-magasin-dignames.jpg',
+    ],
     emoji: '🍠',
   },
   {
@@ -110,7 +149,11 @@ const BENIN_EVENTS: BeninEvent[] = [
     location: 'Nikki — Département du Borgou',
     description: 'La grande fête annuelle des Bariba du Nord-Bénin au Palais royal de Nikki. Cavalcades équestres, danses, rites royaux et rassemblement des chefferies traditionnelles dans une ambiance grandiose.',
     highlights: ['Cavalcades équestres', 'Rites royaux Bariba', 'Danses et traditions du Nord'],
-    image: '',
+    image: 'https://www.afrik.com/wp-content/uploads/2026/08/le-palais-royal-et-larene-de-la-gaani-a-nikki-alors-en-construction-1200x675.jpg',
+    images: [
+      'https://www.afrik.com/wp-content/uploads/2026/08/le-palais-royal-et-larene-de-la-gaani-a-nikki-alors-en-construction-1200x675.jpg',
+      'https://www.afrik.com/wp-content/uploads/2026/08/un-cavalier-a-la-gaani-wwwgouvbj.jpeg',
+    ],
     emoji: '🐎',
   },
 ];
@@ -118,10 +161,18 @@ const BENIN_EVENTS: BeninEvent[] = [
 export const GalleryView: React.FC<GalleryViewProps> = () => {
   const [activeCategory, setActiveCategory] = useState<string>('ALL');
   const [selected, setSelected] = useState<BeninEvent | null>(null);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  useEffect(() => {
+    setPhotoIndex(0);
+  }, [selected]);
 
   const filtered = useMemo(() => {
-    const list = activeCategory === 'ALL' ? BENIN_EVENTS : BENIN_EVENTS.filter(e => e.category === activeCategory);
-    return list;
+    const all = activeCategory === 'ALL' ? BENIN_EVENTS : BENIN_EVENTS.filter(e => e.category === activeCategory);
+    return all.map((ev) => {
+      const photos = ev.images.length > 0 ? ev.images : (ev.image ? [ev.image] : []);
+      return { ...ev, image: ev.image || (photos[0] || ''), images: photos };
+    });
   }, [activeCategory]);
 
   const categories = Object.keys(CATEGORY_META) as EventCategory[];
@@ -206,6 +257,13 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   )}
 
+                  {ev.images.length > 1 && (
+                    <span className="absolute top-3 right-3 flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md bg-black/60 text-white">
+                      <Images className="w-3 h-3 text-amber-400" />
+                      {ev.images.length} photos
+                    </span>
+                  )}
+
                   {/* Category badge */}
                   <span className={`absolute top-3 left-3 flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md bg-white/95 ${meta.color}`}>
                     <meta.icon className="w-3 h-3" />
@@ -238,19 +296,80 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
       {/* Event detail modal */}
       {selected && (() => {
         const SelMeta = CATEGORY_META[selected.category];
+        const photos = selected.images.length > 0 ? selected.images : (selected.image ? [selected.image] : []);
+        const goPrev = () => setPhotoIndex((i) => (i - 1 + photos.length) % photos.length);
+        const goNext = () => setPhotoIndex((i) => (i + 1) % photos.length);
         return (
         <div className="fixed inset-0 z-[900] flex items-center justify-center p-4 sm:p-8 bg-black/90 overflow-y-auto">
           <button
             onClick={() => setSelected(null)}
-            className="absolute top-5 right-5 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="absolute top-5 right-5 z-10 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
             aria-label="Fermer"
           >
             <X className="w-6 h-6" />
           </button>
 
           <div className="max-w-2xl w-full bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden">
-            {selected.image ? (
-              <img src={selected.image} alt={selected.name} className="w-full h-64 object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
+            {photos.length > 0 ? (
+              <div className="relative bg-black">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${Math.min(photoIndex, photos.length - 1) * 100}%)` }}
+                >
+                  {photos.map((src, idx) => (
+                    <img
+                      key={idx}
+                      src={src}
+                      alt={`${selected.name} ${idx + 1}`}
+                      loading="lazy"
+                      className="w-full shrink-0 h-72 sm:h-80 object-cover"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                    />
+                  ))}
+                </div>
+
+                {photos.length > 1 && (
+                  <>
+                    <div className="absolute inset-x-0 bottom-16 flex justify-center">
+                      <span className="px-3 py-1 rounded-full bg-black/60 text-white text-[11px] font-bold backdrop-blur-md">
+                        {Math.min(photoIndex, photos.length - 1) + 1} / {photos.length}
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={goPrev}
+                      className="absolute top-1/2 left-3 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
+                      aria-label="Photo précédente"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={goNext}
+                      className="absolute top-1/2 right-3 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
+                      aria-label="Photo suivante"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    <div className="absolute bottom-0 inset-x-0 flex gap-2 px-4 py-3 overflow-x-auto bg-gradient-to-t from-black/80 to-transparent justify-center">
+                      {photos.map((src, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setPhotoIndex(idx)}
+                          className={`w-14 h-10 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
+                            idx === Math.min(photoIndex, photos.length - 1)
+                              ? 'border-amber-400 scale-105'
+                              : 'border-transparent opacity-60 hover:opacity-100'
+                          }`}
+                          aria-label={`Voir la photo ${idx + 1}`}
+                        >
+                          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover" />
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
             ) : (
               <div className="w-full h-56 flex items-center justify-center bg-gradient-to-br from-stone-800 to-stone-950">
                 <span className="text-8xl">{selected.emoji}</span>
