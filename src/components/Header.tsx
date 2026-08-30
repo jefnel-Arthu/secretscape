@@ -85,8 +85,8 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* Nav Icons */}
-          <nav className="flex items-center gap-2">
+          {/* Nav */}
+          <nav className="flex items-center gap-1.5">
             {NAV_ITEMS.map(({ tab, icon: Icon, label }) => {
               const isActive = activeTab === tab;
               let badge = 0;
@@ -99,13 +99,14 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => setActiveTab(tab)}
                   title={label}
                   aria-label={label}
-                  className={`relative w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
+                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-2xl transition-all duration-200 ${
                     isActive
-                      ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30 scale-105'
-                      : 'text-stone-400 hover:bg-stone-800 hover:text-white hover:scale-105'
+                      ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
+                      : 'text-stone-300 hover:bg-stone-800 hover:text-white'
                   }`}
                 >
-                  <Icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
+                  <Icon className="w-[18px] h-[18px]" strokeWidth={isActive ? 2.5 : 2} />
+                  <span className="text-sm font-semibold whitespace-nowrap">{label}</span>
                   {badge > 0 && (
                     <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] flex items-center justify-center bg-amber-500 text-stone-950 text-[10px] font-black rounded-full px-1 shadow-sm">
                       {badge}
