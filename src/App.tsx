@@ -435,13 +435,7 @@ export default function App() {
 
         {/* Gallery View */}
         {activeTab === 'gallery' && (
-          <GalleryView
-            spots={spots}
-            onOpenSpot={(spot) => {
-              trackAction('spot_preview', `Aperçu galerie: ${spot.title}`, spot.id);
-              setSelectedSpotModal(spot);
-            }}
-          />
+          <GalleryView />
         )}
 
         {/* Calendar View */}
