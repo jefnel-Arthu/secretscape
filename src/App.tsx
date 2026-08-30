@@ -12,6 +12,7 @@ import { HomePage } from './components/HomePage';
 import { FilterBar } from './components/FilterBar';
 import { MapExplorer } from './components/MapExplorer';
 import { SpotCard } from './components/SpotCard';
+import { GalleryView } from './components/GalleryView';
 import { CalendarItineraryView } from './components/CalendarItineraryView';
 import { SpotDetailModal } from './components/SpotDetailModal';
 import { AddSpotModal } from './components/AddSpotModal';
@@ -36,7 +37,7 @@ function migrateStorage() {
 export default function App() {
   migrateStorage();
   // Navigation tab state
-  const [activeTab, setActiveTab] = useState<'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'map' | 'gallery' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
 
   // Spots dataset
@@ -430,6 +431,17 @@ export default function App() {
               </div>
             )}
           </div>
+        )}
+
+        {/* Gallery View */}
+        {activeTab === 'gallery' && (
+          <GalleryView
+            spots={spots}
+            onOpenSpot={(spot) => {
+              trackAction('spot_preview', `Aperçu galerie: ${spot.title}`, spot.id);
+              setSelectedSpotModal(spot);
+            }}
+          />
         )}
 
         {/* Calendar View */}

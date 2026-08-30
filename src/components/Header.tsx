@@ -1,9 +1,9 @@
 import React from 'react';
-import { Home, Compass, Calendar as CalendarIcon, Bookmark, MapPin, Search, Lock } from 'lucide-react';
+import { Home, Compass, Calendar as CalendarIcon, Bookmark, Images, MapPin, Search, Lock } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
-  setActiveTab: (tab: 'home' | 'map' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin') => void;
+  activeTab: 'home' | 'map' | 'gallery' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
+  setActiveTab: (tab: 'home' | 'map' | 'gallery' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin') => void;
   calendarItemsCount: number;
   favoritesCount: number;
   selectedCity: string;
@@ -14,12 +14,13 @@ interface HeaderProps {
 }
 
 const NAV_ITEMS: {
-  tab: 'home' | 'map' | 'calendar' | 'favorites' | 'services' | 'contact' | 'admin';
+  tab: 'home' | 'map' | 'gallery' | 'calendar' | 'favorites' | 'services' | 'contact' | 'admin';
   icon: React.ElementType;
   label: string;
 }[] = [
   { tab: 'home', icon: Home, label: 'Accueil' },
   { tab: 'map', icon: Compass, label: 'Lieux' },
+  { tab: 'gallery', icon: Images, label: 'Galerie' },
   { tab: 'calendar', icon: CalendarIcon, label: 'Calendrier' },
   { tab: 'favorites', icon: Bookmark, label: 'Favoris' },
 ];
