@@ -117,6 +117,8 @@ const BENIN_EVENTS: BeninEvent[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxwsVoKQri65VjgmudnPUfRhxpUqm9qPHpHj5NuxvLw&s=10',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7-YDjfabI9Qt4l9uPcSkRCHQV2F0iNDNOOf9qcH6G_w&s=10',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMrFVUet-6wzAun7UbZPawteoPBbECmbqFPUkutnzeg&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKdd-HGXdG23Kwj_g4zfoBjrLOtsWK2dGVyto5Ty46Fg&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufm6LP9L5R7fJnn8J08LaLyLLdci-oe58fqDxlRaNvw&s=10',
     ],
     emoji: '🎤',
   },
