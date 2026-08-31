@@ -186,6 +186,51 @@ const BENIN_EVENTS: BeninEvent[] = [
     ],
     emoji: '🐎',
   },
+  {
+    id: 'event-finnab',
+    name: 'FInAB',
+    category: 'musique',
+    date: 'Février - Mars',
+    period: 'Annuel',
+    location: 'Cotonou — Palais des Congrès',
+    description: 'Le Festival International des Arts du Bénin, créé en 2023 par Groupe Empire. Multidisciplinaire : musique, cinéma, mode, arts plastiques, danse et théâtre. Le Tokp\'Art rassemble 500+ exposants dans une ambiance festive panafricaine.',
+    highlights: ['500+ exposants au Tokp\'Art', 'Masterclasses & concerts live', 'Artistes de 10+ pays', 'Cinéma & défilés de mode'],
+    image: 'https://matinlibre.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-23-at-23.22.40.jpeg',
+    images: ['https://matinlibre.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-23-at-23.22.40.jpeg'],
+    emoji: '🎨',
+  },
+  {
+    id: 'event-chill-groove',
+    name: 'Chill & Groove',
+    category: 'musique',
+    date: 'Décembre',
+    period: 'Annuel',
+    location: 'Cotonou — Palais des Congrès',
+    description: 'Festival lifestyle créé par Vitalor célébrant la culture béninoise à travers musique, street food et divertissement. 72h de shows non-stop, 50+ restaurants et bars, DJ sets locaux et internationaux.',
+    highlights: ['50+ restaurants & bars', 'DJ sets internationaux', 'Zones VR & dance battles', 'Good Vibes Only'],
+    image: 'https://critikmag.com/wp-content/uploads/2024/12/chill-and-groove-un-festival-de-plus-dans-le-divertissement-a-cotonou-critikmag-e1734088860893.jpg',
+    images: [
+      'https://critikmag.com/wp-content/uploads/2024/12/chill-and-groove-un-festival-de-plus-dans-le-divertissement-a-cotonou-critikmag-e1734088860893.jpg',
+      'https://chillandgroovefestival.com/wp-content/uploads/2026/07/Image-de-reference-1024x538.png',
+    ],
+    emoji: '🎧',
+  },
+  {
+    id: 'event-1er-aout',
+    name: '1er Août',
+    category: 'traditions',
+    date: '1er août',
+    period: 'Annuel',
+    location: 'Cotonou — Boulevard de la Marina',
+    description: 'La Fête Nationale du Bénin commémorant l\'indépendance du 1er août 1960. Cérémonie officielle avec dépôt de gerbe au Monument aux Dévoués, défilé militaire et paramilitaire de 30+ pelotons, performances culturelles et participation de la communauté internationale.',
+    highlights: ['Défilé militaire & paramilitaire', 'Dépôt de gerbe au Monument', 'Performances culturelles', 'Cérémonie présidentielle'],
+    image: 'https://www.afrik.com/wp-content/uploads/2026/08/depot-de-gerbe-a-la-place-du-monument-aux-devoues-de-la-nation-696x522.webp',
+    images: [
+      'https://www.afrik.com/wp-content/uploads/2026/08/depot-de-gerbe-a-la-place-du-monument-aux-devoues-de-la-nation-696x522.webp',
+      'https://www.afrik.com/wp-content/uploads/2026/08/romuald-wadagni-president-de-la-republique-du-benin-696x392.webp',
+    ],
+    emoji: '🇧🇯',
+  },
 ];
 
 interface EventPhoto {
@@ -214,12 +259,12 @@ const ALL_PHOTOS: EventPhoto[] = BENIN_EVENTS.flatMap((ev) => {
 });
 
 export const GalleryView: React.FC<GalleryViewProps> = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('ALL');
+  const [activeEventId, setActiveEventId] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered = useMemo(
-    () => (activeCategory === 'ALL' ? ALL_PHOTOS : ALL_PHOTOS.filter((p) => p.category === activeCategory)),
-    [activeCategory]
+    () => (activeEventId === null ? ALL_PHOTOS : ALL_PHOTOS.filter((p) => p.eventId === activeEventId)),
+    [activeEventId]
   );
 
   useEffect(() => {
@@ -233,7 +278,6 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, [lightboxIndex === null, filtered.length]);
 
-  const categories = Object.keys(CATEGORY_META) as EventCategory[];
   const current = lightboxIndex !== null ? filtered[lightboxIndex] : null;
   const activeEv = current ? BENIN_EVENTS.find((e) => e.id === current.eventId) : null;
 
@@ -250,36 +294,35 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
           Vodun Days, WeLovEya, FestiChill, festivals, fêtes traditionnelles… Toutes les photos des événements qui font vibrer le Bénin.
         </p>
 
-        {/* Category filter */}
+        {/* Event filter */}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
           <button
-            onClick={() => { setActiveCategory('ALL'); setLightboxIndex(null); }}
+            onClick={() => { setActiveEventId(null); setLightboxIndex(null); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-              activeCategory === 'ALL'
+              activeEventId === null
                 ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
                 : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
             }`}
           >
             Tout
-            {activeCategory === 'ALL' && (
+            {activeEventId === null && (
               <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{filtered.length}</span>
             )}
           </button>
-          {categories.map((cat) => {
-            const meta = CATEGORY_META[cat];
-            const count = ALL_PHOTOS.filter((p) => p.category === cat).length;
+          {BENIN_EVENTS.map((ev) => {
+            const count = ALL_PHOTOS.filter((p) => p.eventId === ev.id).length;
             return (
               <button
-                key={cat}
-                onClick={() => { setActiveCategory(cat); setLightboxIndex(null); }}
+                key={ev.id}
+                onClick={() => { setActiveEventId(ev.id); setLightboxIndex(null); }}
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
-                  activeCategory === cat
+                  activeEventId === ev.id
                     ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
                     : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
                 }`}
               >
-                <meta.icon className="w-3.5 h-3.5" />
-                {meta.label}
+                {ev.emoji}
+                {ev.name}
                 <span className="px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{count}</span>
               </button>
             );
