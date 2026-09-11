@@ -5,7 +5,6 @@ import {
   Compass,
   MapPin,
   Calendar as CalendarIcon,
-  Sparkles,
   ArrowRight,
   Star,
   Footprints,
@@ -149,16 +148,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 sm:pb-32">
           <div className="max-w-3xl space-y-8">
-            {/* Tag */}
-            <div
-              className={`transition-all duration-1000 delay-300 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-            >
-              <span className="inline-flex items-center gap-2 text-amber-400 text-xs font-bold tracking-[4px] uppercase bg-amber-500/10 border border-amber-500/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                <Sparkles className="w-3.5 h-3.5" />
-                SecretScape — Bénin
-              </span>
-            </div>
-
             {/* Title */}
             <div className={`space-y-1 transition-all duration-1000 delay-500 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
