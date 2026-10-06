@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Lock, BarChart3, Mail, Bookmark, Map, Eye, CheckCircle, Trash2, LogOut, Loader2, Activity
+  Lock, BarChart3, Mail, Bookmark, Map, Eye, CheckCircle, Trash2, LogOut, Loader2, Activity, Camera, ThumbsUp, User
 } from 'lucide-react';
 import SecretScapeDashboard from './SecretScapeDashboard';
+import { VisitorPhoto } from '../types';
 
 interface AdminPanelProps {
   onClose: () => void;
@@ -41,7 +42,7 @@ interface Message {
   read: boolean;
 }
 
-type AdminTab = 'dashboard' | 'stats' | 'messages' | 'favorites' | 'spots';
+type AdminTab = 'dashboard' | 'stats' | 'messages' | 'favorites' | 'spots' | 'photos';
 
 export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   const [token, setToken] = useState<string | null>(null);
@@ -52,6 +53,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   const [activeTab, setActiveTab] = useState<AdminTab>('dashboard');
   const [stats, setStats] = useState<Stats | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [photos, setPhotos] = useState<VisitorPhoto[]>([]);
 
   const headers = useCallback(() => ({
     'Content-Type': 'application/json',
@@ -101,12 +103,21 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
     } catch {}
   }, [token, headers]);
 
+  const fetchPhotos = useCallback(async () => {
+    if (!token) return;
+    try {
+      const res = await fetch('/api/admin/photos', { headers: headers() });
+      if (res.ok) setPhotos((await res.json()).photos);
+    } catch {}
+  }, [token, headers]);
+
   useEffect(() => {
     if (token) {
       fetchStats();
       fetchMessages();
+      fetchPhotos();
     }
-  }, [token, fetchStats, fetchMessages]);
+  }, [token, fetchStats, fetchMessages, fetchPhotos]);
 
   const markRead = async (id: string) => {
     await fetch('/api/admin/messages/read', {
@@ -120,6 +131,20 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
     await fetch(`/api/admin/messages/${id}`, { method: 'DELETE', headers: headers() });
     setMessages(prev => prev.filter(m => m.id !== id));
     fetchStats();
+  };
+
+  const togglePhotoApproval = async (id: string) => {
+    const photo = photos.find(p => p.id === id);
+    if (!photo) return;
+    await fetch(`/api/admin/photos/${id}`, {
+      method: 'PUT', headers: headers(), body: JSON.stringify({ approved: !photo.approved }),
+    });
+    setPhotos(prev => prev.map(p => p.id === id ? { ...p, approved: !p.approved } : p));
+  };
+
+  const deletePhoto = async (id: string) => {
+    await fetch(`/api/admin/photos/${id}`, { method: 'DELETE', headers: headers() });
+    setPhotos(prev => prev.filter(p => p.id !== id));
   };
 
   const logout = () => {
@@ -165,12 +190,15 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
     );
   }
 
+  const pendingPhotosCount = photos.filter(p => !p.approved).length;
+
   const tabs: { key: AdminTab; label: string; icon: React.ReactNode }[] = [
     { key: 'dashboard', label: 'Dashboard', icon: <Activity className="w-4 h-4" /> },
     { key: 'stats', label: 'Statistiques', icon: <BarChart3 className="w-4 h-4" /> },
     { key: 'messages', label: `Messages${stats?.unreadMessages ? ` (${stats.unreadMessages})` : ''}`, icon: <Mail className="w-4 h-4" /> },
     { key: 'favorites', label: 'Favoris', icon: <Bookmark className="w-4 h-4" /> },
     { key: 'spots', label: 'Lieux', icon: <Map className="w-4 h-4" /> },
+    { key: 'photos', label: `Photos${pendingPhotosCount ? ` (${pendingPhotosCount})` : ''}`, icon: <Camera className="w-4 h-4" /> },
   ];
 
   return (
@@ -182,7 +210,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
           <span className="font-display font-bold text-sm">Admin SecretScape</span>
         </div>
         <div className="flex items-center gap-2">
-          <button onClick={() => { fetchStats(); fetchMessages(); }} className="p-2 hover:bg-stone-800 rounded-lg text-xs text-stone-300 transition-colors">Rafraîchir</button>
+          <button onClick={() => { fetchStats(); fetchMessages(); fetchPhotos(); }} className="p-2 hover:bg-stone-800 rounded-lg text-xs text-stone-300 transition-colors">Rafraîchir</button>
           <button onClick={logout} className="p-2 hover:bg-stone-800 rounded-lg text-xs text-stone-300 flex items-center gap-1 transition-colors">
             <LogOut className="w-4 h-4" /> Déconnexion
           </button>
@@ -365,6 +393,78 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
               Les lieux sont gérés dans <code className="bg-stone-100 px-1 rounded">src/data/hiddenSpots.ts</code>.
               Pour ajouter un lieu, utilisez le formulaire "Proposer un lieu" du site ou éditez le fichier directement.
             </p>
+          </div>
+        )}
+
+        {/* ── Photos Tab ── */}
+        {activeTab === 'photos' && (
+          <div className="max-w-5xl mx-auto space-y-4">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <h2 className="font-display font-bold text-lg text-stone-900">
+                Photos des visiteurs ({photos.length})
+              </h2>
+              <span className="text-xs text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-full font-semibold">
+                {pendingPhotosCount} en attente de validation
+              </span>
+            </div>
+
+            {photos.length === 0 ? (
+              <p className="text-xs text-stone-400 py-10 text-center">Aucune photo soumise pour le moment.</p>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[...photos]
+                  .sort((a, b) => Number(a.approved) - Number(b.approved) || b.createdAt.localeCompare(a.createdAt))
+                  .map(photo => (
+                    <div key={photo.id} className={`bg-white rounded-2xl border overflow-hidden flex flex-col ${photo.approved ? 'border-stone-200' : 'border-amber-300 bg-amber-50/30'}`}>
+                      <div className="relative h-44 bg-stone-100">
+                        <img
+                          src={photo.imageUrl}
+                          alt={`Souvenir de ${photo.visitorName}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                        />
+                        <span className={`absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-full ${photo.approved ? 'bg-emerald-500 text-white' : 'bg-amber-500 text-stone-950'}`}>
+                          {photo.approved ? 'Publiée' : 'En attente'}
+                        </span>
+                      </div>
+                      <div className="p-3 space-y-1.5 flex-1">
+                        <p className="font-bold text-sm text-stone-900 flex items-center gap-1.5">
+                          <User className="w-3.5 h-3.5 text-amber-500" />
+                          {photo.visitorName}
+                        </p>
+                        <p className="text-xs text-stone-500">
+                          {photo.spotTitle || photo.spotId}
+                        </p>
+                        <p className="text-[11px] text-stone-400">
+                          {new Date(photo.createdAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                        </p>
+                        {photo.message && (
+                          <p className="text-xs text-stone-600 bg-stone-50 rounded-xl p-2.5">{photo.message}</p>
+                        )}
+                        <div className="flex items-center gap-1.5 pt-1.5">
+                          <button
+                            onClick={() => togglePhotoApproval(photo.id)}
+                            className={`flex-1 flex items-center justify-center gap-1.5 text-[11px] font-bold py-2 rounded-xl transition-colors ${
+                              photo.approved
+                                ? 'bg-stone-100 text-stone-500 hover:bg-stone-200'
+                                : 'bg-emerald-500 hover:bg-emerald-600 text-white'
+                            }`}
+                          >
+                            {photo.approved ? <><Eye className="w-3.5 h-3.5" /> Retirer</> : <><ThumbsUp className="w-3.5 h-3.5" /> Approuver</>}
+                          </button>
+                          <button
+                            onClick={() => deletePhoto(photo.id)}
+                            className="p-2 hover:bg-red-50 rounded-xl transition-colors"
+                            title="Supprimer"
+                          >
+                            <Trash2 className="w-4 h-4 text-red-400" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            )}
           </div>
         )}
       </div>

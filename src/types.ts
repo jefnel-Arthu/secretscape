@@ -74,3 +74,14 @@ export interface AITripRequest {
   vibes: SecretCategory[];
   extraNotes?: string;
 }
+
+export interface VisitorPhoto {
+  id: string;
+  spotId: string;
+  spotTitle: string;
+  visitorName: string;
+  message?: string;
+  imageUrl: string;
+  approved: boolean;
+  createdAt: string;
+}

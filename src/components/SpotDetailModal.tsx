@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { HiddenSpot } from '../types';
+import React, { useEffect, useState } from 'react';
+import { HiddenSpot, VisitorPhoto } from '../types';
 import { CATEGORY_LABELS, SECRET_LEVEL_LABELS } from '../data/hiddenSpots';
 import {
   X,
@@ -15,6 +15,8 @@ import {
   Star,
   Sun,
   ExternalLink,
+  Camera,
+  ImagePlus,
 } from 'lucide-react';
 
 interface SpotDetailModalProps {
@@ -23,6 +25,8 @@ interface SpotDetailModalProps {
   onAddToCalendar: (spot: HiddenSpot) => void;
   onToggleFavorite: (spot: HiddenSpot) => void;
   onNavigate?: (spot: HiddenSpot) => void;
+  onAddPhoto?: (spot: HiddenSpot) => void;
+  onViewAllPhotos?: (spot: HiddenSpot) => void;
   isFavorite: boolean;
 }
 
@@ -32,10 +36,28 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
   onAddToCalendar,
   onToggleFavorite,
   onNavigate,
+  onAddPhoto,
+  onViewAllPhotos,
   isFavorite,
 }) => {
   const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
   const [copiedGps, setCopiedGps] = useState<boolean>(false);
+  const [visitorPhotos, setVisitorPhotos] = useState<VisitorPhoto[]>([]);
+
+  useEffect(() => {
+    if (!spot) {
+      setVisitorPhotos([]);
+      return;
+    }
+    let cancelled = false;
+    fetch(`/api/visitor-photos?spotId=${encodeURIComponent(spot.id)}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!cancelled) setVisitorPhotos(data.photos || []);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [spot?.id]);
 
   if (!spot) return null;
 
@@ -307,6 +329,63 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
                 </span>
               );
             })}
+          </div>
+
+          {/* Visitor Photos */}
+          <div className="space-y-2.5">
+            <div className="flex items-center justify-between gap-2">
+              <h4 className="font-display font-bold text-stone-900 text-base flex items-center gap-2">
+                <span className="w-1 h-5 bg-amber-500 rounded-full" />
+                <Camera className="w-4 h-4 text-amber-500" />
+                Souvenirs des visiteurs
+                {visitorPhotos.length > 0 && (
+                  <span className="text-xs text-stone-400 font-normal">({visitorPhotos.length})</span>
+                )}
+              </h4>
+              <button
+                onClick={() => onAddPhoto?.(spot)}
+                className="flex items-center gap-1.5 text-[11px] font-bold bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 px-3 py-1.5 rounded-xl transition-colors shrink-0"
+              >
+                <ImagePlus className="w-3.5 h-3.5" />
+                Ajouter ma photo
+              </button>
+            </div>
+
+            {visitorPhotos.length === 0 ? (
+              <div className="bg-stone-50 border border-stone-200 rounded-2xl p-4 text-center">
+                <p className="text-xs text-stone-500">
+                  Soyez le premier explorateur à partager sa photo ici !
+                </p>
+              </div>
+            ) : (
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {visitorPhotos.slice(0, 10).map((photo) => (
+                  <button
+                    key={photo.id}
+                    onClick={() => onViewAllPhotos?.(spot)}
+                    className="relative shrink-0 w-20 h-20 rounded-2xl overflow-hidden border border-stone-200 group hover:border-amber-500/60 transition-colors"
+                    title={`${photo.visitorName} — ${new Date(photo.createdAt).toLocaleDateString('fr-FR')}`}
+                  >
+                    <img
+                      src={photo.imageUrl}
+                      alt={`Souvenir de ${photo.visitorName}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                    />
+                  </button>
+                ))}
+                {visitorPhotos.length > 10 && (
+                  <button
+                    onClick={() => onViewAllPhotos?.(spot)}
+                    className="shrink-0 w-20 h-20 rounded-2xl bg-stone-900 text-white flex flex-col items-center justify-center gap-0.5 hover:bg-stone-800 transition-colors"
+                  >
+                    <span className="text-base font-black">+{visitorPhotos.length - 10}</span>
+                    <span className="text-[9px] font-semibold text-stone-400">Voir tout</span>
+                  </button>
+                )}
+              </div>
+            )}
           </div>
 
         </div>

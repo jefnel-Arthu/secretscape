@@ -13,6 +13,8 @@ import { FilterBar } from './components/FilterBar';
 import { MapExplorer } from './components/MapExplorer';
 import { SpotCard } from './components/SpotCard';
 import { GalleryView } from './components/GalleryView';
+import { VisitorPhotosView } from './components/VisitorPhotosView';
+import { AddVisitorPhotoModal } from './components/AddVisitorPhotoModal';
 import { CalendarItineraryView } from './components/CalendarItineraryView';
 import { SpotDetailModal } from './components/SpotDetailModal';
 import { AddSpotModal } from './components/AddSpotModal';
@@ -37,7 +39,7 @@ function migrateStorage() {
 export default function App() {
   migrateStorage();
   // Navigation tab state
-  const [activeTab, setActiveTab] = useState<'home' | 'map' | 'gallery' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'map' | 'gallery' | 'souvenirs' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
 
   // Spots dataset
@@ -120,6 +122,16 @@ export default function App() {
   const [isAddSpotModalOpen, setIsAddSpotModalOpen] = useState<boolean>(false);
   const [navigationSpot, setNavigationSpot] = useState<HiddenSpot | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  // Visitor photos state
+  const [visitorPhotoModalOpen, setVisitorPhotoModalOpen] = useState<boolean>(false);
+  const [visitorPhotoInitialSpot, setVisitorPhotoInitialSpot] = useState<string | null>(null);
+  const [souvenirsRefreshKey, setSouvenirsRefreshKey] = useState<number>(0);
+
+  const openAddVisitorPhoto = useCallback((spotId?: string | null) => {
+    setVisitorPhotoInitialSpot(spotId ?? null);
+    setVisitorPhotoModalOpen(true);
+  }, []);
 
   // Save to LocalStorage
   useEffect(() => {
@@ -348,6 +360,7 @@ export default function App() {
           } else if (tab === 'admin') {
             setActiveTab('admin');
           } else {
+            if (tab === 'souvenirs') setVisitorPhotoInitialSpot(null);
             setActiveTab(tab);
           }
         }}
@@ -438,6 +451,16 @@ export default function App() {
           <GalleryView />
         )}
 
+        {/* Visitor Photos View */}
+        {activeTab === 'souvenirs' && (
+          <VisitorPhotosView
+            key={`souvenirs-${souvenirsRefreshKey}`}
+            spots={spots}
+            initialSpotId={visitorPhotoInitialSpot}
+            onAddPhoto={(spotId) => openAddVisitorPhoto(spotId)}
+          />
+        )}
+
         {/* Calendar View */}
         {activeTab === 'calendar' && (
           <CalendarItineraryView
@@ -500,11 +523,17 @@ export default function App() {
 
       {/* Spot Detail Modal */}
       <SpotDetailModal
+        key={`spot-${selectedSpotModal?.id}-${souvenirsRefreshKey}`}
         spot={selectedSpotModal}
         onClose={() => setSelectedSpotModal(null)}
         onAddToCalendar={(spot) => handleAddToCalendar(spot)}
         onToggleFavorite={handleToggleFavorite}
         onNavigate={(spot) => { setNavigationSpot(spot); trackAction('navigate_to', `Navigation vers: ${spot.title}`, spot.id); }}
+        onAddPhoto={(spot) => openAddVisitorPhoto(spot.id)}
+        onViewAllPhotos={(spot) => {
+          setVisitorPhotoInitialSpot(spot.id);
+          setActiveTab('souvenirs');
+        }}
         isFavorite={selectedSpotModal ? favorites.includes(selectedSpotModal.id) : false}
       />
 
@@ -519,6 +548,18 @@ export default function App() {
           isOpen={isAddSpotModalOpen}
           onClose={() => setIsAddSpotModalOpen(false)}
           onAddSpot={handleAddUserSpot}
+        />
+
+        {/* Add Visitor Photo Modal */}
+        <AddVisitorPhotoModal
+          isOpen={visitorPhotoModalOpen}
+          onClose={() => setVisitorPhotoModalOpen(false)}
+          spots={spots}
+          initialSpotId={visitorPhotoInitialSpot}
+          onSubmitted={() => {
+            setSouvenirsRefreshKey(k => k + 1);
+            showToast('Photo envoyée ! En attente de validation.');
+          }}
         />
 
         {/* Admin Panel */}

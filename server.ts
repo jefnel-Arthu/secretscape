@@ -10,7 +10,7 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  app.use(express.json());
+  app.use(express.json({ limit: '8mb' }));
 
   // Initialize Gemini AI SDK
   const ai = new GoogleGenAI({
@@ -82,6 +82,35 @@ async function startServer() {
   }
 
   let adminData = loadAdminData();
+
+  // ─── Visitor Photos Storage ──────────────────────────────────────────
+  const PHOTOS_FILE = path.join(DATA_DIR, 'visitor-photos.json');
+
+  interface VisitorPhoto {
+    id: string;
+    spotId: string;
+    spotTitle: string;
+    visitorName: string;
+    message?: string;
+    imageUrl: string;
+    approved: boolean;
+    createdAt: string;
+  }
+
+  function loadVisitorPhotos(): VisitorPhoto[] {
+    try {
+      if (fs.existsSync(PHOTOS_FILE)) {
+        return JSON.parse(fs.readFileSync(PHOTOS_FILE, 'utf-8'));
+      }
+    } catch {}
+    return [];
+  }
+
+  function saveVisitorPhotos(photos: VisitorPhoto[]) {
+    fs.writeFileSync(PHOTOS_FILE, JSON.stringify(photos, null, 2));
+  }
+
+  let visitorPhotos = loadVisitorPhotos();
 
   // Tracking: page view
   app.post("/api/track/pageview", (_req, res) => {
@@ -250,6 +279,79 @@ async function startServer() {
     });
     if (adminData.recentActions.length > 200) adminData.recentActions = adminData.recentActions.slice(0, 200);
     saveAdminData(adminData);
+    res.json({ ok: true });
+  });
+
+  // ─── Visitor Photos: public ─────────────────────────────────────────
+  app.get("/api/visitor-photos", (req, res) => {
+    const { spotId } = req.query;
+    let list = visitorPhotos.filter(p => p.approved);
+    if (spotId) list = list.filter(p => p.spotId === spotId);
+    list = [...list].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+    res.json({ photos: list });
+  });
+
+  app.post("/api/visitor-photos", (req, res) => {
+    const { spotId, spotTitle, visitorName, message, imageData } = req.body;
+    if (!spotId || !visitorName || !visitorName.trim()) {
+      return res.status(400).json({ error: 'Merci de renseigner votre nom et le lieu visité' });
+    }
+    if (typeof imageData !== 'string' || !imageData.startsWith('data:image/')) {
+      return res.status(400).json({ error: 'Image invalide' });
+    }
+    if (imageData.length > 5 * 1024 * 1024) {
+      return res.status(413).json({ error: 'Image trop volumineuse (max 5 Mo)' });
+    }
+    const photo: VisitorPhoto = {
+      id: `photo-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+      spotId,
+      spotTitle: spotTitle || '',
+      visitorName: visitorName.trim().slice(0, 60),
+      message: message ? message.trim().slice(0, 300) : undefined,
+      imageUrl: imageData,
+      approved: false,
+      createdAt: new Date().toISOString(),
+    };
+    visitorPhotos.unshift(photo);
+    if (visitorPhotos.length > 2000) visitorPhotos = visitorPhotos.slice(0, 2000);
+    saveVisitorPhotos(visitorPhotos);
+    adminData.recentActions.unshift({
+      id: `act-${Date.now()}-photo`,
+      type: 'visitor_photo',
+      detail: `${photo.visitorName} a partagé une photo — ${photo.spotTitle || photo.spotId}`,
+      timestamp: new Date().toISOString(),
+    });
+    if (adminData.recentActions.length > 200) adminData.recentActions = adminData.recentActions.slice(0, 200);
+    saveAdminData(adminData);
+    res.json({ ok: true, photo });
+  });
+
+  // ─── Visitor Photos: admin moderation ───────────────────────────────
+  app.get("/api/admin/photos", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    res.json({ photos: visitorPhotos });
+  });
+
+  app.put("/api/admin/photos/:id", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    const photo = visitorPhotos.find(p => p.id === req.params.id);
+    if (photo) {
+      photo.approved = typeof req.body.approved === 'boolean' ? req.body.approved : !photo.approved;
+      saveVisitorPhotos(visitorPhotos);
+    }
+    res.json({ ok: true });
+  });
+
+  app.delete("/api/admin/photos/:id", (req, res) => {
+    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
+      return res.status(401).json({ error: 'Non autorisé' });
+    }
+    visitorPhotos = visitorPhotos.filter(p => p.id !== req.params.id);
+    saveVisitorPhotos(visitorPhotos);
     res.json({ ok: true });
   });
 
