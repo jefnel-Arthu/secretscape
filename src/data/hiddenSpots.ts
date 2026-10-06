@@ -3562,6 +3562,66 @@ const RAW_SPOTS: HiddenSpot[] = [
     rating: 4.3,
     reviewCount: 0,
     crowdLevel: 'modéré'
+  },
+  {
+    id: 'spot-hublot',
+    title: 'Le Hublot Brasserie & Guesthouse',
+    subtitle: 'Gastropub, rooftop face à l\'océan & 6 chambres',
+    category: 'restaurants',
+    city: 'Cotonou',
+    region: 'Littoral',
+    coordinates: { lat: 6.353111, lng: 2.346257 },
+    address: 'Fidjrossè, Route des Pêches, 400 m après l\'immeuble Gozem (sur la droite), Cotonou',
+    secretLevel: 'facile',
+    description: 'De l\'autre côté de la route qui longe la plage de Fidjrossè, Le Hublot déploie une carte cuisine régionale et fusion : poissons et fruits de mer ultra-frais de la pêche locale, viandes grillées et créations semi-gastro dressées avec soin, à savourer sur la terrasse rooftop face à l\'Atlantique. Un bar lounge au rez-de-chaussée et, au 2e étage, la brasserie ; l\'établissement propose aussi 6 chambres climatisées vue mer et, en soirée, The Gentlemen\'s Club : bar, cocktails d\'auteur, jazz et house.',
+    secretAccessHint: 'Le rooftop au coucher du soleil est la table la plus demandée ; ouvert 24h/24, 7j/7 — moules-frites « à volonté » le samedi et gambas & filet de bœuf le dimanche (13h-16h).',
+    bestTimeToVisit: 'Au coucher du soleil, sur la terrasse rooftop',
+    estimatedDurationMinutes: 150,
+    imageUrl: 'https://hublot-benin.com/images/ui/h-resto-dusk.jpg',
+    tags: ['Restaurant', 'Gastropub', 'Rooftop', 'Route des Pêches', 'Fidjrossè', 'Poisson'],
+    rating: 4.2,
+    reviewCount: 25,
+    crowdLevel: 'élevé'
+  },
+  {
+    id: 'spot-gogotinkpon',
+    title: 'Gogotinkpon',
+    subtitle: 'Un village secret au cœur des mangroves du site Ramsar',
+    category: 'sites',
+    city: 'Agbanto (Kpomassè)',
+    region: 'Atlantique',
+    coordinates: { lat: 6.462, lng: 2.0238 },
+    address: 'Village de Gogotinkpon, arrondissement d\'Agbanto (commune de Kpomassè), à la frontière entre les départements de l\'Atlantique et du Mono',
+    secretLevel: 'insider',
+    description: 'Hameau devenu village, perdu dans les zones humides du site Ramsar 1017 (basse vallée du Couffo, lac Ahémé, chenal Aho) à la frontière entre l\'Atlantique et le Mono. Son nom viendrait d\'un geste d\'appréciation des pêcheurs : Gogo (= palper les joues et les fesses), d\'où « Gogotinkponme » — là où l\'on palpe. On y accède par pirogue : balades à travers les mangroves sacrées, plantes médicinales, plantation de cocotiers, déjeuner local (ragoût de manioc agnan, dakouin), bouillie de riz « Monlou godo » et bain d\'argile Tobò de Gogo. Accueil par le guide du village, Dieudonné Kuassi Metonou, et le chef de village Gaston M. Zounon.',
+    secretAccessHint: 'Faites-vous accompagner par un guide du village (Dieudonné Kuassi Metonou) ; les balades en pirogue dans les mangroves sont magiques en saison des pluies, quand toute la plaine est inondée.',
+    bestTimeToVisit: 'En saison des pluies, pour les balades en pirogue',
+    estimatedDurationMinutes: 240,
+    imageUrl: 'https://fondationmargaretha.com/wp-content/uploads/2021/03/gog2.jpg',
+    tags: ['Village', 'Mangroves', 'Zone humide', 'Pirogue', 'Écotourisme', 'Ramsar'],
+    rating: 4.5,
+    reviewCount: 12,
+    crowdLevel: 'faible'
+  },
+  {
+    id: 'spot-homeboy',
+    title: 'Homeboy Lounge Bar',
+    subtitle: 'Le night-club légendaire de l\'Arrondissement 12',
+    category: 'boites',
+    city: 'Cotonou',
+    region: 'Littoral',
+    coordinates: { lat: 6.3539014, lng: 2.4056202 },
+    address: '9C34+H69, Arrondissement 12, Cotonou',
+    secretLevel: 'moyen',
+    description: 'Adresse emblématique de la nuit cotonoise : un lounge au design soigné, terrasse à ciel ouvert et DJ live qui enchaînent un mix de hits nigérians, occidentaux et français du jeudi au dimanche. Cocktails et spiritueux à prix doux, ambiance festive, service VIP le week-end et parking sur place. Beaucoup le considèrent comme le meilleur club du Bénin pour ses nuits légendaires.',
+    secretAccessHint: 'Ouvert du jeudi au dimanche de 18h à 5h du matin (fermé du lundi au mercredi) ; la piste de danse explose le vendredi et samedi soir.',
+    bestTimeToVisit: 'Les nuits du vendredi et du samedi',
+    estimatedDurationMinutes: 240,
+    imageUrl: 'https://static.where-e.com/Benin/Littoral_Department/Homeboy-Lounge-Bar_1bc1ffa0cbb9588af51ead6e2c9d0f7d.jpg',
+    tags: ['Boîte de nuit', 'Lounge', 'DJ', 'Night-club', 'Cotonou'],
+    rating: 3.9,
+    reviewCount: 150,
+    crowdLevel: 'élevé'
   }
 ];
 
@@ -3743,7 +3803,10 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-le-seven': '/images/club-le-seven.jpg',
   'spot-crystal-palace': '/images/club-crystal-palace.jpg',
   'spot-le-tabou': '/images/club-le-tabou.jpg',
-  'spot-314-club': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSwOSsn78yn_MpkDIHlSJQdYzi4dtGlOh8-2NFCIBRtYAWm1wTy97K21k&s=10'
+  'spot-314-club': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSwOSsn78yn_MpkDIHlSJQdYzi4dtGlOh8-2NFCIBRtYAWm1wTy97K21k&s=10',
+  'spot-hublot': 'https://hublot-benin.com/images/ui/h-resto-dusk.jpg',
+  'spot-gogotinkpon': 'https://fondationmargaretha.com/wp-content/uploads/2021/03/gog2.jpg',
+  'spot-homeboy': 'https://static.where-e.com/Benin/Littoral_Department/Homeboy-Lounge-Bar_1bc1ffa0cbb9588af51ead6e2c9d0f7d.jpg'
 };
 
 export const INITIAL_HIDDEN_SPOTS: HiddenSpot[] = RAW_SPOTS.map((spot) =>
