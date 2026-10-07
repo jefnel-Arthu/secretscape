@@ -68,16 +68,16 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
       <div className="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-stone-200 overflow-hidden my-8 animate-in zoom-in-95 duration-200">
         
         {/* Header */}
-        <div className="bg-stone-900 p-6 text-stone-100 flex items-center justify-between">
+        <div className="bg-sky-600 p-6 text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-amber-500 text-stone-950 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-white/20 text-white flex items-center justify-center">
               <PlusCircle className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-display font-bold text-xl text-white">
                 Proposer un Lieu Secret
               </h3>
-              <p className="text-stone-400 text-xs">
+              <p className="text-sky-100 text-xs">
                 Partagez une pépite cachée ou un passage méconnu avec les voyageurs
               </p>
             </div>
@@ -85,7 +85,7 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2 text-stone-400 hover:text-white rounded-full bg-stone-800 transition-colors"
+            className="p-2 text-sky-100 hover:text-white rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -102,7 +102,7 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="ex: Le Village Lacustre Secret de Ganvié"
-              className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-sm focus:outline-none focus:border-amber-500"
+              className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-sm focus:outline-none focus:border-sky-500"
             />
           </div>
 
@@ -112,7 +112,7 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as SecretCategory)}
-                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-amber-500"
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-sky-500"
               >
                 <option value="sites">Sites touristiques</option>
                 <option value="plages">Plages</option>
@@ -128,7 +128,7 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
               <select
                 value={secretLevel}
                 onChange={(e) => setSecretLevel(e.target.value as SecretLevel)}
-                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-amber-500"
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-sky-500"
               >
                 <option value="facile">Facile à trouver (Accessible)</option>
                 <option value="moyen">Bien caché (Discret)</option>
@@ -146,7 +146,7 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="ex: Cotonou, Ouidah, Porto-Novo, Abomey..."
-                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-amber-500"
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-sky-500"
               />
             </div>
 
@@ -157,7 +157,7 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="ex: Quartier Ganvié, rive du lac Nokoué"
-                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-amber-500"
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-sky-500"
               />
             </div>
           </div>
@@ -170,19 +170,19 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
               onChange={(e) => setDescription(e.target.value)}
               rows={3}
               placeholder="Racontez l'histoire du lieu, son ambiance particulière..."
-              className="w-full bg-stone-50 border border-stone-200 rounded-xl p-3 text-stone-900 text-xs focus:outline-none focus:border-amber-500 resize-none"
+              className="w-full bg-stone-50 border border-stone-200 rounded-xl p-3 text-stone-900 text-xs focus:outline-none focus:border-sky-500 resize-none"
             />
           </div>
 
-          <div className="space-y-1 bg-amber-50 p-3 rounded-xl border border-amber-200">
-            <label className="font-bold text-amber-950 uppercase block">Astuce Secrète d'Accès *</label>
+          <div className="space-y-1 bg-sky-50 p-3 rounded-xl border border-sky-200">
+            <label className="font-bold text-sky-950 uppercase block">Astuce Secrète d'Accès *</label>
             <textarea
               required
               value={secretAccessHint}
               onChange={(e) => setSecretAccessHint(e.target.value)}
               rows={2}
               placeholder="ex: Poussez la porte en fer forgé du n°12, traverser la cour intérieure..."
-              className="w-full bg-white border border-amber-200 rounded-lg p-2.5 text-stone-900 text-xs focus:outline-none focus:border-amber-500 resize-none"
+              className="w-full bg-white border border-sky-200 rounded-lg p-2.5 text-stone-900 text-xs focus:outline-none focus:border-sky-500 resize-none"
             />
           </div>
 
@@ -193,13 +193,13 @@ export const AddSpotModal: React.FC<AddSpotModalProps> = ({
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
               placeholder="https://..."
-              className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-amber-500"
+              className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 text-xs focus:outline-none focus:border-sky-500"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer mt-2"
+            className="w-full bg-sky-500 hover:bg-sky-600 text-stone-950 font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer mt-2"
           >
             <Check className="w-4 h-4" />
             <span>Publier ce lieu secret</span>

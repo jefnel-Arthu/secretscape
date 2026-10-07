@@ -32,7 +32,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             onClick={() => setSelectedCategory('ALL')}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
               selectedCategory === 'ALL'
-                ? 'bg-stone-900 text-white shadow-lg shadow-stone-900/20'
+                ? 'bg-sky-500 text-stone-950 shadow-lg shadow-sky-500/25'
                 : 'bg-stone-100 text-stone-500 hover:bg-stone-200 hover:text-stone-700'
             }`}
           >
@@ -47,8 +47,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => setSelectedCategory(key as SecretCategory)}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap flex items-center gap-1.5 transition-all duration-300 ${
                   isActive
-                    ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/25'
-                    : 'bg-stone-100 text-stone-500 hover:bg-amber-50 hover:text-amber-700 hover:border hover:border-amber-200'
+                    ? 'bg-sky-500 text-stone-950 shadow-lg shadow-sky-500/25'
+                    : 'bg-stone-100 text-stone-500 hover:bg-sky-50 hover:text-sky-700 hover:border hover:border-sky-200'
                 }`}
               >
                 <span>{item.name}</span>
@@ -62,7 +62,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={selectedSecretLevel}
             onChange={(e) => setSelectedSecretLevel(e.target.value as any)}
-            className="bg-stone-100 text-stone-600 text-xs px-3 py-2 rounded-xl border border-stone-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-200 cursor-pointer font-semibold transition-colors"
+            className="bg-stone-100 text-stone-600 text-xs px-3 py-2 rounded-xl border border-stone-200 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-200 cursor-pointer font-semibold transition-colors"
           >
             <option value="ALL">Tous les niveaux</option>
             <option value="facile">🟢 Accessible</option>
@@ -81,7 +81,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
               id="view-map-toggle"
             >
-              <Map className="w-3.5 h-3.5 text-amber-600" />
+              <Map className="w-3.5 h-3.5 text-sky-600" />
               <span>Carte</span>
             </button>
 
@@ -94,7 +94,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
               id="view-grid-toggle"
             >
-              <Grid className="w-3.5 h-3.5 text-amber-600" />
+              <Grid className="w-3.5 h-3.5 text-sky-600" />
               <span>Catalogue</span>
             </button>
           </div>

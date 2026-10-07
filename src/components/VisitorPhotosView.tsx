@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Camera, X, MapPin, ChevronLeft, ChevronRight, User, MessageSquare, ImagePlus, Loader2 } from 'lucide-react';
+import { Camera, X, MapPin, ChevronLeft, ChevronRight, User, MessageSquare, ImagePlus, Loader2, Clock } from 'lucide-react';
 import { HiddenSpot, VisitorPhoto } from '../types';
+import { mergedVisitorPhotos } from '../lib/visitorPhotos';
 
 interface VisitorPhotosViewProps {
   spots: HiddenSpot[];
@@ -29,9 +30,9 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
       try {
         const res = await fetch('/api/visitor-photos');
         const data = await res.json();
-        if (!cancelled) setPhotos(data.photos || []);
+        if (!cancelled) setPhotos(mergedVisitorPhotos(data.photos || []));
       } catch {
-        if (!cancelled) setPhotos([]);
+        if (!cancelled) setPhotos(mergedVisitorPhotos([]));
       }
       if (!cancelled) setLoading(false);
     };
@@ -65,15 +66,15 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
     new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
 
   return (
-    <div className="bg-stone-950 min-h-full">
+    <div className="bg-stone-50 min-h-full">
       {/* Header */}
       <div className="relative py-14 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-600/10 via-transparent to-stone-950" />
-        <Camera className="w-10 h-10 text-amber-400 mx-auto mb-4" />
-        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3">
-          Souvenirs <span className="text-amber-400">des Explorateurs</span>
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-500/10 via-transparent to-stone-50" />
+        <Camera className="w-10 h-10 text-sky-500 mx-auto mb-4" />
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 mb-3">
+          Souvenirs <span className="text-sky-500">des Explorateurs</span>
         </h1>
-        <p className="text-stone-400 text-sm max-w-lg mx-auto">
+        <p className="text-stone-500 text-sm max-w-lg mx-auto">
           Les photos des voyageurs après leur passage dans ces lieux cachés du Bénin. Partagez le vôtre !
         </p>
 
@@ -83,19 +84,19 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
             onClick={() => setFilterSpotId(null)}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
               filterSpotId === null
-                ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
-                : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
+                ? 'bg-sky-500 text-stone-950 shadow-lg shadow-sky-500/30'
+                : 'bg-white text-stone-600 border border-stone-200 hover:border-sky-300 hover:text-sky-700'
             }`}
           >
             Tout
-            <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{photos.length}</span>
+            <span className={`ml-1.5 px-1.5 py-0.5 rounded-full text-[10px] ${filterSpotId === null ? 'bg-black/20' : 'bg-stone-100'}`}>{photos.length}</span>
           </button>
 
           <select
             value={filterSpotId || ''}
             onChange={(e) => setFilterSpotId(e.target.value || null)}
-            className={`px-4 py-2 rounded-full text-xs font-bold bg-stone-800 text-stone-300 hover:bg-stone-700 cursor-pointer focus:outline-none ${
-              filterSpotId !== null ? 'ring-2 ring-amber-500/60' : ''
+            className={`px-4 py-2 rounded-full text-xs font-bold bg-white text-stone-600 border border-stone-200 hover:border-sky-300 cursor-pointer focus:outline-none ${
+              filterSpotId !== null ? 'ring-2 ring-sky-500/60 text-sky-700' : ''
             }`}
           >
             <option value="">Filtrer par lieu...</option>
@@ -108,7 +109,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
 
           <button
             onClick={() => onAddPhoto?.(filterSpotId)}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-amber-500 hover:text-stone-950 transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-sky-500 text-stone-950 hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/25"
           >
             <ImagePlus className="w-3.5 h-3.5" />
             Ajouter ma photo
@@ -119,17 +120,17 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
       {/* Photo grid */}
       {loading ? (
         <div className="pb-24 text-center">
-          <Loader2 className="w-10 h-10 text-stone-600 animate-spin mx-auto" />
+          <Loader2 className="w-10 h-10 text-sky-500 animate-spin mx-auto" />
         </div>
       ) : filtered.length === 0 ? (
         <div className="pb-24 text-center max-w-md mx-auto px-6">
-          <Camera className="w-12 h-12 text-stone-700 mx-auto mb-3" />
+          <Camera className="w-12 h-12 text-stone-300 mx-auto mb-3" />
           <p className="text-stone-500 text-sm">
             Aucune photo pour le moment. Soyez le premier explorateur à partager son souvenir !
           </p>
           <button
             onClick={() => onAddPhoto?.(filterSpotId)}
-            className="mt-5 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-bold py-2.5 px-5 rounded-full transition-colors"
+            className="mt-5 inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-stone-950 text-sm font-bold py-2.5 px-5 rounded-full transition-colors shadow-lg shadow-sky-500/25"
           >
             <ImagePlus className="w-4 h-4" />
             Ajouter ma photo
@@ -142,7 +143,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
               <button
                 key={p.id}
                 onClick={() => setLightboxIndex(i)}
-                className="group relative w-full mb-4 break-inside-avoid rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 text-left hover:border-amber-500/40 transition-all hover:shadow-xl hover:shadow-amber-500/5"
+                className="group relative w-full mb-4 break-inside-avoid rounded-2xl overflow-hidden bg-white border border-stone-200 text-left shadow-sm hover:border-sky-500/50 transition-all hover:shadow-xl hover:shadow-sky-500/10"
               >
                 <img
                   src={p.imageUrl}
@@ -151,19 +152,26 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent pointer-events-none" />
+
+                {!p.approved && (
+                  <span className="absolute top-3 left-3 flex items-center gap-1 text-[9px] font-bold px-2 py-1 rounded-full backdrop-blur-md bg-sky-400 text-stone-950 shadow">
+                    <Clock className="w-3 h-3" />
+                    En attente de validation
+                  </span>
+                )}
 
                 <div className="absolute bottom-0 inset-x-0 p-3 text-left pointer-events-none">
                   <p className="font-display text-white font-bold text-sm leading-tight">
                     {spotName(p.spotId)}
                   </p>
-                  <div className="flex items-center gap-2 mt-1 text-stone-300 text-[10px]">
+                  <div className="flex items-center gap-2 mt-1 text-stone-200 text-[10px]">
                     <span className="flex items-center gap-1">
-                      <User className="w-3 h-3 text-amber-400" />
+                      <User className="w-3 h-3 text-sky-400" />
                       {p.visitorName}
                     </span>
                     <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-amber-400" />
+                      <MapPin className="w-3 h-3 text-sky-400" />
                       {spotCity(p.spotId) || formatDate(p.createdAt)}
                     </span>
                   </div>
@@ -198,7 +206,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
           <div className="flex-1 flex items-center justify-center px-4 sm:px-16 min-h-0" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setLightboxIndex(i => (i === null ? i : (i - 1 + filtered.length) % filtered.length))}
-              className="absolute left-3 sm:left-5 p-2.5 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
+              className="absolute left-3 sm:left-5 p-2.5 rounded-full bg-black/50 hover:bg-sky-500 text-white hover:text-stone-950 transition-colors"
               aria-label="Photo précédente"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -213,7 +221,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
 
             <button
               onClick={() => setLightboxIndex(i => (i === null ? i : (i + 1) % filtered.length))}
-              className="absolute right-3 sm:right-5 p-2.5 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
+              className="absolute right-3 sm:right-5 p-2.5 rounded-full bg-black/50 hover:bg-sky-500 text-white hover:text-stone-950 transition-colors"
               aria-label="Photo suivante"
             >
               <ChevronRight className="w-6 h-6" />
@@ -222,18 +230,24 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
 
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 px-5 py-5" onClick={(e) => e.stopPropagation()}>
             <span className="flex items-center gap-2 text-sm text-stone-300">
-              <User className="w-4 h-4 text-amber-400" />
+              <User className="w-4 h-4 text-sky-400" />
               {current.visitorName}
             </span>
+            {!current.approved && (
+              <span className="flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-400/90 text-stone-950">
+                <Clock className="w-3 h-3" />
+                En attente de validation
+              </span>
+            )}
             <span className="flex items-center gap-2 text-sm text-stone-300">
-              <MapPin className="w-4 h-4 text-amber-400" />
+              <MapPin className="w-4 h-4 text-sky-400" />
               {spotName(current.spotId)} · {spotCity(current.spotId) || 'Bénin'}
             </span>
             <span className="text-sm text-stone-500">{formatDate(current.createdAt)}</span>
             {currentSpotId && (
               <button
                 onClick={() => { setLightboxIndex(null); onAddPhoto?.(currentSpotId); }}
-                className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-bold py-2 px-5 rounded-full transition-colors"
+                className="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-stone-950 text-sm font-bold py-2 px-5 rounded-full transition-colors"
               >
                 <ImagePlus className="w-4 h-4" />
                 Partager le mien
@@ -243,7 +257,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
 
           {current.message && (
             <p className="text-center text-stone-300 text-xs px-6 pb-4 flex items-center justify-center gap-2" onClick={(e) => e.stopPropagation()}>
-              <MessageSquare className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <MessageSquare className="w-3.5 h-3.5 text-sky-400 shrink-0" />
               {current.message}
             </p>
           )}

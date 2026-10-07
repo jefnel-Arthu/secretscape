@@ -19,7 +19,7 @@ interface DashboardHeaderProps {
 
 const presets: { value: TrafficPreset; label: string; icon: React.ReactNode; color: string }[] = [
   { value: 'normal', label: 'Normal', icon: <Activity size={12} />, color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-  { value: 'surge', label: 'Surge', icon: <Zap size={12} />, color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
+  { value: 'surge', label: 'Surge', icon: <Zap size={12} />, color: 'bg-sky-500/20 text-sky-400 border-sky-500/30' },
   { value: 'incident', label: 'Incident', icon: <Radio size={12} />, color: 'bg-red-500/20 text-red-400 border-red-500/30' },
   { value: 'sale', label: 'Sale', icon: <Clock size={12} />, color: 'bg-violet-500/20 text-violet-400 border-violet-500/30' },
 ];

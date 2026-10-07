@@ -39,7 +39,7 @@ export const MetricCards = ({
 }: MetricCardsProps) => {
   const cards = [
     { label: 'VISITEURS LIVE', value: activeVisitors.toLocaleString(), icon: Users, color: 'text-blue-600' },
-    { label: 'PAGES VUES', value: pageViews.toLocaleString(), icon: Eye, color: 'text-amber-600' },
+    { label: 'PAGES VUES', value: pageViews.toLocaleString(), icon: Eye, color: 'text-sky-600' },
     { label: 'VUES LIEUX', value: totalSpotViews.toLocaleString(), icon: MapPin, color: 'text-emerald-600' },
     { label: 'FAVORIS', value: totalFavorites.toLocaleString(), icon: Heart, color: 'text-rose-500' },
     { label: 'MESSAGES', value: totalMessages.toLocaleString(), icon: Mail, color: 'text-violet-600' },

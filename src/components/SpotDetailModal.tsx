@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HiddenSpot, VisitorPhoto } from '../types';
 import { CATEGORY_LABELS, SECRET_LEVEL_LABELS } from '../data/hiddenSpots';
+import { mergedVisitorPhotos } from '../lib/visitorPhotos';
 import {
   X,
   MapPin,
@@ -53,7 +54,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
     fetch(`/api/visitor-photos?spotId=${encodeURIComponent(spot.id)}`)
       .then((r) => r.json())
       .then((data) => {
-        if (!cancelled) setVisitorPhotos(data.photos || []);
+        if (!cancelled) setVisitorPhotos(mergedVisitorPhotos(data.photos || []));
       })
       .catch(() => {});
     return () => { cancelled = true; };
@@ -138,13 +139,13 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
 
           {/* Bottom Title Overlay */}
           <div className="absolute bottom-4 left-6 right-6 text-white space-y-1.5">
-            <div className="flex items-center gap-2 text-xs text-amber-300 font-semibold">
+            <div className="flex items-center gap-2 text-xs text-sky-300 font-semibold">
               <span className={`px-2 py-0.5 rounded-md ${categoryInfo.bg} ${categoryInfo.color} font-bold text-[10px]`}>
                 {categoryInfo.name}
               </span>
               <span className="text-stone-400">/</span>
               <span className="flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                <MapPin className="w-3.5 h-3.5 text-sky-400" />
                 {spot.city}, {spot.region}
               </span>
             </div>
@@ -164,13 +165,13 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
 
           {/* Quick Metrics Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {/* Duration - Amber */}
+            {/* Duration - sky */}
             <div className="relative bg-stone-50 p-3.5 rounded-2xl border border-stone-200/60 overflow-hidden group hover:shadow-md transition-shadow duration-200">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-amber-100 rounded-bl-[3rem] opacity-60" />
+              <div className="absolute top-0 right-0 w-16 h-16 bg-sky-100 rounded-bl-[3rem] opacity-60" />
               <span className="relative text-[10px] text-stone-400 font-bold block uppercase tracking-wider">Duree estimee</span>
               <span className="relative text-stone-900 font-bold text-sm flex items-center gap-1.5 mt-1">
-                <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-amber-100">
-                  <Clock className="w-3.5 h-3.5 text-amber-700" />
+                <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-sky-100">
+                  <Clock className="w-3.5 h-3.5 text-sky-700" />
                 </span>
                 {spot.estimatedDurationMinutes} min
               </span>
@@ -216,7 +217,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
           {/* Description */}
           <div className="space-y-2">
             <h4 className="font-display font-bold text-stone-900 text-base flex items-center gap-2">
-              <span className="w-1 h-5 bg-amber-500 rounded-full" />
+              <span className="w-1 h-5 bg-sky-500 rounded-full" />
               Histoire & Recit du lieu
             </h4>
             <p className="text-stone-600 text-sm leading-relaxed">
@@ -225,11 +226,11 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
           </div>
 
           {/* Secret Access Hint Highlight Box */}
-          <div className="bg-gradient-to-br from-amber-50 via-amber-50/80 to-amber-100/50 border border-amber-200/80 rounded-2xl p-4 space-y-2.5 text-amber-950 shadow-sm">
+          <div className="bg-gradient-to-br from-sky-50 via-sky-50/80 to-sky-100/50 border border-sky-200/80 rounded-2xl p-4 space-y-2.5 text-sky-950 shadow-sm">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 font-bold text-sm text-amber-950">
-                <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-amber-200/60">
-                  <Compass className="w-4.5 h-4.5 text-amber-700" />
+              <div className="flex items-center gap-2 font-bold text-sm text-sky-950">
+                <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-sky-200/60">
+                  <Compass className="w-4.5 h-4.5 text-sky-700" />
                 </span>
                 <span>Guide & Instructions Secretes d'Acces</span>
               </div>
@@ -240,7 +241,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
                 className={`text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 transition-all duration-200 cursor-pointer ${
                   isPlayingAudio
                     ? 'bg-rose-100 text-rose-700 hover:bg-rose-200 shadow-sm'
-                    : 'bg-amber-200/70 hover:bg-amber-200 text-amber-900 hover:shadow-sm'
+                    : 'bg-sky-200/70 hover:bg-sky-200 text-sky-900 hover:shadow-sm'
                 }`}
               >
                 {isPlayingAudio ? (
@@ -257,7 +258,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
               </button>
             </div>
 
-            <p className="text-amber-900/80 text-xs sm:text-sm leading-relaxed pl-10">
+            <p className="text-sky-900/80 text-xs sm:text-sm leading-relaxed pl-10">
               {spot.secretAccessHint}
             </p>
           </div>
@@ -277,7 +278,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
                   : 'bg-white hover:bg-stone-100 text-stone-700 border-stone-200 hover:shadow-sm'
               }`}
             >
-              <Navigation className="w-3.5 h-3.5 text-amber-600" />
+              <Navigation className="w-3.5 h-3.5 text-sky-600" />
               <span>{copiedGps ? 'GPS Copie !' : 'Copier Coordonnees GPS'}</span>
             </button>
           </div>
@@ -295,7 +296,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
                   body: JSON.stringify({ type: 'external_link', detail: `Clic site externe: ${spot.title} → ${spot.websiteUrl}`, spotId: spot.id }),
                 }).catch(() => {});
               }}
-              className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-3 px-5 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-blue-600 text-white font-bold py-3 px-5 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <ExternalLink className="w-4 h-4" />
               <span>Visiter le site</span>
@@ -308,9 +309,9 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
               const tagColors: Record<string, string> = {
                 nature: 'bg-emerald-50 text-emerald-700 border-emerald-200/60',
                 culture: 'bg-violet-50 text-violet-700 border-violet-200/60',
-                histoire: 'bg-amber-50 text-amber-700 border-amber-200/60',
+                histoire: 'bg-sky-50 text-sky-700 border-sky-200/60',
                 art: 'bg-rose-50 text-rose-700 border-rose-200/60',
-                gastronomie: 'bg-orange-50 text-orange-700 border-orange-200/60',
+                gastronomie: 'bg-blue-50 text-blue-700 border-blue-200/60',
                 architecture: 'bg-blue-50 text-blue-700 border-blue-200/60',
                 sport: 'bg-red-50 text-red-700 border-red-200/60',
                 marche: 'bg-teal-50 text-teal-700 border-teal-200/60',
@@ -335,8 +336,8 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
           <div className="space-y-2.5">
             <div className="flex items-center justify-between gap-2">
               <h4 className="font-display font-bold text-stone-900 text-base flex items-center gap-2">
-                <span className="w-1 h-5 bg-amber-500 rounded-full" />
-                <Camera className="w-4 h-4 text-amber-500" />
+                <span className="w-1 h-5 bg-sky-500 rounded-full" />
+                <Camera className="w-4 h-4 text-sky-500" />
                 Souvenirs des visiteurs
                 {visitorPhotos.length > 0 && (
                   <span className="text-xs text-stone-400 font-normal">({visitorPhotos.length})</span>
@@ -344,7 +345,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
               </h4>
               <button
                 onClick={() => onAddPhoto?.(spot)}
-                className="flex items-center gap-1.5 text-[11px] font-bold bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 px-3 py-1.5 rounded-xl transition-colors shrink-0"
+                className="flex items-center gap-1.5 text-[11px] font-bold bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 px-3 py-1.5 rounded-xl transition-colors shrink-0"
               >
                 <ImagePlus className="w-3.5 h-3.5" />
                 Ajouter ma photo
@@ -363,7 +364,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
                   <button
                     key={photo.id}
                     onClick={() => onViewAllPhotos?.(spot)}
-                    className="relative shrink-0 w-20 h-20 rounded-2xl overflow-hidden border border-stone-200 group hover:border-amber-500/60 transition-colors"
+                    className="relative shrink-0 w-20 h-20 rounded-2xl overflow-hidden border border-stone-200 group hover:border-sky-500/60 transition-colors"
                     title={`${photo.visitorName} — ${new Date(photo.createdAt).toLocaleDateString('fr-FR')}`}
                   >
                     <img
@@ -373,6 +374,9 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                     />
+                    {!photo.approved && (
+                      <span className="absolute bottom-1 right-1 w-2.5 h-2.5 rounded-full bg-sky-400 ring-2 ring-white" title="En attente de validation" />
+                    )}
                   </button>
                 ))}
                 {visitorPhotos.length > 10 && (
@@ -414,7 +418,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
               onAddToCalendar(spot);
               onClose();
             }}
-            className="bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-stone-950 font-bold text-xs py-2.5 px-5 rounded-xl flex items-center gap-2 shadow-md shadow-amber-500/25 hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-200 cursor-pointer"
+            className="bg-gradient-to-r from-sky-500 to-sky-400 hover:from-sky-600 hover:to-sky-500 text-stone-950 font-bold text-xs py-2.5 px-5 rounded-xl flex items-center gap-2 shadow-md shadow-sky-500/25 hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-200 cursor-pointer"
           >
             <CalendarPlus className="w-4 h-4" />
             <span>Ajouter a mon calendrier</span>

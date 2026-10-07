@@ -345,8 +345,8 @@ export default function App() {
       
       {/* Toast Floating Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-[700] bg-stone-900 text-stone-100 px-4 py-3 rounded-2xl shadow-2xl border border-stone-700 flex items-center gap-2 text-xs font-semibold animate-in fade-in slide-in-from-bottom-5">
-          <Sparkles className="w-4 h-4 text-amber-400" />
+        <div className="fixed bottom-6 right-6 z-[700] bg-white text-stone-900 px-4 py-3 rounded-2xl shadow-2xl border border-sky-200 flex items-center gap-2 text-xs font-semibold animate-in fade-in slide-in-from-bottom-5">
+          <Sparkles className="w-4 h-4 text-sky-500" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -568,16 +568,16 @@ export default function App() {
         )}
 
       {/* Footer */}
-      <footer className="bg-stone-900 border-t border-stone-800">
+      <footer className="bg-white border-t border-sky-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-stone-900">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center text-white">
                 <Compass className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div>
-                <span className="font-display text-lg font-bold text-stone-100 block leading-none">
-                  Secret<span className="text-amber-400">Scape</span>
+                <span className="font-display text-lg font-bold text-sky-950 block leading-none">
+                  Secret<span className="text-sky-500">Scape</span>
                 </span>
                 <span className="text-[10px] text-stone-500 font-medium tracking-wider uppercase block mt-0.5">
                   Lieux Cachés & Itinéraires
@@ -588,14 +588,14 @@ export default function App() {
               Conçu pour les explorateurs de lieux cachés et de pépites méconnues du Bénin.
             </p>
           </div>
-          <div className="mt-6 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-stone-600">
+          <div className="mt-6 pt-6 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-stone-500">
             <span>&copy; {new Date().getFullYear()} SecretScape. Tous droits réservés.</span>
             <div className="flex items-center gap-4">
-              <button onClick={() => setActiveTab('services')} className="hover:text-amber-400 transition-colors font-medium">Services</button>
-              <span className="text-stone-800">•</span>
-              <button onClick={() => setActiveTab('contact')} className="hover:text-amber-400 transition-colors font-medium">Contact</button>
-              <span className="text-stone-800">•</span>
-              <button onClick={() => setActiveTab('addSpot')} className="hover:text-amber-400 transition-colors font-medium">Proposer un lieu</button>
+              <button onClick={() => setActiveTab('services')} className="hover:text-sky-600 transition-colors font-medium">Services</button>
+              <span className="text-stone-200">•</span>
+              <button onClick={() => setActiveTab('contact')} className="hover:text-sky-600 transition-colors font-medium">Contact</button>
+              <span className="text-stone-200">•</span>
+              <button onClick={() => setActiveTab('addSpot')} className="hover:text-sky-600 transition-colors font-medium">Proposer un lieu</button>
             </div>
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />

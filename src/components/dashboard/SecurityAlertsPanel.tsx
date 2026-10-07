@@ -17,7 +17,7 @@ interface SecurityAlertsPanelProps {
 const severityColor: Record<SecurityAlert['severity'], string> = {
   low: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   medium: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-  high: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+  high: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   critical: 'bg-red-500/20 text-red-400 border-red-500/30',
 };
 
@@ -40,7 +40,7 @@ const categoryColor: Record<SecurityAlert['category'], string> = {
   bruteforce: 'bg-pink-500/20 text-pink-400 border-pink-500/30',
   sqli: 'bg-red-500/20 text-red-400 border-red-500/30',
   anomaly: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
-  waf: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+  waf: 'bg-sky-500/20 text-sky-400 border-sky-500/30',
 };
 
 const categoryIcon: Record<SecurityAlert['category'], React.ElementType> = {

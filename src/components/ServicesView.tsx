@@ -40,19 +40,19 @@ const SERVICES: ServiceDetail[] = [
     ],
     cities: 'Cotonou, Ouidah, Abomey, Ganvié, Grand-Popo, Natitingou, Parc Pendjari',
     gradient: {
-      from: 'from-amber-400',
-      via: 'via-orange-400',
-      to: 'to-orange-500',
-      accent: 'text-amber-600',
-      bg: 'bg-amber-50',
-      ring: 'ring-amber-200',
-      bar: 'from-amber-400 to-orange-500',
-      iconBg: 'bg-gradient-to-br from-amber-400 to-orange-500',
+      from: 'from-sky-400',
+      via: 'via-blue-400',
+      to: 'to-blue-500',
+      accent: 'text-sky-600',
+      bg: 'bg-sky-50',
+      ring: 'ring-sky-200',
+      bar: 'from-sky-400 to-blue-500',
+      iconBg: 'bg-gradient-to-br from-sky-400 to-blue-500',
       iconText: 'text-white',
-      hoverBorder: 'hover:border-amber-400',
-      headerFrom: 'from-amber-500',
-      headerTo: 'to-orange-600',
-      badge: 'bg-amber-100 text-amber-700',
+      hoverBorder: 'hover:border-sky-400',
+      headerFrom: 'from-sky-500',
+      headerTo: 'to-blue-600',
+      badge: 'bg-sky-100 text-sky-700',
     },
   },
   {
@@ -183,19 +183,19 @@ const SERVICES: ServiceDetail[] = [
     ],
     cities: 'Toutes les régions du Bénin',
     gradient: {
-      from: 'from-amber-400',
+      from: 'from-sky-400',
       via: 'via-yellow-400',
       to: 'to-yellow-500',
-      accent: 'text-amber-600',
-      bg: 'bg-amber-50',
-      ring: 'ring-amber-200',
-      bar: 'from-amber-400 to-yellow-500',
-      iconBg: 'bg-gradient-to-br from-amber-400 to-yellow-500',
+      accent: 'text-sky-600',
+      bg: 'bg-sky-50',
+      ring: 'ring-sky-200',
+      bar: 'from-sky-400 to-yellow-500',
+      iconBg: 'bg-gradient-to-br from-sky-400 to-yellow-500',
       iconText: 'text-white',
-      hoverBorder: 'hover:border-amber-400',
-      headerFrom: 'from-amber-500',
+      hoverBorder: 'hover:border-sky-400',
+      headerFrom: 'from-sky-500',
       headerTo: 'to-yellow-600',
-      badge: 'bg-amber-100 text-amber-700',
+      badge: 'bg-sky-100 text-sky-700',
     },
   },
 ];
@@ -216,15 +216,15 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 rounded-b-3xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 via-sky-500 to-blue-600 rounded-b-3xl">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-3xl" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 ring-1 ring-amber-500/20">
+          <div className="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-6 ring-1 ring-white/25">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Tous nos services</span>
           </div>
@@ -232,7 +232,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
           <h1 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4 tracking-tight">
             Votre voyage, notre expertise
           </h1>
-          <p className="text-stone-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-sky-100 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
             Du transfert aéroport à l'excursion sur mesure, nous couvrons chaque aspect de votre séjour au Bénin avec soin et professionnalisme.
           </p>
 
@@ -240,9 +240,9 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
             {BADGES.map((badge) => (
               <div
                 key={badge.label}
-                className="flex items-center gap-2 bg-white/5 text-stone-300 text-xs font-medium px-4 py-2 rounded-full ring-1 ring-white/10 backdrop-blur-sm"
+                className="flex items-center gap-2 bg-white/10 text-white text-xs font-medium px-4 py-2 rounded-full ring-1 ring-white/20 backdrop-blur-sm"
               >
-                <span className="text-amber-400">{badge.icon}</span>
+                <span>{badge.icon}</span>
                 <span>{badge.label}</span>
               </div>
             ))}
@@ -341,14 +341,14 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <button
                     onClick={() => { setSelected(null); onNavigateToContact(); }}
-                    className="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors flex-1"
+                    className="bg-sky-500 hover:bg-sky-600 text-stone-950 font-bold px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors flex-1"
                   >
                     <Phone className="w-4 h-4" />
                     <span>Nous contacter</span>
                   </button>
                   <a
                     href="tel:+2290191722907"
-                    className="bg-stone-900 hover:bg-stone-800 text-amber-300 font-bold px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors flex-1"
+                    className="bg-white hover:bg-sky-50 text-sky-700 border border-stone-200 font-bold px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors flex-1"
                   >
                     <Phone className="w-4 h-4" />
                     <span>Appeler maintenant</span>
@@ -360,16 +360,16 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
         )}
 
         {/* CTA Banner */}
-        <div className="bg-stone-900 rounded-3xl text-stone-100 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="bg-gradient-to-br from-sky-600 via-sky-500 to-blue-600 rounded-3xl text-white p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl shadow-sky-500/20">
           <div>
             <h2 className="font-display font-bold text-lg">Besoin d'un accompagnement sur mesure ?</h2>
-            <p className="text-stone-400 text-xs mt-1">
+            <p className="text-sky-100 text-xs mt-1">
               Renseignez-nous vos informations et nous vous recontactons au plus vite.
             </p>
           </div>
           <button
             onClick={onNavigateToContact}
-            className="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-5 py-3 rounded-xl text-sm flex items-center gap-2 transition-colors shrink-0"
+            className="bg-white hover:bg-white/90 text-sky-700 font-bold px-5 py-3 rounded-xl text-sm flex items-center gap-2 transition-colors shrink-0 shadow-lg"
           >
             <Phone className="w-4 h-4" />
             <span>Nous contacter</span>
@@ -378,7 +378,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
         </div>
 
         <div className="flex items-center gap-2 text-stone-400 text-xs">
-          <MapPin className="w-4 h-4 text-amber-600" />
+          <MapPin className="w-4 h-4 text-sky-600" />
           <span>Bénin — Cotonou, Ouidah, Abomey, Grand-Popo et plus encore.</span>
         </div>
       </div>

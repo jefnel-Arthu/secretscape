@@ -20,14 +20,14 @@ interface NetworkTrafficViewProps {
 const methodColors: Record<string, string> = {
   GET: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
   POST: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  PUT: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  PATCH: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+  PUT: 'bg-sky-500/20 text-sky-400 border-sky-500/30',
+  PATCH: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   DELETE: 'bg-red-500/20 text-red-400 border-red-500/30',
 };
 
 function statusDot(errorCount: number) {
   if (errorCount === 0) return 'bg-emerald-400';
-  if (errorCount < 10) return 'bg-amber-400';
+  if (errorCount < 10) return 'bg-sky-400';
   return 'bg-red-400';
 }
 

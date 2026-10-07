@@ -3815,7 +3815,7 @@ export const INITIAL_HIDDEN_SPOTS: HiddenSpot[] = RAW_SPOTS.map((spot) =>
 
 export const CATEGORY_LABELS: Record<string, { name: string; icon: string; color: string; bg: string }> = {
   plages: { name: 'Plages', icon: 'Waves', color: 'text-sky-700', bg: 'bg-sky-100' },
-  restaurants: { name: 'Restaurants', icon: 'Utensils', color: 'text-orange-700', bg: 'bg-orange-100' },
+  restaurants: { name: 'Restaurants', icon: 'Utensils', color: 'text-blue-700', bg: 'bg-blue-100' },
   boites: { name: 'Boîtes de nuit', icon: 'Music', color: 'text-fuchsia-700', bg: 'bg-fuchsia-100' },
   transports: { name: 'Moyens de transport', icon: 'Bike', color: 'text-cyan-700', bg: 'bg-cyan-100' },
   sites: { name: 'Sites touristiques', icon: 'Landmark', color: 'text-emerald-700', bg: 'bg-emerald-100' },
@@ -3824,6 +3824,6 @@ export const CATEGORY_LABELS: Record<string, { name: string; icon: string; color
 
 export const SECRET_LEVEL_LABELS: Record<string, { label: string; badgeClass: string }> = {
   facile: { label: 'Accessible', badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
-  moyen: { label: 'Bien caché', badgeClass: 'bg-amber-50 text-amber-700 border-amber-200' },
+  moyen: { label: 'Bien caché', badgeClass: 'bg-sky-50 text-sky-700 border-sky-200' },
   insider: { label: "Secret d'initié", badgeClass: 'bg-rose-50 text-rose-700 border-rose-200' },
 };

@@ -58,7 +58,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
     <div className="max-w-6xl mx-auto p-4 sm:p-6 space-y-6 font-sans">
       
       {/* Barre d'actions & Sélecteur de jour */}
-      <div className="flex flex-wrap items-center justify-between gap-4 bg-stone-900 text-stone-100 p-4 rounded-2xl border border-stone-800">
+      <div className="flex flex-wrap items-center justify-between gap-4 bg-white text-stone-800 p-4 rounded-2xl border border-stone-200 shadow-sm">
         <div className="flex items-center gap-2 overflow-x-auto">
           {data.days.map((day, idx) => (
             <button
@@ -66,8 +66,8 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
               onClick={() => setSelectedDayIndex(idx)}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 selectedDayIndex === idx
-                  ? 'bg-amber-500 text-stone-950 shadow-md'
-                  : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
+                  ? 'bg-sky-500 text-stone-950 shadow-md'
+                  : 'bg-stone-100 text-stone-500 hover:bg-stone-200'
               }`}
             >
               Jour {day.dayNumber} ({day.items.length} étapes)
@@ -80,8 +80,8 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
             onClick={() => setIsStamped(!isStamped)}
             className={`text-xs font-bold px-3 py-1.5 rounded-xl border flex items-center gap-1.5 transition-all ${
               isStamped
-                ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
-                : 'bg-stone-800 text-stone-400 border-stone-700'
+                ? 'bg-emerald-500/15 text-emerald-700 border-emerald-400/50'
+                : 'bg-stone-100 text-stone-500 border-stone-200'
             }`}
           >
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -90,15 +90,15 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
 
           <button
             onClick={() => setIsTorn(!isTorn)}
-            className="text-xs font-bold px-3 py-1.5 rounded-xl bg-stone-800 text-stone-300 border border-stone-700 hover:bg-stone-700 flex items-center gap-1.5"
+            className="text-xs font-bold px-3 py-1.5 rounded-xl bg-stone-100 text-stone-600 border border-stone-200 hover:bg-stone-200 flex items-center gap-1.5"
           >
-            <Scissors className="w-3.5 h-3.5 text-amber-400" />
+            <Scissors className="w-3.5 h-3.5 text-sky-500" />
             <span>{isTorn ? 'Reconnecter' : 'Détacher Talon'}</span>
           </button>
 
           <button
             onClick={() => window.print()}
-            className="text-xs font-bold px-3 py-1.5 rounded-xl bg-amber-500 text-stone-950 flex items-center gap-1.5 hover:bg-amber-400"
+            className="text-xs font-bold px-3 py-1.5 rounded-xl bg-sky-500 text-stone-950 flex items-center gap-1.5 hover:bg-sky-400"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Imprimer</span>
@@ -147,7 +147,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
           <div className="px-6 py-4 bg-stone-50 border-b border-stone-200 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
             <div>
               <span className="text-[9px] text-stone-400 font-bold uppercase tracking-wider block">ROUTE</span>
-              <span className="font-mono font-black text-lg text-amber-600">
+              <span className="font-mono font-black text-lg text-sky-600">
                 {data.originCode} ➔ {data.destCode}
               </span>
               <span className="text-[10px] text-stone-500 block">{data.destName}</span>
@@ -160,7 +160,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
 
             <div>
               <span className="text-[9px] text-stone-400 font-bold uppercase tracking-wider block">PORTE / SIÈGE</span>
-              <span className="font-mono font-bold text-amber-600 block mt-0.5">{data.gate} • {data.seat}</span>
+              <span className="font-mono font-bold text-sky-600 block mt-0.5">{data.gate} • {data.seat}</span>
             </div>
 
             <div>
@@ -173,7 +173,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
 
           <div className="p-6 flex-1 space-y-4">
             <div className="flex items-center justify-between border-b border-stone-200 pb-2">
-              <span className="flex items-center gap-2 text-xs font-bold text-amber-700 uppercase tracking-wide">
+              <span className="flex items-center gap-2 text-xs font-bold text-sky-700 uppercase tracking-wide">
                 <CalendarIcon className="w-4 h-4" />
                 <span>Horaires & Planning Établi</span>
               </span>
@@ -189,13 +189,13 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
                   className={`p-3.5 rounded-2xl border transition-all ${
                     item.isCompleted
                       ? 'bg-emerald-50 border-emerald-200 opacity-70'
-                      : 'bg-stone-50 border-stone-200 hover:border-amber-300'
+                      : 'bg-stone-50 border-stone-200 hover:border-sky-300'
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <button
                       onClick={() => toggleItem(item.id)}
-                      className="mt-0.5 text-stone-400 hover:text-amber-600 transition-colors"
+                      className="mt-0.5 text-stone-400 hover:text-sky-600 transition-colors"
                     >
                       {item.isCompleted ? (
                         <CheckCircle2 className="w-5 h-5 text-emerald-500" />
@@ -206,7 +206,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
 
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md">
+                        <span className="font-mono text-xs font-bold text-sky-700 bg-sky-100 px-2 py-0.5 rounded-md">
                           {item.timeString}
                         </span>
                         {item.slotLabel && (
@@ -226,12 +226,12 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
                       </h4>
 
                       <p className="text-xs text-stone-500 mt-0.5 flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-amber-500" />
+                        <MapPin className="w-3 h-3 text-sky-500" />
                         {item.location}
                       </p>
 
                       {item.accessHint && (
-                        <div className="mt-2 text-[11px] text-amber-800 bg-amber-50 p-2 rounded-lg border border-amber-200">
+                        <div className="mt-2 text-[11px] text-sky-800 bg-sky-50 p-2 rounded-lg border border-sky-200">
                           <strong>Accès :</strong> {item.accessHint}
                         </div>
                       )}
@@ -252,7 +252,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
         <div
           className={`w-full lg:w-72 rounded-3xl lg:rounded-l-none border border-stone-200 bg-stone-50 text-stone-900 p-5 flex flex-col justify-between relative transition-all duration-300 ${
             isTorn
-              ? 'lg:translate-x-4 lg:rotate-1 border-dashed border-amber-400 shadow-xl opacity-90'
+              ? 'lg:translate-x-4 lg:rotate-1 border-dashed border-sky-400 shadow-xl opacity-90'
               : 'border-dashed border-t-0 lg:border-t lg:border-l-0'
           }`}
         >
@@ -262,10 +262,10 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
           <div className="space-y-4">
             <div className="flex items-center justify-between pb-2 border-b border-stone-200 text-[10px] text-stone-400 font-mono">
               <span className="flex items-center gap-1">
-                <Scissors className="w-3 h-3 text-amber-500" />
+                <Scissors className="w-3 h-3 text-sky-500" />
                 SOUCHE DÉTACHABLE
               </span>
-              <span className="text-amber-600 font-bold">{data.flightNumber}</span>
+              <span className="text-sky-600 font-bold">{data.flightNumber}</span>
             </div>
 
             <div className="space-y-2 text-xs">
@@ -276,7 +276,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
               <div className="grid grid-cols-2 gap-2">
                 <div>
                   <span className="text-[9px] text-stone-400 uppercase font-bold block">SIÈGE</span>
-                  <span className="font-mono font-bold text-amber-600">{data.seat}</span>
+                  <span className="font-mono font-bold text-sky-600">{data.seat}</span>
                 </div>
                 <div>
                   <span className="text-[9px] text-stone-400 uppercase font-bold block">PORTE</span>
@@ -292,7 +292,7 @@ export const FlightTicketCalendar: React.FC<{ initialData: FlightTicketData }> =
               {currentDay.items.map((item) => (
                 <div key={item.id} className="flex items-center justify-between text-[10px]">
                   <span className="text-stone-600 truncate max-w-[120px]">{item.title}</span>
-                  <span className="font-mono text-amber-600 font-bold">{item.timeString}</span>
+                  <span className="font-mono text-sky-600 font-bold">{item.timeString}</span>
                 </div>
               ))}
             </div>

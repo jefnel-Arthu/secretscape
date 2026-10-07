@@ -370,7 +370,7 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
         )}
 
         {error && (
-          <div className="flex items-center gap-2 text-amber-600 bg-amber-50 rounded-xl px-4 py-3 text-xs mx-4 mt-3">
+          <div className="flex items-center gap-2 text-sky-600 bg-sky-50 rounded-xl px-4 py-3 text-xs mx-4 mt-3">
             <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>

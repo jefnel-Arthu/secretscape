@@ -159,7 +159,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
       <div className="fixed inset-0 z-[800] bg-black/60 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl max-w-sm w-full p-8 shadow-2xl space-y-6">
           <div className="text-center">
-            <div className="w-14 h-14 rounded-2xl bg-stone-900 text-amber-400 flex items-center justify-center mx-auto mb-3">
+            <div className="w-14 h-14 rounded-2xl bg-sky-500 text-stone-950 flex items-center justify-center mx-auto mb-3">
               <Lock className="w-7 h-7" />
             </div>
             <h2 className="font-display font-bold text-lg text-stone-900">Espace Admin</h2>
@@ -171,13 +171,13 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
             onChange={(e) => setPassword(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
             placeholder="Mot de passe"
-            className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+            className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
           />
           {loginError && <p className="text-xs text-red-500 text-center">{loginError}</p>}
           <button
             onClick={handleLogin}
             disabled={loading}
-            className="w-full bg-stone-900 hover:bg-stone-800 text-amber-300 font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors"
+            className="w-full bg-sky-500 hover:bg-sky-400 text-stone-950 font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors shadow-lg shadow-sky-500/25"
           >
             {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Lock className="w-4 h-4" />}
             <span>Se connecter</span>
@@ -204,17 +204,17 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[800] bg-stone-100 flex flex-col overflow-auto">
       {/* Top bar */}
-      <div className="bg-stone-900 text-stone-100 px-4 py-3 flex items-center justify-between shrink-0">
+      <div className="bg-white border-b border-sky-100 text-stone-800 px-4 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2">
-          <Lock className="w-5 h-5 text-amber-400" />
-          <span className="font-display font-bold text-sm">Admin SecretScape</span>
+          <Lock className="w-5 h-5 text-sky-500" />
+          <span className="font-display font-bold text-sm text-sky-950">Admin SecretScape</span>
         </div>
         <div className="flex items-center gap-2">
-          <button onClick={() => { fetchStats(); fetchMessages(); fetchPhotos(); }} className="p-2 hover:bg-stone-800 rounded-lg text-xs text-stone-300 transition-colors">Rafraîchir</button>
-          <button onClick={logout} className="p-2 hover:bg-stone-800 rounded-lg text-xs text-stone-300 flex items-center gap-1 transition-colors">
+          <button onClick={() => { fetchStats(); fetchMessages(); fetchPhotos(); }} className="px-2.5 py-1.5 hover:bg-sky-50 rounded-lg text-xs text-stone-600 hover:text-sky-700 transition-colors">Rafraîchir</button>
+          <button onClick={logout} className="px-2.5 py-1.5 hover:bg-sky-50 rounded-lg text-xs text-stone-600 hover:text-sky-700 flex items-center gap-1 transition-colors">
             <LogOut className="w-4 h-4" /> Déconnexion
           </button>
-          <button onClick={onClose} className="p-2 hover:bg-stone-800 rounded-lg text-xs text-stone-300 transition-colors">✕</button>
+          <button onClick={onClose} className="p-2 hover:bg-sky-50 rounded-lg text-xs text-stone-600 hover:text-sky-700 transition-colors">✕</button>
         </div>
       </div>
 
@@ -226,7 +226,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
             onClick={() => setActiveTab(t.key)}
             className={`px-4 py-3 text-xs font-semibold flex items-center gap-1.5 border-b-2 transition-colors ${
               activeTab === t.key
-                ? 'border-amber-500 text-amber-600'
+                ? 'border-sky-500 text-sky-600'
                 : 'border-transparent text-stone-400 hover:text-stone-600'
             }`}
           >
@@ -253,7 +253,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                 { label: 'Visites page', value: stats.pageViews, color: 'text-blue-600 bg-blue-50 border-blue-200' },
                 { label: 'Vues lieux', value: stats.totalSpotViews, color: 'text-emerald-600 bg-emerald-50 border-emerald-200' },
                 { label: 'Favoris ajoutés', value: stats.totalFavorites, color: 'text-rose-600 bg-rose-50 border-rose-200' },
-                { label: 'Messages', value: stats.totalMessages, color: 'text-amber-600 bg-amber-50 border-amber-200' },
+                { label: 'Messages', value: stats.totalMessages, color: 'text-sky-600 bg-sky-50 border-sky-200' },
               ].map(c => (
                 <div key={c.label} className={`rounded-2xl border p-4 ${c.color}`}>
                   <p className="text-2xl font-bold">{c.value}</p>
@@ -265,7 +265,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
             {stats.topSpots.length > 0 && (
               <div className="bg-white rounded-2xl border border-stone-200 p-5">
                 <h3 className="font-display font-bold text-sm text-stone-900 mb-3 flex items-center gap-2">
-                  <Eye className="w-4 h-4 text-amber-600" /> Lieux les plus vus
+                  <Eye className="w-4 h-4 text-sky-600" /> Lieux les plus vus
                 </h3>
                 <div className="space-y-2">
                   {stats.topSpots.map(s => (
@@ -305,12 +305,12 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
             ) : (
               <div className="space-y-3">
                 {messages.map(msg => (
-                  <div key={msg.id} className={`bg-white rounded-2xl border p-5 space-y-2 ${msg.read ? 'border-stone-200' : 'border-amber-300 bg-amber-50/30'}`}>
+                  <div key={msg.id} className={`bg-white rounded-2xl border p-5 space-y-2 ${msg.read ? 'border-stone-200' : 'border-sky-300 bg-sky-50/30'}`}>
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="font-bold text-sm text-stone-900">{msg.name}</span>
-                          {!msg.read && <span className="bg-amber-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">Nouveau</span>}
+                          {!msg.read && <span className="bg-sky-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">Nouveau</span>}
                         </div>
                         <p className="text-xs text-stone-500 mt-0.5">
                           {msg.email}{msg.phone ? ` · ${msg.phone}` : ''}{msg.city ? ` · ${msg.city}` : ''}
@@ -373,7 +373,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                   </thead>
                   <tbody>
                     {stats.topFavs.map((s, i) => (
-                      <tr key={s.id} className={`border-b border-stone-100 ${i === 0 ? 'bg-amber-50' : ''}`}>
+                      <tr key={s.id} className={`border-b border-stone-100 ${i === 0 ? 'bg-sky-50' : ''}`}>
                         <td className="px-4 py-3 text-stone-700 truncate max-w-[300px]">{s.id}</td>
                         <td className="px-4 py-3 text-right font-bold text-stone-900">{s.count}</td>
                       </tr>
@@ -403,7 +403,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
               <h2 className="font-display font-bold text-lg text-stone-900">
                 Photos des visiteurs ({photos.length})
               </h2>
-              <span className="text-xs text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-full font-semibold">
+              <span className="text-xs text-sky-700 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-full font-semibold">
                 {pendingPhotosCount} en attente de validation
               </span>
             </div>
@@ -415,7 +415,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                 {[...photos]
                   .sort((a, b) => Number(a.approved) - Number(b.approved) || b.createdAt.localeCompare(a.createdAt))
                   .map(photo => (
-                    <div key={photo.id} className={`bg-white rounded-2xl border overflow-hidden flex flex-col ${photo.approved ? 'border-stone-200' : 'border-amber-300 bg-amber-50/30'}`}>
+                    <div key={photo.id} className={`bg-white rounded-2xl border overflow-hidden flex flex-col ${photo.approved ? 'border-stone-200' : 'border-sky-300 bg-sky-50/30'}`}>
                       <div className="relative h-44 bg-stone-100">
                         <img
                           src={photo.imageUrl}
@@ -423,13 +423,13 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                           className="w-full h-full object-cover"
                           onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                         />
-                        <span className={`absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-full ${photo.approved ? 'bg-emerald-500 text-white' : 'bg-amber-500 text-stone-950'}`}>
+                        <span className={`absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-full ${photo.approved ? 'bg-emerald-500 text-white' : 'bg-sky-500 text-stone-950'}`}>
                           {photo.approved ? 'Publiée' : 'En attente'}
                         </span>
                       </div>
                       <div className="p-3 space-y-1.5 flex-1">
                         <p className="font-bold text-sm text-stone-900 flex items-center gap-1.5">
-                          <User className="w-3.5 h-3.5 text-amber-500" />
+                          <User className="w-3.5 h-3.5 text-sky-500" />
                           {photo.visitorName}
                         </p>
                         <p className="text-xs text-stone-500">
