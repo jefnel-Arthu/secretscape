@@ -199,7 +199,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
       {/* ═══════════════════════════════════════════════ STATS ═══ */}
       <section className="relative -mt-16 z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-stone-900/95 backdrop-blur-xl rounded-3xl border border-stone-800 shadow-2xl shadow-stone-900/50 p-6 sm:p-8">
+        <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-sky-100 shadow-xl shadow-sky-500/10 p-6 sm:p-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { icon: MapPin, value: `${INITIAL_HIDDEN_SPOTS.length}+`, label: 'Lieux secrets', gradient: 'from-sky-500 to-blue-500' },
@@ -208,10 +208,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               { icon: Star, value: '4.8', label: 'Note moyenne', gradient: 'from-yellow-500 to-sky-500' },
             ].map(({ icon: Icon, value, label, gradient }) => (
               <div key={label} className="text-center space-y-2">
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto shadow-lg`}>
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto shadow-lg shadow-sky-500/10`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-2xl font-black text-white">{value}</div>
+                <div className="text-2xl font-black text-stone-900">{value}</div>
                 <div className="text-[11px] text-stone-500 font-semibold uppercase tracking-wider">{label}</div>
               </div>
             ))}
