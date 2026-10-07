@@ -94,9 +94,9 @@ export const MapExplorer: React.FC<MapExplorerProps> = ({
       // Fix gray map when container is laid out after mount
       setTimeout(() => map.invalidateSize(), 200);
 
-      // OpenStreetMap tiles
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      // Esri World Street Map tiles
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; Esri, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
       }).addTo(map);
 
