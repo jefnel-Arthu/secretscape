@@ -120,7 +120,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
             {onNavigate && (
               <button
                 onClick={(e) => { e.stopPropagation(); onNavigate(spot); }}
-                className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all active:scale-95"
+                className="bg-sky-500 hover:bg-sky-400 text-stone-950 text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-md shadow-sky-500/25 transition-all active:scale-95"
                 title="Y aller"
               >
                 <Navigation className="w-3.5 h-3.5" />

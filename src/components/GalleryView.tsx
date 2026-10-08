@@ -365,7 +365,7 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
             onClick={() => { setActiveEventId(null); setLightboxIndex(null); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
               activeEventId === null
-                ? 'bg-stone-900 text-white shadow-lg shadow-stone-900/20'
+                ? 'bg-sky-500 text-stone-950 shadow-lg shadow-sky-500/30'
                 : 'bg-white text-stone-600 border border-stone-200 hover:border-sky-300 hover:text-sky-700'
             }`}
           >
@@ -382,7 +382,7 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
                 onClick={() => { setActiveEventId(ev.id); setLightboxIndex(null); }}
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
                   activeEventId === ev.id
-                    ? 'bg-stone-900 text-white shadow-lg shadow-stone-900/20'
+                    ? 'bg-sky-500 text-stone-950 shadow-lg shadow-sky-500/30'
                     : 'bg-white text-stone-600 border border-stone-200 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700'
                 }`}
               >

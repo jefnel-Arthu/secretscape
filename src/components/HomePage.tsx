@@ -47,14 +47,14 @@ const CATEGORY_CARDS = [
     name: 'Gastronomie',
     desc: 'Saveurs authentiques et adresses cachées',
     image: '/images/petit-four.jpg',
-    color: 'from-rose-500 to-pink-600',
+    color: 'from-emerald-500 to-teal-500',
   },
   {
     key: 'boites',
     name: 'Virée Nocturne',
     desc: 'Clubs et soirées exclusives',
     image: '/images/club-vip.jpg',
-    color: 'from-violet-500 to-purple-600',
+    color: 'from-indigo-500 to-blue-700',
   },
   {
     key: 'hotels',
@@ -68,7 +68,7 @@ const CATEGORY_CARDS = [
     name: 'Transport & Access',
     desc: 'Gozem & Yango, transferts',
     image: '/images/benin-taxi.jpg',
-    color: 'from-yellow-500 to-sky-600',
+    color: 'from-sky-500 to-cyan-600',
   },
 ];
 
@@ -205,7 +205,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               { icon: MapPin, value: `${INITIAL_HIDDEN_SPOTS.length}+`, label: 'Lieux secrets', gradient: 'from-sky-500 to-blue-500' },
               { icon: Globe, value: '15+', label: 'Villes couvertes', gradient: 'from-cyan-500 to-blue-500' },
               { icon: Users, value: '1000+', label: 'Explorateurs', gradient: 'from-emerald-500 to-teal-500' },
-              { icon: Star, value: '4.8', label: 'Note moyenne', gradient: 'from-yellow-500 to-sky-500' },
+              { icon: Star, value: '4.8', label: 'Note moyenne', gradient: 'from-teal-500 to-sky-600' },
             ].map(({ icon: Icon, value, label, gradient }) => (
               <div key={label} className="text-center space-y-2">
                 <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto shadow-lg shadow-sky-500/10`}>
