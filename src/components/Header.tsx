@@ -88,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Nav */}
-          <nav className="flex items-center gap-1.5">
+          <nav className="flex items-center gap-1 md:gap-1.5 min-w-0 max-w-full overflow-x-auto scrollbar-none">
             {NAV_ITEMS.map(({ tab, icon: Icon, label }) => {
               const isActive = activeTab === tab;
               let badge = 0;
@@ -101,14 +101,14 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => setActiveTab(tab)}
                   title={label}
                   aria-label={label}
-                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-2xl transition-all duration-200 ${
+                  className={`relative flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-2.5 rounded-2xl transition-all duration-200 shrink-0 ${
                     isActive
                       ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
                       : 'text-stone-300 hover:bg-stone-800 hover:text-white'
                   }`}
                 >
                   <Icon className="w-[18px] h-[18px]" strokeWidth={isActive ? 2.5 : 2} />
-                  <span className="text-sm font-semibold whitespace-nowrap">{label}</span>
+                  <span className="hidden sm:inline text-sm font-semibold whitespace-nowrap">{label}</span>
                   {badge > 0 && (
                     <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] flex items-center justify-center bg-amber-500 text-stone-950 text-[10px] font-black rounded-full px-1 shadow-sm">
                       {badge}
@@ -119,14 +119,14 @@ export const Header: React.FC<HeaderProps> = ({
             })}
 
             {/* Divider */}
-            <div className="w-px h-7 bg-stone-700/50 mx-1.5" />
+            <div className="w-px h-7 bg-stone-700/50 mx-1 md:mx-1.5 shrink-0" />
 
             {/* Admin */}
             <button
               onClick={() => setActiveTab('admin')}
               title="Admin"
               aria-label="Admin"
-              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
+              className={`w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 shrink-0 ${
                 activeTab === 'admin'
                   ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
                   : 'text-stone-500 hover:bg-stone-800 hover:text-stone-300 hover:scale-105'
