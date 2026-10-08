@@ -33,7 +33,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
 
   return (
     <div 
-      className="group bg-white rounded-3xl border border-stone-200/60 shadow-sm hover:shadow-2xl hover:shadow-sky-500/8 hover:-translate-y-1 transition-all duration-500 flex flex-col overflow-hidden cursor-pointer"
+      className="group bg-white rounded-3xl border border-stone-200/60 shadow-sm hover:shadow-2xl hover:shadow-amber-500/8 hover:-translate-y-1 transition-all duration-500 flex flex-col overflow-hidden cursor-pointer"
       onClick={() => onSelectSpot(spot)}
     >
       {/* Card Image */}
@@ -45,7 +45,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/10 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/0 via-transparent to-sky-600/10 group-hover:from-sky-500/10 transition-all duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 via-transparent to-amber-600/10 group-hover:from-amber-500/10 transition-all duration-500" />
 
         {/* Top Badges */}
         <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
@@ -72,11 +72,11 @@ export const SpotCard: React.FC<SpotCardProps> = ({
         {/* Bottom City & Rating */}
         <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-xs">
           <div className="flex items-center gap-1.5 font-medium text-white text-[11px] bg-stone-900/50 backdrop-blur-sm px-2.5 py-1 rounded-full">
-            <MapPin className="w-3 h-3 text-sky-400" />
+            <MapPin className="w-3 h-3 text-amber-400" />
             <span>{spot.city}</span>
           </div>
           <div className="flex items-center gap-1 bg-stone-900/50 backdrop-blur-sm px-2.5 py-1 rounded-full text-[11px] font-semibold">
-            <Star className="w-3 h-3 text-sky-400 fill-sky-400" />
+            <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
             <span className="text-white">{spot.rating}</span>
             <span className="text-stone-400 text-[10px]">({spot.reviewCount})</span>
           </div>
@@ -96,7 +96,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
             </span>
           </div>
 
-          <h3 className="font-display font-bold text-stone-900 text-lg group-hover:text-sky-700 transition-colors leading-snug">
+          <h3 className="font-display font-bold text-stone-900 text-lg group-hover:text-amber-700 transition-colors leading-snug">
             {spot.title}
           </h3>
 
@@ -106,9 +106,9 @@ export const SpotCard: React.FC<SpotCardProps> = ({
         </div>
 
         {/* Secret Hint Preview */}
-        <div className="bg-gradient-to-br from-sky-50 to-sky-100/50 rounded-2xl p-3 border border-sky-200/60 text-[11px] text-sky-900 line-clamp-2">
-          <span className="font-bold text-sky-950 flex items-center gap-1 mb-1">
-            <Sparkles className="w-3 h-3 text-sky-500" />
+        <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-2xl p-3 border border-amber-200/60 text-[11px] text-amber-900 line-clamp-2">
+          <span className="font-bold text-amber-950 flex items-center gap-1 mb-1">
+            <Sparkles className="w-3 h-3 text-amber-500" />
             Secret
           </span>
           {spot.secretAccessHint}
@@ -120,7 +120,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
             {onNavigate && (
               <button
                 onClick={(e) => { e.stopPropagation(); onNavigate(spot); }}
-                className="bg-sky-500 hover:bg-sky-400 text-stone-950 text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-md shadow-sky-500/25 transition-all active:scale-95"
+                className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all active:scale-95"
                 title="Y aller"
               >
                 <Navigation className="w-3.5 h-3.5" />
@@ -132,7 +132,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
                 e.stopPropagation();
                 onAddToCalendar(spot);
               }}
-              className="bg-sky-500 hover:bg-sky-400 text-stone-950 text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm shadow-sky-500/20 transition-all active:scale-95 hover:shadow-md hover:shadow-sky-500/25"
+              className="bg-amber-500 hover:bg-amber-400 text-stone-950 text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm shadow-amber-500/20 transition-all active:scale-95 hover:shadow-md hover:shadow-amber-500/25"
               title="Ajouter au calendrier de voyage"
             >
               <CalendarPlus className="w-3.5 h-3.5" />
@@ -151,7 +151,7 @@ export const SpotCard: React.FC<SpotCardProps> = ({
                     body: JSON.stringify({ type: 'external_link', detail: `Clic site externe: ${spot.title} → ${spot.websiteUrl}`, spotId: spot.id }),
                   }).catch(() => {});
                 }}
-                className="bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-blue-600 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all active:scale-95 hover:shadow-md"
+                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all active:scale-95 hover:shadow-md"
                 title="Visiter le site"
               >
                 <ExternalLink className="w-3.5 h-3.5" />

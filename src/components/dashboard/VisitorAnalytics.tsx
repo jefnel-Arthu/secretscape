@@ -41,7 +41,7 @@ export function VisitorAnalytics({ escapeRooms, metrics }: VisitorAnalyticsProps
       {/* Summary cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-sky-500/15 text-sky-400">
+          <div className="p-2 rounded-lg bg-amber-500/15 text-amber-400">
             <Users size={20} />
           </div>
           <div>
@@ -186,7 +186,7 @@ export function VisitorAnalytics({ escapeRooms, metrics }: VisitorAnalyticsProps
                             room.successRatePercent >= 70
                               ? 'bg-emerald-500'
                               : room.successRatePercent >= 40
-                                ? 'bg-sky-500'
+                                ? 'bg-amber-500'
                                 : 'bg-red-500'
                           }`}
                           style={{ width: `${room.successRatePercent}%` }}

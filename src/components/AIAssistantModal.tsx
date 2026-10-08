@@ -132,16 +132,16 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
       <div className="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-stone-200 overflow-hidden my-8 animate-in zoom-in-95 duration-200">
         
         {/* Modal Header */}
-        <div className="bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 p-6 text-white flex items-center justify-between">
+        <div className="bg-gradient-to-r from-stone-900 via-stone-850 to-stone-900 p-6 text-stone-100 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center text-white shadow-lg">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-stone-950 shadow-lg shadow-amber-500/20">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-display font-bold text-xl text-white">
                 Générateur d'Itinéraire IA
               </h3>
-              <p className="text-sky-100 text-xs">
+              <p className="text-stone-400 text-xs">
                 Créateur de calendrier sur-mesure d'étapes secrètes et cachées
               </p>
             </div>
@@ -149,7 +149,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2 text-sky-100 hover:text-white rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="p-2 text-stone-400 hover:text-white rounded-full bg-stone-800/60 hover:bg-stone-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -167,13 +167,13 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
                   Destination ou Ville
                 </label>
                 <div className="relative">
-                  <MapPin className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-sky-600" />
+                  <MapPin className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-600" />
                   <input
                     type="text"
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
                     placeholder="ex: Cotonou, Ouidah, Porto-Novo, Abomey, Ganvié..."
-                    className="w-full bg-stone-50 border border-stone-200 rounded-xl pl-10 pr-4 py-2.5 text-stone-900 text-sm focus:outline-none focus:border-sky-500 focus:bg-white font-medium"
+                    className="w-full bg-stone-50 border border-stone-200 rounded-xl pl-10 pr-4 py-2.5 text-stone-900 text-sm focus:outline-none focus:border-amber-500 focus:bg-white font-medium"
                   />
                 </div>
               </div>
@@ -187,7 +187,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
                   <select
                     value={durationDays}
                     onChange={(e) => setDurationDays(Number(e.target.value))}
-                    className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2.5 text-stone-900 text-sm focus:outline-none focus:border-sky-500 font-medium"
+                    className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2.5 text-stone-900 text-sm focus:outline-none focus:border-amber-500 font-medium"
                   >
                     <option value={1}>1 jour d'immersion</option>
                     <option value={2}>2 jours (Week-end secret)</option>
@@ -203,7 +203,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
                   <select
                     value={pace}
                     onChange={(e) => setPace(e.target.value as any)}
-                    className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2.5 text-stone-900 text-sm focus:outline-none focus:border-sky-500 font-medium"
+                    className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2.5 text-stone-900 text-sm focus:outline-none focus:border-amber-500 font-medium"
                   >
                     <option value="tranquille">Tranquille (2-3 étapes/jour)</option>
                     <option value="equilibre">Équilibré (3-4 étapes/jour)</option>
@@ -234,7 +234,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
                         onClick={() => toggleVibe(v.id as any)}
                         className={`text-xs px-3 py-1.5 rounded-xl border font-semibold transition-all ${
                           isSelected
-                            ? 'bg-sky-500 text-stone-950 border-sky-500 shadow-sm'
+                            ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-sm'
                             : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-stone-100'
                         }`}
                       >
@@ -256,7 +256,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
                   onChange={(e) => setExtraNotes(e.target.value)}
                   rows={2}
                   placeholder="ex: envie de photographie d'architecture, spots romantiques au coucher du soleil..."
-                  className="w-full bg-stone-50 border border-stone-200 rounded-xl p-3 text-stone-900 text-xs focus:outline-none focus:border-sky-500 resize-none"
+                  className="w-full bg-stone-50 border border-stone-200 rounded-xl p-3 text-stone-900 text-xs focus:outline-none focus:border-amber-500 resize-none"
                 />
               </div>
 
@@ -270,7 +270,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
               <button
                 onClick={handleGenerate}
                 disabled={isLoading || !destination.trim()}
-                className="w-full bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 disabled:opacity-50 text-stone-950 font-bold py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 transition-all cursor-pointer"
+                className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 disabled:opacity-50 text-stone-950 font-bold py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition-all cursor-pointer"
               >
                 {isLoading ? (
                   <>
@@ -289,14 +289,14 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
           ) : (
             /* AI Result Preview */
             <div className="space-y-6">
-              <div className="bg-sky-50 border border-sky-200 p-4 rounded-2xl space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-sky-800">
+              <div className="bg-amber-50 border border-amber-200 p-4 rounded-2xl space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-800">
                   Proposition d'Itinéraire IA
                 </span>
-                <h4 className="font-display text-lg font-bold text-sky-950">
+                <h4 className="font-display text-lg font-bold text-amber-950">
                   {generatedPlan.title}
                 </h4>
-                <p className="text-sky-800 text-xs">
+                <p className="text-amber-800 text-xs">
                   {generatedPlan.days?.length} jours programmés pour {generatedPlan.destinationCity}
                 </p>
               </div>
@@ -311,7 +311,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
                     <div className="space-y-2 pt-1">
                       {(day.items || []).map((it: any, i: number) => (
                         <div key={i} className="bg-white p-2.5 rounded-xl border border-stone-200/80 text-xs flex items-start gap-2">
-                          <span className="bg-sky-100 text-sky-800 font-bold text-[10px] px-2 py-0.5 rounded-md shrink-0 mt-0.5">
+                          <span className="bg-amber-100 text-amber-800 font-bold text-[10px] px-2 py-0.5 rounded-md shrink-0 mt-0.5">
                             {it.timeString || 'Etape'}
                           </span>
                           <div>
@@ -334,7 +334,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
                 </button>
                 <button
                   onClick={handleApplyToCalendar}
-                  className="flex-[2] bg-sky-500 hover:bg-sky-600 text-stone-950 font-bold py-3 rounded-2xl text-xs flex items-center justify-center gap-1.5 shadow-md"
+                  className="flex-[2] bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold py-3 rounded-2xl text-xs flex items-center justify-center gap-1.5 shadow-md"
                 >
                   <Check className="w-4 h-4" />
                   <span>Importer dans mon calendrier</span>

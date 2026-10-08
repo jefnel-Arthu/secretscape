@@ -40,21 +40,21 @@ const CATEGORY_CARDS = [
     name: 'Patrimoine & Culture',
     desc: 'Temples, forêts sacrées et mémoire',
     image: '/images/au-coeur-ouidah.jpg',
-    color: 'from-sky-500 to-blue-600',
+    color: 'from-amber-500 to-orange-600',
   },
   {
     key: 'restaurants',
     name: 'Gastronomie',
     desc: 'Saveurs authentiques et adresses cachées',
     image: '/images/petit-four.jpg',
-    color: 'from-emerald-500 to-teal-500',
+    color: 'from-rose-500 to-pink-600',
   },
   {
     key: 'boites',
     name: 'Virée Nocturne',
     desc: 'Clubs et soirées exclusives',
     image: '/images/club-vip.jpg',
-    color: 'from-indigo-500 to-blue-700',
+    color: 'from-violet-500 to-purple-600',
   },
   {
     key: 'hotels',
@@ -68,7 +68,7 @@ const CATEGORY_CARDS = [
     name: 'Transport & Access',
     desc: 'Gozem & Yango, transferts',
     image: '/images/benin-taxi.jpg',
-    color: 'from-sky-500 to-cyan-600',
+    color: 'from-yellow-500 to-amber-600',
   },
 ];
 
@@ -153,7 +153,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
                 Voyagez Au Cœur
               </h1>
-              <h1 className="font-script text-5xl sm:text-6xl lg:text-7xl text-mango-400 leading-[1.15] tracking-tight drop-shadow-[0_4px_18px_rgba(230,126,34,0.35)]">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-amber-400 leading-[1.05] tracking-tight">
                 des Secrets
               </h1>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
@@ -172,7 +172,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
             <div className={`flex flex-wrap items-center gap-3 pt-2 transition-all duration-1000 delay-[900ms] ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <button
                 onClick={() => onNavigate('map')}
-                className="bg-mango-500 hover:bg-mango-400 text-stone-950 font-black text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl shadow-mango-500/30 transition-all hover:scale-[1.03] active:scale-95"
+                className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-black text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl shadow-amber-500/30 transition-all hover:scale-[1.03] active:scale-95"
               >
                 <Compass className="w-5 h-5" />
                 Explorer maintenant
@@ -181,7 +181,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
                 onClick={() => onNavigate('calendar')}
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 border border-white/20 transition-all hover:scale-[1.03] active:scale-95"
               >
-                <CalendarIcon className="w-5 h-5 text-sky-400" />
+                <CalendarIcon className="w-5 h-5 text-amber-400" />
                 Planifier mon voyage
               </button>
             </div>
@@ -199,19 +199,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
       {/* ═══════════════════════════════════════════════ STATS ═══ */}
       <section className="relative -mt-16 z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-sky-100 shadow-xl shadow-sky-500/10 p-6 sm:p-8">
+        <div className="bg-stone-900/95 backdrop-blur-xl rounded-3xl border border-stone-800 shadow-2xl shadow-stone-900/50 p-6 sm:p-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
-              { icon: MapPin, value: `${INITIAL_HIDDEN_SPOTS.length}+`, label: 'Lieux secrets', gradient: 'from-sky-500 to-blue-500' },
+              { icon: MapPin, value: `${INITIAL_HIDDEN_SPOTS.length}+`, label: 'Lieux secrets', gradient: 'from-amber-500 to-orange-500' },
               { icon: Globe, value: '15+', label: 'Villes couvertes', gradient: 'from-cyan-500 to-blue-500' },
               { icon: Users, value: '1000+', label: 'Explorateurs', gradient: 'from-emerald-500 to-teal-500' },
-              { icon: Star, value: '4.8', label: 'Note moyenne', gradient: 'from-teal-500 to-sky-600' },
+              { icon: Star, value: '4.8', label: 'Note moyenne', gradient: 'from-yellow-500 to-amber-500' },
             ].map(({ icon: Icon, value, label, gradient }) => (
               <div key={label} className="text-center space-y-2">
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto shadow-lg shadow-sky-500/10`}>
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto shadow-lg`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-2xl font-black text-stone-900">{value}</div>
+                <div className="text-2xl font-black text-white">{value}</div>
                 <div className="text-[11px] text-stone-500 font-semibold uppercase tracking-wider">{label}</div>
               </div>
             ))}
@@ -223,7 +223,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 space-y-4">
-            <span className="text-xs font-bold text-sky-600 tracking-[3px] uppercase">Explorez par thème</span>
+            <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Explorez par thème</span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 leading-tight">
               Quelle aventure vous appelle ?
             </h2>
@@ -269,14 +269,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <div className="space-y-3">
-              <span className="text-xs font-bold text-sky-600 tracking-[3px] uppercase">Les incontournables</span>
+              <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Les incontournables</span>
               <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900">
                 Pepites que vous ne ratez pas
               </h2>
             </div>
             <button
               onClick={() => onNavigate('map')}
-              className="hidden sm:flex items-center gap-1.5 text-sky-700 hover:text-sky-800 font-bold text-xs bg-sky-50 hover:bg-sky-100 px-4 py-2 rounded-xl transition-colors"
+              className="hidden sm:flex items-center gap-1.5 text-amber-700 hover:text-amber-800 font-bold text-xs bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded-xl transition-colors"
             >
               Voir tous les lieux <ChevronRight className="w-4 h-4" />
             </button>
@@ -296,11 +296,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/30 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-500/0 to-sky-600/10 group-hover:from-sky-500/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-600/10 group-hover:from-amber-500/10 transition-all duration-500" />
 
                 {/* Rating badge */}
                 <div className="absolute top-4 right-4 flex items-center gap-1 bg-stone-900/60 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                  <Star className="w-3 h-3 text-sky-400 fill-sky-400" />
+                  <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
                   <span className="text-white text-xs font-bold">{spot.rating}</span>
                 </div>
 
@@ -314,13 +314,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
                 <div className="absolute bottom-0 left-0 right-0 p-6 space-y-3">
                   <div className="flex items-center gap-3 text-white/60 text-[11px]">
                     <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-sky-400" /> {spot.city}
+                      <MapPin className="w-3 h-3 text-amber-400" /> {spot.city}
                     </span>
                     <span className="flex items-center gap-1">
                       <Footprints className="w-3 h-3" /> ~{spot.estimatedDurationMinutes} min
                     </span>
                   </div>
-                  <h3 className="font-display font-bold text-white text-xl leading-tight group-hover:text-sky-300 transition-colors">
+                  <h3 className="font-display font-bold text-white text-xl leading-tight group-hover:text-amber-300 transition-colors">
                     {spot.title}
                   </h3>
                   <p className="text-stone-300 text-xs line-clamp-2 leading-relaxed">
@@ -334,7 +334,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
           <div className="sm:hidden mt-8 text-center">
             <button
               onClick={() => onNavigate('map')}
-              className="bg-sky-500 hover:bg-sky-400 text-stone-950 font-bold text-sm py-3 px-6 rounded-xl inline-flex items-center gap-1.5 shadow-lg shadow-sky-500/25"
+              className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-sm py-3 px-6 rounded-xl inline-flex items-center gap-1.5 shadow-lg shadow-amber-500/25"
             >
               Voir tous les lieux <ChevronRight className="w-4 h-4" />
             </button>
@@ -346,7 +346,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 space-y-3">
-            <span className="text-xs font-bold text-sky-600 tracking-[3px] uppercase">Destinations</span>
+            <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Destinations</span>
             <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900">
               Explorez par ville
             </h2>
@@ -378,21 +378,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       </section>
 
       {/* ═══════════════════════════════════════════════ HOW IT WORKS ═══ */}
-      <section className="py-24 bg-sky-50/60 relative overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-24 bg-stone-900 relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-amber-500/3 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 space-y-3">
-            <span className="text-xs font-bold text-sky-600 tracking-[3px] uppercase">Comment ca marche</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900">
+            <span className="text-xs font-bold text-amber-400 tracking-[3px] uppercase">Comment ca marche</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-white">
               Votre voyage en 3 etapes
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 relative">
             {/* Connecting line */}
-            <div className="hidden sm:block absolute top-10 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-sky-400/40 to-transparent" />
+            <div className="hidden sm:block absolute top-10 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
 
             {[
               {
@@ -414,16 +414,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               <div key={title} className="relative text-center space-y-5 px-4">
                 {/* Step number */}
                 <div className="relative mx-auto w-20 h-20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-sky-500 to-blue-500 rounded-2xl rotate-6 opacity-20" />
-                  <div className="relative w-20 h-20 rounded-2xl bg-white border border-sky-200 flex items-center justify-center shadow-xl shadow-sky-500/10">
-                    <Icon className="w-9 h-9 text-sky-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl rotate-6 opacity-20" />
+                  <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-500/30 flex items-center justify-center shadow-xl shadow-amber-500/10">
+                    <Icon className="w-9 h-9 text-amber-400" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-sky-500 text-stone-950 text-xs font-black flex items-center justify-center shadow-lg shadow-sky-500/30">
+                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-amber-500 text-stone-950 text-xs font-black flex items-center justify-center shadow-lg shadow-amber-500/30">
                     {idx + 1}
                   </div>
                 </div>
-                <h3 className="font-display font-bold text-xl text-stone-900">{title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed max-w-xs mx-auto">{desc}</p>
+                <h3 className="font-display font-bold text-xl text-white">{title}</h3>
+                <p className="text-stone-400 text-sm leading-relaxed max-w-xs mx-auto">{desc}</p>
               </div>
             ))}
           </div>
@@ -434,7 +434,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       <section className="py-24 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 space-y-3">
-            <span className="text-xs font-bold text-sky-600 tracking-[3px] uppercase">Temoignages</span>
+            <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Temoignages</span>
             <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900">
               Ils ont explore le Benin avec nous
             </h2>
@@ -446,13 +446,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
                 key={t.name}
                 className="bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:shadow-lg transition-shadow space-y-4"
               >
-                <Quote className="w-8 h-8 text-sky-200" />
+                <Quote className="w-8 h-8 text-amber-200" />
                 <p className="text-stone-600 text-sm leading-relaxed italic">
                   "{t.text}"
                 </p>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-sky-400 fill-sky-400" />
+                    <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
                   ))}
                 </div>
                 <div className="pt-2 border-t border-stone-100">
@@ -467,7 +467,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
       {/* ═══════════════════════════════════════════════ CTA ═══ */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-500 via-sky-600 to-blue-500" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-amber-600 to-orange-500" />
         <div className="absolute inset-0 bg-[url('https://i.pinimg.com/1200x/ee/8d/8f/ee8d8fc7c496a912c850b239dd8892bf.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
@@ -485,9 +485,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => onNavigate('contact')}
-              className="bg-white hover:bg-white/90 text-sky-700 font-bold text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl transition-all hover:scale-[1.03]"
+              className="bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl transition-all hover:scale-[1.03]"
             >
-              <Phone className="w-4 h-4 text-sky-500" />
+              <Phone className="w-4 h-4 text-amber-400" />
               Nous contacter
             </button>
             <button

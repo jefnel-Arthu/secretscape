@@ -103,7 +103,7 @@ export const AiOpsAssistantModal: React.FC<AiOpsAssistantModalProps> = ({
                   </div>
                   <div className="bg-slate-800 rounded-lg p-3 border border-slate-700/50">
                     <span className="text-slate-400 block mb-1">RAM (moy)</span>
-                    <span className={`font-bold text-lg ${Number(analysis.avgRam) > 80 ? 'text-sky-400' : 'text-emerald-400'}`}>
+                    <span className={`font-bold text-lg ${Number(analysis.avgRam) > 80 ? 'text-amber-400' : 'text-emerald-400'}`}>
                       {analysis.avgRam}%
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export const AiOpsAssistantModal: React.FC<AiOpsAssistantModalProps> = ({
                   </div>
                   <div className="bg-slate-800 rounded-lg p-3 border border-slate-700/50">
                     <span className="text-slate-400 block mb-1">Cache Hit (moy)</span>
-                    <span className={`font-bold text-lg ${Number(analysis.avgCacheHit) < 90 ? 'text-sky-400' : 'text-emerald-400'}`}>
+                    <span className={`font-bold text-lg ${Number(analysis.avgCacheHit) < 90 ? 'text-amber-400' : 'text-emerald-400'}`}>
                       {analysis.avgCacheHit}%
                     </span>
                   </div>
@@ -125,7 +125,7 @@ export const AiOpsAssistantModal: React.FC<AiOpsAssistantModalProps> = ({
               {/* Security Alerts Summary */}
               <div className="bg-slate-800/50 rounded-xl p-4 space-y-3">
                 <div className="flex items-center gap-2 text-slate-300">
-                  <AlertTriangle className="w-4 h-4 text-sky-400" />
+                  <AlertTriangle className="w-4 h-4 text-amber-400" />
                   <span className="font-semibold text-sm uppercase tracking-wider">Alertes de Sécurité</span>
                 </div>
                 <div className="grid grid-cols-3 gap-3 text-xs">
@@ -137,7 +137,7 @@ export const AiOpsAssistantModal: React.FC<AiOpsAssistantModalProps> = ({
                   </div>
                   <div className="bg-slate-800 rounded-lg p-3 border border-slate-700/50 text-center">
                     <span className="text-slate-400 block mb-1">Actives</span>
-                    <span className={`font-bold text-lg ${analysis.activeAlerts.length > 0 ? 'text-sky-400' : 'text-slate-400'}`}>
+                    <span className={`font-bold text-lg ${analysis.activeAlerts.length > 0 ? 'text-amber-400' : 'text-slate-400'}`}>
                       {analysis.activeAlerts.length}
                     </span>
                   </div>
@@ -163,7 +163,7 @@ export const AiOpsAssistantModal: React.FC<AiOpsAssistantModalProps> = ({
                   </div>
                   <div className="bg-slate-800 rounded-lg p-3 border border-slate-700/50 text-center">
                     <span className="text-slate-400 block mb-1">Avertissement</span>
-                    <span className="font-bold text-lg text-sky-400">{analysis.warningNodes.length}</span>
+                    <span className="font-bold text-lg text-amber-400">{analysis.warningNodes.length}</span>
                   </div>
                   <div className="bg-slate-800 rounded-lg p-3 border border-slate-700/50 text-center">
                     <span className="text-slate-400 block mb-1">Dégradé</span>

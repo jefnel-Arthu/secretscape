@@ -136,7 +136,7 @@ const TYPE_LABELS: Record<string, string> = {
 const SEVERITY_DOT: Record<UserAction['severity'], string> = {
   info: 'bg-blue-500',
   success: 'bg-emerald-500',
-  warning: 'bg-sky-500',
+  warning: 'bg-amber-500',
   critical: 'bg-red-500',
 };
 
@@ -216,7 +216,7 @@ function OverviewTab({
               </div>
               <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden ml-7">
                 <div
-                  className="h-full bg-sky-400 rounded-full"
+                  className="h-full bg-amber-400 rounded-full"
                   style={{ width: `${Math.max((s.views / maxViews) * 100, 2)}%` }}
                 />
               </div>
@@ -250,7 +250,7 @@ function MessagesTab({
       <div className="flex items-center gap-3 text-sm text-gray-600">
         <span>{messages.length} message{messages.length > 1 ? 's' : ''}</span>
         {unread > 0 && (
-          <span className="px-2 py-0.5 rounded-full bg-sky-100 text-sky-700 text-xs font-semibold">
+          <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 text-xs font-semibold">
             {unread} non lu{unread > 1 ? 's' : ''}
           </span>
         )}
@@ -260,12 +260,12 @@ function MessagesTab({
         <div
           key={m.id}
           className={`bg-white rounded-xl border shadow-sm p-4 ${
-            m.read ? 'border-gray-200' : 'border-l-4 border-l-sky-500 border-gray-200'
+            m.read ? 'border-gray-200' : 'border-l-4 border-l-amber-500 border-gray-200'
           }`}
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start gap-3 min-w-0">
-              <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${m.read ? 'bg-gray-100 text-gray-500' : 'bg-sky-100 text-sky-600'}`}>
+              <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${m.read ? 'bg-gray-100 text-gray-500' : 'bg-amber-100 text-amber-600'}`}>
                 <Mail className="w-4 h-4" />
               </div>
               <div className="min-w-0">
@@ -274,7 +274,7 @@ function MessagesTab({
                     {m.name}
                   </span>
                   {!m.read && (
-                    <span className="w-2 h-2 rounded-full bg-sky-500 shrink-0" title="Non lu" />
+                    <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" title="Non lu" />
                   )}
                   <span className="text-xs text-gray-400">
                     {new Date(m.date).toLocaleString('fr-FR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}
@@ -392,7 +392,7 @@ function StatsTab({ liveOps }: { liveOps: LiveOpsData }) {
               <p className="text-xs text-gray-500">Retraits récents</p>
             </div>
             <div className="bg-gray-50 rounded-lg p-3">
-              <TrendingUp className={`w-4 h-4 mb-1.5 ${favNet >= 0 ? 'text-sky-500' : 'text-red-500'}`} />
+              <TrendingUp className={`w-4 h-4 mb-1.5 ${favNet >= 0 ? 'text-amber-500' : 'text-red-500'}`} />
               <p className={`text-xl font-bold ${favNet >= 0 ? 'text-gray-900' : 'text-red-600'}`}>
                 {favNet >= 0 ? '+' : ''}{favNet}
               </p>
@@ -418,7 +418,7 @@ function StatsTab({ liveOps }: { liveOps: LiveOpsData }) {
                   </div>
                   <div className="h-5 bg-gray-100 rounded-md overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-sky-400 to-sky-500 rounded-md flex items-center justify-end pr-2 transition-all"
+                      className="h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-md flex items-center justify-end pr-2 transition-all"
                       style={{ width: `${Math.max(pct, 2)}%` }}
                     >
                       {pct >= 20 && <span className="text-[10px] font-bold text-white">{pct}%</span>}
@@ -541,7 +541,7 @@ export default function SecretScapeDashboard() {
       <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
         <div className="px-4 lg:px-8 py-4 flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gray-900 text-sky-400 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-gray-900 text-amber-400 flex items-center justify-center shrink-0">
               <Activity className="w-5 h-5" />
             </div>
             <div>
@@ -611,14 +611,14 @@ export default function SecretScapeDashboard() {
               onClick={() => setActiveMainTab(t.key)}
               className={`relative px-4 py-3 text-xs font-semibold flex items-center gap-1.5 border-b-2 transition-colors whitespace-nowrap ${
                 activeMainTab === t.key
-                  ? 'border-sky-500 text-sky-600'
+                  ? 'border-amber-500 text-amber-600'
                   : 'border-transparent text-gray-500 hover:text-gray-800'
               }`}
             >
               {t.icon}
               <span>{t.label}</span>
               {!!t.badge && t.badge > 0 && (
-                <span className="ml-1 px-1.5 py-0.5 rounded-full bg-sky-500 text-white text-[10px] font-bold leading-none">
+                <span className="ml-1 px-1.5 py-0.5 rounded-full bg-amber-500 text-white text-[10px] font-bold leading-none">
                   {t.badge}
                 </span>
               )}
@@ -644,7 +644,7 @@ export default function SecretScapeDashboard() {
 
         {liveOpsLoading && !liveOps && !liveOpsError ? (
           <div className="flex flex-col items-center justify-center py-24 gap-3">
-            <RefreshCw className="w-8 h-8 animate-spin text-sky-500" />
+            <RefreshCw className="w-8 h-8 animate-spin text-amber-500" />
             <p className="text-sm text-gray-500">Connexion au flux temps réel…</p>
           </div>
         ) : (

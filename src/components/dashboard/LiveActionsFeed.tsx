@@ -19,7 +19,7 @@ const categoryBadge: Record<ActionCategory, string> = {
   gameplay: 'bg-purple-50 text-purple-700',
   auth: 'bg-cyan-50 text-cyan-700',
   payment: 'bg-emerald-50 text-emerald-700',
-  navigation: 'bg-sky-50 text-sky-700',
+  navigation: 'bg-amber-50 text-amber-700',
   security: 'bg-rose-50 text-rose-700',
   page_view: 'bg-gray-100 text-gray-600',
 };

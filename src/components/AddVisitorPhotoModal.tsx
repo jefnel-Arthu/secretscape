@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { HiddenSpot } from '../types';
 import { Camera, X, Upload, User, ImagePlus, Loader2, CheckCircle2 } from 'lucide-react';
 import { compressImage } from '../lib/image';
-import { saveLocalPhoto } from '../lib/visitorPhotos';
 
 interface AddVisitorPhotoModalProps {
   isOpen: boolean;
@@ -97,7 +96,6 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type: 'visitor_photo_submit', detail: `Photo partagée — ${spot?.title || spotId}`, spotId }),
       }).catch(() => {});
-      if (data.photo) saveLocalPhoto(data.photo);
       setDone(true);
       onSubmitted?.();
     } catch {
@@ -112,16 +110,16 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
       <div className="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-stone-200 overflow-hidden my-8 animate-in zoom-in-95 duration-200">
 
         {/* Header */}
-        <div className="bg-sky-600 p-6 text-white flex items-center justify-between">
+        <div className="bg-stone-900 p-6 text-stone-100 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-white/20 text-white flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-amber-500 text-stone-950 flex items-center justify-center">
               <Camera className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-display font-bold text-xl text-white">
                 Partager un Souvenir
               </h3>
-              <p className="text-sky-100 text-xs">
+              <p className="text-stone-400 text-xs">
                 Ajoutez votre photo après votre visite d'un de ces lieux cachés
               </p>
             </div>
@@ -129,7 +127,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2 text-sky-100 hover:text-white rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="p-2 text-stone-400 hover:text-white rounded-full bg-stone-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -141,12 +139,11 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
             <CheckCircle2 className="w-14 h-14 text-emerald-500 mx-auto" />
             <h4 className="font-display font-bold text-xl text-stone-900">Photo envoyée !</h4>
             <p className="text-sm text-stone-500 max-w-sm mx-auto">
-              Votre souvenir est publié ici ! Il apparaît dans l'onglet <span className="font-semibold text-stone-700">Souvenirs</span> avec un badge
-              « En attente de validation » jusqu'à ce que notre équipe le valide pour tous les visiteurs.
+              Merci pour votre contribution. Votre souvenir sera publié après validation par notre équipe.
             </p>
             <button
               onClick={onClose}
-              className="mt-2 bg-sky-500 hover:bg-sky-600 text-stone-950 font-bold px-6 py-3 rounded-xl transition-colors"
+              className="mt-2 bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-6 py-3 rounded-xl transition-colors"
             >
               Fermer
             </button>
@@ -168,11 +165,11 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
                 <button
                   type="button"
                   onClick={() => fileRef.current?.click()}
-                  className="w-full border-2 border-dashed border-stone-300 hover:border-sky-500 rounded-2xl p-8 flex flex-col items-center justify-center gap-2 text-center transition-colors"
+                  className="w-full border-2 border-dashed border-stone-300 hover:border-amber-500 rounded-2xl p-8 flex flex-col items-center justify-center gap-2 text-center transition-colors"
                 >
                   {compressing ? (
                     <>
-                      <Loader2 className="w-9 h-9 text-sky-500 animate-spin" />
+                      <Loader2 className="w-9 h-9 text-amber-500 animate-spin" />
                       <span className="text-stone-500">Compression de l'image...</span>
                     </>
                   ) : (
@@ -205,7 +202,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
               <select
                 value={spotId}
                 onChange={(e) => setSpotId(e.target.value)}
-                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2.5 text-stone-900 text-xs focus:outline-none focus:border-sky-500"
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2.5 text-stone-900 text-xs focus:outline-none focus:border-amber-500"
               >
                 {sortedSpots.map(s => (
                   <option key={s.id} value={s.id}>{s.title} — {s.city}</option>
@@ -223,7 +220,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
                   value={visitorName}
                   onChange={(e) => setVisitorName(e.target.value)}
                   placeholder="ex: Awa, Jean-Marc..."
-                  className="w-full bg-stone-50 border border-stone-200 rounded-xl pl-9 pr-3 py-2.5 text-stone-900 text-xs focus:outline-none focus:border-sky-500"
+                  className="w-full bg-stone-50 border border-stone-200 rounded-xl pl-9 pr-3 py-2.5 text-stone-900 text-xs focus:outline-none focus:border-amber-500"
                 />
               </div>
             </div>
@@ -236,7 +233,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
                 rows={2}
                 maxLength={300}
                 placeholder="Un souvenir à partager auprès des futurs explorateurs..."
-                className="w-full bg-stone-50 border border-stone-200 rounded-xl p-3 text-stone-900 text-xs focus:outline-none focus:border-sky-500 resize-none"
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl p-3 text-stone-900 text-xs focus:outline-none focus:border-amber-500 resize-none"
               />
             </div>
 
@@ -245,7 +242,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
             <button
               type="submit"
               disabled={uploading || compressing}
-              className="w-full bg-sky-500 hover:bg-sky-600 text-stone-950 font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-1"
+              className="w-full bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-1"
             >
               {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
               <span>{uploading ? "Envoi en cours..." : "Envoyer ma photo"}</span>

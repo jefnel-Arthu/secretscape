@@ -201,12 +201,11 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
 
     L.control.zoom({ position: 'topright' }).addTo(map);
 
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-      attribution: '&copy; Esri, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; <a href="https://www.esri.com">Esri</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       maxZoom: 19,
     }).addTo(map);
-
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
       opacity: 0.9,
       maxZoom: 19,
     }).addTo(map);
@@ -347,7 +346,7 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 bg-sky-500 hover:bg-sky-400 text-stone-950 text-xs font-bold py-2 px-3 rounded-xl transition-colors shrink-0 shadow-md shadow-sky-500/25"
+          className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-3 rounded-xl transition-colors shrink-0"
         >
           <ExternalLink className="w-3.5 h-3.5" />
           Google Maps
@@ -375,7 +374,7 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
         )}
 
         {error && (
-          <div className="flex items-center gap-2 text-sky-600 bg-sky-50 rounded-xl px-4 py-3 text-xs mx-4 mt-3">
+          <div className="flex items-center gap-2 text-amber-600 bg-amber-50 rounded-xl px-4 py-3 text-xs mx-4 mt-3">
             <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>
@@ -389,8 +388,8 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
                 onClick={() => setWalkingRoute(true)}
                 className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   walkingRoute
-                    ? 'bg-sky-500 text-stone-950 shadow-md shadow-sky-500/20'
-                    : 'bg-gray-100 text-gray-500 hover:bg-sky-50 hover:text-sky-700'
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
                 <Footprints className="w-4 h-4" />
@@ -403,8 +402,8 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ spot, onClose 
                 onClick={() => setWalkingRoute(false)}
                 className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   !walkingRoute
-                    ? 'bg-sky-500 text-stone-950 shadow-md shadow-sky-500/20'
-                    : 'bg-gray-100 text-gray-500 hover:bg-sky-50 hover:text-sky-700'
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
                 <Car className="w-4 h-4" />
