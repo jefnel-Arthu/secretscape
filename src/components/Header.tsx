@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
   setSearchQuery,
 }) => {
   return (
-    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-lg shadow-sky-500/5">
+    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-lg shadow-sky-500/5 font-menu">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 py-2 gap-6">
 

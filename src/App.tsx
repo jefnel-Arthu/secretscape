@@ -579,8 +579,8 @@ export default function App() {
                 <span className="font-display text-lg font-bold text-sky-950 block leading-none">
                   Secret<span className="text-sky-500">Scape</span>
                 </span>
-                <span className="text-[10px] text-stone-500 font-medium tracking-wider uppercase block mt-0.5">
-                  Lieux Cachés & Itinéraires
+                <span className="font-script text-sm text-mango-500 block mt-0.5">
+                  Lieux Cachés &amp; Itinéraires
                 </span>
               </div>
             </div>

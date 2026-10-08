@@ -153,7 +153,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
                 Voyagez Au Cœur
               </h1>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-sky-400 leading-[1.05] tracking-tight">
+              <h1 className="font-script text-5xl sm:text-6xl lg:text-7xl text-mango-400 leading-[1.15] tracking-tight drop-shadow-[0_4px_18px_rgba(230,126,34,0.35)]">
                 des Secrets
               </h1>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
@@ -172,7 +172,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
             <div className={`flex flex-wrap items-center gap-3 pt-2 transition-all duration-1000 delay-[900ms] ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <button
                 onClick={() => onNavigate('map')}
-                className="bg-sky-500 hover:bg-sky-400 text-stone-950 font-black text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl shadow-sky-500/30 transition-all hover:scale-[1.03] active:scale-95"
+                className="bg-mango-500 hover:bg-mango-400 text-stone-950 font-black text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl shadow-mango-500/30 transition-all hover:scale-[1.03] active:scale-95"
               >
                 <Compass className="w-5 h-5" />
                 Explorer maintenant
