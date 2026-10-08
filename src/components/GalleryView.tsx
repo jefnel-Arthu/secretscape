@@ -282,17 +282,15 @@ const ALL_PHOTOS: EventPhoto[] = BENIN_EVENTS.flatMap((ev) => {
 
 export const GalleryView: React.FC<GalleryViewProps> = () => {
   const [activeEventId, setActiveEventId] = useState<string | null>(null);
-  const [activeCategory, setActiveCategory] = useState<EventCategory | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered = useMemo(
     () => {
       let list = ALL_PHOTOS;
       if (activeEventId) list = list.filter((p) => p.eventId === activeEventId);
-      if (activeCategory) list = list.filter((p) => p.category === activeCategory);
       return list;
     },
-    [activeEventId, activeCategory]
+    [activeEventId]
   );
 
   useEffect(() => {
@@ -322,45 +320,8 @@ export const GalleryView: React.FC<GalleryViewProps> = () => {
           Vodun Days, WeLovEya, FestiChill, festivals, fêtes traditionnelles… Toutes les photos des événements qui font vibrer le Bénin.
         </p>
 
-        {/* Category filter */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
-          <button
-            onClick={() => { setActiveCategory(null); setLightboxIndex(null); }}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-              activeCategory === null
-                ? 'bg-sky-500 text-stone-950 shadow-lg shadow-sky-500/30'
-                : 'bg-white text-stone-600 border border-stone-200 hover:border-sky-300 hover:text-sky-700'
-            }`}
-          >
-            Tout
-            {activeCategory === null && (
-              <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{filtered.length}</span>
-            )}
-          </button>
-          {(Object.keys(CATEGORY_META) as EventCategory[]).map((cat) => {
-            const meta = CATEGORY_META[cat];
-            const count = ALL_PHOTOS.filter((p) => p.category === cat).length;
-            const isActive = activeCategory === cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => { setActiveCategory(cat); setLightboxIndex(null); }}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
-                  isActive
-                    ? 'bg-sky-500 text-stone-950 shadow-lg shadow-sky-500/30'
-                    : 'bg-white text-stone-600 border border-stone-200 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700'
-                }`}
-              >
-                <meta.icon className="w-3.5 h-3.5" />
-                {meta.label}
-                <span className={`px-1.5 py-0.5 rounded-full text-[10px] ${isActive ? 'bg-black/20' : 'bg-stone-100'}`}>{count}</span>
-              </button>
-            );
-          })}
-        </div>
-
         {/* Event filter */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
           <button
             onClick={() => { setActiveEventId(null); setLightboxIndex(null); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
