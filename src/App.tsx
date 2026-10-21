@@ -415,6 +415,7 @@ export default function App() {
                 onClosePanel={() => setSelectedSpot(null)}
                 onAddToCalendar={(spot) => handleAddToCalendar(spot)}
                 onToggleFavorite={handleToggleFavorite}
+                onNavigate={(spot) => { setNavigationSpot(spot); trackAction('navigate_to', `Navigation vers: ${spot.title}`, spot.id); }}
                 favorites={favorites}
               />
             ) : (
@@ -435,7 +436,6 @@ export default function App() {
                         onSelectSpot={(s) => setSelectedSpotModal(s)}
                         onAddToCalendar={(s) => handleAddToCalendar(s)}
                         onToggleFavorite={handleToggleFavorite}
-                        onNavigate={(s) => { setNavigationSpot(s); trackAction('navigate_to', `Navigation vers: ${s.title}`, s.id); }}
                         isFavorite={favorites.includes(spot.id)}
                       />
                     ))}
@@ -498,7 +498,6 @@ export default function App() {
                     onSelectSpot={(s) => setSelectedSpotModal(s)}
                     onAddToCalendar={(s) => handleAddToCalendar(s)}
                     onToggleFavorite={handleToggleFavorite}
-                    onNavigate={(s) => { setNavigationSpot(s); trackAction('navigate_to', `Navigation vers: ${s.title}`, s.id); }}
                     isFavorite={true}
                   />
                 ))}
@@ -528,7 +527,6 @@ export default function App() {
         onClose={() => setSelectedSpotModal(null)}
         onAddToCalendar={(spot) => handleAddToCalendar(spot)}
         onToggleFavorite={handleToggleFavorite}
-        onNavigate={(spot) => { setNavigationSpot(spot); trackAction('navigate_to', `Navigation vers: ${spot.title}`, spot.id); }}
         onAddPhoto={(spot) => openAddVisitorPhoto(spot.id)}
         onViewAllPhotos={(spot) => {
           setVisitorPhotoInitialSpot(spot.id);

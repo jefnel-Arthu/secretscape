@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import { HiddenSpot } from '../types';
 import { CATEGORY_LABELS, SECRET_LEVEL_LABELS } from '../data/hiddenSpots';
-import { Compass, CalendarPlus, Bookmark, Eye, MapPin, LocateFixed } from 'lucide-react';
+import { Compass, CalendarPlus, Bookmark, Eye, MapPin, LocateFixed, Navigation } from 'lucide-react';
 
 const escapeHtml = (value: string): string =>
   value
@@ -23,6 +23,7 @@ interface MapExplorerProps {
   onClosePanel: () => void;
   onAddToCalendar: (spot: HiddenSpot) => void;
   onToggleFavorite: (spot: HiddenSpot) => void;
+  onNavigate: (spot: HiddenSpot) => void;
   favorites: string[];
 }
 
@@ -34,6 +35,7 @@ export const MapExplorer: React.FC<MapExplorerProps> = ({
   onClosePanel,
   onAddToCalendar,
   onToggleFavorite,
+  onNavigate,
   favorites,
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -297,36 +299,49 @@ export const MapExplorer: React.FC<MapExplorerProps> = ({
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-3 border-t border-stone-100 flex items-center gap-2">
-              <button
-                onClick={() => onOpenSpotDetail(selectedSpot)}
-                className="flex-1 bg-stone-900 hover:bg-stone-800 text-stone-100 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
-                title="Ouvrir la fiche détaillée"
-              >
-                <Eye className="w-4 h-4 text-amber-400" />
-                <span>Fiche détaillée</span>
-              </button>
+            <div className="pt-3 border-t border-stone-100 space-y-2">
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => onOpenSpotDetail(selectedSpot)}
+                  className="bg-stone-900 hover:bg-stone-800 text-stone-100 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
+                  title="Ouvrir la fiche détaillée"
+                >
+                  <Eye className="w-4 h-4 text-amber-400" />
+                  <span>Fiche détaillée</span>
+                </button>
 
-              <button
-                onClick={() => onAddToCalendar(selectedSpot)}
-                className="flex-1 bg-amber-500 hover:bg-amber-600 text-stone-950 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
-                id="add-spot-to-calendar-btn"
-              >
-                <CalendarPlus className="w-4 h-4" />
-                <span>Ajouter au Calendrier</span>
-              </button>
+                <button
+                  onClick={() => onAddToCalendar(selectedSpot)}
+                  className="bg-amber-500 hover:bg-amber-600 text-stone-950 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
+                  id="add-spot-to-calendar-btn"
+                >
+                  <CalendarPlus className="w-4 h-4" />
+                  <span>Ajouter au Calendrier</span>
+                </button>
+              </div>
 
-              <button
-                onClick={() => onToggleFavorite(selectedSpot)}
-                className={`p-2.5 rounded-xl border transition-all ${
-                  favorites.includes(selectedSpot.id)
-                    ? 'bg-rose-50 text-rose-600 border-rose-200'
-                    : 'bg-stone-100 text-stone-600 border-stone-200 hover:bg-stone-200'
-                }`}
-                title="Favoris"
-              >
-                <Bookmark className={`w-4 h-4 ${favorites.includes(selectedSpot.id) ? 'fill-current' : ''}`} />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => onNavigate(selectedSpot)}
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
+                  title="Ouvrir l'itineraire detaille dans l'application"
+                >
+                  <Navigation className="w-4 h-4" />
+                  <span>Itinéraire détaillé</span>
+                </button>
+
+                <button
+                  onClick={() => onToggleFavorite(selectedSpot)}
+                  className={`p-2.5 rounded-xl border transition-all ${
+                    favorites.includes(selectedSpot.id)
+                      ? 'bg-rose-50 text-rose-600 border-rose-200'
+                      : 'bg-stone-100 text-stone-600 border-stone-200 hover:bg-stone-200'
+                  }`}
+                  title="Favoris"
+                >
+                  <Bookmark className={`w-4 h-4 ${favorites.includes(selectedSpot.id) ? 'fill-current' : ''}`} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
