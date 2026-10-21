@@ -285,7 +285,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
         {selected && (
           <div className="fixed inset-0 z-[600] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setSelected(null)}>
             <div
-              className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"
+              className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl m-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}

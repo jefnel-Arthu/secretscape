@@ -96,7 +96,7 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-[650] flex items-center justify-center bg-stone-950/80 backdrop-blur-md p-4 overflow-y-auto">
-      <div className="relative bg-white rounded-3xl max-w-3xl w-full shadow-2xl border border-stone-200 overflow-hidden my-8 animate-in zoom-in-95 duration-200">
+      <div className="relative bg-white rounded-3xl max-w-3xl w-full shadow-2xl border border-stone-200 overflow-hidden m-auto animate-in zoom-in-95 duration-200">
 
         {/* Top Hero Image Banner */}
         <div className="relative h-72 sm:h-80 bg-stone-900 overflow-hidden">

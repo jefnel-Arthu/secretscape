@@ -341,7 +341,7 @@ export default function App() {
   const calendarItemsCount = calendar.days.reduce((acc, d) => acc + d.items.length, 0);
 
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans">
+    <div className="min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans overflow-x-hidden">
       
       {/* Toast Floating Notification */}
       {toastMessage && (

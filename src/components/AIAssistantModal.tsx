@@ -129,7 +129,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-[600] flex items-center justify-center bg-stone-950/80 backdrop-blur-md p-4 overflow-y-auto">
-      <div className="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-stone-200 overflow-hidden my-8 animate-in zoom-in-95 duration-200">
+      <div className="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-stone-200 overflow-hidden m-auto animate-in zoom-in-95 duration-200">
         
         {/* Modal Header */}
         <div className="bg-gradient-to-r from-stone-900 via-stone-850 to-stone-900 p-6 text-stone-100 flex items-center justify-between">
