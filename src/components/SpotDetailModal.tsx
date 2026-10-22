@@ -19,6 +19,7 @@ import {
   ImagePlus,
 } from 'lucide-react';
 import { openInGoogleMaps } from '../lib/googleMaps';
+import { loadLocalPhotos } from '../lib/visitorPhotos';
 
 interface SpotDetailModalProps {
   spot: HiddenSpot | null;
@@ -52,7 +53,11 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
     fetch(`/api/visitor-photos?spotId=${encodeURIComponent(spot.id)}`)
       .then((r) => r.json())
       .then((data) => {
-        if (!cancelled) setVisitorPhotos(data.photos || []);
+        if (!cancelled) {
+          const local = loadLocalPhotos().filter((p) => p.spotId === spot.id);
+          const serverIds = new Set((data.photos || []).map((p: VisitorPhoto) => p.id));
+          setVisitorPhotos([...local.filter((p) => !serverIds.has(p.id)), ...(data.photos || [])]);
+        }
       })
       .catch(() => {});
     return () => { cancelled = true; };

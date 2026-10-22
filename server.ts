@@ -309,7 +309,7 @@ async function startServer() {
       visitorName: visitorName.trim().slice(0, 60),
       message: message ? message.trim().slice(0, 300) : undefined,
       imageUrl: imageData,
-      approved: false,
+      approved: true,
       createdAt: new Date().toISOString(),
     };
     visitorPhotos.unshift(photo);

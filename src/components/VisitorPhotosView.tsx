@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Camera, X, MapPin, ChevronLeft, ChevronRight, User, MessageSquare, ImagePlus, Loader2 } from 'lucide-react';
 import { HiddenSpot, VisitorPhoto } from '../types';
+import { mergedVisitorPhotos } from '../lib/visitorPhotos';
 
 interface VisitorPhotosViewProps {
   spots: HiddenSpot[];
@@ -29,7 +30,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
       try {
         const res = await fetch('/api/visitor-photos');
         const data = await res.json();
-        if (!cancelled) setPhotos(data.photos || []);
+        if (!cancelled) setPhotos(mergedVisitorPhotos(data.photos || []));
       } catch {
         if (!cancelled) setPhotos([]);
       }

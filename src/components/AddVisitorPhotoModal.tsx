@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { HiddenSpot } from '../types';
 import { Camera, X, Upload, User, ImagePlus, Loader2, CheckCircle2 } from 'lucide-react';
 import { compressImage } from '../lib/image';
+import { saveLocalPhoto } from '../lib/visitorPhotos';
 
 interface AddVisitorPhotoModalProps {
   isOpen: boolean;
@@ -91,6 +92,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
         setError(data.error || "Erreur lors de l'envoi");
         return;
       }
+      if (data.photo) saveLocalPhoto(data.photo);
       fetch('/api/track/action', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -139,7 +141,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
             <CheckCircle2 className="w-14 h-14 text-emerald-500 mx-auto" />
             <h4 className="font-display font-bold text-xl text-stone-900">Photo envoyée !</h4>
             <p className="text-sm text-stone-500 max-w-sm mx-auto">
-              Merci pour votre contribution. Votre souvenir sera publié après validation par notre équipe.
+              Merci pour votre contribution. Votre souvenir est maintenant visible dans la galerie.
             </p>
             <button
               onClick={onClose}
@@ -249,7 +251,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
             </button>
 
             <p className="text-[10px] text-stone-400 text-center">
-              Les photos sont validées par notre équipe avant publication.
+              Votre photo est publiée immédiatement dans la galerie des souvenirs.
             </p>
 
           </form>

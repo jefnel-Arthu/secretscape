@@ -556,7 +556,7 @@ export default function App() {
           initialSpotId={visitorPhotoInitialSpot}
           onSubmitted={() => {
             setSouvenirsRefreshKey(k => k + 1);
-            showToast('Photo envoyée ! En attente de validation.');
+            showToast('Photo publiée dans la galerie des souvenirs !');
           }}
         />
 
