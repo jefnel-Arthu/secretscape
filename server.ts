@@ -621,8 +621,10 @@ Pour chaque jour, génère de 3 à 4 étapes réparties sur la journée (Matin 0
       try {
         const base64 = auth.slice(6);
         const decoded = Buffer.from(base64, 'base64').toString('utf8');
-        const pass = decoded.split(':')[1];
-        if (pass === SITE_PASSWORD) {
+        const parts = decoded.split(':');
+        const user = parts[0];
+        const pass = parts.slice(1).join(':');
+        if ((user === 'secretscape' || user === 'admin') && pass === SITE_PASSWORD) {
           return next();
         }
       } catch {}
