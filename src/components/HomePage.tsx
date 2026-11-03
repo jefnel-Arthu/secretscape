@@ -226,7 +226,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </div>
             <div className="space-y-6">
-              <span className="text-xs tracking-[0.4em] uppercase text-[#D9A441]">BIENVENUE AU BÉNIN</span>
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight">
                 <span className="block text-[#11382E]">Un petit pays,</span>
                 <span className="block text-[#D9A441] italic">de grandes histoires.</span>
@@ -248,8 +247,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 sm:mb-16">
-            <span className="text-xs tracking-[0.4em] uppercase text-[#D9A441]">NOS INCONTOURNABLES</span>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl mt-4 leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight">
               <span className="block text-[#11382E]">Choisissez votre</span>
               <span className="block">prochaine <span className="text-[#D9A441] italic">émotion</span>.</span>
             </h2>
@@ -314,7 +312,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
             </div>
             <div className="space-y-8">
               <div className="space-y-4">
-                <span className="text-xs tracking-[0.4em] uppercase text-[#D9A441]">VIVEZ L'ESSENTIEL</span>
                 <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight">
                   <span className="block text-[#11382E]">Plus qu'un voyage,</span>
                   <span className="block text-[#D9A441] italic">une rencontre.</span>
@@ -361,9 +358,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="inline-flex bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-8">
-              <span className="text-xs tracking-[0.3em] uppercase text-white/80">CIRCUIT SIGNATURE</span>
-            </div>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
               Des palais d'Abomey
               <br />
