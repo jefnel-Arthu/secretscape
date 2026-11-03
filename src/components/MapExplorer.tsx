@@ -96,14 +96,11 @@ export const MapExplorer: React.FC<MapExplorerProps> = ({
       // Fix gray map when container is laid out after mount
       setTimeout(() => map.invalidateSize(), 200);
 
-      // Esri Dark Gray Canvas tiles (dark theme, no API key)
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-        attribution: '&copy; <a href="https://www.esri.com">Esri</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        maxZoom: 19,
-      }).addTo(map);
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-        opacity: 0.9,
-        maxZoom: 19,
+      // Google Maps style tiles via OpenStreetMap/CartoDB or use Google-like tiles
+      L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; Google Maps'
       }).addTo(map);
 
       mapRef.current = map;
