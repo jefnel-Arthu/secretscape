@@ -303,11 +303,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl h-[520px] sm:h-[640px]">
-                <img src={MARKET_IMAGE} alt="Marché traditionnel béninois" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-8 left-8 sm:left-12 bg-[#D9A441] text-stone-950 w-28 h-28 rounded-full flex flex-col items-center justify-center text-center shadow-2xl">
-                <span className="text-xs font-bold tracking-widest">100%</span>
-                <span className="text-xs font-bold tracking-widest">AUTHENTIQUE</span>
+                <img src="https://i.pinimg.com/736x/6e/16/2a/6e162a75e2abf9ecfa31e2a4bfd4f9ae.jpg" alt="Ambiance et rencontres au Bénin" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="space-y-8">
