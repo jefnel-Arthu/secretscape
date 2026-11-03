@@ -475,34 +475,38 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
       {/* ═══════════════════════════════════════════════ CTA ═══ */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-amber-600 to-orange-500" />
-        <div className="absolute inset-0 bg-[url('https://i.pinimg.com/1200x/ee/8d/8f/ee8d8fc7c496a912c850b239dd8892bf.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80" alt="Bénin autrement" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/90 via-[#0b1b2b]/70 to-[#0b1b2b]/50" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-stone-950 text-xs font-bold px-4 py-2 rounded-full border border-white/20">
-            <Heart className="w-3.5 h-3.5 fill-current" />
-            <span>Explorez avec passion</span>
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/80 text-xs font-medium px-4 py-2 rounded-full border border-white/20">
+            <Heart className="w-3.5 h-3.5 fill-[#D9A441] text-[#D9A441]" />
+            <span className="tracking-[0.3em] uppercase">EXPLOREZ AVEC PASSION</span>
           </div>
 
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-stone-950 leading-tight">
-            Pret a vivre l'aventure ?
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight">
+            <span className="block text-white">Prêt à vivre l'aventure ?</span>
           </h2>
-          <p className="text-stone-900/70 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
-            Contactez-nous pour un voyage sur-mesure, ou commencez des maintenant a planifier votre escapade secrete.
+          <p className="text-white/80 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+            Contactez-nous pour un voyage sur-mesure, ou commencez dès maintenant à planifier votre escapade secrète.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => onNavigate('contact')}
-              className="bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl transition-all hover:scale-[1.03]"
+              className="bg-[#D9A441] hover:bg-[#c89433] text-stone-950 font-semibold text-sm py-4 px-8 rounded-full flex items-center gap-2.5 shadow-2xl transition-all hover:scale-[1.03]"
             >
-              <Phone className="w-4 h-4 text-amber-400" />
+              <Phone className="w-4 h-4" />
               Nous contacter
             </button>
             <button
               onClick={() => onNavigate('services')}
-              className="bg-white/20 hover:bg-white/30 text-stone-950 font-bold text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 backdrop-blur-sm border border-stone-950/10 transition-all hover:scale-[1.03]"
+              className="group flex items-center gap-3 text-white font-medium text-sm py-4 px-6 rounded-full hover:bg-white/5 transition-all"
             >
-              <ShieldCheck className="w-4 h-4" />
+              <span className="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center group-hover:border-white/70 transition-all">
+                <ShieldCheck className="w-4 h-4" />
+              </span>
               Nos services
             </button>
           </div>
