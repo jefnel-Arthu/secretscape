@@ -606,6 +606,32 @@ Pour chaque jour, génère de 3 à 4 étapes réparties sur la journée (Matin 0
     }
   });
 
+  // Basic auth protection
+  const SITE_PASSWORD = process.env.SITE_PASSWORD || 'secretscape2026';
+  const protectedRoutes = ['/', '/index.html'];
+  
+  app.use((req, res, next) => {
+    // Allow API routes
+    if (req.path.startsWith('/api/')) {
+      return next();
+    }
+    // Check auth for main routes
+    const auth = req.headers.authorization;
+    if (auth && auth.startsWith('Basic ')) {
+      try {
+        const base64 = auth.slice(6);
+        const decoded = Buffer.from(base64, 'base64').toString('utf8');
+        const pass = decoded.split(':')[1];
+        if (pass === SITE_PASSWORD) {
+          return next();
+        }
+      } catch {}
+    }
+    // Request auth
+    res.set('WWW-Authenticate', 'Basic realm="SecretScape - Accès restreint"');
+    res.status(401).send('Authentification requise');
+  });
+
   // Vite middleware
   if (process.env.NODE_ENV !== "production") {
     const { createServer: createViteServer } = await import("vite");
