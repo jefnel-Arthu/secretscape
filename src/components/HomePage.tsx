@@ -347,7 +347,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
         </div>
       </section>
 
-      <section className="relative py-28 overflow-hidden mb-20 sm:mb-28">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://www.africanparks.org/sites/default/files/2017-07/pendjari_bg.jpg" alt="Savane du Parc National de la Pendjari" className="w-full h-full object-cover" />
         </div>
