@@ -302,6 +302,14 @@ async function startServer() {
     if (imageData.length > 5 * 1024 * 1024) {
       return res.status(413).json({ error: 'Image trop volumineuse (max 5 Mo)' });
     }
+    const normName = visitorName.trim().toLowerCase().replace(/\s+/g, ' ');
+    const alreadyExists = visitorPhotos.some(p => 
+      p.spotId === spotId && 
+      p.visitorName?.trim().toLowerCase().replace(/\s+/g, ' ') === normName
+    );
+    if (alreadyExists) {
+      return res.status(409).json({ error: 'Vous avez déjà partagé un souvenir pour ce lieu avec ce nom.' });
+    }
     const photo: VisitorPhoto = {
       id: `photo-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
       spotId,

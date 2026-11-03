@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
   setSearchQuery,
 }) => {
   return (
-    <header className="sticky top-0 z-40 bg-stone-900/95 backdrop-blur-md border-b border-stone-800/60 shadow-lg shadow-stone-950/30">
+    <header className="sticky top-0 z-40 bg-[#0b1b2b]/95 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 py-2 gap-6">
 
@@ -47,14 +47,14 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setActiveTab('home')}
             className="flex items-center gap-3 shrink-0 group"
           >
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/30 group-hover:shadow-amber-500/50 transition-all group-hover:scale-105 group-hover:-rotate-3">
+            <div className="w-11 h-11 rounded-full bg-[#D9A441] flex items-center justify-center shadow-lg shadow-[#D9A441]/20 group-hover:shadow-[#D9A441]/40 transition-all">
               <Compass className="w-5 h-5 text-stone-950 stroke-[2.5]" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-display text-xl font-black text-white block leading-none tracking-tight">
-                Secret<span className="text-amber-400">Scape</span>
+              <span className="text-lg font-semibold text-white block leading-none tracking-tight">
+                Secret<span className="text-[#D9A441]">Scape</span>
               </span>
-              <span className="text-[10px] text-stone-500 font-semibold tracking-[3px] uppercase block mt-1">
+              <span className="text-[9px] text-white/40 font-medium tracking-[0.4em] uppercase block mt-1">
                 Bénin
               </span>
             </div>
@@ -101,16 +101,16 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => setActiveTab(tab)}
                   title={label}
                   aria-label={label}
-                  className={`relative flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-2.5 rounded-2xl transition-all duration-200 shrink-0 ${
+                  className={`relative flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-2.5 rounded-full transition-all duration-200 shrink-0 ${
                     isActive
-                      ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
-                      : 'text-stone-300 hover:bg-stone-800 hover:text-white'
+                      ? 'bg-[#D9A441] text-stone-950'
+                      : 'text-white/70 hover:text-white hover:bg-white/5'
                   }`}
                 >
-                  <Icon className="w-[18px] h-[18px]" strokeWidth={isActive ? 2.5 : 2} />
-                  <span className="hidden sm:inline text-sm font-semibold whitespace-nowrap">{label}</span>
+                  <Icon className="w-[18px] h-[18px]" strokeWidth={isActive ? 2.2 : 1.8} />
+                  <span className="hidden sm:inline text-sm font-medium whitespace-nowrap">{label}</span>
                   {badge > 0 && (
-                    <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] flex items-center justify-center bg-amber-500 text-stone-950 text-[10px] font-black rounded-full px-1 shadow-sm">
+                    <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] flex items-center justify-center bg-[#D9A441] text-stone-950 text-[10px] font-bold rounded-full px-1">
                       {badge}
                     </span>
                   )}
@@ -118,18 +118,16 @@ export const Header: React.FC<HeaderProps> = ({
               );
             })}
 
-            {/* Divider */}
-            <div className="w-px h-7 bg-stone-700/50 mx-1 md:mx-1.5 shrink-0" />
+            <div className="w-px h-7 bg-white/10 mx-1 md:mx-1.5 shrink-0" />
 
-            {/* Admin */}
             <button
               onClick={() => setActiveTab('admin')}
               title="Admin"
               aria-label="Admin"
-              className={`w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 shrink-0 ${
+              className={`w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${
                 activeTab === 'admin'
-                  ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
-                  : 'text-stone-500 hover:bg-stone-800 hover:text-stone-300 hover:scale-105'
+                  ? 'bg-[#D9A441] text-stone-950'
+                  : 'text-white/40 hover:text-white/70 hover:bg-white/5'
               }`}
             >
               <Lock className="w-4 h-4" />

@@ -347,7 +347,8 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
                 )}
               </h4>
               <button
-                onClick={() => onAddPhoto?.(spot)}
+                type="button"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); console.log('[SpotDetailModal] add photo clicked for', spot?.id); onAddPhoto?.(spot); }}
                 className="flex items-center gap-1.5 text-[11px] font-bold bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 px-3 py-1.5 rounded-xl transition-colors shrink-0"
               >
                 <ImagePlus className="w-3.5 h-3.5" />
@@ -397,14 +398,16 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
         {/* Modal Footer Fixed Actions */}
         <div className="bg-stone-50/80 backdrop-blur-sm border-t border-stone-200 p-4 sm:p-6 flex items-center justify-end gap-3">
           <button
-            onClick={onClose}
+            type="button"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); onClose(); }}
             className="px-4 py-2.5 text-stone-500 font-semibold text-xs hover:text-stone-700 hover:bg-stone-200/70 rounded-xl transition-all duration-200"
           >
             Fermer
           </button>
 
           <button
-            onClick={() => { if (spot) openInGoogleMaps(spot); onClose(); }}
+            type="button"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); if (spot) openInGoogleMaps(spot); onClose(); }}
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-5 rounded-xl flex items-center gap-2 shadow-md shadow-blue-500/25 hover:shadow-lg transition-all duration-200"
             title="Ouvrir l'itineraire dans Google Maps"
           >
@@ -413,7 +416,10 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
           </button>
 
           <button
-            onClick={() => {
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
               onAddToCalendar(spot);
               onClose();
             }}

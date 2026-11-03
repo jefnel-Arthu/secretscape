@@ -108,7 +108,8 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
           </select>
 
           <button
-            onClick={() => onAddPhoto?.(filterSpotId)}
+            type="button"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); console.log('[VisitorPhotosView] add photo clicked, filterSpotId:', filterSpotId); setLightboxIndex(null); onAddPhoto?.(filterSpotId); }}
             className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-amber-500 hover:text-stone-950 transition-all"
           >
             <ImagePlus className="w-3.5 h-3.5" />
@@ -129,7 +130,8 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
             Aucune photo pour le moment. Soyez le premier explorateur à partager son souvenir !
           </p>
           <button
-            onClick={() => onAddPhoto?.(filterSpotId)}
+            type="button"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); console.log('[VisitorPhotosView] empty add photo clicked, filterSpotId:', filterSpotId); setLightboxIndex(null); onAddPhoto?.(filterSpotId); }}
             className="mt-5 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-bold py-2.5 px-5 rounded-full transition-colors"
           >
             <ImagePlus className="w-4 h-4" />
@@ -141,8 +143,9 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
             {filtered.map((p, i) => (
               <button
+                type="button"
                 key={p.id}
-                onClick={() => setLightboxIndex(i)}
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightboxIndex(i); }}
                 className="group relative w-full mb-4 break-inside-avoid rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 text-left hover:border-amber-500/40 transition-all hover:shadow-xl hover:shadow-amber-500/5"
               >
                 <img

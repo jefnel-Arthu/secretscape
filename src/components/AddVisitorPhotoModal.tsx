@@ -19,6 +19,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
   initialSpotId,
   onSubmitted,
 }) => {
+  console.log('[AddVisitorPhotoModal] render, isOpen:', isOpen, 'initialSpotId:', initialSpotId);
   const sortedSpots = useMemo(
     () => [...spots].sort((a, b) => a.title.localeCompare(b.title)),
     [spots]
@@ -35,7 +36,16 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      setDone(false);
+      setUploading(false);
+      setCompressing(false);
+      setError('');
+      setPreview(null);
+      setMessage('');
+      setVisitorName('');
+      return;
+    }
     setSpotId(initialSpotId && sortedSpots.some(s => s.id === initialSpotId) ? initialSpotId : (sortedSpots[0]?.id || ''));
     setVisitorName('');
     setMessage('');
@@ -46,7 +56,11 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
     setError('');
   }, [isOpen, initialSpotId, sortedSpots]);
 
-  if (!isOpen) return null;
+  if (!isOpen) {
+    console.log('[AddVisitorPhotoModal] not open, returning null');
+    return null;
+  }
+  console.log('[AddVisitorPhotoModal] rendering modal, isOpen:', isOpen);
 
   const handleFile = async (file: File | undefined) => {
     if (!file) return;
@@ -100,9 +114,9 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
       }).catch(() => {});
       setDone(true);
       onSubmitted?.();
+      setUploading(false);
     } catch {
       setError('Erreur réseau. Réessayez.');
-    } finally {
       setUploading(false);
     }
   };
@@ -128,7 +142,8 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
           </div>
 
           <button
-            onClick={onClose}
+            type="button"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); onClose(); }}
             className="p-2 text-stone-400 hover:text-white rounded-full bg-stone-800 transition-colors"
           >
             <X className="w-5 h-5" />
@@ -144,7 +159,8 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
               Merci pour votre contribution. Votre souvenir est maintenant visible dans la galerie.
             </p>
             <button
-              onClick={onClose}
+              type="button"
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onClose(); }}
               className="mt-2 bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-6 py-3 rounded-xl transition-colors"
             >
               Fermer

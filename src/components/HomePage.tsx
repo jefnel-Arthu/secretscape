@@ -1,22 +1,23 @@
 import React from 'react';
 import { HiddenSpot } from '../types';
-import { INITIAL_HIDDEN_SPOTS, CATEGORY_LABELS } from '../data/hiddenSpots';
+import { INITIAL_HIDDEN_SPOTS } from '../data/hiddenSpots';
 import {
   Compass,
   MapPin,
-  Calendar as CalendarIcon,
   ArrowRight,
   Star,
-  Footprints,
+  Play,
+  Leaf,
+  Users,
+  Crown,
+  Route,
+  ArrowDown,
+  Ticket,
+  Quote,
+  Heart,
   Phone,
   ShieldCheck,
-  Users,
-  Globe,
-  ChevronRight,
-  Ticket,
-  Heart,
-  Quote,
-  ArrowDown,
+  Calendar as CalendarIcon,
 } from 'lucide-react';
 
 interface HomePageProps {
@@ -25,7 +26,14 @@ interface HomePageProps {
   onOpenSpot: (spot: HiddenSpot) => void;
 }
 
-const HERO_IMAGE = 'https://i.pinimg.com/1200x/ee/8d/8f/ee8d8fc7c496a912c850b239dd8892bf.jpg';
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80';
+const GANVIE_IMAGE = 'https://journeysbydesign.com/wp-content/uploads/2023/02/Ganvie-2000x1024.jpg';
+const COTONOU_IMAGE = 'https://www.gouv.bj/upload/thumbnails/articles//0167603001607780384.jpeg';
+const OUIDAH_IMAGE = 'https://media.istockphoto.com/id/2222142715/fr/photo/porte-de-non-retour-%C3%A0-ouidah-b%C3%A9nin-sur-la-c%C3%B4te-atlantique-par-un-apr%C3%A8s-midi-ensoleill%C3%A9-2.jpg?s=612x612&w=0&k=20&c=47hSXjwvydJD0PBkQDcwovccP-04oa7DjUwuqJMWoW4=';
+const GRAND_POPO_IMAGE = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/1f/67/88/grand-popo-beach-tranquility.jpg?w=1200&h=-1&s=1';
+const PORTO_NOVO_IMAGE = 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg';
+const MARKET_IMAGE = 'https://i.pinimg.com/1200x/a5/63/0b/a5630b8eae26b64c7f6f344c14941541.jpg';
+const SAFARI_IMAGE = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=80';
 
 const CATEGORY_CARDS = [
   {
@@ -100,6 +108,24 @@ const TESTIMONIALS = [
     text: "Le billet de voyage est une super idée. On l'a imprimé, c'était notre compagnon de route. Le Bénin est un trésor caché.",
     rating: 5,
   },
+  {
+    name: 'Thomas R.',
+    from: 'Lyon, France',
+    text: "Ouidah nous a profondément marqué. L'histoire, l'ambiance et l'accueil ont dépassé toutes nos attentes.",
+    rating: 5,
+  },
+  {
+    name: 'Aminata B.',
+    from: 'Lomé, Togo',
+    text: "Un site qui met vraiment en valeur le Bénin authentique. J'ai redécouvert mon propre pays sous un autre angle.",
+    rating: 5,
+  },
+  {
+    name: 'Lucas F.',
+    from: 'Bruxelles, Belgique',
+    text: "Ganvié était le coup de cœur absolu. Merci pour ces pépites méconnues, on reviendra sans hésiter.",
+    rating: 5,
+  },
 ];
 
 const FEATURED_SPOT_IDS = [
@@ -135,244 +161,226 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
     <div className="min-h-screen">
 
       {/* ═══════════════════════════════════════════════ HERO ═══ */}
-      <section className="relative h-[85vh] min-h-[650px] flex items-end overflow-hidden">
-        {/* Background Image */}
+      <section className="relative h-[100vh] min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMAGE} alt="" className="w-full h-full object-cover" />
+          <img src={GANVIE_IMAGE} alt="Village lacustre de Ganvié" className="w-full h-full object-cover scale-105" />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/90 via-[#0b1b2b]/65 to-[#0b1b2b]/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b2b]/90 via-transparent to-transparent" />
 
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/70 via-transparent to-transparent" />
-
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 sm:pb-32">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-8">
-            {/* Title */}
-            <div className={`space-y-1 transition-all duration-1000 delay-500 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
-                Voyagez Au Cœur
-              </h1>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-amber-400 leading-[1.05] tracking-tight">
-                des Secrets
-              </h1>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
-                du Bénin
+            <div className={`transition-all duration-1000 delay-300 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+              <span className="text-[#D9A441] text-xs sm:text-sm tracking-[0.4em] uppercase font-medium">TERRE D'ÉMOTIONS ET DE RENCONTRES</span>
+            </div>
+
+            <div className={`transition-all duration-1000 delay-500 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <h1 className="font-serif text-5xl sm:text-7xl lg:text-[90px] xl:text-[100px] leading-[0.9] tracking-tight">
+                <span className="block text-white">Le Bénin,</span>
+                <span className="block text-[#D9A441] italic">autrement.</span>
               </h1>
             </div>
 
-            {/* Subtitle */}
-            <p
-              className={`text-stone-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl transition-all duration-1000 delay-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-            >
-              Partez à la découverte des merveilles méconnues du Bénin, avec des itinéraires pensés pour vous.
+            <p className={`text-white/80 text-base sm:text-lg leading-relaxed max-w-xl transition-all duration-1000 delay-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+              Vibrez au rythme d'une terre authentique,
+              <br className="hidden sm:block" />
+              entre héritages royaux, nature indomptée
+              <br className="hidden sm:block" />
+              et hospitalité inoubliable.
             </p>
 
-            {/* CTA */}
-            <div className={`flex flex-wrap items-center gap-3 pt-2 transition-all duration-1000 delay-[900ms] ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+            <div className={`flex flex-wrap items-center gap-4 pt-4 transition-all duration-1000 delay-[900ms] ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <button
                 onClick={() => onNavigate('map')}
-                className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-black text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 shadow-2xl shadow-amber-500/30 transition-all hover:scale-[1.03] active:scale-95"
+                className="group bg-[#D9A441] hover:bg-[#c89433] text-stone-950 font-semibold text-sm py-4 px-8 rounded-full flex items-center gap-3 transition-all hover:gap-4"
               >
-                <Compass className="w-5 h-5" />
-                Explorer maintenant
+                Explorer le Bénin
+                <ArrowRight className="w-4 h-4" />
               </button>
               <button
-                onClick={() => onNavigate('calendar')}
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-sm py-4 px-8 rounded-2xl flex items-center gap-2.5 border border-white/20 transition-all hover:scale-[1.03] active:scale-95"
+                onClick={() => onNavigate('gallery')}
+                className="group flex items-center gap-3 text-white font-medium text-sm py-4 px-6 rounded-full hover:bg-white/5 transition-all"
               >
-                <CalendarIcon className="w-5 h-5 text-amber-400" />
-                Planifier mon voyage
+                <span className="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center group-hover:border-white/70 transition-all">
+                  <Play className="w-4 h-4 fill-white ml-0.5" />
+                </span>
+                Voir les incontournables
               </button>
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:block">
-          <div className="flex flex-col items-center gap-1 text-white/30 animate-bounce">
+          <div className="flex flex-col items-center gap-1 text-white/40 animate-bounce">
             <span className="text-[9px] font-bold tracking-widest uppercase">Scroll</span>
             <ArrowDown className="w-4 h-4" />
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ STATS ═══ */}
-      <section className="relative -mt-16 z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-stone-900/95 backdrop-blur-xl rounded-3xl border border-stone-800 shadow-2xl shadow-stone-900/50 p-6 sm:p-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {[
-              { icon: MapPin, value: `${INITIAL_HIDDEN_SPOTS.length}+`, label: 'Lieux secrets', gradient: 'from-amber-500 to-orange-500' },
-              { icon: Globe, value: '15+', label: 'Villes couvertes', gradient: 'from-cyan-500 to-blue-500' },
-              { icon: Users, value: '1000+', label: 'Explorateurs', gradient: 'from-emerald-500 to-teal-500' },
-              { icon: Star, value: '4.8', label: 'Note moyenne', gradient: 'from-yellow-500 to-amber-500' },
-            ].map(({ icon: Icon, value, label, gradient }) => (
-              <div key={label} className="text-center space-y-2">
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto shadow-lg`}>
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-2xl font-black text-white">{value}</div>
-                <div className="text-[11px] text-stone-500 font-semibold uppercase tracking-wider">{label}</div>
+      <section className="bg-[#F6F3EE] py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-3xl h-[420px] sm:h-[560px]">
+                <img src="https://i.pinimg.com/736x/ea/ff/b6/eaffb67a1d39b692128a5cd01edb60c5.jpg" alt="Ambiance béninoise" className="w-full h-full object-cover" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════ CATEGORIES ═══ */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14 space-y-4">
-            <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Explorez par thème</span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 leading-tight">
-              Quelle aventure vous appelle ?
-            </h2>
-            <p className="text-stone-500 text-sm max-w-lg mx-auto leading-relaxed">
-              Du littoral aux terres intérieures, chaque catégorie recèle des trésors méconnus.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {CATEGORY_CARDS.map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => onNavigateToCategory(cat.key)}
-                className="group relative rounded-2xl overflow-hidden aspect-[3/4] bg-stone-200 text-left"
-              >
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${cat.color} opacity-60 group-hover:opacity-70 transition-opacity duration-300`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                <div className="absolute bottom-0 left-0 right-0 p-4 space-y-1">
-                  <h3 className="font-display font-bold text-white text-sm leading-tight">{cat.name}</h3>
-                  <p className="text-white/70 text-[10px] leading-snug">{cat.desc}</p>
-                  <div className="flex items-center justify-between pt-1">
-                    <span className="text-white/60 text-[10px] font-semibold">
-                      {spotCountsByCategory[cat.key] || 0} lieux
-                    </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all" />
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════ FEATURED SPOTS ═══ */}
-      <section className="py-24 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-12">
-            <div className="space-y-3">
-              <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Les incontournables</span>
-              <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900">
-                Pepites que vous ne ratez pas
-              </h2>
             </div>
-            <button
-              onClick={() => onNavigate('map')}
-              className="hidden sm:flex items-center gap-1.5 text-amber-700 hover:text-amber-800 font-bold text-xs bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded-xl transition-colors"
-            >
-              Voir tous les lieux <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredSpots.map((spot) => (
-              <button
-                key={spot.id}
-                onClick={() => onOpenSpot(spot)}
-                className="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-stone-200 text-left shadow-lg hover:shadow-2xl transition-all duration-500"
-              >
-                <img
-                  src={spot.imageUrl}
-                  alt={spot.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/30 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-600/10 group-hover:from-amber-500/10 transition-all duration-500" />
-
-                {/* Rating badge */}
-                <div className="absolute top-4 right-4 flex items-center gap-1 bg-stone-900/60 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                  <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
-                  <span className="text-white text-xs font-bold">{spot.rating}</span>
-                </div>
-
-                {/* Category badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/10">
-                    {CATEGORY_LABELS[spot.category]?.name || spot.category}
-                  </span>
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-6 space-y-3">
-                  <div className="flex items-center gap-3 text-white/60 text-[11px]">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-amber-400" /> {spot.city}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Footprints className="w-3 h-3" /> ~{spot.estimatedDurationMinutes} min
-                    </span>
-                  </div>
-                  <h3 className="font-display font-bold text-white text-xl leading-tight group-hover:text-amber-300 transition-colors">
-                    {spot.title}
-                  </h3>
-                  <p className="text-stone-300 text-xs line-clamp-2 leading-relaxed">
-                    {spot.description}
-                  </p>
-                </div>
+            <div className="space-y-6">
+              <span className="text-xs tracking-[0.4em] uppercase text-[#D9A441]">BIENVENUE AU BÉNIN</span>
+              <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight">
+                <span className="block text-[#11382E]">Un petit pays,</span>
+                <span className="block text-[#D9A441] italic">de grandes histoires.</span>
+              </h2>
+              <p className="text-stone-700 text-base sm:text-lg leading-relaxed">
+                Du tumulte coloré de Cotonou aux silences majestueux de la Pendjari,
+                le Bénin ne se visite pas : il se vit. Entre héritages royaux, spiritualité
+                vivante et hospitalité légendaire, chaque rencontre laisse une empreinte.
+              </p>
+              <button onClick={() => onNavigate('map')} className="group flex items-center gap-2 text-[#11382E] font-medium hover:text-[#D9A441] transition-colors">
+                Pourquoi choisir le Bénin ?
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-            ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 sm:mb-16">
+            <span className="text-xs tracking-[0.4em] uppercase text-[#D9A441]">NOS INCONTOURNABLES</span>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl mt-4 leading-tight">
+              <span className="block text-[#11382E]">Choisissez votre</span>
+              <span className="block">prochaine <span className="text-[#D9A441] italic">émotion</span>.</span>
+            </h2>
           </div>
 
-          <div className="sm:hidden mt-8 text-center">
-            <button
-              onClick={() => onNavigate('map')}
-              className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-sm py-3 px-6 rounded-xl inline-flex items-center gap-1.5 shadow-lg shadow-amber-500/25"
-            >
-              Voir tous les lieux <ChevronRight className="w-4 h-4" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <button onClick={() => onNavigate('gallery')} className="lg:col-span-6 group relative overflow-hidden rounded-3xl h-[380px] sm:h-[460px] text-left">
+              <img src="https://benin360.com/wp-content/uploads/2026/09/hotel-ganvie-1080x675.jpg" alt="Ganvié" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-8 left-8 space-y-2">
+                <span className="text-xs tracking-[0.3em] uppercase text-white/70">VILLAGE LACUSTRE</span>
+                <h3 className="font-serif text-4xl sm:text-5xl text-white">Ganvié</h3>
+              </div>
+            </button>
+            <button onClick={() => onNavigate('gallery')} className="lg:col-span-6 group relative overflow-hidden rounded-3xl h-[380px] sm:h-[460px] text-left">
+              <img src="https://www.libreville-aeroport.com/wp-content/uploads/2019/11/cotonou-1-750x500-c-default.jpg" alt="Cotonou" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-8 left-8 space-y-2">
+                <span className="text-xs tracking-[0.3em] uppercase text-white/70">VILLE VIBRANTE</span>
+                <h3 className="font-serif text-4xl sm:text-5xl text-white">Cotonou</h3>
+              </div>
+            </button>
+            <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
+              <img src="https://media.istockphoto.com/id/2222142715/fr/photo/porte-de-non-retour-%C3%A0-ouidah-b%C3%A9nin-sur-la-c%C3%B4te-atlantique-par-un-apr%C3%A8s-midi-ensoleill%C3%A9-2.jpg?s=612x612&w=0&k=20&c=47hSXjwvydJD0PBkQDcwovccP-04oa7DjUwuqJMWoW4=" alt="Ouidah" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-8 left-8 space-y-2">
+                <span className="text-xs tracking-[0.3em] uppercase text-white/70">MÉMOIRE & SPIRITUALITÉ</span>
+                <h3 className="font-serif text-3xl sm:text-4xl text-white">Ouidah</h3>
+              </div>
+            </button>
+            <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/1f/67/88/grand-popo-beach-tranquility.jpg?w=1200&h=-1&s=1" alt="Grand-Popo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-8 left-8 space-y-2">
+                <span className="text-xs tracking-[0.3em] uppercase text-white/70">OCÉAN & DOUCEUR</span>
+                <h3 className="font-serif text-3xl sm:text-4xl text-white">Grand-Popo</h3>
+              </div>
+            </button>
+            <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg" alt="Porto-Novo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-8 left-8 space-y-2">
+                <span className="text-xs tracking-[0.3em] uppercase text-white/70">HISTOIRE & TRADITIONS</span>
+                <h3 className="font-serif text-3xl sm:text-4xl text-white">Porto-Novo</h3>
+              </div>
             </button>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ DESTINATIONS ═══ */}
-      <section className="py-24 bg-white">
+      <section className="py-20 sm:py-28 bg-[#F6F3EE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14 space-y-3">
-            <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Destinations</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900">
-              Explorez par ville
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {DESTINATIONS.map((dest) => (
-              <button
-                key={dest.city}
-                onClick={() => onNavigate('map')}
-                className="group relative rounded-2xl overflow-hidden aspect-square bg-stone-200 text-left"
-              >
-                <img
-                  src={dest.image}
-                  alt={dest.city}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 to-transparent group-hover:from-stone-950/60 transition-colors" />
-
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="font-display font-bold text-white text-base">{dest.city}</h3>
-                  <span className="text-white/60 text-[11px] font-medium">{dest.count} lieux</span>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-3xl h-[520px] sm:h-[640px]">
+                <img src={MARKET_IMAGE} alt="Marché traditionnel béninois" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-8 left-8 sm:left-12 bg-[#D9A441] text-stone-950 w-28 h-28 rounded-full flex flex-col items-center justify-center text-center shadow-2xl">
+                <span className="text-xs font-bold tracking-widest">100%</span>
+                <span className="text-xs font-bold tracking-widest">AUTHENTIQUE</span>
+              </div>
+            </div>
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <span className="text-xs tracking-[0.4em] uppercase text-[#D9A441]">VIVEZ L'ESSENTIEL</span>
+                <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight">
+                  <span className="block text-[#11382E]">Plus qu'un voyage,</span>
+                  <span className="block text-[#D9A441] italic">une rencontre.</span>
+                </h2>
+              </div>
+              <p className="text-stone-700 text-base sm:text-lg leading-relaxed max-w-xl">
+                Nous imaginons des aventures qui ont du sens, loin des itinéraires tout tracés et au plus proche de l'âme béninoise. Le Bénin se découvre par les échanges, les sourires et le partage.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-8 pt-4">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-[#11382E]/5 flex items-center justify-center">
+                    <Crown className="w-5 h-5 text-[#11382E]" />
+                  </div>
+                  <h3 className="font-semibold text-[#11382E]">Culture & Histoire</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">Palais royaux, Route des Esclaves, traditions vivantes.</p>
                 </div>
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-[#11382E]/5 flex items-center justify-center">
+                    <Leaf className="w-5 h-5 text-[#11382E]" />
+                  </div>
+                  <h3 className="font-semibold text-[#11382E]">Nature sauvage</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">Safari, mangroves, parcs naturels, paysages protégés.</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-[#11382E]/5 flex items-center justify-center">
+                    <Users className="w-5 h-5 text-[#11382E]" />
+                  </div>
+                  <h3 className="font-semibold text-[#11382E]">Rencontres locales</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">Des expériences guidées par celles et ceux qui vivent ici.</p>
+                </div>
+              </div>
+              <button onClick={() => onNavigate('map')} className="bg-[#11382E] hover:bg-[#0e2d25] text-white font-medium text-sm py-4 px-8 rounded-full transition-all">
+                Découvrir nos expériences
               </button>
-            ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={SAFARI_IMAGE} alt="Savane béninoise" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <div className="inline-flex bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-8">
+              <span className="text-xs tracking-[0.3em] uppercase text-white/80">CIRCUIT SIGNATURE</span>
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+              Des palais d'Abomey
+              <br />
+              aux terres <span className="italic text-[#D9A441]">sauvages.</span>
+            </h2>
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8">
+              Un voyage complet à travers les trésors du Bénin : mémoire des royaumes,
+              spiritualité, villages lacustres et safari dans le parc national de la Pendjari.
+            </p>
+            <div className="flex flex-wrap items-center gap-6 mb-10 text-white/70 text-sm">
+              <span>10 jours / 9 nuits</span>
+              <span className="w-1 h-1 rounded-full bg-white/40" />
+              <span>À partir de 1490 €</span>
+            </div>
+            <button onClick={() => onNavigate('calendar')} className="bg-[#D9A441] hover:bg-[#c89433] text-stone-950 font-semibold text-sm py-4 px-10 rounded-full transition-all">
+              Découvrir ce circuit
+            </button>
           </div>
         </div>
       </section>
@@ -434,13 +442,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       <section className="py-24 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 space-y-3">
-            <span className="text-xs font-bold text-amber-600 tracking-[3px] uppercase">Temoignages</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900">
-              Ils ont explore le Benin avec nous
+            <span className="text-xs tracking-[0.4em] uppercase text-[#D9A441]">Témoignages</span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-[#11382E]">
+              Ils ont exploré le Bénin avec nous
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (
               <div
                 key={t.name}

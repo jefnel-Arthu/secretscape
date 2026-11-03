@@ -129,8 +129,10 @@ export default function App() {
   const [souvenirsRefreshKey, setSouvenirsRefreshKey] = useState<number>(0);
 
   const openAddVisitorPhoto = useCallback((spotId?: string | null) => {
+    console.log('[openAddVisitorPhoto] called with', spotId);
     setVisitorPhotoInitialSpot(spotId ?? null);
     setVisitorPhotoModalOpen(true);
+    console.log('[openAddVisitorPhoto] modal state set to open');
   }, []);
 
   // Save to LocalStorage
@@ -551,10 +553,12 @@ export default function App() {
         {/* Add Visitor Photo Modal */}
         <AddVisitorPhotoModal
           isOpen={visitorPhotoModalOpen}
-          onClose={() => setVisitorPhotoModalOpen(false)}
+          onClose={() => { setVisitorPhotoModalOpen(false); setVisitorPhotoInitialSpot(null); setSouvenirsRefreshKey(k => k + 1); }}
           spots={spots}
           initialSpotId={visitorPhotoInitialSpot}
           onSubmitted={() => {
+            setVisitorPhotoModalOpen(false);
+            setVisitorPhotoInitialSpot(null);
             setSouvenirsRefreshKey(k => k + 1);
             showToast('Photo publiée dans la galerie des souvenirs !');
           }}
