@@ -382,6 +382,9 @@ export default function App() {
           <HomePage
             onNavigate={(tab) => {
               trackAction('homepage_click', `Clic homepage: ${tab}`);
+              if (tab === 'map') {
+                setViewMode('map');
+              }
               setActiveTab(tab as any);
             }}
             onNavigateToCategory={(category) => {
