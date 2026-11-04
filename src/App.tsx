@@ -425,27 +425,33 @@ export default function App() {
               />
             ) : (
               /* Grid / Catalog View */
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
-                {filteredSpots.length === 0 ? (
-                  <div className="text-center py-20 bg-white rounded-3xl border border-stone-200 p-8 space-y-4">
-                    <Compass className="w-12 h-12 text-stone-300 mx-auto" />
-                    <h3 className="font-display font-bold text-lg text-stone-800">Aucun lieu secret ne correspond à vos filtres</h3>
-                    <p className="text-stone-500 text-xs">Essayez d'élargir votre recherche.</p>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredSpots.map(spot => (
-                      <SpotCard
-                        key={spot.id}
-                        spot={spot}
-                        onSelectSpot={(s) => setSelectedSpotModal(s)}
-                        onAddToCalendar={(s) => handleAddToCalendar(s)}
-                        onToggleFavorite={handleToggleFavorite}
-                        isFavorite={favorites.includes(spot.id)}
-                      />
-                    ))}
-                  </div>
-                )}
+              <div className="relative flex-1 w-full">
+                <div className="absolute inset-0">
+                  <img src="https://www.africanparks.org/sites/default/files/2017-07/pendjari_bg.jpg" alt="Forêt et savane du Bénin" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0b1b2b]/80 via-[#0b1b2b]/70 to-[#0b1b2b]/85" />
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+                  {filteredSpots.length === 0 ? (
+                    <div className="text-center py-20 bg-white/95 backdrop-blur-sm rounded-3xl border border-white/20 p-8 space-y-4 shadow-2xl">
+                      <Compass className="w-12 h-12 text-stone-300 mx-auto" />
+                      <h3 className="font-display font-bold text-lg text-stone-800">Aucun lieu secret ne correspond à vos filtres</h3>
+                      <p className="text-stone-500 text-xs">Essayez d'élargir votre recherche.</p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {filteredSpots.map(spot => (
+                        <SpotCard
+                          key={spot.id}
+                          spot={spot}
+                          onSelectSpot={(s) => setSelectedSpotModal(s)}
+                          onAddToCalendar={(s) => handleAddToCalendar(s)}
+                          onToggleFavorite={handleToggleFavorite}
+                          isFavorite={favorites.includes(spot.id)}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>

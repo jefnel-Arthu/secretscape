@@ -165,8 +165,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
         <div className="absolute inset-0">
           <img src={GANVIE_IMAGE} alt="Village lacustre de Ganvié" className="w-full h-full object-cover scale-105" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/90 via-[#0b1b2b]/65 to-[#0b1b2b]/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b2b]/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/70 via-[#0b1b2b]/45 to-[#0b1b2b]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b2b]/80 via-transparent to-transparent" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-8">
