@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>SecretScape — Bénin, les lieux secrets (spécimen)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ======================= SPRITE D'ICÔNES ======================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/>
+    <circle cx="12" cy="10" r="2.6"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/>
+  </symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24">
+    <path d="m12 3 2.7 5.7 6.3.8-4.6 4.4 1.2 6.2L12 17.2 6.4 20.1l1.2-6.2L3 9.5l6.3-.8L12 3Z"/>
+  </symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/>
+  </symbol>
+  <symbol id="i-route" viewBox="0 0 24 24">
+    <circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/>
+    <path d="M8.4 6H14a3 3 0 0 1 0 6h-4a3 3 0 0 0 0 6h5.6"/>
+  </symbol>
+</svg>
+
+<!-- ======================= 01 — COUVERTURE ======================= -->
+<section class="page cover" data-name="couverture">
+  <div class="cover__photo">
+    <img src="../../public/images/localized/ganvie-6b0090.jpg" alt="Village lacustre de Ganvié au lever du jour">
+    <div class="cover__veil"></div>
+    <span class="credit">Photo : Wikimedia Commons</span>
+  </div>
+
+  <div class="cover__top">
+    <div class="wordmark">Secret<span>Scape</span></div>
+    <div class="specimen-tag">Spécimen · 10 pages</div>
+  </div>
+
+  <div class="cover__band">
+    <img class="cover__map" src="assets/benin-outline.svg" alt="">
+    <div class="cover__kicker">
+      <span>Le guide des lieux secrets</span>
+      <i></i>
+      <span>Édition 2026</span>
+    </div>
+    <h1 class="cover__title display">Bénin<em>les lieux secrets</em></h1>
+    <p class="cover__sub">Cinquante adresses choisies, neuf territoires, trois itinéraires. Un carnet de route pour découvrir le Bénin autrement.</p>
+  </div>
+
+  <div class="cover__foot">
+    <span>Guide numérique · Format A4</span>
+    <span>secretscape.com</span>
+  </div>
+</section>
+
+<!-- ======================= 02 — PAGE DE GARDE ======================= -->
+<section class="page inside" data-name="page-de-garde">
+  <div class="inside__frame"></div>
+
+  <div class="inside__content">
+    <div class="monogram">SS</div>
+    <p class="inside__epigraph">« Au Bénin, les plus beaux endroits ne sont pas toujours ceux que l’on montre. »</p>
+    <div class="inside__rule"></div>
+    <p class="inside__text">Ce carnet est né d’une conviction simple : le Bénin se découvre mieux en dehors des circuits balisés. Derrière une plage, un marché, une porte de pierre, il y a toujours une histoire que l’on ne raconte pas dans les guides classiques.</p>
+    <p class="inside__text">Nous avons parcouru le pays, comparé les lumières, écouté les habitants, puis retenu cinquante lieux. Cinquante, pas un de plus : ceux qui méritent le détour, le lever de soleil et parfois la patience.</p>
+    <p class="inside__text">Ce spécimen de dix pages présente la maquette, la hiérarchie typographique et le rythme éditorial du guide complet. Les textes et les visuels y sont proposés à titre de validation.</p>
+    <p class="inside__note">Bonne route — et prenez le temps.</p>
+  </div>
+
+  <div class="colophon">
+    <div><b>Édition</b>SecretScape — Édition 2026</div>
+    <div><b>Conception éditoriale</b>SecretScape Studio</div>
+    <div><b>Typographies</b>Playfair Display &amp; Poppins</div>
+    <div><b>Format</b>210 × 297 mm — numérique</div>
+    <div><b>Photographies</b>SecretScape · Wikimedia Commons · Unsplash</div>
+    <div><b>Contact</b>secretscape.com</div>
+  </div>
+</section>
+
+<!-- ======================= 03 — SOMMAIRE ======================= -->
+<section class="page toc" data-name="sommaire">
+  <div class="toc__head">
+    <p class="eyebrow">Bénin, les lieux secrets</p>
+    <h2 class="toc__title display">Sommaire</h2>
+    <p class="toc__sub">Neuf chapitres, cinquante fiches et un carnet pratique pour composer votre propre route.</p>
+  </div>
+
+  <div class="toc__list">
+    <div class="toc__group">
+      <div class="toc__group-label">Ouvrir le guide</div>
+      <div class="toc-row">
+        <span class="num">—</span><span class="label">Avant-propos</span>
+        <span class="dots"></span><span class="page">003</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">—</span><span class="label">Le Bénin en neuf territoires</span>
+        <span class="dots"></span><span class="page">006</span>
+      </div>
+    </div>
+
+    <div class="toc__group">
+      <div class="toc__group-label">Les neuf territoires</div>
+      <div class="toc-row">
+        <span class="num">01</span><span class="label">Cotonou &amp; le littoral</span>
+        <span class="dots"></span><span class="page">012</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">02</span><span class="label">Ouidah, Ganvié &amp; la côte atlantique</span>
+        <span class="dots"></span><span class="page">026</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">03</span><span class="label">Grand-Popo &amp; la vallée du Mono</span>
+        <span class="dots"></span><span class="page">042</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">04</span><span class="label">Abomey &amp; le pays du Zou</span>
+        <span class="dots"></span><span class="page">056</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">05</span><span class="label">Porto-Novo &amp; l’Ouémé</span>
+        <span class="dots"></span><span class="page">068</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">06</span><span class="label">Dassa &amp; les collines sacrées</span>
+        <span class="dots"></span><span class="page">080</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">07</span><span class="label">L’Atacora, terre de pierre</span>
+        <span class="dots"></span><span class="page">090</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">08</span><span class="label">Alibori, Borgou &amp; le Donga</span>
+        <span class="dots"></span><span class="page">104</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">09</span><span class="label">Le Couffo &amp; le plateau</span>
+        <span class="dots"></span><span class="page">116</span>
+      </div>
+    </div>
+
+    <div class="toc__group">
+      <div class="toc__group-label">Carnet pratique</div>
+      <div class="toc-row">
+        <span class="num">—</span><span class="label">Trois itinéraires, de 4 à 10 jours</span>
+        <span class="dots"></span><span class="page">126</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">—</span><span class="label">L’agenda des fêtes</span>
+        <span class="dots"></span><span class="page">132</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">—</span><span class="label">Le répertoire des 296 adresses</span>
+        <span class="dots"></span><span class="page">136</span>
+      </div>
+      <div class="toc-row">
+        <span class="num">—</span><span class="label">Index &amp; crédits</span>
+        <span class="dots"></span><span class="page">142</span>
+      </div>
+    </div>
+  </div>
+
+  <aside class="toc__aside">
+    <div class="ph toc__photo">
+      <img src="../../public/images/localized/ambiance-beninoise-1f72ae.jpg" alt="Ruelles de Ouidah">
+    </div>
+    <p class="toc__caption">Ouidah, au fil des ruelles.</p>
+    <div class="toc__stats">
+      <div class="toc__stat"><b>50</b><span>fiches choisies</span></div>
+      <div class="toc__stat"><b>09</b><span>territoires</span></div>
+      <div class="toc__stat"><b>03</b><span>itinéraires</span></div>
+      <div class="toc__stat"><b>296</b><span>adresses répertoriées</span></div>
+    </div>
+  </aside>
+
+  <div class="toc__note">
+    <p>Chaque chapitre s’ouvre par une carte, se poursuit par les fiches et se referme sur un carnet d’adresses.</p>
+    <span>Comment lire ce guide</span>
+  </div>
+
+  <div class="folio">
+    <span>SecretScape — Bénin, les lieux secrets</span>
+    <span class="folio__line"></span>
+    <span>005</span>
+  </div>
+</section>
+
+<!-- ======================= 04 — INTRODUCTION + CARTE ======================= -->
+<section class="page intro" data-name="introduction">
+  <div class="intro__head">
+    <p class="eyebrow">Introduction</p>
+    <h2 class="intro__title display">Neuf territoires,<br><em>une même promesse.</em></h2>
+  </div>
+
+  <div class="intro__text">
+    <p class="body-copy">Le Bénin tient dans un geste : une pirogue qui s’éloigne, une porte qui s’ouvre sur l’océan, un marché qui s’éveille. En apparence petit, le pays déploie une densité rare — lagunes, savanes, palais, forêts sacrées, plages sans fin.</p>
+    <p class="body-copy">Ce guide n’est pas un inventaire. C’est une sélection. Cinquante lieux choisis pour leur beauté, leur histoire ou leur capacité à provoquer un souvenir. Autour d’eux, un répertoire de <strong>296 adresses</strong> pour composer votre propre route.</p>
+    <p class="body-copy">Neuf chapitres, neuf territoires. Chacun s’ouvre sur une carte, des repères et nos conseils de terrain. À la fin, trois itinéraires — quatre, sept ou dix jours — et un agenda pour attraper les fêtes au bon moment.</p>
+    <div class="rule" style="margin-top:9mm"></div>
+    <p class="serif-italic" style="margin-top:5mm;font-size:11pt;line-height:1.55;color:#11263a;max-width:88mm">« Le Bénin ne se raconte pas. Il se traverse, lentement, du sud au nord. »</p>
+  </div>
+
+  <aside class="map-col">
+    <div class="map-col__frame">
+      <img src="assets/benin-map.svg" alt="Carte des neuf territoires du Bénin">
+    </div>
+    <div class="intro__legend">
+      <div class="intro__legend-item"><b>01</b><span>Cotonou &amp; le littoral</span></div>
+      <div class="intro__legend-item"><b>02</b><span>Ouidah, Ganvié &amp; la côte</span></div>
+      <div class="intro__legend-item"><b>03</b><span>Grand-Popo &amp; le Mono</span></div>
+      <div class="intro__legend-item"><b>04</b><span>Abomey &amp; le Zou</span></div>
+      <div class="intro__legend-item"><b>05</b><span>Porto-Novo &amp; l’Ouémé</span></div>
+      <div class="intro__legend-item"><b>06</b><span>Dassa &amp; les collines</span></div>
+      <div class="intro__legend-item"><b>07</b><span>L’Atacora</span></div>
+      <div class="intro__legend-item"><b>08</b><span>Alibori, Borgou &amp; Donga</span></div>
+      <div class="intro__legend-item"><b>09</b><span>Le Couffo &amp; le plateau</span></div>
+    </div>
+    <p class="map-col__label">Les numéros renvoient aux chapitres</p>
+  </aside>
+
+  <div class="folio">
+    <span>Introduction</span>
+    <span class="folio__line"></span>
+    <span>006</span>
+  </div>
+</section>
+
+<!-- ======================= 05 — OUVERTURE DE CHAPITRE ======================= -->
+<section class="page chapter" data-name="chapitre-02">
+  <div class="chapter__photo">
+    <img src="../../public/images/localized/spot-ouidah-porte-7b413a.jpg" alt="La Porte du Non-Retour à Ouidah">
+    <div class="chapter__veil"></div>
+  </div>
+
+  <div class="chapter__body">
+    <div class="chapter__num">02</div>
+    <div class="chapter__kicker">
+      <span class="eyebrow eyebrow--light">Chapitre 02</span>
+      <i></i>
+      <span class="eyebrow eyebrow--light" style="color:rgba(250,246,238,.55)">Atlantique</span>
+    </div>
+    <h2 class="chapter__title display">Ouidah, Ganvié &amp; la côte atlantique</h2>
+    <p class="chapter__lead">Entre la porte du Non-Retour et les canaux de Ganvié, l’Atlantique raconte deux histoires : celle du départ et celle de la résistance. Ici, chaque village a gardé sa mémoire, chaque plage son secret.</p>
+
+    <div class="chapter__contents">
+      <div class="chapter__item"><span>027</span>Village lacustre de Ganvié</div>
+      <div class="chapter__item"><span>029</span>Porte du Non-Retour</div>
+      <div class="chapter__item"><span>031</span>Temple des Pythons</div>
+      <div class="chapter__item"><span>033</span>Plage de Djégbadji</div>
+      <div class="chapter__item"><span>035</span>Plage d’Avlékété</div>
+      <div class="chapter__item"><span>037</span>Chez Raphaël, à Ganvié</div>
+    </div>
+
+    <div class="chapter__meta">
+      <div class="chapter__places">
+        <b>Dans ce chapitre</b>
+        Ouidah · Sô-Ava · Avlékété · Djégbadji
+      </div>
+      <div class="chapter__pages">Pages 026 — 041</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 06 — FICHE GANVIÉ ======================= -->
+<section class="page fiche-a" data-name="fiche-ganvie">
+  <div class="fiche__head">
+    <span><b>02</b> — Ouidah, Ganvié &amp; la côte atlantique</span>
+    <span>Fiche 05 — Site</span>
+  </div>
+
+  <div class="ph fiche-a__photo">
+    <img src="../../public/images/localized/ganvie-6b0090.jpg" alt="Village lacustre de Ganvié">
+    <span class="credit">Ganvié, lac Nokoué</span>
+  </div>
+
+  <div class="fiche-a__titleblock">
+    <div>
+      <p class="eyebrow">Sô-Ava · Atlantique</p>
+      <h2 class="fiche-a__title display">Village lacustre<br>de Ganvié</h2>
+      <p class="fiche-a__sub">La « Venise de l’Afrique » et ses canaux secrets</p>
+    </div>
+    <div class="rating">
+      <b>4,9</b>
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><use href="#i-star"/></svg>
+        <svg viewBox="0 0 24 24"><use href="#i-star"/></svg>
+        <svg viewBox="0 0 24 24"><use href="#i-star"/></svg>
+        <svg viewBox="0 0 24 24"><use href="#i-star"/></svg>
+        <svg viewBox="0 0 24 24"><use href="#i-star"/></svg>
+      </div>
+      <small>142 avis</small>
+    </div>
+  </div>
+
+  <div class="meta-strip">
+    <div class="item">
+      <svg class="ic"><use href="#i-pin"/></svg>
+      <div class="txt"><div class="k">Lieu</div><div class="v">Sô-Ava,<br>lac Nokoué</div></div>
+    </div>
+    <div class="item">
+      <svg class="ic"><use href="#i-clock"/></svg>
+      <div class="txt"><div class="k">Durée</div><div class="v">3 heures<br>sur place</div></div>
+    </div>
+    <div class="item">
+      <svg class="ic"><use href="#i-sun"/></svg>
+      <div class="txt"><div class="k">Meilleur moment</div><div class="v">06h30 — 09h00<br>avant les bateaux</div></div>
+    </div>
+    <div class="item">
+      <svg class="ic"><use href="#i-compass"/></svg>
+      <div class="txt"><div class="k">Niveau de secret</div><div class="v">Bien caché<br>accessible en pirogue</div></div>
+    </div>
+  </div>
+
+  <div class="fiche-a__body">
+    <p class="body-copy">Ganvié est née de l’eau et de la nécessité. Au cœur du lac Nokoué, ce village de pilotis fut fondé par le peuple Tofinu pour échapper aux razzias. Aujourd’hui encore, tout s’y organise autour de la pirogue : le marché, l’école, les visites, les rires.</p>
+    <p class="body-copy">On y glisse entre les maisons comme dans une rue liquide. Le matin, les reflets découpent les façades de bois ; les pêcheurs relèvent les nasses, les enfants pagayent seuls. C’est un lieu fragile, à regarder et à respecter.</p>
+  </div>
+
+  <div class="secret">
+    <p class="eyebrow">Le conseil SecretScape</p>
+    <p>Embarquez à la rive de Sô-Ava avant 09h00 et demandez une pirogue à pagaie, plus silencieuse qu’un moteur. Vous entrerez dans le village par les canaux du marché, au moment où il s’éveille.</p>
+  </div>
+
+  <div class="fiche-a__cols">
+    <div class="mini-col">
+      <h4>À ne pas manquer</h4>
+      <ul>
+        <li>Le marché flottant de Dantokpa-Ganvié</li>
+        <li>Les écoles et les maisons sur pilotis</li>
+        <li>Les reflets du matin sur les canaux</li>
+      </ul>
+    </div>
+    <div class="mini-col">
+      <h4>Y aller</h4>
+      <p>Ganvié, commune de Sô-Ava, lac Nokoué.</p>
+      <p style="margin-top:1.6mm">30 min de Cotonou jusqu’à Sô-Ava, puis 20 min de pirogue. Départ conseillé à 07h00.</p>
+    </div>
+    <div class="mini-col">
+      <h4>Bon à savoir</h4>
+      <div class="tags" style="margin-bottom:2mm">
+        <span>Pirogue</span><span>Lac</span><span>Culture Tofinu</span><span>Photo</span>
+      </div>
+      <p>Prévoyez de l’eau et une protection solaire : l’accès se fait uniquement en barque.</p>
+    </div>
+  </div>
+
+  <div class="folio">
+    <span>Ouidah, Ganvié &amp; la côte atlantique</span>
+    <span class="folio__line"></span>
+    <span>027</span>
+  </div>
+</section>
+
+<!-- ======================= 07 — FICHE BOUCHE DU ROI ======================= -->
+<section class="page fiche-b" data-name="fiche-bouche-du-roi">
+  <div class="fiche__head">
+    <span><b>03</b> — Grand-Popo &amp; la vallée du Mono</span>
+    <span>Fiche 12 — Site</span>
+  </div>
+
+  <div class="fiche-b__grid">
+    <div>
+      <div class="ph fiche-b__photo">
+        <img src="../../public/images/localized/spot-grandpopo-bouche-3f6adc.jpg" alt="La Bouche du Roi, embouchure du fleuve Mono">
+        <span class="credit">Grand-Popo · Mono</span>
+      </div>
+      <p class="fiche-b__caption">L’embouchure du Mono, côté océan.</p>
+
+      <div class="fiche-b__meta">
+        <div class="row">
+          <svg class="ic"><use href="#i-pin"/></svg>
+          <div><div class="k">Lieu</div><div class="v">Bouche du Roi, Grand-Popo</div></div>
+        </div>
+        <div class="row">
+          <svg class="ic"><use href="#i-sun"/></svg>
+          <div><div class="k">Meilleur moment</div><div class="v">Lever ou coucher du soleil,<br>à marée montante</div></div>
+        </div>
+        <div class="row">
+          <svg class="ic"><use href="#i-clock"/></svg>
+          <div><div class="k">Durée</div><div class="v">2 heures sur place</div></div>
+        </div>
+        <div class="row">
+          <svg class="ic"><use href="#i-star"/></svg>
+          <div><div class="k">Niveau de secret</div><div class="v">Secret d’initié</div></div>
+        </div>
+      </div>
+
+      <div class="mini-col" style="margin-top:6mm">
+        <h4>Bon à savoir</h4>
+        <p>L’accès se fait par la plage ou par pirogue. Prévoyez de l’eau, une protection solaire et un peu de marge : la marée décide du chemin.</p>
+      </div>
+    </div>
+
+    <div class="fiche-b__text">
+      <p class="eyebrow">Grand-Popo · Mono</p>
+      <h2 class="fiche-b__title display">La Bouche<br>du Roi</h2>
+      <p class="fiche-b__sub">Là où le fleuve Mono embrasse l’Atlantique</p>
+
+      <p class="body-copy">Le fleuve Mono finit sa course ici, dans l’Atlantique, en dessinant un delta mouvant de sable et de lumière. Selon la marée, le chenal se referme, s’ouvre, déplace les bancs de sable. Le paysage n’est jamais le même.</p>
+      <p class="body-copy">On vient pour le silence, les oiseaux, l’horizon brut. À l’aube, la lumière rase les dunes ; au crépuscule, l’eau prend la couleur du cuivre. C’est l’un des rares endroits du littoral où l’on entend encore le vent.</p>
+
+      <div class="secret secret--b">
+        <p class="eyebrow">Le conseil SecretScape</p>
+        <p>Longez la plage vers l’est après le village d’Agoué, ou remontez le fleuve en pirogue à marée basse pour voir le chenal se reformer.</p>
+      </div>
+
+      <div class="mini-col" style="margin-top:6mm">
+        <h4>À observer</h4>
+        <ul>
+          <li>Les oiseaux migrateurs sur les bancs de sable</li>
+          <li>La rencontre visuelle du fleuve et de l’océan</li>
+          <li>Les pirogues qui remontent le Mono</li>
+        </ul>
+      </div>
+
+      <div class="mini-col" style="margin-top:5mm">
+        <h4>Y aller</h4>
+        <p>Bouche du Roi, commune de Grand-Popo. À 1h15 de Ouidah par la route côtière ; demandez le passage en pirogue au village d’Agoué.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fiche-b__quote">
+    <span class="qmark">“</span>
+    <p>Ici, le fleuve et l’océan se disputent la lumière.<br>À la marée montante, le paysage se réinvente en quelques minutes.</p>
+  </div>
+
+  <div class="folio">
+    <span>Grand-Popo &amp; la vallée du Mono</span>
+    <span class="folio__line"></span>
+    <span>043</span>
+  </div>
+</section>
+
+<!-- ======================= 08 — TABLE / RESTAURANT ======================= -->
+<section class="page resto" data-name="fiche-jaaba">
+  <div class="fiche__head">
+    <span><b>01</b> — Cotonou &amp; le littoral</span>
+    <span>Fiche 36 — Restaurant</span>
+  </div>
+
+  <div class="resto__intro">
+    <div>
+      <p class="eyebrow">Tables &amp; saveurs</p>
+      <h2 class="display">Jaaba, l’esprit grill<br>de Fidjrossè</h2>
+    </div>
+    <p>Douze tables choisies pour leur cuisine, leur cadre ou leur art de recevoir. Des adresses simples, vivantes, souvent loin des cartes postales.</p>
+  </div>
+
+  <div class="resto__feature">
+    <div class="resto__feature-copy">
+      <p class="eyebrow">Fidjrossè · Cotonou</p>
+      <p class="sub">Le grill branché de la plage</p>
+
+      <div class="resto__meta">
+        <div>Cuisine<b>Grill &amp; bar</b></div>
+        <div>Ambiance<b>Décontractée</b></div>
+        <div>Moment<b>En soirée</b></div>
+        <div>Note<b>4,9 / 5</b></div>
+      </div>
+
+      <p class="body-copy">À Fidjrossè, la nuit commence souvent par un grill. Jaaba a l’ambiance des bonnes adresses de quartier : tables dehors, braises visibles, musique juste assez forte pour engager la conversation.</p>
+      <p class="body-copy" style="margin-top:3mm">On y vient après la plage, pour partager un poisson grillé, des brochettes et un cocktail en regardant la rue s’animer. Le service est détendu ; l’assiette, généreuse. C’est le genre d’adresse qu’on se transmet.</p>
+
+      <div class="resto__note">Notre conseil : arrivez avant 20h le vendredi, ou préférez le déjeuner, plus calme, entre deux baignades.</div>
+    </div>
+
+    <div class="ph resto__photo">
+      <img src="../../public/images/localized/spot-jaaba-c7411f.jpg" alt="Terrasse du restaurant Jaaba à Fidjrossè">
+      <span class="credit">Jaaba · Fidjrossè</span>
+    </div>
+  </div>
+
+  <div class="resto__list">
+    <div class="resto__list-head">
+      <h3>Notre sélection de tables</h3>
+      <span>Extrait — 3 sur 12</span>
+    </div>
+
+    <div class="resto__item">
+      <span class="n">01</span>
+      <span class="name">Villa Kaya<small>Jardin confidentiel</small></span>
+      <span class="why">Une cuisine soignée, une terrasse calme et l’impression d’être reçu chez quelqu’un.</span>
+      <span class="city">Cotonou</span>
+    </div>
+    <div class="resto__item">
+      <span class="n">02</span>
+      <span class="name">Face à la Mer<small>Pieds dans le sable</small></span>
+      <span class="why">Poisson du jour, tables face à l’océan et coucher de soleil en prime.</span>
+      <span class="city">Fidjrossè</span>
+    </div>
+    <div class="resto__item">
+      <span class="n">03</span>
+      <span class="name">Chez Raphaël<small>Déjeuner sur l’eau</small></span>
+      <span class="why">Une halte à Ganvié, les pieds au-dessus du lac, pour prolonger la pirogue.</span>
+      <span class="city">Sô-Ava</span>
+    </div>
+
+    <p style="margin-top:5mm;font-size:6.4pt;line-height:1.6;color:#71808b">Les douze tables sont réparties dans les neuf chapitres. Chaque fiche indique l’ambiance, le bon moment et notre conseil de terrain.</p>
+  </div>
+
+  <div class="folio">
+    <span>Cotonou &amp; le littoral</span>
+    <span class="folio__line"></span>
+    <span>021</span>
+  </div>
+</section>
+
+<!-- ======================= 09 — ITINÉRAIRE 7 JOURS ======================= -->
+<section class="page itin" data-name="itineraire-7-jours">
+  <div class="itin__head">
+    <p class="eyebrow">Carnet pratique · Itinéraire</p>
+    <h2 class="itin__title display">Sept jours,<br>du littoral aux <em>savanes.</em></h2>
+    <p class="itin__lead">Le grand tour classique, pensé pour prendre le temps : deux jours sur la côte, un détour par l’histoire, puis la route du nord jusqu’aux savanes. Toutes les étapes sont reliées en voiture avec chauffeur.</p>
+    <div class="itin__tabs">
+      <span class="itin__tab">4 jours</span>
+      <span class="itin__tab on">7 jours</span>
+      <span class="itin__tab">10 jours</span>
+    </div>
+  </div>
+
+  <div class="itin__days">
+    <div class="itin__day">
+      <div class="itin__daynum">J1</div>
+      <div class="itin__daytitle">Cotonou<small>Littoral</small></div>
+      <div class="itin__daytext">Fondation Zinsou, déjeuner à Fidjrossè, coucher de soleil sur la plage. <b>Nuit :</b> Cotonou.</div>
+    </div>
+    <div class="itin__day">
+      <div class="itin__daynum">J2</div>
+      <div class="itin__daytitle">Ganvié<small>Lac Nokoué</small></div>
+      <div class="itin__daytext">Pirogue à l’aube, déjeuner chez Raphaël, retour par le marché Ganhi. <b>Nuit :</b> Cotonou.</div>
+    </div>
+    <div class="itin__day">
+      <div class="itin__daynum">J3</div>
+      <div class="itin__daytitle">Ouidah<small>Route des Esclaves</small></div>
+      <div class="itin__daytext">Porte du Non-Retour, Temple des Pythons, musée. Fin de journée sur la plage de Djégbadji. <b>Nuit :</b> Ouidah.</div>
+    </div>
+    <div class="itin__day">
+      <div class="itin__daynum">J4</div>
+      <div class="itin__daytitle">Grand-Popo<small>Embouchure du Mono</small></div>
+      <div class="itin__daytext">La Bouche du Roi à marée montante, puis plage d’Avlékété. <b>Nuit :</b> Grand-Popo.</div>
+    </div>
+    <div class="itin__day">
+      <div class="itin__daynum">J5</div>
+      <div class="itin__daytitle">Abomey<small>Pays du Zou</small></div>
+      <div class="itin__daytext">Palais royaux, ateliers de bas-reliefs, route vers Dassa. <b>Nuit :</b> Dassa.</div>
+    </div>
+    <div class="itin__day">
+      <div class="itin__daynum">J6</div>
+      <div class="itin__daytitle">Dassa<small>Collines sacrées</small></div>
+      <div class="itin__daytext">Montée aux collines au lever du jour, puis route vers Natitingou. <b>Nuit :</b> Natitingou.</div>
+    </div>
+    <div class="itin__day">
+      <div class="itin__daynum">J7</div>
+      <div class="itin__daytitle">Atacora<small>Pays Somba</small></div>
+      <div class="itin__daytext">Tata Somba de Boukoumbé, cascades de Tanougou, retour vers Cotonou. <b>Nuit :</b> Natitingou ou Cotonou.</div>
+    </div>
+  </div>
+
+  <div class="itin__variants">
+    <div class="itin__variant">
+      <div class="n">4</div>
+      <div>
+        <h4>La version courte</h4>
+        <p>Cotonou · Ganvié · Ouidah · Grand-Popo. L’essentiel du littoral, sans le nord.</p>
+      </div>
+    </div>
+    <div class="itin__variant">
+      <div class="n">10</div>
+      <div>
+        <h4>La version longue</h4>
+        <p>Ajoutez Porto-Novo, la Pendjari et le pays Tanéka. Le guide détaille les étapes et les temps de route.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="folio">
+    <span>Trois itinéraires, de 4 à 10 jours</span>
+    <span class="folio__line"></span>
+    <span>127</span>
+  </div>
+</section>
+
+<!-- ======================= 10 — QUATRIÈME DE COUVERTURE ======================= -->
+<section class="page back" data-name="quatrieme-de-couverture">
+  <img class="back__map" src="assets/benin-outline.svg" alt="">
+  <p class="back__specimen">Spécimen de maquette — 10 pages</p>
+
+  <div class="back__inner">
+    <div class="monogram back__mono">SS</div>
+    <p class="back__title">Le Bénin ne se visite pas.<br>Il se découvre.</p>
+    <div class="back__rule"></div>
+    <div class="back__contents">
+      <div><b>50</b>fiches</div>
+      <i></i>
+      <div><b>09</b>chapitres</div>
+      <i></i>
+      <div><b>03</b>itinéraires</div>
+      <i></i>
+      <div><b>296</b>adresses</div>
+    </div>
+    <p class="back__text">Un guide pensé pour le voyageur curieux : à feuilleter avant de partir, à garder sous la main pendant la route, à transmettre à ceux qui prendront le même chemin.</p>
+  </div>
+
+  <div class="back__foot">
+    <div class="wordmark">Secret<span>Scape</span></div>
+    <p>Guide numérique · Format A4 · Édition 2026<br>© SecretScape — Tous droits réservés</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  function runAudit() {
+    try {
+      const PX_PER_MM = 96 / 25.4;
+      const keys = ['.cover__band', '.inside__content', '.colophon', '.toc__list', '.toc__note', '.toc__aside',
+        '.intro__text', '.intro__legend', '.map-col', '.chapter__body', '.chapter__contents', '.fiche-a__photo',
+        '.fiche-a__titleblock', '.meta-strip', '.fiche-a__body', '.secret', '.fiche-a__cols',
+        '.fiche-b__grid', '.fiche-b__quote', '.resto__intro', '.resto__feature', '.resto__list',
+        '.itin__head', '.itin__days', '.itin__variants', '.back__inner', '.back__text'];
+
+      const rows = [];
+      document.querySelectorAll('section.page').forEach((page, i) => {
+        const name = page.getAttribute('data-name') || ('page-' + (i + 1));
+        const pr = page.getBoundingClientRect();
+        const issues = [];
+
+        page.querySelectorAll('img').forEach((img) => {
+          if (!img.complete || img.naturalWidth === 0) issues.push('img:' + img.getAttribute('src'));
+        });
+
+        let maxBottom = 0;
+        const walker = document.createTreeWalker(page, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (!node.textContent.trim()) continue;
+          const range = document.createRange();
+          range.selectNodeContents(node);
+          Array.from(range.getClientRects()).forEach((r) => {
+            maxBottom = Math.max(maxBottom, r.bottom - pr.top);
+          });
+        }
+        if (maxBottom > pr.height + 0.5) issues.push('text-below:' + ((maxBottom - pr.height) / PX_PER_MM).toFixed(1) + 'mm');
+
+        const boxes = keys.map((sel) => {
+          const el = page.querySelector(sel);
+          if (!el) return null;
+          const r = el.getBoundingClientRect();
+          return sel + ' ' + ((r.top - pr.top) / PX_PER_MM).toFixed(1) + '→' + ((r.bottom - pr.top) / PX_PER_MM).toFixed(1);
+        }).filter(Boolean);
+
+        rows.push(name + ' => ' + (issues.length ? issues.join(', ') : 'ok') + ' | text ' + (maxBottom / PX_PER_MM).toFixed(1) + 'mm');
+        if (boxes.length) rows.push('   ' + boxes.join(' · '));
+      });
+
+      const pre = document.createElement('pre');
+      pre.id = 'audit';
+      pre.textContent = 'AUDIT ' + rows.filter((r) => !r.startsWith('   ')).length + ' pages\n' + rows.join('\n');
+      document.body.appendChild(pre);
+    } catch (e) {
+      const pre = document.createElement('pre');
+      pre.id = 'audit';
+      pre.textContent = 'AUDIT ERROR: ' + e.message + '\n' + e.stack;
+      document.body.appendChild(pre);
+    }
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(runAudit);
+  } else {
+    window.addEventListener('load', runAudit);
+  }
+})();
+</script>
+
+</body>
+</html>

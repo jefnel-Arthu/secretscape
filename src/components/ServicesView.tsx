@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ConciergeBell, Car, BedDouble, Ship, Utensils, CalendarDays, Phone, MapPin, ArrowRight, CheckCircle, X, ShieldCheck, Star, Sparkles } from 'lucide-react';
+import { AGENCY_PHONE_HREF } from '../data/contact';
 
 interface ServiceDetail {
   icon: React.ReactNode;
@@ -347,7 +348,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigateToContact 
                     <span>Nous contacter</span>
                   </button>
                   <a
-                    href="tel:+2290191722907"
+                    href={AGENCY_PHONE_HREF}
                     className="bg-stone-900 hover:bg-stone-800 text-amber-300 font-bold px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors flex-1"
                   >
                     <Phone className="w-4 h-4" />

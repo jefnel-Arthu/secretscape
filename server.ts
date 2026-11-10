@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import fs from "fs";
+import crypto from "crypto";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 
@@ -30,7 +31,25 @@ async function startServer() {
   // ─── Admin Data Storage ──────────────────────────────────────────────
   const DATA_DIR = path.join(process.cwd(), 'data');
   const DATA_FILE = path.join(DATA_DIR, 'admin-data.json');
-  const ADMIN_PASSWORD = 'Jefnela2026@';
+  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
+  // Régénéré à chaque démarrage : une session admin ne survit pas au redémarrage du serveur.
+  const ADMIN_TOKEN = crypto.randomBytes(24).toString('hex');
+
+  if (!ADMIN_PASSWORD) {
+    console.warn("[admin] ADMIN_PASSWORD absent de .env.local — l'espace admin est désactivé.");
+  }
+
+  function requireAdmin(req: express.Request, res: express.Response): boolean {
+    if (!ADMIN_PASSWORD) {
+      res.status(503).json({ error: 'Espace admin non configuré' });
+      return false;
+    }
+    if (req.headers['x-admin-token'] !== ADMIN_TOKEN) {
+      res.status(401).json({ error: 'Non autorisé' });
+      return false;
+    }
+    return true;
+  }
 
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
@@ -168,9 +187,14 @@ async function startServer() {
 
   // Admin: login
   app.post("/api/admin/login", (req, res) => {
-    const { password } = req.body;
-    if (password === ADMIN_PASSWORD) {
-      res.json({ ok: true, token: 'secretscape-admin-2026' });
+    if (!ADMIN_PASSWORD) {
+      return res.status(503).json({ error: 'Espace admin non configuré' });
+    }
+    const submitted = typeof req.body?.password === 'string' ? req.body.password : '';
+    const expected = Buffer.from(ADMIN_PASSWORD, 'utf-8');
+    const provided = Buffer.from(submitted, 'utf-8');
+    if (provided.length === expected.length && crypto.timingSafeEqual(provided, expected)) {
+      res.json({ ok: true, token: ADMIN_TOKEN });
     } else {
       res.status(401).json({ error: 'Mot de passe incorrect' });
     }
@@ -178,9 +202,7 @@ async function startServer() {
 
   // Admin: stats
   app.get("/api/admin/stats", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     const topSpots = Object.entries(adminData.spotViews)
       .sort(([,a], [,b]) => b - a)
       .slice(0, 10)
@@ -203,16 +225,12 @@ async function startServer() {
 
   // Admin: messages
   app.get("/api/admin/messages", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     res.json({ messages: adminData.messages.reverse() });
   });
 
   app.post("/api/admin/messages/read", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     const { id } = req.body;
     const msg = adminData.messages.find(m => m.id === id);
     if (msg) { msg.read = true; saveAdminData(adminData); }
@@ -220,9 +238,7 @@ async function startServer() {
   });
 
   app.delete("/api/admin/messages/:id", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     adminData.messages = adminData.messages.filter(m => m.id !== req.params.id);
     saveAdminData(adminData);
     res.json({ ok: true });
@@ -230,16 +246,12 @@ async function startServer() {
 
   // Admin: spots CRUD
   app.get("/api/admin/spots", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     res.json({ spots: adminData.customSpots });
   });
 
   app.post("/api/admin/spots", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     const spot = { ...req.body, id: req.body.id || `custom-${Date.now()}` };
     adminData.customSpots.push(spot);
     saveAdminData(adminData);
@@ -247,9 +259,7 @@ async function startServer() {
   });
 
   app.put("/api/admin/spots/:id", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     const idx = adminData.customSpots.findIndex(s => s.id === req.params.id);
     if (idx >= 0) {
       adminData.customSpots[idx] = { ...adminData.customSpots[idx], ...req.body };
@@ -259,9 +269,7 @@ async function startServer() {
   });
 
   app.delete("/api/admin/spots/:id", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     adminData.customSpots = adminData.customSpots.filter(s => s.id !== req.params.id);
     saveAdminData(adminData);
     res.json({ ok: true });
@@ -336,16 +344,12 @@ async function startServer() {
 
   // ─── Visitor Photos: admin moderation ───────────────────────────────
   app.get("/api/admin/photos", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     res.json({ photos: visitorPhotos });
   });
 
   app.put("/api/admin/photos/:id", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     const photo = visitorPhotos.find(p => p.id === req.params.id);
     if (photo) {
       photo.approved = typeof req.body.approved === 'boolean' ? req.body.approved : !photo.approved;
@@ -355,9 +359,7 @@ async function startServer() {
   });
 
   app.delete("/api/admin/photos/:id", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     visitorPhotos = visitorPhotos.filter(p => p.id !== req.params.id);
     saveVisitorPhotos(visitorPhotos);
     res.json({ ok: true });
@@ -365,9 +367,7 @@ async function startServer() {
 
   // LiveOps: real-time dashboard data
   app.get("/api/admin/liveops", (req, res) => {
-    if (req.headers['x-admin-token'] !== 'secretscape-admin-2026') {
-      return res.status(401).json({ error: 'Non autorisé' });
-    }
+    if (!requireAdmin(req, res)) return;
     const totalSpotViews = Object.values(adminData.spotViews).reduce((a, b) => a + b, 0);
     const totalFavorites = Object.values(adminData.favorites).reduce((a, b) => a + b, 0);
     const unreadMessages = adminData.messages.filter(m => !m.read).length;
@@ -606,33 +606,7 @@ Pour chaque jour, génère de 3 à 4 étapes réparties sur la journée (Matin 0
     }
   });
 
-  // Basic auth protection
-  const SITE_PASSWORD = process.env.SITE_PASSWORD || 'secretscape2026';
-  const protectedRoutes = ['/', '/index.html'];
-  
-  app.use((req, res, next) => {
-    // Allow API routes
-    if (req.path.startsWith('/api/')) {
-      return next();
-    }
-    // Check auth for main routes
-    const auth = req.headers.authorization;
-    if (auth && auth.startsWith('Basic ')) {
-      try {
-        const base64 = auth.slice(6);
-        const decoded = Buffer.from(base64, 'base64').toString('utf8');
-        const parts = decoded.split(':');
-        const user = parts[0];
-        const pass = parts.slice(1).join(':');
-        if ((user === 'secretscape' || user === 'admin') && pass === SITE_PASSWORD) {
-          return next();
-        }
-      } catch {}
-    }
-    // Request auth
-    res.set('WWW-Authenticate', 'Basic realm="SecretScape - Accès restreint"');
-    res.status(401).send('Authentification requise');
-  });
+  // Basic auth protection disabled for local development
 
   // Vite middleware
   if (process.env.NODE_ENV !== "production") {

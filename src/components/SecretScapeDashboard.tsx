@@ -105,6 +105,11 @@ function getAuthHeaders(): Record<string, string> {
   return token ? { 'x-admin-token': token } : {};
 }
 
+// Le token est régénéré à chaque démarrage du serveur : un 401 = session périmée.
+function clearExpiredSession() {
+  localStorage.removeItem('secretscape_admin_token');
+}
+
 const POLL_INTERVAL_MS = 10000;
 
 type MainTab = 'overview' | 'visitors' | 'actions' | 'messages' | 'stats';
@@ -459,6 +464,10 @@ export default function SecretScapeDashboard() {
     setLiveOpsError(null);
     try {
       const res = await fetch('/api/admin/liveops', { headers: getAuthHeaders() });
+      if (res.status === 401) {
+        clearExpiredSession();
+        throw new Error('Session expirée — reconnectez-vous à l’espace admin');
+      }
       if (!res.ok) throw new Error(`Erreur ${res.status}`);
       const data: LiveOpsData = await res.json();
       setLiveOps(data);

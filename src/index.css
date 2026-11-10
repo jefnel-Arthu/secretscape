@@ -37,3 +37,187 @@
 
 .scrollbar-none { scrollbar-width: none; }
 .scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* Typographie éditoriale */
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+/* Planificateur de voyage */
+.planner-steps {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.planner-steps-line {
+  position: absolute;
+  top: 26px;
+  left: 10%;
+  right: 10%;
+  border-top: 1.5px dashed #E7E2D8;
+  pointer-events: none;
+}
+
+.planner-step {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.planner-circle-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+}
+
+.planner-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 1.5px solid #e7e2d8;
+  background: #ffffff;
+  color: #8a8578;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  transition: border-color 220ms ease, background 220ms ease,
+    color 220ms ease, box-shadow 220ms ease;
+}
+
+.planner-step:hover .planner-circle {
+  border-color: #d97706;
+  color: #0b1b2b;
+}
+
+.planner-step.is-done .planner-circle {
+  border-color: #f0d9ae;
+  background: #fdf3e3;
+  color: #d97706;
+}
+
+.planner-step.is-active .planner-circle {
+  border-color: #0b1b2b;
+  background: #0b1b2b;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 0 5px #fdf3e3;
+}
+
+.planner-step:focus-visible {
+  outline: none;
+}
+
+.planner-step:focus-visible .planner-circle {
+  box-shadow: 0 0 0 5px rgba(217, 119, 6, 0.28);
+}
+
+.planner-bar {
+  width: 26px;
+  height: 3px;
+  margin-top: 9px;
+  border-radius: 30px;
+  background: #d97706;
+  transition: background 200ms ease;
+}
+
+.planner-bar.is-hidden {
+  background: transparent;
+}
+
+.planner-label {
+  margin-top: 7px;
+  max-width: 122px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #8a8578;
+  transition: color 200ms ease;
+}
+
+.planner-step.is-active .planner-label {
+  color: #0b1b2b;
+  font-weight: 700;
+}
+
+.planner-step.is-done .planner-label {
+  color: #b45309;
+}
+
+@media (max-width: 639px) {
+  .planner-steps {
+    min-width: 560px;
+  }
+  .planner-label {
+    font-size: 11px;
+    max-width: 104px;
+  }
+}
+
+/* Carnet d'escapade : fil continu de la timeline */
+.escapade-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  bottom: 26px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #f59e0b 0%, #e7e2d8 100%);
+  pointer-events: none;
+}
+
+.escapade-node {
+  position: absolute;
+  left: 9px;
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  border: 3px solid #d97706;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px #fdf3e3;
+}
+
+/* Widget cadeau */
+.gift-svg {
+  filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.28)) drop-shadow(0 0 18px rgba(255, 190, 80, 0.35));
+  transition: filter 300ms ease;
+}
+
+.gift-button:hover .gift-svg {
+  filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.32)) drop-shadow(0 0 28px rgba(255, 190, 80, 0.6));
+}
+
+.gift-button:focus-visible .gift-svg {
+  filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.28)) drop-shadow(0 0 16px rgba(255, 214, 0, 0.95));
+}
+
+@keyframes gift-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(-1.5deg); }
+}
+
+.gift-float {
+  animation: gift-float 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gift-float {
+    animation: none;
+  }
+}

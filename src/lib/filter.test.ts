@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { filterSpots, SpotFilters } from './filter';
+import { filterSpots, normalizeText, SpotFilters } from './filter';
 import { HiddenSpot } from '../types';
+import { INITIAL_HIDDEN_SPOTS } from '../data/hiddenSpots';
 
 const spot = (overrides: Partial<HiddenSpot>): HiddenSpot => ({
   id: 'spot-1',
@@ -28,13 +29,14 @@ const spots: HiddenSpot[] = [
   spot({ id: 's1', title: 'Belvédère Secret', city: 'Paris', category: 'sites', secretLevel: 'moyen', description: 'Une terrasse panoramique cachée' }),
   spot({ id: 's2', title: 'Quartier des Canuts', city: 'Lyon', category: 'boites', secretLevel: 'insider', tags: ['Traboule'], description: 'Un passage historique des canuts' }),
   spot({ id: 's3', title: 'Jardin Caché', city: 'Paris', category: 'plages', secretLevel: 'facile', tags: ['Jardin'], description: 'Un jardin paisible au cœur de la ville' }),
+  spot({ id: 's4', title: 'Plage calme', city: 'Sèmè-Kpodji', category: 'plages', secretLevel: 'facile', description: 'Une plage tranquille du littoral' }),
 ];
 
 const base: SpotFilters = { city: 'ALL', category: 'ALL', secretLevel: 'ALL', searchQuery: '' };
 
 describe('filterSpots', () => {
   it('returns all spots with no filters', () => {
-    expect(filterSpots(spots, base)).toHaveLength(3);
+    expect(filterSpots(spots, base)).toHaveLength(4);
   });
 
   it('filters by city', () => {
@@ -61,7 +63,27 @@ describe('filterSpots', () => {
     expect(filterSpots(spots, { ...base, searchQuery: 'traboule' }).map(s => s.id)).toEqual(['s2']);
   });
 
-  it('ignores blank search queries', () => {
-    expect(filterSpots(spots, { ...base, searchQuery: '   ' })).toHaveLength(3);
+  it('ignore la casse et les accents sur le filtre ville', () => {
+    expect(filterSpots(spots, { ...base, city: 'seme-kpodji' }).map(s => s.id)).toEqual(['s4']);
+    expect(filterSpots(spots, { ...base, city: 'Sèmé-Kpodji' }).map(s => s.id)).toEqual(['s4']);
+    expect(filterSpots(spots, { ...base, city: 'SEME KPODJI' }).map(s => s.id)).toEqual(['s4']);
+  });
+
+  it('recherche sans accents ni casse', () => {
+    expect(filterSpots(spots, { ...base, searchQuery: 'seme' }).map(s => s.id)).toEqual(['s4']);
+    expect(filterSpots(spots, { ...base, searchQuery: 'CŒUR' }).map(s => s.id)).toEqual(['s3']);
+  });
+
+  it('ignore les recherches vides', () => {
+    expect(filterSpots(spots, { ...base, searchQuery: '   ' })).toHaveLength(4);
+  });
+
+  it('couvre chaque ville du catalogue réel sans doublon accentué', () => {
+    const cities = Array.from(new Set(INITIAL_HIDDEN_SPOTS.map(s => s.city)));
+    const normalized = cities.map(normalizeText);
+    expect(new Set(normalized).size).toBe(cities.length);
+    for (const city of cities) {
+      expect(filterSpots(INITIAL_HIDDEN_SPOTS, { ...base, city }).length).toBeGreaterThan(0);
+    }
   });
 });

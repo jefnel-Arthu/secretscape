@@ -1,0 +1,159 @@
+{
+  "headlines": {
+    "spot-ouidah-porte": "La Porte du Non-Retour",
+    "spot-ouidah-pythons": "Le Temple des Pythons",
+    "spot-plage-ouidah": "Plage de Djégbadji",
+    "spot-grandpopo-lactoho": "Le lac Toho",
+    "spot-portonovo-honme": "Le musée Honmè",
+    "spot-dassa-arigbo": "Notre-Dame d’Arigbo",
+    "spot-dassa-1": "Les collines de Dassa",
+    "spot-pendjari-1": "Les Grands Espaces",
+    "spot-parc-w": "Le parc national W",
+    "spot-nikki-palais": "Le palais de Nikki",
+    "spot-site-palais-kinkinhoue": "Kinkinhoué",
+    "spot-site-foret-pobe": "La forêt de Pobè",
+    "spot-plage-grandpopo": "La Grande Plage",
+    "spot-villa-kaya-cotonou": "Villa Kaya",
+    "spot-jaaba": "Jaaba",
+    "spot-face-a-la-mer": "Face à la Mer",
+    "spot-rousski-dom": "Rousski Dom",
+    "spot-petit-four": "Le Petit Four",
+    "spot-musee-soleil-ouidah": "Le Musée du Soleil",
+    "spot-hakuna-matata-ouidah": "Hakuna Matata",
+    "spot-kole-ouidah": "Kolè",
+    "spot-alozo-terrasse-ouidah": "Alozo",
+    "spot-boca-del-rio": "La Boca del Rio",
+    "spot-chez-jean-ganvie": "Chez Raphaël",
+    "spot-maison-rouge": "Maison Rouge",
+    "spot-hotel-sofitel": "Sofitel Marina",
+    "spot-hotel-bambou-beach": "Bambou Beach",
+    "spot-hotel-hotel-baobab-de-tanguieta": "Le Baobab"
+  },
+  "overrides": {
+    "spot-fondation-zinsou-cotonou": {
+      "p1": "Dans une villa claire de la Haie Vive, la Fondation Zinsou fait dialoguer les artistes africains contemporains avec un public qui n’a pas toujours l’habitude des musées. Les expositions changent au fil des saisons : peinture, photographie, installation, design.",
+      "p2": "On vient pour l’art, on reste pour le lieu : une cour ombragée, une librairie spécialisée et un café où l’on feuillette les catalogues en buvant un jus de bissap. C’est la première halte idéale pour comprendre où va la création béninoise.",
+      "tip": "L’entrée est souvent libre ; vérifiez le programme en ligne, les meilleures expositions ne durent que quelques semaines."
+    },
+    "spot-marche-ganhi-cotonou": {
+      "p1": "Ganhi est le marché des objets qui ne se trouvent nulle part ailleurs : tissus wax, perles, statuettes, paniers, épices et mille ustensiles empilés dans un dédale de allées couvertes. On y vient pour acheter, mais surtout pour regarder.",
+      "p2": "Le matin, les porteurs ouvrent la journée au milieu des charrettes ; l’après-midi, l’air devient épais et les allées se remplissent. C’est un lieu de travail avant d’être un lieu de visite : demandez toujours avant de photographier.",
+      "tip": "Prévoyez de la monnaie et marchez avec un guide local si vous négociez ; le marché se traverse mieux tôt, vers 8 h."
+    },
+    "spot-site-poterie-adjarra": {
+      "p1": "À Adjarra, la terre se travaille encore à la main, sans tour électrique. Les potières façonnent les jarres, les canaris et les ustensiles de cuisine selon des gestes transmis de mère en fille, puis les font sécher au soleil avant une cuisson à ciel ouvert.",
+      "p2": "On assiste à un savoir-faire discret, loin des démonstrations pour touristes. Les pièces finies s’alignent devant les ateliers ; certaines partent vers les marchés de Porto-Novo, d’autres restent dans les cours, prêtes à servir.",
+      "tip": "Demandez la permission avant de filmer ; une petite participation pour la démonstration est appréciée."
+    },
+    "spot-villa-kaya-cotonou": {
+      "p1": "Villa Kaya a l’allure d’une maison de famille posée derrière les palmiers de Fidjrossè. La carte mélange les influences — produits de la mer, légumes du jardin, épices locales — avec une précision qui ne se prend pas au sérieux.",
+      "p2": "On s’installe sous la véranda, à l’abri du vent, pour un déjeuner qui s’étire. Le service est attentionné sans être pressé ; c’est l’adresse des repas qui comptent, ceux que l’on offre à quelqu’un que l’on aime.",
+      "tip": "Réservez en fin de semaine et demandez une table côté jardin ; la carte change souvent, faites-vous conseiller."
+    },
+    "spot-jaaba": {
+      "p1": "À Fidjrossè, la nuit commence souvent par un grill. Jaaba a l’ambiance des bonnes adresses de quartier : tables dehors, braises visibles, musique juste assez forte pour engager la conversation.",
+      "p2": "On y vient après la plage, pour partager un poisson grillé, des brochettes et un cocktail en regardant la rue s’animer. Le service est détendu ; l’assiette, généreuse. C’est le genre d’adresse qu’on se transmet.",
+      "tip": "Arrivez avant 20 h le vendredi, ou préférez le déjeuner, plus calme, entre deux baignades."
+    },
+    "spot-face-a-la-mer": {
+      "p1": "Le nom dit tout : ici, les tables regardent l’océan. Face à la Mer est une institution de Fidjrossè, ouverte aux heures où la lumière descend sur l’Atlantique et où les pêcheurs rentrent leurs filets.",
+      "p2": "La cuisine reste simple — poisson du jour, fruits de mer, riz, plantains — et c’est précisément ce qu’on vient chercher. On commande sans se presser, on reste pour le coucher de soleil, on repart les pieds pleins de sable.",
+      "tip": "Réservez la première rangée pour le coucher du soleil ; le service peut être long, venez sans impatience."
+    },
+    "spot-rousski-dom": {
+      "p1": "Rousski Dom cultive une étrangeté réjouissante à Cotonou : une table russe, généreuse et familiale, où le bortsch fume dans des bols épais et où les conversations passent du français au russe sans prévenir.",
+      "p2": "Le décor n’a rien de minimaliste, l’accueil est chaleureux, et l’on ressort avec l’impression d’avoir dîné chez quelqu’un plutôt qu’au restaurant. Une parenthèse inattendue dans la ville.",
+      "tip": "Goûtez le bortsch et les pirojki ; le soir, mieux vaut réserver, la salle est petite."
+    },
+    "spot-petit-four": {
+      "p1": "Dans le quartier de la Haie Vive, Le Petit Four est une halte de jour : viennoiseries, pâtisseries fines et salon de thé à l’ombre, pour une pause entre deux rendez-vous ou avant de reprendre la route.",
+      "p2": "Ce n’est pas une table de voyage à proprement parler, plutôt un refuge de quartier où les habitués viennent travailler, lire ou retrouver quelqu’un. Les gâteaux partent vite en fin de matinée.",
+      "tip": "Arrivez avant 11 h pour le choix de pâtisseries ; le salon est plus calme en début d’après-midi."
+    },
+    "spot-musee-soleil-ouidah": {
+      "p1": "Le restaurant-bar du Musée du Soleil prolonge la visite par une table simple, installée dans l’enceinte de la maison. On y déjeune à l’ombre, entre les murs patinés et les objets de collection.",
+      "p2": "La carte est courte, les produits locaux, le rythme celui d’Ouidah : lent, à l’abri de la chaleur. C’est une halte idéale après la Route des Esclaves, quand on a besoin de silence et d’un verre frais.",
+      "tip": "Combinez la visite du musée et le déjeuner ; demandez la terrasse, plus fraîche que la salle."
+    },
+    "spot-hakuna-matata-ouidah": {
+      "p1": "Hakuna Matata assume l’esprit maquis : grillades au feu de bois, plats africains généreux, tables sans chichis et service qui prend son temps. C’est une adresse pour finir la journée en groupe.",
+      "p2": "Les soirs de week-end, la musique monte et la terrasse se remplit. On y vient moins pour la gastronomie que pour l’ambiance, et c’est très bien ainsi.",
+      "tip": "Commandez les grillades et arrivez avant 20 h ; les soirs de concert, la terrasse est vite complète."
+    },
+    "spot-kole-ouidah": {
+      "p1": "Kolè propose une cuisine africaine franche, servie dans une salle simple du centre d’Ouidah. Pas de mise en scène : des plats mijotés, du riz, du poisson, et des prix qui restent raisonnables.",
+      "p2": "C’est l’adresse des déjeuners de passage, quand on veut manger local sans cérémonie avant de reprendre la route vers la côte. L’accueil est discret, le service efficace.",
+      "tip": "Venez le midi, la carte du soir est plus courte ; demandez le plat du jour."
+    },
+    "spot-alozo-terrasse-ouidah": {
+      "p1": "Alozo est une terrasse posée près de la basilique, avec vue sur les toits et l’animation tranquille d’Ouidah. On y monte pour un grill, une bière fraîche et la lumière de fin de journée.",
+      "p2": "La carte reste dans le registre du grill et des plats à partager ; l’intérêt du lieu tient autant à la vue qu’à l’assiette. Une bonne étape avant ou après la visite du centre historique.",
+      "tip": "Montez en fin d’après-midi pour la lumière ; la terrasse est petite, arrivez tôt ou réservez."
+    },
+    "spot-boca-del-rio": {
+      "p1": "La Boca del Rio s’installe dans un jardin de Grand-Popo, à quelques pas de l’embouchure du Mono. On y mange du poisson, on boit un verre, et l’on reste plus longtemps que prévu.",
+      "p2": "L’esprit est celui d’une maison de bord de fleuve : bois, ombre, ventilateurs, musique douce. C’est une adresse de fin de journée, quand la chaleur tombe et que le jardin s’allume.",
+      "tip": "Réservez le soir en saison haute ; demandez une table au fond du jardin, plus calme."
+    },
+    "spot-chez-jean-ganvie": {
+      "p1": "Chez Raphaël, à Ganvié, on déjeune au-dessus de l’eau. Les tables sont posées sur une terrasse de bois, à hauteur de pirogue, et le poisson arrive du lac presque directement dans l’assiette.",
+      "p2": "Le cadre fait la moitié du repas : les canaux défilent, les enfants pagayent, le vent passe. La cuisine est simple et l’adresse touristique — mais l’expérience du lac, elle, reste intacte.",
+      "tip": "Prévenez de votre venue avec le batelier ; le déjeuner se prend tôt, avant le retour en pirogue."
+    },
+    "spot-hotel-au-coeur-ouidah": {
+      "p1": "Au cœur de Ouidah est une maison de ville transformée en guesthouse, à deux pas de la basilique et des ruelles historiques. Les chambres s’organisent autour d’une cour ombragée, loin du bruit de la côte.",
+      "p2": "On vient pour la position : tout se fait à pied, la Route des Esclaves, le marché, les musées. Le soir, la ville se vide et la maison retrouve son calme.",
+      "tip": "Demandez une chambre côté cour ; le stationnement se fait dans la rue, arrivez avant la nuit."
+    },
+    "spot-hotel-bambou-beach": {
+      "p1": "Bambou Beach est une guesthouse les pieds dans le sable, sur la côte de Grand-Popo. Les bungalows sont simples, ventilés, et l’on s’endort au bruit des vagues.",
+      "p2": "C’est une adresse de décompression : pas de programme, des hamacs, un bar, la plage qui s’étire. Idéale pour couper un itinéraire entre Ouidah et la frontière togolaise.",
+      "tip": "Réservez côté plage et prévoyez de l’anti-moustique ; l’accès se fait par une piste, arrivez avant la nuit."
+    },
+    "spot-hotel-ouadada": {
+      "p1": "Les Résidences Ouadada proposent des appartements et des chambres à Porto-Novo, dans un quartier calme, avec l’autonomie d’une résidence et le confort d’un hôtel.",
+      "p2": "C’est un bon camp de base pour explorer la capitale : musées, mosquée, marché et jardin des plantes sont à courte distance. Le soir, on rentre dans un espace sécurisé, loin de l’animation du centre.",
+      "tip": "Demandez un logement avec cuisine si vous restez plusieurs nuits ; vérifiez l’heure d’arrivée avec la réception."
+    },
+    "spot-hotel-hotel-baobab-de-tanguieta": {
+      "p1": "Le Baobab est l’étape historique de Tanguiéta, sur la route de la Pendjari. Chambres simples, restaurant, jardin : tout est pensé pour une nuit de repos avant ou après le parc.",
+      "p2": "On y croise des voyageurs revenus du safari, des guides et des familles. L’adresse n’a rien de luxueux, mais elle rend un service précieux : elle rend le nord accessible.",
+      "tip": "Réservez en saison sèche, période de safari ; demandez une chambre loin de la route."
+    }
+  },
+  "tips": {
+    "spot-amazone": "Le monument se photographie mieux en fin de journée, depuis le terre-plein ; traversez au passage piéton, le carrefour est dense.",
+    "spot-fidjrosse": "Arrivez avant 17 h 30 pour avoir une place face à l’océan ; évitez la baignade après la tombée de la nuit.",
+    "spot-ganvie-1": "Partez de Sô-Ava avant 9 h et demandez une pirogue à pagaie ; prévoyez de l’eau et un chapeau.",
+    "spot-ouidah-porte": "Parcourez la route à pied tôt le matin ; le site se visite dans le recueillement, pas en maillot de bain.",
+    "spot-ouidah-pythons": "La visite se fait avec un guide du temple ; ne touchez pas les serpents et demandez avant de photographier.",
+    "spot-ouidah-musee-vodun": "Prévoyez une heure et demie ; certains objets ne se photographient pas, demandez au guide.",
+    "spot-plage-ouidah": "L’accès se fait par la plage ou par la route ; prévoyez de l’eau, la baignade reste prudente.",
+    "spot-plage-avlekete": "Venez en fin de journée, quand les pirogues rentrent ; l’endroit est isolé, ne restez pas après la nuit.",
+    "spot-grandpopo-bouche": "Vérifiez l’heure de la marée avant de partir ; l’accès change avec l’eau, empruntez un guide local.",
+    "spot-grandpopo-lactoho": "La traversée se négocie sur place ; respectez les zones sacrées et les caïmans, ne descendez pas seul.",
+    "spot-plage-grandpopo": "La plage est longue et sans ombre : venez tôt ou en fin d’après-midi, avec de l’eau.",
+    "spot-plage-avlo": "Prenez un guide du village pour rejoindre la presqu’île ; la piste est sablonneuse et longue.",
+    "spot-abomey-1": "Visitez avec un guide officiel ; le billet couvre plusieurs palais, gardez-le toute la visite.",
+    "spot-site-bas-reliefs-abomey": "Les ateliers se visitent en matinée ; achetez directement aux artisans si vous voulez soutenir la transmission.",
+    "spot-bohicon-agongointo": "Prévoyez une lampe et de bonnes chaussures ; le site est partiellement souterrain et glissant.",
+    "spot-portonovo-honme": "Le musée se visite en matinée ; combinez avec la Grande Mosquée, à quelques minutes à pied.",
+    "spot-portonovo-mosquee": "La visite s’arrête aux espaces ouverts aux non-musulmans ; habillez-vous couvert et demandez l’autorisation.",
+    "spot-plage-seme": "Venez en fin d’après-midi pour le coucher de soleil ; la plage est fréquentée, gardez vos affaires près de vous.",
+    "spot-dassa-arigbo": "Montez à l’aube pour la fraîcheur et la vue ; le 15 août, le site accueille un grand pèlerinage.",
+    "spot-dassa-1": "Grimpez avec un guide local ; certaines collines sont des lieux de culte, restez sur les sentiers.",
+    "spot-boukoumbe-tatasomba": "Visitez en saison sèche et demandez l’accord des habitants avant d’entrer dans une cour.",
+    "spot-tanougou-cascade": "La baignade est possible en saison des pluies ; prévoyez des chaussures qui tiennent sur la roche mouillée.",
+    "spot-pendjari-1": "Réservez un guide et un 4x4 à l’avance ; partez tôt, les animaux sont plus actifs au lever du jour.",
+    "spot-parc-w": "L’accès se prépare depuis Karimama ; prévoyez deux jours et un véhicule tout-terrain avec guide.",
+    "spot-site-gaani": "L’arène se visite hors fête ; renseignez-vous sur les dates de la Gaani, elles changent chaque année.",
+    "spot-nikki-palais": "La visite se fait avec un guide du palais ; demandez l’autorisation avant de photographier les objets rituels.",
+    "spot-copargo-taneka": "La banque culturelle se visite sur rendez-vous ; combinez avec le jardin botanique voisin.",
+    "spot-site-palais-kinkinhoue": "La visite se fait sur rendez-vous ; appelez la chefferie avant de venir, le musée n’est pas toujours ouvert.",
+    "spot-site-foret-pobe": "Entrez avec un guide du village ; la forêt est un lieu sacré, ne cueillez rien et restez sur le sentier.",
+    "spot-cali-cali-togbin": "Le lieu fonctionne comme un food court : commandez à plusieurs stands et installez-vous côté plage.",
+    "spot-maison-rouge": "Demandez une chambre haute côté marina ; le restaurant est une bonne option le soir.",
+    "spot-hotel-sofitel": "Réservez tôt en saison haute ; le spa et la piscine se prennent à la journée pour les non-résidents.",
+    "spot-hotel-hotel-baobab-de-tanguieta": "Réservez en saison sèche ; le restaurant ferme tôt, signalez votre heure d’arrivée."
+  }
+}

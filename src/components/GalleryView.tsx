@@ -1,488 +1,376 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Images, X, CalendarDays, MapPin, Sparkles, Music, Flame, Theater, Crown, Utensils, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { ChevronRight } from 'lucide-react';
+import { AGENDA_EVENTS } from '../data/agendaEvents';
 
-type EventCategory = 'spiritualite' | 'musique' | 'traditions' | 'mode' | 'gastronomie';
-
-interface BeninEvent {
-  id: string;
-  name: string;
-  category: EventCategory;
-  date: string;
-  period: string;
-  location: string;
-  description: string;
-  highlights: string[];
-  image: string;
-  images: string[];
-  emoji: string;
-}
-
-interface GalleryViewProps {
-  onOpenSpot?: (spot: any) => void;
-}
-
-const CATEGORY_META: Record<EventCategory, { label: string; icon: React.ElementType; color: string }> = {
-  spiritualite: { label: 'Spiritualité', icon: Sparkles, color: 'text-violet-400' },
-  musique: { label: 'Musique & Concerts', icon: Music, color: 'text-pink-400' },
-  traditions: { label: 'Traditions', icon: Theater, color: 'text-emerald-400' },
-  mode: { label: 'Mode & Culture', icon: Crown, color: 'text-amber-400' },
-  gastronomie: { label: 'Gastronomie', icon: Utensils, color: 'text-orange-400' },
+const overlayStyle: React.CSSProperties = {
+  background:
+    'linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,0) 100%)',
 };
 
-const BENIN_EVENTS: BeninEvent[] = [
-  {
-    id: 'event-vodun-days',
-    name: 'Vodun Days',
-    category: 'spiritualite',
-    date: '8 - 10 janvier',
-    period: 'Annuel',
-    location: 'Ouidah',
-    description: 'Le plus grand rendez-vous mondial de la spiritualité Vodun. Cérémonies traditionnelles, sorties des couvents, processions de masques Egungun, parades de Zangbéto et grands concerts sur la plage pendant trois jours d\'immersion culturelle.',
-    highlights: ['Procession des masques Egungun', 'Parades Zangbéto', 'Concerts géants sur la plage', 'Village artisanal & gastronomique'],
-    image: 'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110509_0:0:3072:2048_1440x900_80_0_1_24b5b6404e2fe8a3e081700735f8ed53.jpg',
-    images: [
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110509_0:0:3072:2048_1440x900_80_0_1_24b5b6404e2fe8a3e081700735f8ed53.jpg',
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110704_0:0:3072:2048_1440x900_80_0_1_f56c02eb0367a1d0b20baff7b28b0bb7.jpg',
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070110897_0:0:3072:2048_1440x900_80_0_1_299915f53269174d73160fde4ae4edff.jpg',
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111090_0:0:3072:2048_1440x900_80_0_1_443e3eb3e57ef4d1851d3d33e3e70626.jpg',
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111283_0:0:3072:2048_1440x900_80_0_1_4b21c541e42e71d7c8d5f45809496922.jpg',
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111476_0:0:3072:2048_1440x900_80_0_1_44de18b50f692a734f99c85a792e85be.jpg',
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111669_0:0:3072:2048_1440x900_80_0_1_7ab99b4899dd5667c240d3a823402ed6.jpg',
-      'https://cdn1.img.sputniknews.africa/img/07e9/01/0a/1070111862_0:0:3072:2048_1440x900_80_0_1_540581c85e0981a4680baf6e0bec1989.jpg',
-      'https://myafricanmagazine.com/wp-content/uploads/2026/01/A-voodoo-worshipper-in-trance-1536x1024.jpg',
-      'https://myafricanmagazine.com/wp-content/uploads/2026/01/One-of-the-hundreds-of-dances-perforned-during-the-2026-Vodun-Days-1536x937.jpg',
-      'https://myafricanmagazine.com/wp-content/uploads/2026/01/Zangbeto.-Image-by-Thiani-Capo-chichi-for-The-African-1-2048x1089.jpg',
-      'https://myafricanmagazine.com/wp-content/uploads/2026/01/Ouidah.-Image-by-Thiani-Capo-chichi-for-The-African-1536x1024.jpg',
-      'https://www.afrik.com/wp-content/uploads/2026/01/patrice-talon-a-bord-dun-tricycle-aux-vodun-days-1200x675.jpg',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUiL0VT6_9AyVeoWMGBHOOJd4e_YXUHiVm7B0teNKG55wvkLg2h9X9Qii9&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZDtuVNM24IhrCgkSIvNjtKntH_4CpEp16gH21Bg1K6g&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIhc0FSDjS1sdhUhKHuhiZOiJu2k6DeeOP5UrQ62eEag&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0spb_mvq7qANIc4ua-hwV3EfeDSkQeqNQhtF_EP7BoQ&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgygKquIcSiAJGbxLouqmmScEFN7GFKe8oXVzuuo2VbQ&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSujBtT9ft5xXAjNSIZLXIVF85H6hmaHevcgQ8ywe0a1w&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3OzWLRvS1xpgWAwUQjy_lk2rpuoO7nt0KQOdtHcF6Yw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkeZVXVzS6GDXoY6luQsy9KhOv3WaynnyVy4Yn-jVUVw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ2kA8hb45POp9fgJ88alLTCZQJ9il_OHPtoSEAtkxFw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUMFifQOrpiYSC5QGqGi8fjrE5cXlRcnfzJJ4bYH2rJg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5Dyq2mWS5fXIFItyhdN8rnXOnM3fyjOUOgS06KlfCg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsqhbdyHV7U2fq7gym13l1GH17h2p8M-lmbfoa5XVLAA&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6SH1Oy1MqxgrDb9SAfxehJHM0U7l8UFWYZdFbIYBGQg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Fj-JvKrNpGV9NRbIcve7gpchhwkf1c8P3__boXXLtg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScXC_olFhO2ykDFDtnHN_H96WW1SYyzZzkEUaBcWi8Ww&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlp7Ri6QDBTQSfHCoTaCzOdCR_XVpbkVqXYU-Q-DzqMGfbln6nUKoJIFc&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9aRWVHUH1tUnFMSX3AzgnbEel6YRFy2LQqjiOcs2WFg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMgiObMnh8ExGdrfWodcXYR1ROEqeqIDRp0H9yzoq44A&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLtDVtTn7Oj-cVHIj6WDMxmzUHZf1bcLhmB6_dhzk6A&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZQfSgef5nqAg4xkd6nLkozXSQVvWQb2mVQPxX-1eUUQ&s',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgB3by-YXGunyLjdJ1C8t9YDgxcWe3bhgJIbOCseGbHg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6pxA2pt_HoSoFrpLUdw5DCCkg8arlVgZrLCmBYz93vw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKdjj318nhzom_fcQz9f0ECfutWcC2iNBqa6VSVoXuA&s=10',
-      'https://i.la-croix.com/x/smart/2017/01/12/1200816708/festival-Vaudou-Ouidah-10-janvier-2016-AFP-PHOTO-STEFAN-HEUNIS_0.jpg',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxbFzsCujCN5uxDlfyPC5NXkHGfU7lwvtMZct_SuZhFw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT37KEbKzqlXcHT660Otpe9c_WaHdAIw-mAF4fduCh9aw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYPc4PweXTfEmNh1smY-0AjhGkBV5B4eLzHD2pAzc8A&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPnl4aNqu7wDiZ6h8KR2Pg4C6rBH68OoRCqn6vI9sKb9zuvXGuijLi5Q&s=10',
-      'https://gdb.voanews.com/01000000-0aff-0242-15fd-08dc008ed3e2_w1080_h608_s.jpeg',
-      'https://cdn.synaps.media/yeclo/content/images/size/w1000/format/webp/www-yeclo-com/wp-content/uploads/2022/01/benin-mami-wata.jpg',
-    ],
-    emoji: '🫧',
-  },
-  {
-    id: 'event-weloveya',
-    name: 'WeLovEya',
-    category: 'musique',
-    date: 'Fin décembre',
-    period: 'Annuel',
-    location: 'Cotonou — Place de l\'Amazone',
-    description: 'Le festival des musiques urbaines et de l\'afrobeat, créé en 2022. Une plateforme pour la jeunesse et les communautés du Bénin, avec les plus grands artistes de la scène afro.',
-    highlights: ['Afrobeat & musiques urbaines', 'Artistes de la scène africaine', 'Atmosphère festive en plein air'],
-    image: 'https://blackmusics.com/wp-content/uploads/2025/01/IMG-20250103-WA0344.jpg',
-    images: [
-      'https://blackmusics.com/wp-content/uploads/2025/01/IMG-20250103-WA0344.jpg',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE458rJbECGpxPxjiNZF3uAg6r38LsHD2BftzTlVrb0A&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaXeshs9FGfPTy8ON_EX0XlEEKoXkjYvRQFRj1NTWjAA&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv-Gw-OU59fWe757A73UUs3gaxQCEJyCF-sfJplbCUfw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8LpONjmYy1SDCTizhmXV0dUcafWpoviGncfWuNddv5w&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTOOrsxcvTXtcd4LVzdUKGwAUI7ggOcAe6_L5GPSoWiw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaPr409dBMYRin1fSMVQrE4hhlESEcmQ4Pktyqi5nZYA&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxwWvwMN-xRx4OqWHBaJHkm6Db1ff9livxr_j4edf78A&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOJsSK1L0x5klVoXtMn5eAgyEuNVjDBoX5VS-OnG0n_g&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWV0jMKz7K7I8te7cRfJIHCJB0JHpNlZBxgemsBO--8g&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTvVWR67lvIUh0RqgKhsR2WgPIh_ANfc5Ob2ykPUsI2g&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg5JLKlEQHXWNdD0a-8PUHfruXLPP60EWvY3bnJr8jZA&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZQGEdvaDL5mslu2yf8sCBCWCyhjk9gipjMDOh1GbTcA&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzRP9VNWtfuRzvYwk2dKznIzjDakA3lU8jisk5q0CSdg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhVsdyi7wyJ5lmi-a_yshM-gEHqWtbf5ihlkOw5G4ppA&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwMeshPySWMfPNcEkUNob5VPECw-yV7_IBJI3sz9PgnQ&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxwsVoKQri65VjgmudnPUfRhxpUqm9qPHpHj5NuxvLw&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7-YDjfabI9Qt4l9uPcSkRCHQV2F0iNDNOOf9qcH6G_w&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMrFVUet-6wzAun7UbZPawteoPBbECmbqFPUkutnzeg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKdd-HGXdG23Kwj_g4zfoBjrLOtsWK2dGVyto5Ty46Fg&s=10',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufm6LP9L5R7fJnn8J08LaLyLLdci-oe58fqDxlRaNvw&s=10',
-    ],
-    emoji: '🎤',
-  },
-  {
-    id: 'event-festichill',
-    name: 'FestiChill',
-    category: 'musique',
-    date: 'Juillet',
-    period: 'Annuel',
-    location: 'Cotonou',
-    description: 'Le plus grand festival lifestyle du Bénin. Une expérience inoubliable mêlant concerts, mode, jeux et frissons dans une ambiance unique, avec des artistes nationaux et internationaux.',
-    highlights: ['Concerts & performances live', 'Expérience lifestyle immersive', 'Artistes invités internationaux'],
-    image: 'https://www.festichill.com/_next/image?url=%2Fhf_20260624_153758_5503e980-398a-44e5-8255-7cd29f4d6700.avif&w=1200&q=75',
-    images: [
-      'https://www.festichill.com/_next/image?url=%2Fhf_20260624_153758_5503e980-398a-44e5-8255-7cd29f4d6700.avif&w=1200&q=75',
-      'https://www.festichill.com/_next/image?url=%2Fhf_20260624_161056_b83cf922-5e4c-4dc3-840c-70a6f99f9884.avif&w=1200&q=75',
-      'https://www.festichill.com/affiche_festichill_las_favelas.jpeg',
-    ],
-    emoji: '⛱️',
-  },
-  {
-    id: 'event-festival-masques',
-    name: 'Festival des Masques',
-    category: 'traditions',
-    date: '25 - 26 juillet',
-    period: 'Annuel',
-    location: 'Porto-Novo',
-    description: 'Immersion dans l\'univers des masques sacrés et profanes : Gèlèdè, Zangbéto, Egungun, Kaléta. Colloque scientifique, démonstrations d\'artisans et grande procession de masques venus de toute l\'Afrique.',
-    highlights: ['Grande procession des masques', 'Masques Gèlèdè & Zangbéto', 'Concerts tradi-modernes', 'Ateliers pour enfants'],
-    image: 'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0129.jpg',
-    images: [
-      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0129.jpg',
-      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0131.jpg',
-      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0123.jpg',
-      'https://www.lameteo.info/wp-content/uploads/2025/08/IMG-20250804-WA0119.jpg',
-    ],
-    emoji: '🎭',
-  },
-  {
-    id: 'event-festival-sica',
-    name: 'Festival SICA',
-    category: 'mode',
-    date: '9 - 15 novembre',
-    period: 'Annuel',
-    location: 'Cotonou — CNOA',
-    description: 'Le festival panafricain de référence célébrant la musique africaine, la mode et la culture depuis 25 ans. Concerts live, défilés de mode, conférences et soirée de Gala avec remise de trophées.',
-    highlights: ['Afro Musique & Musique Urbaine', 'SICA Fashion Show', 'Conférences & Master Class', 'Soirée de Gala'],
-    image: 'https://festivalsica.com/assets/images/gala-laureats-groupe-2025.jpg',
-    images: [
-      'https://festivalsica.com/assets/images/gala-laureats-groupe-2025.jpg',
-      'https://festivalsica.com/assets/images/sica-2025/_X8A9678.jpg',
-      'https://festivalsica.com/assets/images/remise-trophee-scene.jpg',
-      'https://festivalsica.com/assets/images/portrait-couple-gala.jpg',
-      'https://festivalsica.com/assets/images/laureate-marie-louise-ouamono.jpg',
-    ],
-    emoji: '👑',
-  },
-  {
-    id: 'event-fete-igname',
-    name: 'Fête de l\'Igname',
-    category: 'gastronomie',
-    date: 'Autour du 15 août',
-    period: 'Annuel',
-    location: 'Savalou',
-    description: 'Célébration traditionnelle de la nouvelle igname, marquant la fin des récoltes. Rites ancestraux, danses, repas communautaires et dégustation des premières ignames de la saison.',
-    highlights: ['Rites de la nouvelle récolte', 'Danses traditionnelles', 'Dégustations communautaires'],
-    image: 'https://www.afrik.com/wp-content/uploads/2025/08/un-magasin-dignames-1200x675.jpg',
-    images: [
-      'https://www.afrik.com/wp-content/uploads/2025/08/un-magasin-dignames-1200x675.jpg',
-      'https://www.afrik.com/wp-content/uploads/2025/08/un-magasin-dignames.jpg',
-    ],
-    emoji: '🍠',
-  },
-  {
-    id: 'event-gaani',
-    name: 'Gaani de Nikki',
-    category: 'traditions',
-    date: 'Mai - juin',
-    period: 'Annuel',
-    location: 'Nikki — Département du Borgou',
-    description: 'La grande fête annuelle des Bariba du Nord-Bénin au Palais royal de Nikki. Cavalcades équestres, danses, rites royaux et rassemblement des chefferies traditionnelles dans une ambiance grandiose.',
-    highlights: ['Cavalcades équestres', 'Rites royaux Bariba', 'Danses et traditions du Nord'],
-    image: 'https://www.afrik.com/wp-content/uploads/2026/08/le-palais-royal-et-larene-de-la-gaani-a-nikki-alors-en-construction-1200x675.jpg',
-    images: [
-      'https://www.afrik.com/wp-content/uploads/2026/08/le-palais-royal-et-larene-de-la-gaani-a-nikki-alors-en-construction-1200x675.jpg',
-      'https://www.afrik.com/wp-content/uploads/2026/08/un-cavalier-a-la-gaani-wwwgouvbj.jpeg',
-    ],
-    emoji: '🐎',
-  },
-  {
-    id: 'event-finnab',
-    name: 'FInAB',
-    category: 'musique',
-    date: 'Février - Mars',
-    period: 'Annuel',
-    location: 'Cotonou — Palais des Congrès',
-    description: 'Le Festival International des Arts du Bénin, créé en 2023 par Groupe Empire. Multidisciplinaire : musique, cinéma, mode, arts plastiques, danse et théâtre. Le Tokp\'Art rassemble 500+ exposants dans une ambiance festive panafricaine.',
-    highlights: ['500+ exposants au Tokp\'Art', 'Masterclasses & concerts live', 'Artistes de 10+ pays', 'Cinéma & défilés de mode'],
-    image: 'https://matinlibre.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-23-at-23.22.40.jpeg',
-    images: ['https://matinlibre.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-23-at-23.22.40.jpeg'],
-    emoji: '🎨',
-  },
-  {
-    id: 'event-chill-groove',
-    name: 'Chill & Groove',
-    category: 'musique',
-    date: 'Décembre',
-    period: 'Annuel',
-    location: 'Cotonou — Palais des Congrès',
-    description: 'Festival lifestyle créé par Vitalor célébrant la culture béninoise à travers musique, street food et divertissement. 72h de shows non-stop, 50+ restaurants et bars, DJ sets locaux et internationaux.',
-    highlights: ['50+ restaurants & bars', 'DJ sets internationaux', 'Zones VR & dance battles', 'Good Vibes Only'],
-    image: 'https://critikmag.com/wp-content/uploads/2024/12/chill-and-groove-un-festival-de-plus-dans-le-divertissement-a-cotonou-critikmag-e1734088860893.jpg',
-    images: [
-      'https://critikmag.com/wp-content/uploads/2024/12/chill-and-groove-un-festival-de-plus-dans-le-divertissement-a-cotonou-critikmag-e1734088860893.jpg',
-      'https://chillandgroovefestival.com/wp-content/uploads/2026/07/Image-de-reference-1024x538.png',
-    ],
-    emoji: '🎧',
-  },
-  {
-    id: 'event-1er-aout',
-    name: '1er Août',
-    category: 'traditions',
-    date: '1er août',
-    period: 'Annuel',
-    location: 'Cotonou — Boulevard de la Marina',
-    description: 'La Fête Nationale du Bénin commémorant l\'indépendance du 1er août 1960. Cérémonie officielle avec dépôt de gerbe au Monument aux Dévoués, défilé militaire et paramilitaire de 30+ pelotons, performances culturelles et participation de la communauté internationale.',
-    highlights: ['Défilé militaire & paramilitaire', 'Dépôt de gerbe au Monument', 'Performances culturelles', 'Cérémonie présidentielle'],
-    image: 'https://www.afrik.com/wp-content/uploads/2026/08/depot-de-gerbe-a-la-place-du-monument-aux-devoues-de-la-nation-696x522.webp',
-    images: [
-      'https://www.afrik.com/wp-content/uploads/2026/08/depot-de-gerbe-a-la-place-du-monument-aux-devoues-de-la-nation-696x522.webp',
-      'https://www.afrik.com/wp-content/uploads/2026/08/romuald-wadagni-president-de-la-republique-du-benin-696x392.webp',
-    ],
-    emoji: '🇧🇯',
-  },
-];
+/** Photo Vodun Days (celle de la carte événement), voilée en bleu nuit. */
+const AGENDA_BACKGROUND = '/images/vodun-days-2026.jpg';
 
-interface EventPhoto {
-  id: string;
-  eventId: string;
-  src: string;
-  eventName: string;
-  emoji: string;
-  category: EventCategory;
-  date: string;
-  location: string;
-}
-
-const ALL_PHOTOS: EventPhoto[] = BENIN_EVENTS.flatMap((ev) => {
-  const photos = ev.images.length > 0 ? ev.images : (ev.image ? [ev.image] : []);
-  return photos.map((src, i) => ({
-    id: `${ev.id}-${i}`,
-    eventId: ev.id,
-    src,
-    eventName: ev.name,
-    emoji: ev.emoji,
-    category: ev.category,
-    date: ev.date,
-    location: ev.location,
-  }));
-});
-
-export const GalleryView: React.FC<GalleryViewProps> = () => {
-  const [activeEventId, setActiveEventId] = useState<string | null>(null);
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
-  const filtered = useMemo(
-    () => (activeEventId === null ? ALL_PHOTOS : ALL_PHOTOS.filter((p) => p.eventId === activeEventId)),
-    [activeEventId]
-  );
-
-  useEffect(() => {
-    if (lightboxIndex === null) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setLightboxIndex(null);
-      if (e.key === 'ArrowLeft') setLightboxIndex((i) => (i === null ? i : (i - 1 + filtered.length) % filtered.length));
-      if (e.key === 'ArrowRight') setLightboxIndex((i) => (i === null ? i : (i + 1) % filtered.length));
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [lightboxIndex === null, filtered.length]);
-
-  const current = lightboxIndex !== null ? filtered[lightboxIndex] : null;
-  const activeEv = current ? BENIN_EVENTS.find((e) => e.id === current.eventId) : null;
+export const GalleryView: React.FC = () => {
+  const featured = AGENDA_EVENTS[0];
+  const rest = AGENDA_EVENTS.slice(1);
 
   return (
-    <div className="bg-stone-950 min-h-full">
-      {/* Header */}
-      <div className="relative py-14 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-600/10 via-transparent to-stone-950" />
-        <Flame className="w-10 h-10 text-amber-400 mx-auto mb-4" />
-        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3">
-          Galerie <span className="text-amber-400">du Bénin</span>
-        </h1>
-        <p className="text-stone-400 text-sm max-w-lg mx-auto">
-          Vodun Days, WeLovEya, FestiChill, festivals, fêtes traditionnelles… Toutes les photos des événements qui font vibrer le Bénin.
-        </p>
+    <section className="relative isolate w-full overflow-hidden bg-[#0b1b2b]">
+      {/* Fond photo pleine page + voile bleu nuit */}
+      <div className="agenda-bg pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(8,20,32,.90) 0%, rgba(8,20,32,.74) 42%, rgba(8,20,32,.92) 100%)',
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+        style={{
+          background:
+            'radial-gradient(120% 75% at 50% 0%, rgba(217,164,65,.12) 0%, rgba(217,164,65,0) 62%)',
+        }}
+      />
 
-        {/* Event filter */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
-          <button
-            onClick={() => { setActiveEventId(null); setLightboxIndex(null); }}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-              activeEventId === null
-                ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
-                : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
-            }`}
+      <div className="relative mx-auto w-full max-w-[1400px] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+        {/* Header */}
+        <div className="mb-8 grid grid-cols-1 items-end gap-6 lg:mb-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,.85fr)]">
+          <div className="ag-head">
+            <p className="ag-kicker">
+              <span className="ag-flag" aria-hidden="true">
+                <i className="ag-fg" />
+                <i className="ag-fy" />
+                <i className="ag-fr" />
+              </span>
+              Saison culturelle · Bénin
+            </p>
+            <h2 className="ag-title font-extrabold">
+              <span className="ag-line">
+                <span className="ag-w ag-w1">Quand</span>{' '}
+                <span className="ag-w ag-w2">le</span>{' '}
+                <span className="ag-w ag-green">Bénin</span>
+              </span>{' '}
+              <span className="ag-line">
+                <span className="ag-w ag-yellow">célèbre</span>{' '}
+                <span className="ag-w ag-red">l&apos;instant</span>
+              </span>
+            </h2>
+            <span className="ag-rule" aria-hidden="true">
+              <i className="ag-rg" />
+              <i className="ag-ry" />
+              <i className="ag-rr" />
+            </span>
+          </div>
+          <p
+            className="max-w-[520px] lg:justify-self-end lg:text-right"
+            style={{
+              color: 'rgba(255,255,255,.75)',
+              fontSize: 'clamp(1rem, 1.4vw, 18px)',
+              lineHeight: 1.5,
+              fontWeight: 400,
+            }}
           >
-            Tout
-            {activeEventId === null && (
-              <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{filtered.length}</span>
-            )}
-          </button>
-          {BENIN_EVENTS.map((ev) => {
-            const count = ALL_PHOTOS.filter((p) => p.eventId === ev.id).length;
+            Fêtes traditionnelles, grands rendez-vous :<br className="hidden sm:block" />
+            la saison culturelle du Bénin ne s&apos;arrête jamais.
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="agenda-grid grid gap-5">
+          {/* Featured */}
+          {(() => {
+            const FeaturedTag = (featured.url ? 'a' : 'article') as 'a' | 'article';
             return (
-              <button
-                key={ev.id}
-                onClick={() => { setActiveEventId(ev.id); setLightboxIndex(null); }}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
-                  activeEventId === ev.id
-                    ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
-                    : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
-                }`}
+              <FeaturedTag
+                {...(featured.url
+                  ? { href: featured.url, target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+                className={`group relative block min-h-[420px] overflow-hidden sm:min-h-[520px] lg:min-h-0 ${featured.url ? 'cursor-pointer' : ''}`}
+                style={{
+                  borderRadius: 32,
+                  gridArea: 'featured',
+                }}
               >
-                {ev.emoji}
-                {ev.name}
-                <span className="px-1.5 py-0.5 rounded-full bg-black/20 text-[10px]">{count}</span>
-              </button>
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0" style={overlayStyle} />
+                <div className="relative flex h-full flex-col justify-end p-6 sm:p-8 lg:p-9">
+                  <div className="mb-2 flex flex-wrap items-end gap-x-4 gap-y-1">
+                    <span
+                      className="font-extrabold leading-none"
+                      style={{ color: '#FFD600', fontSize: 'clamp(2.5rem, 4.5vw, 56px)' }}
+                    >
+                      {featured.dayRange}
+                    </span>
+                    <span
+                      className="pb-1 uppercase"
+                      style={{
+                        color: '#FFFFFF',
+                        fontSize: 'clamp(0.95rem, 1.6vw, 22px)',
+                        letterSpacing: '0.14em',
+                        fontWeight: 500,
+                      }}
+                    >
+                      {featured.monthYear}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-bold"
+                    style={{
+                      color: '#FFFFFF',
+                      fontSize: 'clamp(2.4rem, 4.8vw, 60px)',
+                      lineHeight: 1.02,
+                    }}
+                  >
+                    {featured.title}
+                  </h3>
+                </div>
+              </FeaturedTag>
+            );
+          })()}
+
+          {rest.map((event) => {
+            const CardTag = (event.url ? 'a' : 'article') as 'a' | 'article';
+            return (
+              <CardTag
+                key={event.id}
+                {...(event.url ? { href: event.url, target: '_blank', rel: 'noopener noreferrer' } : {})}
+                className={`group relative block min-h-[240px] overflow-hidden sm:min-h-[260px] lg:min-h-0 ${event.url ? 'cursor-pointer' : ''}`}
+                style={{ borderRadius: 32 }}
+              >
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0" style={{ ...overlayStyle, background: 'linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.28) 50%, rgba(0,0,0,.05) 100%)' }} />
+                <div className="relative flex h-full flex-col justify-end p-5 sm:p-6">
+                  <div className="mb-1 flex flex-wrap items-end gap-x-3 gap-y-0.5">
+                    {event.dayRange && (
+                      <span
+                        className="font-extrabold leading-none"
+                        style={{ color: '#FFD600', fontSize: 'clamp(1.8rem, 2.4vw, 34px)' }}
+                      >
+                        {event.dayRange}
+                      </span>
+                    )}
+                    <span
+                      className="pb-0.5 uppercase"
+                      style={{
+                        color: '#FFFFFF',
+                        fontSize: event.dayRange ? 'clamp(0.72rem, 1vw, 13px)' : 'clamp(0.82rem, 1.1vw, 15px)',
+                        letterSpacing: '0.12em',
+                        fontWeight: 500,
+                      }}
+                    >
+                      {event.monthYear}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-medium"
+                    style={{
+                      color: '#FFFFFF',
+                      fontSize: event.id === 'gaani' ? 'clamp(1.3rem, 1.8vw, 22px)' : 'clamp(1.35rem, 1.9vw, 24px)',
+                      lineHeight: 1.15,
+                      fontWeight: 500,
+                    }}
+                  >
+                    {event.title}
+                  </h3>
+                </div>
+              </CardTag>
             );
           })}
         </div>
+
+        <div className="mt-6 flex justify-end">
+          <a
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-white/70 transition-colors hover:text-[#FFD600]"
+          >
+            Voir tous les événements
+            <ChevronRight className="h-4 w-4" />
+          </a>
+        </div>
       </div>
 
-      {/* Photo grid — all photos visible at once */}
-      {filtered.length === 0 ? (
-        <div className="pb-24 text-center">
-          <Images className="w-12 h-12 text-stone-700 mx-auto mb-3" />
-          <p className="text-stone-500 text-sm">Aucune photo dans cette catégorie.</p>
-        </div>
-      ) : (
-        <div className="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-            {filtered.map((p, i) => {
-              const meta = CATEGORY_META[p.category];
-              return (
-                <button
-                  key={p.id}
-                  onClick={() => setLightboxIndex(i)}
-                  className="group relative w-full mb-4 break-inside-avoid rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 text-left hover:border-amber-500/40 transition-all hover:shadow-xl hover:shadow-amber-500/5"
-                >
-                  <img
-                    src={p.src}
-                    alt={p.eventName}
-                    loading="lazy"
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+      <style>{`
+        /* ---- Titre aux couleurs du drapeau du Bénin ---- */
+        .ag-head { min-width: 0; }
+        .ag-kicker {
+          display: flex;
+          align-items: center;
+          gap: 11px;
+          margin: 0 0 16px;
+          color: rgba(243,238,232,.82);
+          font-size: clamp(.68rem, 1.05vw, 12px);
+          font-weight: 600;
+          letter-spacing: .26em;
+          text-transform: uppercase;
+          text-shadow: 0 1px 3px rgba(0,0,0,.9), 0 0 10px rgba(0,0,0,.6);
+          animation: agFade .6s cubic-bezier(.22,.9,.28,1) both;
+        }
+        .ag-flag {
+          position: relative;
+          display: block;
+          flex: 0 0 auto;
+          width: 34px;
+          height: 23px;
+          border-radius: 4px;
+          overflow: hidden;
+          box-shadow: 0 0 0 1px rgba(255,255,255,.22), 0 7px 20px -7px rgba(0,0,0,.9);
+        }
+        .ag-flag i { position: absolute; display: block; }
+        .ag-fg { left: 0; top: 0; bottom: 0; width: 33.333%; background: #008751; }
+        .ag-fy { left: 33.333%; right: 0; top: 0; height: 50%; background: #FCD116; }
+        .ag-fr { left: 33.333%; right: 0; bottom: 0; height: 50%; background: #E8112D; }
+        .ag-flag::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(115deg, transparent 34%, rgba(255,255,255,.55) 50%, transparent 66%);
+          transform: translateX(-120%);
+          animation: agSheen 5.5s ease-in-out 1.1s infinite;
+        }
+        .ag-title {
+          margin: 0;
+          color: #F3EEE8;
+          font-size: clamp(2.75rem, 6vw, 86px);
+          line-height: .95;
+          letter-spacing: -.035em;
+          overflow-wrap: break-word;
+        }
+        .ag-line { display: block; }
+        .ag-w {
+          display: inline-block;
+          color: #F3EEE8;
+          text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 2px 22px rgba(0,0,0,.6);
+        }
+        .ag-w1 { animation: agWord .78s cubic-bezier(.16,.84,.28,1) .10s both; }
+        .ag-w2 { animation: agWord .78s cubic-bezier(.16,.84,.28,1) .16s both; }
+        .ag-green {
+          color: #00A65C;
+          text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 30px rgba(0,135,81,.5);
+          animation: agWord .78s cubic-bezier(.16,.84,.28,1) .22s both,
+                     agGlowG 6.5s ease-in-out 1.4s infinite;
+        }
+        .ag-yellow {
+          color: #FCD116;
+          text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 32px rgba(252,209,22,.42);
+          animation: agWord .78s cubic-bezier(.16,.84,.28,1) .30s both,
+                     agGlowY 6.5s ease-in-out 2.1s infinite;
+        }
+        .ag-red {
+          color: #F52D42;
+          text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 30px rgba(232,17,45,.48);
+          animation: agWord .78s cubic-bezier(.16,.84,.28,1) .38s both,
+                     agGlowR 6.5s ease-in-out 2.8s infinite;
+        }
+        .ag-rule {
+          display: flex;
+          gap: 4px;
+          width: clamp(168px, 30vw, 306px);
+          height: 5px;
+          margin-top: 22px;
+        }
+        .ag-rule i {
+          display: block;
+          height: 100%;
+          border-radius: 99px;
+          transform-origin: left center;
+          animation: agDraw .7s cubic-bezier(.22,.9,.28,1) both;
+        }
+        .ag-rule i.ag-rg { flex: 1 1 33.33%; background: linear-gradient(90deg,#008751,#00C46E); box-shadow: 0 0 16px -2px rgba(0,135,81,.85); animation-delay: .52s; }
+        .ag-rule i.ag-ry { flex: 1 1 33.33%; background: linear-gradient(90deg,#FCD116,#FFE873); box-shadow: 0 0 16px -2px rgba(252,209,22,.8); animation-delay: .62s; }
+        .ag-rule i.ag-rr { flex: 1 1 33.34%; background: linear-gradient(90deg,#E8112D,#FF6A5A); box-shadow: 0 0 16px -2px rgba(232,17,45,.8); animation-delay: .72s; }
 
-                  <span className={`absolute top-3 left-3 flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md bg-white/95 ${meta.color}`}>
-                    <meta.icon className="w-3 h-3" />
-                    {meta.label}
-                  </span>
+        @keyframes agFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+        @keyframes agWord {
+          from { opacity: 0; transform: translateY(26px) scale(.965); filter: blur(7px); }
+          to   { opacity: 1; transform: none; filter: blur(0); }
+        }
+        @keyframes agDraw { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+        @keyframes agSheen { 0%,72% { transform: translateX(-120%); } 88%,100% { transform: translateX(120%); } }
+        @keyframes agGlowG { 0%,100% { text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 26px rgba(0,135,81,.40); } 50% { text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 44px rgba(0,196,110,.72); } }
+        @keyframes agGlowY { 0%,100% { text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 26px rgba(252,209,22,.34); } 50% { text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 46px rgba(252,209,22,.66); } }
+        @keyframes agGlowR { 0%,100% { text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 26px rgba(232,17,45,.38); } 50% { text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 9px rgba(0,0,0,.72), 0 0 44px rgba(245,45,66,.70); } }
 
-                  <div className="absolute bottom-0 inset-x-0 p-3 text-left pointer-events-none">
-                    <p className="font-display text-white font-bold text-sm leading-tight">
-                      {p.emoji} {p.eventName}
-                    </p>
-                    <div className="flex items-center gap-2 mt-1 text-stone-300 text-[10px]">
-                      <span className="flex items-center gap-1">
-                        <CalendarDays className="w-3 h-3 text-amber-400" />
-                        {p.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-amber-400" />
-                        {p.location}
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
+        @media (max-width: 639px) {
+          .ag-kicker { gap: 9px; margin-bottom: 13px; letter-spacing: .2em; }
+          .ag-flag { width: 28px; height: 19px; }
+          .ag-title { font-size: clamp(2.25rem, 10.8vw, 2.75rem); }
+          .ag-rule { margin-top: 17px; height: 4px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .ag-kicker, .ag-w, .ag-green, .ag-yellow, .ag-red, .ag-rule i, .ag-flag::after {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+            filter: none !important;
+          }
+        }
 
-      {/* Lightbox — single photo view with navigation */}
-      {current && (() => {
-        const SelMeta = CATEGORY_META[current.category];
-        const goPrev = () => setLightboxIndex((i) => (i === null ? i : (i - 1 + filtered.length) % filtered.length));
-        const goNext = () => setLightboxIndex((i) => (i === null ? i : (i + 1) % filtered.length));
-        return (
-        <div className="fixed inset-0 z-[900] flex flex-col bg-black/95" onClick={() => setLightboxIndex(null)}>
-          <div className="flex items-center justify-between px-5 py-4">
-            <div className="flex items-center gap-3 min-w-0">
-              <span className={`flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/10 ${SelMeta.color}`}>
-                <SelMeta.icon className="w-3 h-3" />
-                {SelMeta.label}
-              </span>
-              <p className="text-white font-bold text-sm truncate">{current.emoji} {current.eventName}</p>
-            </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <span className="text-stone-400 text-xs font-bold">
-                {lightboxIndex! + 1} / {filtered.length}
-              </span>
-              <button
-                onClick={(e) => { e.stopPropagation(); setLightboxIndex(null); }}
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                aria-label="Fermer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-
-          <div className="flex-1 flex items-center justify-center px-4 sm:px-16 min-h-0" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={goPrev}
-              className="absolute left-3 sm:left-5 p-2.5 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
-              aria-label="Photo précédente"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <img
-              src={current.src}
-              alt={current.eventName}
-              className="max-h-[70vh] max-w-full object-contain rounded-2xl"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-            />
-
-            <button
-              onClick={goNext}
-              className="absolute right-3 sm:right-5 p-2.5 rounded-full bg-black/50 hover:bg-amber-500 text-white hover:text-stone-950 transition-colors"
-              aria-label="Photo suivante"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 px-5 py-5" onClick={(e) => e.stopPropagation()}>
-            <span className="flex items-center gap-2 text-sm text-stone-300">
-              <CalendarDays className="w-4 h-4 text-amber-400" />
-              {activeEv ? activeEv.date : current.date}
-            </span>
-            <span className="flex items-center gap-2 text-sm text-stone-300">
-              <MapPin className="w-4 h-4 text-amber-400" />
-              {current.location}
-            </span>
-            {activeEv && (
-              <a
-                href={`https://www.google.com/search?q=${encodeURIComponent(activeEv.name + ' Bénin ' + activeEv.location)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-bold py-2 px-5 rounded-full transition-colors"
-              >
-                <Eye className="w-4 h-4" />
-                En savoir plus
-              </a>
-            )}
-          </div>
-        </div>
-        );
-      })()}
-    </div>
+        .agenda-bg {
+          background-image: url("${AGENDA_BACKGROUND}");
+          background-size: cover;
+          background-position: center 35%;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+        @media (max-width: 767px) {
+          .agenda-bg { display: none; }
+        }
+        .agenda-grid {
+          grid-template-areas:
+            "featured"
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+            "f"
+            "g";
+        }
+        .agenda-grid > :nth-child(1) { grid-area: featured; }
+        .agenda-grid > :nth-child(2) { grid-area: a; }
+        .agenda-grid > :nth-child(3) { grid-area: b; }
+        .agenda-grid > :nth-child(4) { grid-area: c; }
+        .agenda-grid > :nth-child(5) { grid-area: d; }
+        .agenda-grid > :nth-child(6) { grid-area: e; }
+        .agenda-grid > :nth-child(7) { grid-area: f; }
+        .agenda-grid > :nth-child(8) { grid-area: g; }
+        @media (min-width: 640px) {
+          .agenda-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-areas:
+              "featured featured"
+              "a b"
+              "c d"
+              "e f"
+              "g g";
+          }
+        }
+        @media (min-width: 1024px) {
+          .agenda-grid {
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 300px 240px 240px;
+            grid-template-areas:
+              "featured a b"
+              "featured c d"
+              "e f g";
+            gap: 20px;
+          }
+        }
+      `}</style>
+    </section>
   );
 };

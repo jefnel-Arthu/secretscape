@@ -13,13 +13,7 @@ import {
   Shield,
   Heart,
 } from 'lucide-react';
-
-const AGENCY_CONTACT = {
-  phone: '+229 01 91 72 29 07',
-  email: 'ajefnel@gmail.com',
-  address: 'Cotonou, Benin',
-  hours: 'Lundi - Dimanche : 8h a 22h',
-};
+import { AGENCY_CONTACT, FORMSPREE_ENDPOINT } from '../data/contact';
 
 const initialForm = {
   name: '',
@@ -53,7 +47,7 @@ export const ContactView: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch('https://formspree.io/f/xppaydyr', {
+      await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

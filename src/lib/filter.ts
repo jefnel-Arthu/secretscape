@@ -7,18 +7,36 @@ export interface SpotFilters {
   searchQuery: string;
 }
 
-export const filterSpots = (spots: HiddenSpot[], filters: SpotFilters): HiddenSpot[] =>
-  spots.filter((s) => {
-    if (filters.city !== 'ALL' && s.city !== filters.city) return false;
-    if (filters.category !== 'ALL' && s.category !== filters.category) return false;
-    if (filters.secretLevel !== 'ALL' && s.secretLevel !== filters.secretLevel) return false;
-    if (filters.searchQuery.trim()) {
-      const q = filters.searchQuery.toLowerCase();
-      const matchTitle = s.title.toLowerCase().includes(q);
-      const matchCity = s.city.toLowerCase().includes(q);
-      const matchDesc = s.description.toLowerCase().includes(q);
-      const matchTag = s.tags.some((t) => t.toLowerCase().includes(q));
+// Les libellés du jeu de données mélangeaient « Sèmè » / « Sèmé » et « Sô-Ava » / « So-Ava » :
+// la comparaison est insensible aux accents, aux ligatures, aux tirets et aux espaces multiples.
+export const normalizeText = (value: string): string =>
+  value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[œ]/g, 'oe')
+    .replace(/[æ]/g, 'ae')
+    .replace(/[-_]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+export const filterSpots = (spots: HiddenSpot[], filters: SpotFilters): HiddenSpot[] => {
+  const city = filters.city === 'ALL' ? null : normalizeText(filters.city);
+  const category = filters.category === 'ALL' ? null : filters.category;
+  const secretLevel = filters.secretLevel === 'ALL' ? null : filters.secretLevel;
+  const query = filters.searchQuery.trim() ? normalizeText(filters.searchQuery) : '';
+
+  return spots.filter((s) => {
+    if (city && normalizeText(s.city) !== city) return false;
+    if (category && s.category !== category) return false;
+    if (secretLevel && s.secretLevel !== secretLevel) return false;
+    if (query) {
+      const matchTitle = normalizeText(s.title).includes(query);
+      const matchCity = normalizeText(s.city).includes(query);
+      const matchDesc = normalizeText(s.description).includes(query);
+      const matchTag = s.tags.some((t) => normalizeText(t).includes(query));
       if (!matchTitle && !matchCity && !matchDesc && !matchTag) return false;
     }
     return true;
   });
+};

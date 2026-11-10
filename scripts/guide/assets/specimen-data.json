@@ -1,0 +1,114 @@
+[
+  {
+    "id": "spot-ganvie-1",
+    "title": "Village Lacustre de Ganvié",
+    "subtitle": "La « Venise de l'Afrique » et ses canaux secrets",
+    "category": "sites",
+    "city": "Sô-Ava",
+    "region": "Atlantique",
+    "coordinates": {
+      "lat": 6.46769,
+      "lng": 2.39125
+    },
+    "address": "Ganvié, commune de Sô-Ava, lac Nokoué",
+    "secretLevel": "moyen",
+    "description": "Ganvié est l’une des cités lacustres les plus fascinantes d’Afrique de l’Ouest, née de l’histoire et de l’ingéniosité du peuple Tofinu. Bâtie sur pilotis au cœur du lac Nokoué, elle dévoile un paysage unique où les maisons, les marchés et les déplacements quotidiens s’organisent autour de l’eau.\n\nLors de la visite, vous glissez en pirogue entre les canaux, observez la vie locale et découvrez un mode d’habitat parfaitement adapté à son environnement. L’atmosphère paisible du matin, les reflets sur le lac et l’authenticité des scènes de vie font de Ganvié une expérience culturelle et humaine mémorable.\n\nC’est un lieu idéal pour comprendre l’histoire du Bénin, rencontrer ses traditions vivantes et repartir avec des images fortes d’un patrimoine à la fois fragile et remarquable.",
+    "secretAccessHint": "Embarquez tôt à la rive de So-Ava avant 09h00 et demandez une pirogue à pagaie, plus silencieuse et discrète, plutôt qu'à moteur.",
+    "bestTimeToVisit": "Tôt le matin (06h30 - 09h00), avant l'affluence des bateaux",
+    "estimatedDurationMinutes": 180,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg/1280px-Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg",
+    "tags": [
+      "Lac",
+      "Pirogue",
+      "Culture Tofinu",
+      "Photographie"
+    ],
+    "rating": 4.9,
+    "reviewCount": 142,
+    "crowdLevel": "modéré"
+  },
+  {
+    "id": "spot-grandpopo-bouche",
+    "title": "La Bouche du Roi",
+    "subtitle": "Là où le fleuve Mono embrasse l'Atlantique",
+    "category": "sites",
+    "city": "Grand-Popo",
+    "region": "Mono",
+    "coordinates": {
+      "lat": 6.29528,
+      "lng": 1.93111
+    },
+    "address": "Bouche du Roi, commune de Grand-Popo",
+    "secretLevel": "insider",
+    "description": "La Bouche du Roi offre l’un des paysages naturels les plus saisissants du littoral béninois. Ici, le fleuve Mono rencontre l’océan Atlantique dans un jeu de courants, de bancs de sable et de lumière qui change au fil des marées.\n\nLe site séduit par son caractère sauvage et préservé : oiseaux migrateurs, étendues dégagées, souffle du vent et ambiance presque hors du temps. C’est un lieu parfait pour la contemplation, la photographie et les promenades au calme, loin de l’agitation.\n\nAu lever ou au coucher du soleil, les couleurs transforment le décor et rendent l’expérience encore plus spectaculaire. Une halte incontournable pour découvrir la beauté brute de Grand-Popo.",
+    "secretAccessHint": "Longez la plage vers l'est après le village d'Agoué, ou remontez le fleuve en pirogue à la marée basse pour voir le chenal se reformer.",
+    "bestTimeToVisit": "Au lever ou au coucher du soleil, à marée montante",
+    "estimatedDurationMinutes": 120,
+    "imageUrl": "/images/localized/spot-grandpopo-bouche-3f6adc.jpg",
+    "tags": [
+      "Fleuve",
+      "Océan",
+      "Oiseaux",
+      "Sauvage"
+    ],
+    "rating": 4.9,
+    "reviewCount": 67,
+    "crowdLevel": "faible"
+  },
+  {
+    "id": "spot-jaaba",
+    "title": "Jaaba – Grill & Bar",
+    "subtitle": "Le grill branché de Fidjrossè",
+    "category": "restaurants",
+    "city": "Cotonou",
+    "region": "Littoral",
+    "coordinates": {
+      "lat": 6.333,
+      "lng": 2.385
+    },
+    "address": "Fidjrossè, Cotonou",
+    "secretLevel": "moyen",
+    "description": "Jaaba – Grill & Bar vous invite à vivre une expérience authentique à Cotonou, Littoral. Le grill branché de Fidjrossè Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+    "secretAccessHint": "Venez tôt le vendredi soir pour trouver une table, ou profitez du déjeuner entre deux baignades.",
+    "bestTimeToVisit": "En soirée, en fin de semaine",
+    "estimatedDurationMinutes": 120,
+    "imageUrl": "/images/localized/spot-jaaba-c7411f.jpg",
+    "tags": [
+      "Restaurant",
+      "Grill",
+      "Bar",
+      "Fidjrossè"
+    ],
+    "rating": 4.9,
+    "reviewCount": 44,
+    "crowdLevel": "élevé"
+  },
+  {
+    "id": "spot-fondation-zinsou-cotonou",
+    "title": "Fondation Zinsou",
+    "subtitle": "Art contemporain africain à découvrir",
+    "category": "sites",
+    "city": "Cotonou",
+    "region": "Littoral",
+    "coordinates": {
+      "lat": 6.3608,
+      "lng": 2.4254
+    },
+    "address": "Fondation Zinsou, Haie Vive, Cotonou",
+    "secretLevel": "facile",
+    "description": "Art contemporain africain à découvrir vous invite à vivre une expérience authentique à Cotonou, Littoral. Découvrez Art contemporain africain à découvrir, un site touristique incontournable à Cotonou, Littoral. Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+    "secretAccessHint": "Vérifier les expositions du moment. Le café attenant vaut aussi le détour.",
+    "bestTimeToVisit": "En journée",
+    "estimatedDurationMinutes": 90,
+    "imageUrl": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "Art",
+      "Culture",
+      "Musée",
+      "Cotonou"
+    ],
+    "rating": 4.8,
+    "reviewCount": 76,
+    "crowdLevel": "modéré"
+  }
+]

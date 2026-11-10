@@ -26,14 +26,22 @@ interface HomePageProps {
   onOpenSpot: (spot: HiddenSpot) => void;
 }
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80';
-const GANVIE_IMAGE = 'https://journeysbydesign.com/wp-content/uploads/2023/02/Ganvie-2000x1024.jpg';
-const COTONOU_IMAGE = 'https://www.gouv.bj/upload/thumbnails/articles//0167603001607780384.jpeg';
-const OUIDAH_IMAGE = 'https://media.istockphoto.com/id/2222142715/fr/photo/porte-de-non-retour-%C3%A0-ouidah-b%C3%A9nin-sur-la-c%C3%B4te-atlantique-par-un-apr%C3%A8s-midi-ensoleill%C3%A9-2.jpg?s=612x612&w=0&k=20&c=47hSXjwvydJD0PBkQDcwovccP-04oa7DjUwuqJMWoW4=';
-const GRAND_POPO_IMAGE = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/1f/67/88/grand-popo-beach-tranquility.jpg?w=1200&h=-1&s=1';
+const GANVIE_IMAGE = '/images/localized/ganvie-6b0090.jpg';
+const COTONOU_IMAGE = '/images/localized/cotonou-5951af.jpg';
+const OUIDAH_IMAGE = '/images/localized/ouidah-7f9923.jpg';
+const GRAND_POPO_IMAGE = '/images/localized/grand-popo-3a6ca6.jpg';
 const PORTO_NOVO_IMAGE = 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg';
-const MARKET_IMAGE = 'https://i.pinimg.com/1200x/a5/63/0b/a5630b8eae26b64c7f6f344c14941541.jpg';
 const SAFARI_IMAGE = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=80';
+
+/** Culture béninoise en fond du hero — défilement automatique toutes les 10 s. */
+const HERO_SLIDES = [
+  { src: GANVIE_IMAGE, alt: 'Village lacustre de Ganvié' },
+  { src: '/images/vodun-days-2026.jpg', alt: 'Vodun Days à Ouidah' },
+  { src: '/images/localized/event-festival-masques-4623dc.jpg', alt: 'Festival des Masques de Porto-Novo' },
+  { src: '/images/localized/event-1er-aout-file-degan-gabin-motorized-parade-jpg-4a8da6.jpg', alt: 'Fête du 1er Août au Bénin' },
+  { src: '/images/hero-festival-sica.jpg', alt: 'Festival SICA, arts et culture du Bénin' },
+];
+const HERO_INTERVAL_MS = 10000;
 
 const CATEGORY_CARDS = [
   {
@@ -139,10 +147,28 @@ const FEATURED_SPOT_IDS = [
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCategory, onOpenSpot }) => {
   const [heroReady, setHeroReady] = React.useState(false);
+  const [heroIndex, setHeroIndex] = React.useState(0);
 
   React.useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
     return () => clearTimeout(t);
+  }, []);
+
+  // Défilement automatique des images de la culture béninoise.
+  React.useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const id = window.setInterval(() => {
+      setHeroIndex((current) => (current + 1) % HERO_SLIDES.length);
+    }, HERO_INTERVAL_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
+  // Précharge les images pour éviter un flash blanc au changement.
+  React.useEffect(() => {
+    HERO_SLIDES.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.src;
+    });
   }, []);
 
   const featuredSpots = FEATURED_SPOT_IDS.map((id) =>
@@ -163,7 +189,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       {/* ═══════════════════════════════════════════════ HERO ═══ */}
       <section className="relative h-[100vh] min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={GANVIE_IMAGE} alt="Village lacustre de Ganvié" className="w-full h-full object-cover scale-105" />
+          {HERO_SLIDES.map((slide, index) => (
+            <img
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
+              aria-hidden={index !== heroIndex}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-out ${
+                index === heroIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/70 via-[#0b1b2b]/45 to-[#0b1b2b]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b2b]/80 via-transparent to-transparent" />
@@ -222,7 +258,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl h-[420px] sm:h-[560px]">
-                <img src="https://i.pinimg.com/736x/ea/ff/b6/eaffb67a1d39b692128a5cd01edb60c5.jpg" alt="Ambiance béninoise" className="w-full h-full object-cover" />
+                <img src="/images/localized/ambiance-beninoise-1f72ae.jpg" alt="Ambiance béninoise" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="space-y-6">
@@ -255,7 +291,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-6 group relative overflow-hidden rounded-3xl h-[380px] sm:h-[460px] text-left">
-              <img src="https://benin360.com/wp-content/uploads/2026/09/hotel-ganvie-1080x675.jpg" alt="Ganvié" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <img src="/images/localized/ganvie-5096cd.jpg" alt="Ganvié" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">VILLAGE LACUSTRE</span>
@@ -263,7 +299,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-6 group relative overflow-hidden rounded-3xl h-[380px] sm:h-[460px] text-left">
-              <img src="https://www.libreville-aeroport.com/wp-content/uploads/2019/11/cotonou-1-750x500-c-default.jpg" alt="Cotonou" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <img src="/images/localized/cotonou-15460d.jpg" alt="Cotonou" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">VILLE VIBRANTE</span>
@@ -271,7 +307,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
-              <img src="https://media.istockphoto.com/id/2222142715/fr/photo/porte-de-non-retour-%C3%A0-ouidah-b%C3%A9nin-sur-la-c%C3%B4te-atlantique-par-un-apr%C3%A8s-midi-ensoleill%C3%A9-2.jpg?s=612x612&w=0&k=20&c=47hSXjwvydJD0PBkQDcwovccP-04oa7DjUwuqJMWoW4=" alt="Ouidah" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <img src="/images/localized/ouidah-7f9923.jpg" alt="Ouidah" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">MÉMOIRE & SPIRITUALITÉ</span>
@@ -279,7 +315,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/1f/67/88/grand-popo-beach-tranquility.jpg?w=1200&h=-1&s=1" alt="Grand-Popo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <img src="/images/localized/grand-popo-3a6ca6.jpg" alt="Grand-Popo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">OCÉAN & DOUCEUR</span>
@@ -303,7 +339,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl h-[520px] sm:h-[640px]">
-                <img src="https://i.pinimg.com/736x/6e/16/2a/6e162a75e2abf9ecfa31e2a4bfd4f9ae.jpg" alt="Ambiance et rencontres au Bénin" className="w-full h-full object-cover" />
+                <img src="/images/localized/ambiance-et-rencontres-au-benin-8597ad.jpg" alt="Ambiance et rencontres au Bénin" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="space-y-8">
@@ -349,7 +385,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://www.africanparks.org/sites/default/files/2017-07/pendjari_bg.jpg" alt="Savane du Parc National de la Pendjari" className="w-full h-full object-cover" />
+          <img src="/images/localized/savane-du-parc-national-de-la-pendjari-390588.jpg" alt="Savane du Parc National de la Pendjari" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -369,7 +405,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               <span>À partir de 1490 €</span>
             </div>
             <button onClick={() => onNavigate('calendar')} className="bg-[#D9A441] hover:bg-[#c89433] text-stone-950 font-semibold text-sm py-4 px-10 rounded-full transition-all">
-              Découvrir ce circuit
+              Personnaliser ce circuit
             </button>
           </div>
         </div>
@@ -401,7 +437,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               {
                 icon: CalendarIcon,
                 title: 'Planifiez',
-                desc: 'Organisez votre propre calendrier jour par jour ou partagez vos envies avec notre equipe.',
+                desc: 'Construisez votre séjour en quelques étapes ou retrouvez votre carnet d’escapade jour par jour.',
               },
               {
                 icon: Ticket,

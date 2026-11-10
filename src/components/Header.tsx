@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Compass, Calendar as CalendarIcon, Bookmark, Images, MapPin, Search, Lock, Camera } from 'lucide-react';
+import { Home, Compass, Route as RouteIcon, Bookmark, Images, MapPin, Search, Lock, Camera } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: 'home' | 'map' | 'gallery' | 'souvenirs' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin';
@@ -20,9 +20,9 @@ const NAV_ITEMS: {
 }[] = [
   { tab: 'home', icon: Home, label: 'Accueil' },
   { tab: 'map', icon: Compass, label: 'Lieux' },
-  { tab: 'gallery', icon: Images, label: 'Galerie' },
+  { tab: 'gallery', icon: Images, label: 'Agenda' },
   { tab: 'souvenirs', icon: Camera, label: 'Souvenirs' },
-  { tab: 'calendar', icon: CalendarIcon, label: 'Calendrier' },
+  { tab: 'calendar', icon: RouteIcon, label: 'Planifier' },
   { tab: 'favorites', icon: Bookmark, label: 'Favoris' },
 ];
 

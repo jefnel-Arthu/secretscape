@@ -1,0 +1,4009 @@
+{
+  "generatedAt": "2026-11-08T06:18:10.414Z",
+  "chapters": [
+    {
+      "n": 1,
+      "title": "Cotonou & le littoral",
+      "short": "Cotonou",
+      "region": "Littoral"
+    },
+    {
+      "n": 2,
+      "title": "Ouidah, Ganvié & la côte atlantique",
+      "short": "Ouidah",
+      "region": "Atlantique"
+    },
+    {
+      "n": 3,
+      "title": "Grand-Popo & la vallée du Mono",
+      "short": "Grand-Popo",
+      "region": "Mono"
+    },
+    {
+      "n": 4,
+      "title": "Abomey & le pays du Zou",
+      "short": "Abomey",
+      "region": "Zou"
+    },
+    {
+      "n": 5,
+      "title": "Porto-Novo & l’Ouémé",
+      "short": "Porto-Novo",
+      "region": "Ouémé"
+    },
+    {
+      "n": 6,
+      "title": "Dassa & les collines sacrées",
+      "short": "Dassa",
+      "region": "Collines"
+    },
+    {
+      "n": 7,
+      "title": "L’Atacora, terre de pierre",
+      "short": "Atacora",
+      "region": "Atacora"
+    },
+    {
+      "n": 8,
+      "title": "Alibori, Borgou & le Donga",
+      "short": "Borgou",
+      "region": "Borgou"
+    },
+    {
+      "n": 9,
+      "title": "Le Couffo & le plateau",
+      "short": "Couffo",
+      "region": "Couffo"
+    }
+  ],
+  "selection": [
+    {
+      "id": "spot-fondation-zinsou-cotonou",
+      "title": "Fondation Zinsou",
+      "subtitle": "Art contemporain africain à découvrir",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.3608,
+        "lng": 2.4254
+      },
+      "address": "Fondation Zinsou, Haie Vive, Cotonou",
+      "secretLevel": "facile",
+      "description": "Art contemporain africain à découvrir vous invite à vivre une expérience authentique à Cotonou, Littoral. Découvrez Art contemporain africain à découvrir, un site touristique incontournable à Cotonou, Littoral. Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Vérifier les expositions du moment. Le café attenant vaut aussi le détour.",
+      "bestTimeToVisit": "En journée",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80",
+      "tags": [
+        "Art",
+        "Culture",
+        "Musée",
+        "Cotonou"
+      ],
+      "rating": 4.8,
+      "reviewCount": 76,
+      "crowdLevel": "modéré",
+      "chapter": 1,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-marche-ganhi-cotonou",
+      "title": "Marché Ganhi",
+      "subtitle": "L'âme commerçante de Cotonou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.3558,
+        "lng": 2.4375
+      },
+      "address": "Quartier Ganhi, Cotonou",
+      "secretLevel": "moyen",
+      "description": "L'âme commerçante de Cotonou vous invite à vivre une expérience authentique à Cotonou, Littoral. Découvrez L'âme commerçante de Cotonou, un site touristique incontournable à Cotonou, Littoral. Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Aller tôt le matin pour éviter la foule et profiter au mieux de l'ambiance.",
+      "bestTimeToVisit": "Le matin",
+      "estimatedDurationMinutes": 75,
+      "imageUrl": "/images/localized/spot-marche-ganhi-cotonou-46dcc3.jpg",
+      "tags": [
+        "Marché",
+        "Artisanat",
+        "Cuisine",
+        "Authentique",
+        "Cotonou"
+      ],
+      "rating": 4.7,
+      "reviewCount": 41,
+      "crowdLevel": "élevé",
+      "chapter": 1,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-amazone",
+      "title": "Place de l’Amazone",
+      "subtitle": "Le monument aux guerrières du Dahomey",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.3606,
+        "lng": 2.4253
+      },
+      "address": "Place de l’Amazone, carrefour des 3 Glorieuses, Cotonou",
+      "secretLevel": "facile",
+      "description": "Imposant monument dédié aux Amazones du Dahomey, ces guerrières du royaume d'Abomey dont la bravoure a marqué l'histoire. Érigé en hommage à la contribution des femmes dans la résistance coloniale, il est devenu l'un des symboles de Cotonou.",
+      "secretAccessHint": "Le monument se trouve sur un grand carrefour : on le photographie de loin, idéalement en fin de journée quand la lumière le met en valeur.",
+      "bestTimeToVisit": "En fin de journée, pour la lumière dorée",
+      "estimatedDurationMinutes": 30,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Monument_de_l%27Amazone_au_Benin.jpg",
+      "tags": [
+        "Amazones",
+        "Monument",
+        "Histoire",
+        "Cotonou"
+      ],
+      "rating": 4.7,
+      "reviewCount": 120,
+      "crowdLevel": "modéré",
+      "chapter": 1,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-fidjrosse",
+      "title": "Plage de Fidjrossè",
+      "subtitle": "Le spot coucher de soleil de Cotonou",
+      "category": "plages",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.3308,
+        "lng": 2.3855
+      },
+      "address": "Fidjrossè plage, Cotonou",
+      "secretLevel": "facile",
+      "description": "La plage de Fidjrossè est l’un des lieux de vie les plus emblématiques de Cotonou, où l’océan Atlantique, les activités balnéaires et l’ambiance locale se rencontrent. En fin de journée, le site devient particulièrement populaire pour ses couchers de soleil spectaculaires qui attirent habitants et voyageurs.\n\nOn y vient pour marcher le long du rivage, profiter de la brise marine, observer l’animation des environs et s’imprégner du rythme côtier de la ville. Entre détente, photos et moments partagés, Fidjrossè offre une expérience simple mais mémorable.\n\nC’est une halte idéale pour ressentir l’énergie de Cotonou côté mer, surtout en fin d’après-midi quand la lumière dorée transforme le paysage.",
+      "secretAccessHint": "Privilégiez la zone en face de Fidjrossè centre et arrivez avant 17 h pour profiter du spectacle du soleil plongeant dans l’Atlantique.",
+      "bestTimeToVisit": "Entre 17 h et 19 h, pour le coucher de soleil",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Coucher_du_soleil_sur_la_plage_Fidjross%C3%A8-Cotonou_Benin.jpg",
+      "tags": [
+        "Plage",
+        "Coucher de soleil",
+        "Cotonou",
+        "Océan"
+      ],
+      "rating": 4.5,
+      "reviewCount": 210,
+      "crowdLevel": "élevé",
+      "chapter": 1,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-ganvie-1",
+      "title": "Village Lacustre de Ganvié",
+      "subtitle": "La « Venise de l'Afrique » et ses canaux secrets",
+      "category": "sites",
+      "city": "Sô-Ava",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.46769,
+        "lng": 2.39125
+      },
+      "address": "Ganvié, commune de Sô-Ava, lac Nokoué",
+      "secretLevel": "moyen",
+      "description": "Ganvié est l’une des cités lacustres les plus fascinantes d’Afrique de l’Ouest, née de l’histoire et de l’ingéniosité du peuple Tofinu. Bâtie sur pilotis au cœur du lac Nokoué, elle dévoile un paysage unique où les maisons, les marchés et les déplacements quotidiens s’organisent autour de l’eau.\n\nLors de la visite, vous glissez en pirogue entre les canaux, observez la vie locale et découvrez un mode d’habitat parfaitement adapté à son environnement. L’atmosphère paisible du matin, les reflets sur le lac et l’authenticité des scènes de vie font de Ganvié une expérience culturelle et humaine mémorable.\n\nC’est un lieu idéal pour comprendre l’histoire du Bénin, rencontrer ses traditions vivantes et repartir avec des images fortes d’un patrimoine à la fois fragile et remarquable.",
+      "secretAccessHint": "Embarquez tôt à la rive de So-Ava avant 09h00 et demandez une pirogue à pagaie, plus silencieuse et discrète, plutôt qu'à moteur.",
+      "bestTimeToVisit": "Tôt le matin (06h30 - 09h00), avant l'affluence des bateaux",
+      "estimatedDurationMinutes": 180,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg/1280px-Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg",
+      "tags": [
+        "Lac",
+        "Pirogue",
+        "Culture Tofinu",
+        "Photographie"
+      ],
+      "rating": 4.9,
+      "reviewCount": 142,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-ouidah-porte",
+      "title": "Porte du Non-Retour & Route des Esclaves",
+      "subtitle": "Le chemin de mémoire qui mène à l'océan",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.32389,
+        "lng": 2.08944
+      },
+      "address": "Route des Esclaves, plage d'Ouidah",
+      "secretLevel": "moyen",
+      "description": "La Route des Esclaves et la Porte du Non-Retour forment l’un des parcours mémoriels les plus importants du Bénin. Ce chemin symbolique relie la ville à l’océan et retrace, à travers ses étapes et ses monuments, une page douloureuse mais essentielle de l’histoire.\n\nLa marche jusqu’à la plage invite au recueillement et à la compréhension. Face à l’Atlantique, le monument de la Porte du Non-Retour impose une forte émotion par sa présence et sa portée symbolique.\n\nC’est un lieu de mémoire à visiter avec respect, qui donne de la profondeur à la découverte d’Ouidah et aide à mieux saisir l’histoire du pays et de la diaspora.",
+      "secretAccessHint": "Parcourez la route à pied à marée basse et gardez le silence à la Porte du Non-Retour : c'est un lieu de mémoire, pas un point selfie.",
+      "bestTimeToVisit": "Tôt le matin ou au coucher du soleil",
+      "estimatedDurationMinutes": 150,
+      "imageUrl": "/images/localized/spot-ouidah-porte-7b413a.jpg",
+      "tags": [
+        "Mémoire",
+        "Route des Esclaves",
+        "Océan",
+        "Ouidah"
+      ],
+      "rating": 4.9,
+      "reviewCount": 130,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-ouidah-pythons",
+      "title": "Temple des Pythons d'Ouidah",
+      "subtitle": "Le sanctuaire vivant du vaudou",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.3583,
+        "lng": 2.0924
+      },
+      "address": "Temple des Pythons, centre historique d'Ouidah",
+      "secretLevel": "facile",
+      "description": "Le Temple des Pythons est l’un des lieux emblématiques d’Ouidah, ville profondément liée à l’histoire spirituelle et culturelle du Bénin. Ici, le python royal est un animal sacré, respecté et intégré aux traditions vodun qui façonnent l’identité de la région.\n\nLa visite offre une découverte à la fois culturelle et symbolique : architecture du lieu, explications sur les pratiques locales et rencontre avec un patrimoine vivant. C’est une expérience qui invite au respect, à la curiosité et à une meilleure compréhension des croyances du pays.\n\nPour les voyageurs, c’est une halte marquante qui complète parfaitement la découverte d’Ouidah et de sa mémoire.",
+      "secretAccessHint": "Présentez-vous avec respect et apportez une offrande simple ; le prêtre accepte de faire toucher le python sacré aux visiteurs de bonne volonté.",
+      "bestTimeToVisit": "En matinée, quand l'ambiance du quartier est calme",
+      "estimatedDurationMinutes": 45,
+      "imageUrl": "/images/localized/spot-ouidah-pythons-d329cb.jpg",
+      "tags": [
+        "Vaudou",
+        "Python",
+        "Sacré",
+        "Créole"
+      ],
+      "rating": 4.7,
+      "reviewCount": 102,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-ouidah-musee-vodun",
+      "title": "Musée International du Vodun",
+      "subtitle": "Les trésors du culte des esprits",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.3575,
+        "lng": 2.0915
+      },
+      "address": "Centre historique d'Ouidah",
+      "secretLevel": "moyen",
+      "description": "Le Musée International du Vodun est un espace dédié à la compréhension du vodun, une dimension essentielle de la culture béninoise. À travers objets rituels, sculptures, autels et pièces symboliques, il offre une lecture riche des croyances, des pratiques et des représentations spirituelles.\n\nLa visite permet d’approcher ce patrimoine avec plus de contexte et de nuance, loin des clichés. Les explications et la mise en scène des collections aident à saisir la profondeur historique et culturelle de cette tradition vivante.\n\nC’est une étape importante à Ouidah pour les voyageurs qui souhaitent découvrir le Bénin dans toute sa diversité culturelle et spirituelle.",
+      "secretAccessHint": "Demandez au conservateur de vous montrer la salle des objets rituels : les explications valent le détour.",
+      "bestTimeToVisit": "En début d'après-midi, à l'abri de la chaleur",
+      "estimatedDurationMinutes": 75,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vodoun_Porto_Novo_05.jpg/1280px-Vodoun_Porto_Novo_05.jpg",
+      "tags": [
+        "Vodun",
+        "Fétiches",
+        "Musée",
+        "Culte"
+      ],
+      "rating": 4.7,
+      "reviewCount": 44,
+      "crowdLevel": "faible",
+      "chapter": 2,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-plage-ouidah",
+      "title": "Plage de Djégbadji (Ouidah)",
+      "subtitle": "Là où la Route des Esclaves touche l'océan",
+      "category": "plages",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.326,
+        "lng": 2.084
+      },
+      "address": "Djégbadji, commune de Ouidah",
+      "secretLevel": "moyen",
+      "description": "Au bout de la Route des Esclaves, la plage de Djégbadji garde la mémoire de l'histoire : c'est ici que les captifs embarquaient vers les Amériques, face à la Porte du Non-Retour. Aujourd'hui, le site mêle recueillement, villages de pêcheurs et longues étendues de sable.",
+      "secretAccessHint": "Louez une pirogue à Djégbadji pour longer la côte jusqu'à la Porte du Non-Retour : la vue sur le mémorial depuis la mer est saisissante.",
+      "bestTimeToVisit": "En début de matinée, avant l'arrivée des groupes",
+      "estimatedDurationMinutes": 150,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Dj%C3%A8gbadji_%C3%A0_Ouidah.jpg",
+      "tags": [
+        "Plage",
+        "Ouidah",
+        "Histoire",
+        "Route des Esclaves"
+      ],
+      "rating": 4.5,
+      "reviewCount": 48,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-plage-avlekete",
+      "title": "Plage d'Avlékété",
+      "subtitle": "Le secret des pêcheurs d'Avlékété",
+      "category": "plages",
+      "city": "Avlékété",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.319,
+        "lng": 2.128
+      },
+      "address": "Avlékété, commune de Ouidah",
+      "secretLevel": "insider",
+      "description": "À l'ouest de Ouidah, la plage d'Avlékété est le fief des pêcheurs et de leurs pirogues colorées. Les crépuscules y sont d'une rare intensité et le littoral, encore sauvage, est surveillé par les vestiges des épaves échouées dans le sable.",
+      "secretAccessHint": "Arrivez à marée montante pour voir les pirogues rentrer du large, puis restez pour le crépuscule : c'est le spectacle préféré des habitants.",
+      "bestTimeToVisit": "En fin de journée, pour le crépuscule",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Cr%C3%A9puscule_avl%C3%A9k%C3%A9t%C3%A9.jpg",
+      "tags": [
+        "Plage",
+        "Pêcheurs",
+        "Crépuscule",
+        "Sauvage"
+      ],
+      "rating": 4.6,
+      "reviewCount": 12,
+      "crowdLevel": "faible",
+      "chapter": 2,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-grandpopo-bouche",
+      "title": "La Bouche du Roi",
+      "subtitle": "Là où le fleuve Mono embrasse l'Atlantique",
+      "category": "sites",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "coordinates": {
+        "lat": 6.29528,
+        "lng": 1.93111
+      },
+      "address": "Bouche du Roi, commune de Grand-Popo",
+      "secretLevel": "insider",
+      "description": "La Bouche du Roi offre l’un des paysages naturels les plus saisissants du littoral béninois. Ici, le fleuve Mono rencontre l’océan Atlantique dans un jeu de courants, de bancs de sable et de lumière qui change au fil des marées.\n\nLe site séduit par son caractère sauvage et préservé : oiseaux migrateurs, étendues dégagées, souffle du vent et ambiance presque hors du temps. C’est un lieu parfait pour la contemplation, la photographie et les promenades au calme, loin de l’agitation.\n\nAu lever ou au coucher du soleil, les couleurs transforment le décor et rendent l’expérience encore plus spectaculaire. Une halte incontournable pour découvrir la beauté brute de Grand-Popo.",
+      "secretAccessHint": "Longez la plage vers l'est après le village d'Agoué, ou remontez le fleuve en pirogue à la marée basse pour voir le chenal se reformer.",
+      "bestTimeToVisit": "Au lever ou au coucher du soleil, à marée montante",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/localized/spot-grandpopo-bouche-3f6adc.jpg",
+      "tags": [
+        "Fleuve",
+        "Océan",
+        "Oiseaux",
+        "Sauvage"
+      ],
+      "rating": 4.9,
+      "reviewCount": 67,
+      "crowdLevel": "faible",
+      "chapter": 3,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-grandpopo-lactoho",
+      "title": "Lac Toho & Rivage d'Ahozon",
+      "subtitle": "Un lac sombre et mystérieux entre cocotiers",
+      "category": "sites",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "coordinates": {
+        "lat": 6.61913,
+        "lng": 1.77671
+      },
+      "address": "Ahozon, commune de Grand-Popo",
+      "secretLevel": "moyen",
+      "description": "Le lac Toho, aux eaux sombres et profondes, est un lieu chargé de mystère et de traditions. Bordé de palmeraies et de villages de pêcheurs, il offre une immersion dans un paysage paisible où la nature et les croyances locales se rencontrent.\n\nUne balade sur le lac permet d’observer le quotidien des communautés riveraines, d’écouter les récits liés aux caïmans sacrés et de ressentir la quiétude particulière de cet espace. La lumière de fin de journée y crée une ambiance douce et envoûtante.\n\nC’est une étape idéale pour les voyageurs en quête d’authenticité, de culture locale et de moments calmes au cœur du Mono.",
+      "secretAccessHint": "Demandez à un pêcheur d'Ahozon de vous conduire vers l'îlot au centre du lac où vivent les caïmans sacrés, le bout de bois de maniguette en offrande.",
+      "bestTimeToVisit": "Fin de journée pour la lumière dorée sur l'eau noire",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pirogue_du_lac_toho_au_B%C3%A9nin.jpg/1280px-Pirogue_du_lac_toho_au_B%C3%A9nin.jpg",
+      "tags": [
+        "Lac",
+        "Caïmans sacrés",
+        "Légende",
+        "Pêcheurs"
+      ],
+      "rating": 4.7,
+      "reviewCount": 34,
+      "crowdLevel": "faible",
+      "chapter": 3,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-plage-grandpopo",
+      "title": "Grande Plage de Grand-Popo",
+      "subtitle": "Le lagon face à l'Atlantique",
+      "category": "plages",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "coordinates": {
+        "lat": 6.281,
+        "lng": 1.832
+      },
+      "address": "Grand-Popo, département du Mono",
+      "secretLevel": "facile",
+      "description": "Longue de plusieurs kilomètres, la grande plage de Grand-Popo est la plus fameuse du Bénin : sable clair, cocotiers, anciens forts coloniaux et village de pêcheurs se succèdent entre le lagon et l'océan. Entre deux baignades, on y croise les tortues marines lors des pontes.",
+      "secretAccessHint": "Explorez la plage à l'est du village en fin de journée : la partie la plus sauvage, où l'on suit les traces des tortues dans le sable.",
+      "bestTimeToVisit": "Tôt le matin ou en fin d'après-midi",
+      "estimatedDurationMinutes": 150,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Plage_de_Grand-Popo_%283%29.jpg",
+      "tags": [
+        "Plage",
+        "Grand-Popo",
+        "Tortues marines",
+        "Mono"
+      ],
+      "rating": 4.6,
+      "reviewCount": 60,
+      "crowdLevel": "modéré",
+      "chapter": 3,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-plage-avlo",
+      "title": "Presqu'île d'Avlo",
+      "subtitle": "Le bout du monde de Grand-Popo",
+      "category": "plages",
+      "city": "Avlo",
+      "region": "Mono",
+      "coordinates": {
+        "lat": 6.242,
+        "lng": 1.792
+      },
+      "address": "Avlo, commune de Grand-Popo",
+      "secretLevel": "insider",
+      "description": "En face de Grand-Popo, la presqu'île d'Avlo vit au rythme de la pêche et du fumage du poisson. Le village, serré entre lagon et océan, est un écrin de vie traditionnelle que quelques piroguiers seulement viennent rejoindre.",
+      "secretAccessHint": "Traversez en pirogue depuis le débarcadère de Grand-Popo et laissez-vous guider par les femmes qui fument le poisson : la visite est aussi un partage.",
+      "bestTimeToVisit": "En fin de matinée, quand les filets sèchent sur la grève",
+      "estimatedDurationMinutes": 180,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Avlo_village.jpg",
+      "tags": [
+        "Plage",
+        "Avlo",
+        "Pêche",
+        "Village"
+      ],
+      "rating": 4.5,
+      "reviewCount": 18,
+      "crowdLevel": "faible",
+      "chapter": 3,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-abomey-1",
+      "title": "Palais Royaux d'Abomey",
+      "subtitle": "Les hauts lieux du royaume du Dahomey",
+      "category": "sites",
+      "city": "Abomey",
+      "region": "Zou",
+      "coordinates": {
+        "lat": 7.1855,
+        "lng": 1.9911
+      },
+      "address": "Site des Palais Royaux, centre d'Abomey",
+      "secretLevel": "facile",
+      "description": "Les Palais Royaux d’Abomey sont un lieu majeur pour comprendre l’histoire politique, culturelle et artistique du royaume du Dahomey. Inscrit au patrimoine mondial de l’UNESCO, le site rassemble des témoignages puissants à travers son architecture, ses bas-reliefs et ses espaces cérémoniels.\n\nLa visite permet de plonger dans l’épopée des rois d’Abomey, de découvrir les symboles du pouvoir et d’apprécier la richesse des traditions qui ont marqué le Bénin. Chaque élément du site raconte une part d’histoire, entre mémoire, art et transmission.\n\nC’est une étape essentielle pour tout voyageur souhaitant explorer l’héritage historique du pays avec profondeur et contexte.",
+      "secretAccessHint": "À la tombée du jour, le quartier des tanneries derrière le musée s'anime : c'est là que bat le vrai cœur de la ville ancienne.",
+      "bestTimeToVisit": "En matinée avant la chaleur (09h00 - 11h00)",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Abomey-K%C3%B6nigspalast2.jpg/1280px-Abomey-K%C3%B6nigspalast2.jpg",
+      "tags": [
+        "UNESCO",
+        "Royaume du Dahomey",
+        "Histoire",
+        "Bas-reliefs"
+      ],
+      "rating": 4.8,
+      "reviewCount": 76,
+      "crowdLevel": "modéré",
+      "chapter": 4,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-site-bas-reliefs-abomey",
+      "title": "Ateliers de bas-reliefs d'Abomey",
+      "subtitle": "Les récits du royaume sculptés dans la terre",
+      "category": "sites",
+      "city": "Abomey",
+      "region": "Zou",
+      "coordinates": {
+        "lat": 7.1820012,
+        "lng": 1.993632
+      },
+      "address": "Quartier Gbécon-Hounli, Abomey",
+      "secretLevel": "insider",
+      "description": "Dans les ruelles du quartier historique, des artisans perpétuent l'art des bas-reliefs polychromes qui ornaient les palais royaux. Éléphants, jarres, écheveaux et symboles de pouvoir prennent forme sous leurs mains, loin des vitrines du musée.",
+      "secretAccessHint": "Passez par les ateliers familiaux derrière le palais de Guézo et demandez à voir la préparation des pigments : c'est là que se joue la vraie transmission.",
+      "bestTimeToVisit": "En matinée, quand les ateliers sont ouverts",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Bas-relief_d%27une_r%C3%A9sidence_du_quartier_de_Gb%C3%A9con-Hounli%2C_non_loin_du_palais_princier_de_Gu%C3%A9zo%2C_motif_de_jarres_et_d%27%C3%A9cheveau_-_A63603S.jpg/1280px-Bas-relief_d%27une_r%C3%A9sidence_du_quartier_de_Gb%C3%A9con-Hounli%2C_non_loin_du_palais_princier_de_Gu%C3%A9zo%2C_motif_de_jarres_et_d%27%C3%A9cheveau_-_A63603S.jpg",
+      "tags": [
+        "Artisanat",
+        "Bas-reliefs",
+        "Abomey",
+        "Culture"
+      ],
+      "rating": 4.7,
+      "reviewCount": 36,
+      "crowdLevel": "faible",
+      "chapter": 4,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-bohicon-agongointo",
+      "title": "Village souterrain d'Agongointo",
+      "subtitle": "Un refuge troglodyte vieux de plusieurs siècles",
+      "category": "sites",
+      "city": "Bohicon",
+      "region": "Zou",
+      "coordinates": {
+        "lat": 7.1505,
+        "lng": 2.067
+      },
+      "address": "Zounkpinfè, route d'Abomey, Bohicon",
+      "secretLevel": "moyen",
+      "description": "Le village souterrain d’Agongointo est un site historique fascinant qui révèle une forme d’ingéniosité remarquable face aux conflits du passé. Creusées dans la terre, ses galeries et ses espaces aménagés servaient de refuge et permettaient d’organiser la vie en période d’insécurité.\n\nLa visite offre une immersion concrète dans cette histoire : on y découvre l’agencement des lieux, les usages des différentes zones et les conditions de vie dans cet habitat atypique. C’est une expérience à la fois pédagogique et impressionnante.\n\nPour les voyageurs intéressés par l’histoire du Zou et les patrimoines méconnus, c’est une étape très enrichissante.",
+      "secretAccessHint": "Descendez avec une lampe frontale et des chaussures fermées : les galeries, fraîches et sombres, se parcourent mieux en petit groupe.",
+      "bestTimeToVisit": "Tôt le matin, pour la fraîcheur souterraine",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Village_souterrain_d%27Agongointo.jpg/1280px-Village_souterrain_d%27Agongointo.jpg",
+      "tags": [
+        "Souterrain",
+        "Refuge",
+        "Abomey",
+        "Histoire"
+      ],
+      "rating": 4.5,
+      "reviewCount": 35,
+      "crowdLevel": "faible",
+      "chapter": 4,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-portonovo-honme",
+      "title": "Musée Honmè, Palais Royal de Porto-Novo",
+      "subtitle": "La résidence du roi Toffa devenue musée",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "coordinates": {
+        "lat": 6.4769,
+        "lng": 2.6036
+      },
+      "address": "Quartier Avassa, Porto-Novo",
+      "secretLevel": "facile",
+      "description": "Le Musée Honmè, ancien palais royal de Porto-Novo, est un lieu clé pour découvrir l’histoire du royaume de Hogbonou et l’héritage du roi Toffa. Le site conserve des objets, témoignages et espaces qui racontent la vie politique et culturelle de la cour.\n\nEn parcourant le musée, on comprend mieux l’organisation du pouvoir, les traditions royales et l’évolution historique de la ville. L’ambiance du lieu, empreinte de mémoire, donne une dimension concrète aux récits du passé.\n\nC’est une visite idéale pour enrichir un séjour à Porto-Novo et mieux saisir l’identité historique de la capitale.",
+      "secretAccessHint": "Le musée organise parfois des événements culturels : renseignez-vous la veille pour assister à une représentation dans la cour royale.",
+      "bestTimeToVisit": "En matinée",
+      "estimatedDurationMinutes": 75,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg/1280px-Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg",
+      "tags": [
+        "Palais royal",
+        "Roi Toffa",
+        "Musée",
+        "Hogbonou"
+      ],
+      "rating": 4.7,
+      "reviewCount": 49,
+      "crowdLevel": "faible",
+      "chapter": 5,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-portonovo-mosquee",
+      "title": "Grande Mosquée de Porto-Novo",
+      "subtitle": "Le joyau architectural afro-brésilien",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "coordinates": {
+        "lat": 6.478,
+        "lng": 2.608
+      },
+      "address": "Centre-ville de Porto-Novo",
+      "secretLevel": "facile",
+      "description": "La Grande Mosquée de Porto-Novo est l’un des édifices les plus remarquables de la ville, connue pour son architecture afro-brésilienne distinctive. Sa façade, ses formes et ses couleurs témoignent des influences croisées qui ont façonné l’identité urbaine et culturelle de Porto-Novo.\n\nAu-delà de sa valeur architecturale, le lieu reste un espace de culte actif, ce qui lui confère une dimension vivante et respectée. L’observer permet de mieux comprendre l’histoire des retours afro-brésiliens et leur empreinte durable sur la capitale.\n\nC’est une visite courte mais marquante, idéale pour enrichir un parcours patrimonial en ville.",
+      "secretAccessHint": "Admirez la façade à la lumière du matin ; pour l'intérieur, présentez-vous auprès de l'imam avec respect hors des heures de prière.",
+      "bestTimeToVisit": "Le matin",
+      "estimatedDurationMinutes": 30,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Grande_Mosquee_de_Porto-Novo.jpg/1280px-Grande_Mosquee_de_Porto-Novo.jpg",
+      "tags": [
+        "Mosquée",
+        "Afro-brésilien",
+        "Architecture",
+        "Patrimoine"
+      ],
+      "rating": 4.7,
+      "reviewCount": 26,
+      "crowdLevel": "faible",
+      "chapter": 5,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-site-poterie-adjarra",
+      "title": "Poterie d'Adjarra",
+      "subtitle": "La terre façonnée par les mains des femmes",
+      "category": "sites",
+      "city": "Adjarra",
+      "region": "Ouémé",
+      "coordinates": {
+        "lat": 6.493028,
+        "lng": 2.6933383
+      },
+      "address": "Adjarra, commune d'Adjarra",
+      "secretLevel": "insider",
+      "description": "Poterie d'Adjarra vous invite à vivre une expérience authentique à Adjarra, Ouémé. La terre façonnée par les mains des femmes Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Demandez à assister au tournage plutôt que d'acheter au bord de la route : les artisanes acceptent volontiers si vous prenez le temps de discuter.",
+      "bestTimeToVisit": "En matinée, avant la cuisson de l'après-midi",
+      "estimatedDurationMinutes": 75,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg/1280px-Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg",
+      "tags": [
+        "Artisanat",
+        "Poterie",
+        "Adjarra",
+        "Terre"
+      ],
+      "rating": 4.5,
+      "reviewCount": 19,
+      "crowdLevel": "faible",
+      "chapter": 5,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-plage-seme",
+      "title": "Plage de Sèmè-Kpodji",
+      "subtitle": "Le coucher de soleil préservé de l'Ouémé",
+      "category": "plages",
+      "city": "Sèmè-Kpodji",
+      "region": "Ouémé",
+      "coordinates": {
+        "lat": 6.338,
+        "lng": 2.585
+      },
+      "address": "Sèmè-Kpodji, département de l'Ouémé",
+      "secretLevel": "moyen",
+      "description": "À une vingtaine de kilomètres à l'est de Cotonou, la plage de Sèmè-Kpodji reste l'une des plus calmes du littoral. Sable clair, cocotiers et villages de pêcheurs composent un décor authentique, loin de l'animation de la route des pêches.",
+      "secretAccessHint": "Depuis la route d'Ekpè, empruntez une piste vers le sud jusqu'à la côte : le plus beau spectacle est le soleil qui se couche sur les pirogues à la marée basse.",
+      "bestTimeToVisit": "En fin d'après-midi",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Couch%C3%A9_de_soleil_%C3%A0_la_plage_de_S%C3%A8m%C3%A8_%28B%C3%A9nin%29.jpg",
+      "tags": [
+        "Plage",
+        "Ouémé",
+        "Coucher de soleil",
+        "Pêcheurs"
+      ],
+      "rating": 4.3,
+      "reviewCount": 22,
+      "crowdLevel": "faible",
+      "chapter": 5,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-dassa-arigbo",
+      "title": "Basilique Notre-Dame d'Arigbo",
+      "subtitle": "Le haut lieu de pèlerinage des collines de Dassa",
+      "category": "sites",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "coordinates": {
+        "lat": 7.77534,
+        "lng": 2.18652
+      },
+      "address": "Colline d'Arigbo, Dassa-Zoumé",
+      "secretLevel": "facile",
+      "description": "La Basilique Notre-Dame d’Arigbo domine les collines de Dassa-Zoumé et constitue un lieu de pèlerinage important, notamment lors des grands rendez-vous religieux. Son emplacement en hauteur offre un cadre à la fois spirituel et panoramique.\n\nEn montant vers la basilique, on profite d’une vue dégagée sur les environs et d’une atmosphère paisible qui invite au recueillement. Le site est aussi intéressant pour comprendre la place du religieux dans le paysage culturel local.\n\nC’est une étape agréable à combiner avec la découverte des collines sacrées, pour une expérience mêlant foi, histoire et paysage.",
+      "secretAccessHint": "Montez les marches jusqu'à la basilique à l'aube pour profiter de la vue et de la fraîcheur avant les pèlerins.",
+      "bestTimeToVisit": "Au lever du soleil ou pour le pèlerinage du 15 août",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Grotte_mariale_d%27Arigbo_.jpg/1280px-Grotte_mariale_d%27Arigbo_.jpg",
+      "tags": [
+        "Pèlerinage",
+        "Basilique",
+        "Collines",
+        "Panorama"
+      ],
+      "rating": 4.7,
+      "reviewCount": 33,
+      "crowdLevel": "faible",
+      "chapter": 6,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-dassa-1",
+      "title": "Collines sacrées de Dassa-Zoumé",
+      "subtitle": "Dix-sept collines et leurs oratoires de prière",
+      "category": "sites",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "coordinates": {
+        "lat": 7.75,
+        "lng": 2.1833
+      },
+      "address": "Dassa-Zoumé, département des Collines",
+      "secretLevel": "insider",
+      "description": "Les collines sacrées de Dassa-Zoumé offrent un mélange saisissant de nature, de spiritualité et de panoramas. Ces reliefs granitiques, importants pour les communautés locales, sont des lieux de prière, de mémoire et de contemplation.\n\nL’ascension récompense les visiteurs par une vue dégagée sur les environs, surtout aux premières heures du jour lorsque la lumière est douce et l’atmosphère paisible. On y ressent un calme particulier, renforcé par la dimension symbolique du site.\n\nC’est une destination idéale pour ceux qui recherchent une expérience à la fois paysagère et culturelle, au cœur du département des Collines.",
+      "secretAccessHint": "Grimpez la colline Notre-Dame d'Arigbo à l'aube : les fidèles y montent en chantant, et la lumière rasante dévoile un panorama irréel.",
+      "bestTimeToVisit": "Au lever du soleil, pour la fraîcheur et la lumière",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg/1280px-Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg",
+      "tags": [
+        "Panorama",
+        "Pèlerinage",
+        "Collines",
+        "Lever du soleil"
+      ],
+      "rating": 4.7,
+      "reviewCount": 29,
+      "crowdLevel": "faible",
+      "chapter": 6,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-boukoumbe-tatasomba",
+      "title": "Tata Somba de Boukoumbé",
+      "subtitle": "Des châteaux de terre rouge en pays Somba",
+      "category": "sites",
+      "city": "Boukoumbé",
+      "region": "Atacora",
+      "coordinates": {
+        "lat": 10.3333,
+        "lng": 1.1333
+      },
+      "address": "Villages Somba, commune de Boukoumbé",
+      "secretLevel": "insider",
+      "description": "Les tata somba de Boukoumbé comptent parmi les trésors architecturaux les plus remarquables du Bénin. Ces habitations forteresses en terre, pensées pour la vie familiale, la protection et les pratiques culturelles, témoignent d’un savoir-faire ancestral unique.\n\nEn parcourant les villages, vous découvrez l’organisation ingénieuse de ces constructions, les matériaux locaux utilisés et le lien profond entre habitat, identité et territoire. La rencontre avec les habitants, lorsqu’elle se fait avec respect, enrichit fortement l’expérience.\n\nCe site offre bien plus qu’une visite : c’est une immersion dans une culture vivante, au cœur des paysages de l’Atacora.",
+      "secretAccessHint": "Passez par un guide du village de Dikoumé ou Tikony, et offrez-vous d'abord le temps d'échanger avant de photographier les habitants.",
+      "bestTimeToVisit": "Saison sèche (novembre à février), en matinée",
+      "estimatedDurationMinutes": 150,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Koussoukoingou1.jpg/1280px-Koussoukoingou1.jpg",
+      "tags": [
+        "Atacora",
+        "Architecture",
+        "Culture Somba",
+        "Terre"
+      ],
+      "rating": 4.9,
+      "reviewCount": 58,
+      "crowdLevel": "faible",
+      "chapter": 7,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-tanougou-cascade",
+      "title": "Cascades de Tanougou",
+      "subtitle": "Chute d'eau secrète au cœur du parc de la Pendjari",
+      "category": "sites",
+      "city": "Tanougou",
+      "region": "Atacora",
+      "coordinates": {
+        "lat": 10.80537,
+        "lng": 1.44449
+      },
+      "address": "Tanougou, commune de Tanguiéta",
+      "secretLevel": "moyen",
+      "description": "Les cascades de Tanougou constituent une pause rafraîchissante et spectaculaire au cœur de l’Atacora. L’eau dévale la roche dans un cadre naturel préservé, entouré de végétation et de reliefs qui invitent à la détente comme à l’exploration.\n\nSur place, on profite d’un moment de baignade, du calme du site et de la beauté du paysage, particulièrement saisissante lorsque le débit est fort. L’accès demande un peu d’effort, mais la récompense est à la hauteur.\n\nC’est une excellente étape à combiner avec la découverte de la région de la Pendjari, pour vivre une expérience nature complète et ressourçante.",
+      "secretAccessHint": "Après la piste depuis le carrefour de la Pendjari, descendez le sentier à pied sur 400 m : la baignade se situe sous la cascade, loin du bivouac.",
+      "bestTimeToVisit": "En saison des pluies (juin - septembre), la cascade est à son apogée",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Jeune_homme_sautant_des_cascades_de_Tanougou_2_%28B%C3%A9nin%29.jpg/1280px-Jeune_homme_sautant_des_cascades_de_Tanougou_2_%28B%C3%A9nin%29.jpg",
+      "tags": [
+        "Cascade",
+        "Baignade",
+        "Pendjari",
+        "Falaise"
+      ],
+      "rating": 4.8,
+      "reviewCount": 41,
+      "crowdLevel": "faible",
+      "chapter": 7,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-pendjari-1",
+      "title": "Piste des Grands Espaces de la Pendjari",
+      "subtitle": "Safari discret au royaume des éléphants",
+      "category": "sites",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "coordinates": {
+        "lat": 11,
+        "lng": 1.5833
+      },
+      "address": "Parc National de la Pendjari, commune de Tanguiéta",
+      "secretLevel": "facile",
+      "description": "Le Parc National de la Pendjari est l’un des grands sanctuaires naturels d’Afrique de l’Ouest. Ses vastes savanes, ses points d’eau et ses paysages ouverts offrent un cadre exceptionnel pour observer la faune dans un environnement encore préservé.\n\nAu fil des pistes, vous pouvez apercevoir éléphants, antilopes, oiseaux et d’autres espèces emblématiques, accompagnés par des guides qui connaissent parfaitement le terrain. Chaque sortie réserve son lot de surprises, entre silence, lumière dorée et scènes de vie sauvage.\n\nC’est une expérience forte pour les amoureux de nature, de grands espaces et d’aventure, à vivre au rythme de la savane béninoise.",
+      "secretAccessHint": "Optez pour une piste en fin d'après-midi avec un guide du parc : c'est le meilleur moment pour croiser les éléphants aux abreuvoirs.",
+      "bestTimeToVisit": "De décembre à mai, tôt le matin ou en fin de journée",
+      "estimatedDurationMinutes": 300,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Parc_national_de_la_Pendjari.JPG/1280px-Parc_national_de_la_Pendjari.JPG",
+      "tags": [
+        "Safari",
+        "Éléphants",
+        "Parc",
+        "Savane"
+      ],
+      "rating": 5,
+      "reviewCount": 89,
+      "crowdLevel": "faible",
+      "chapter": 7,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-parc-w",
+      "title": "Parc national W (Bénin)",
+      "subtitle": "La réserve transfrontalière UNESCO",
+      "category": "sites",
+      "city": "Karimama",
+      "region": "Alibori",
+      "coordinates": {
+        "lat": 11.46,
+        "lng": 2.87
+      },
+      "address": "Partie béninoise du parc W, commune de Karimama, Alibori",
+      "secretLevel": "insider",
+      "description": "La partie béninoise du complexe W-Arly-Pendjari, classé au patrimoine mondial de l'UNESCO. Le fleuve Niger y dessine un « W » majestueux : éléphants, lions, buffles et de nombreux oiseaux peuplent cette savane soudanienne encore sauvage.",
+      "secretAccessHint": "Accès long depuis Natitingou ou Kandi : prévoyez un 4x4, des provisions et idéalement un guide du parc. Un safari au W reste une aventure rare et préservée.",
+      "bestTimeToVisit": "En saison sèche (novembre à mars), pour l’observation",
+      "estimatedDurationMinutes": 480,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/83/Mekrou_river_in_W-National_Park_MS_6380.JPG",
+      "tags": [
+        "Safari",
+        "UNESCO",
+        "Faune sauvage",
+        "Fleuve Niger"
+      ],
+      "rating": 4.7,
+      "reviewCount": 32,
+      "crowdLevel": "faible",
+      "chapter": 8,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-site-gaani",
+      "title": "Arène de la Gaani",
+      "subtitle": "Le grand rendez-vous des cavaliers de Nikki",
+      "category": "sites",
+      "city": "Nikki",
+      "region": "Borgou",
+      "coordinates": {
+        "lat": 9.9363383,
+        "lng": 3.2085658
+      },
+      "address": "Arène impériale, Nikki",
+      "secretLevel": "moyen",
+      "description": "Chaque année, la fête de la Gaani rassemble à Nikki les cavaliers, les dignitaires et les communautés du Borgou. L'arène et ses abords portent la mémoire de cette célébration fastueuse, l'un des plus grands rassemblements culturels du Bénin.",
+      "secretAccessHint": "Si vous venez hors Gaani, demandez à voir les écuries et les costumes de cérémonie : ils sont conservés par les familles de cavaliers.",
+      "bestTimeToVisit": "Lors de la Gaani, ou en saison sèche pour visiter l'arène",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg/1280px-Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg",
+      "tags": [
+        "Culture",
+        "Cavalerie",
+        "Nikki",
+        "Fête"
+      ],
+      "rating": 4.7,
+      "reviewCount": 28,
+      "crowdLevel": "modéré",
+      "chapter": 8,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-nikki-palais",
+      "title": "Palais Royal de Nikki & Musée Danri",
+      "subtitle": "La capitale des Baatonu du Borgou",
+      "category": "sites",
+      "city": "Nikki",
+      "region": "Borgou",
+      "coordinates": {
+        "lat": 9.9406,
+        "lng": 3.2106
+      },
+      "address": "Quartier Danri, Nikki",
+      "secretLevel": "moyen",
+      "description": "Le Palais Royal de Nikki et le Musée Danri offrent une plongée dans l’histoire du peuple baatonu et de la chefferie Wasangari, figures importantes du Borgou. À travers objets de cour, armes, symboles et récits, le lieu retrace l’organisation politique et culturelle de cette région.\n\nLa visite permet de mieux comprendre les traditions locales, l’héritage des cavaliers et le rôle historique de Nikki. C’est une découverte qui enrichit la lecture du nord-est du Bénin, souvent moins connu mais très profond sur le plan culturel.\n\nPour les voyageurs curieux d’histoire et d’identités régionales, c’est une étape à forte valeur patrimoniale.",
+      "secretAccessHint": "La visite du palais se fait avec un membre de la cour : renseignez-vous à l'entrée du musée pour les jours d'audience royale.",
+      "bestTimeToVisit": "En saison sèche, en matinée",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DEGAN_Gabin_%28_gani%27s_party_%29.jpg/1280px-DEGAN_Gabin_%28_gani%27s_party_%29.jpg",
+      "tags": [
+        "Baatonu",
+        "Palais royal",
+        "Wasangari",
+        "Borgou"
+      ],
+      "rating": 4.6,
+      "reviewCount": 19,
+      "crowdLevel": "faible",
+      "chapter": 8,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-copargo-taneka",
+      "title": "Banque Culturelle Tanéka",
+      "subtitle": "Le musée vivant de la civilisation tanéka",
+      "category": "sites",
+      "city": "Copargo",
+      "region": "Donga",
+      "coordinates": {
+        "lat": 9.8667,
+        "lng": 1.55
+      },
+      "address": "Copargo, département de la Donga",
+      "secretLevel": "insider",
+      "description": "Unique au Bénin, cette banque culturelle est un musée conservatoire de la civilisation tanéka : objets de famille, masques et artefacts y sont « déposés » comme en banque. Elle s'étend sur un jardin botanique de dix hectares à Tchouchouhou.",
+      "secretAccessHint": "La visite combine musée et jardin botanique : prévoyez une demi-journée et un guide local pour les explications.",
+      "bestTimeToVisit": "En saison sèche, le matin",
+      "estimatedDurationMinutes": 150,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ortseingang_Copargo.JPG/1280px-Ortseingang_Copargo.JPG",
+      "tags": [
+        "Tanéka",
+        "Musée communautaire",
+        "Jardin botanique",
+        "Donga"
+      ],
+      "rating": 4.6,
+      "reviewCount": 9,
+      "crowdLevel": "faible",
+      "chapter": 8,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-site-palais-kinkinhoue",
+      "title": "Palais royal et musée de Kinkinhoué",
+      "subtitle": "La mémoire du royaume dans un écrin de terre",
+      "category": "sites",
+      "city": "Djakotomey",
+      "region": "Couffo",
+      "coordinates": {
+        "lat": 6.9158259,
+        "lng": 1.7179538
+      },
+      "address": "Kinkinhoué, commune de Djakotomey",
+      "secretLevel": "insider",
+      "description": "Le musée régional de Kinkinhoué conserve les objets, les récits et les insignes du pouvoir royal du Couffo. Installé dans l'enceinte de la chefferie, il raconte l'histoire d'un royaume discret, longtemps absent des guides touristiques.",
+      "secretAccessHint": "Demandez au conservateur de vous montrer les pièces réservées aux cérémonies : elles ne sont pas toujours exposées et méritent un récit guidé.",
+      "bestTimeToVisit": "En semaine, en matinée, sur rendez-vous",
+      "estimatedDurationMinutes": 75,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg/1280px-Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg",
+      "tags": [
+        "Musée",
+        "Royauté",
+        "Couffo",
+        "Patrimoine"
+      ],
+      "rating": 4.5,
+      "reviewCount": 18,
+      "crowdLevel": "faible",
+      "chapter": 9,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-site-foret-pobe",
+      "title": "Forêt sacrée de Pobè",
+      "subtitle": "Les arbres géants du pays nagot",
+      "category": "sites",
+      "city": "Pobè",
+      "region": "Plateau",
+      "coordinates": {
+        "lat": 6.9820238,
+        "lng": 2.666791
+      },
+      "address": "Forêt sacrée d'Igbo Akpa, Pobè",
+      "secretLevel": "insider",
+      "description": "Une forêt sacrée où quelques arbres géants, protégés par les communautés nagot, abritent rites et interdits. Le silence, les racines immenses et les récits des gardiens en font l'un des lieux les plus mystérieux du Plateau.",
+      "secretAccessHint": "Ne partez pas seul : demandez au chef de quartier l'autorisation et un guide, et évitez de photographier les autels sans accord.",
+      "bestTimeToVisit": "En saison sèche, en matinée",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Arbre_g%C3%A9ant_de_la_for%C3%AAt_sacr%C3%A9e_de_Pob%C3%A9.jpg/1280px-Arbre_g%C3%A9ant_de_la_for%C3%AAt_sacr%C3%A9e_de_Pob%C3%A9.jpg",
+      "tags": [
+        "Forêt sacrée",
+        "Nagot",
+        "Arbres géants",
+        "Mystère"
+      ],
+      "rating": 4.7,
+      "reviewCount": 22,
+      "crowdLevel": "faible",
+      "chapter": 9,
+      "ficheKind": "site"
+    },
+    {
+      "id": "spot-villa-kaya-cotonou",
+      "title": "Villa Kaya Cotonou",
+      "subtitle": "Cuisine fusion les pieds dans le sable",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.353146,
+        "lng": 2.3647488
+      },
+      "address": "Rue Isma, Fidjrossè Houénoussou Fin Pavé, Cotonou",
+      "secretLevel": "facile",
+      "description": "Villa Kaya Cotonou vous invite à vivre une expérience authentique à Cotonou, Littoral. Cuisine fusion les pieds dans le sable Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Idéal au coucher du soleil, avec musique en soirée.",
+      "bestTimeToVisit": "Fin d'après-midi",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80",
+      "tags": [
+        "Restaurant",
+        "Fusion",
+        "Plage",
+        "Fidjrossè"
+      ],
+      "rating": 5,
+      "reviewCount": 8,
+      "crowdLevel": "modéré",
+      "chapter": 1,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-jaaba",
+      "title": "Jaaba – Grill & Bar",
+      "subtitle": "Le grill branché de Fidjrossè",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.333,
+        "lng": 2.385
+      },
+      "address": "Fidjrossè, Cotonou",
+      "secretLevel": "moyen",
+      "description": "Jaaba – Grill & Bar vous invite à vivre une expérience authentique à Cotonou, Littoral. Le grill branché de Fidjrossè Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Venez tôt le vendredi soir pour trouver une table, ou profitez du déjeuner entre deux baignades.",
+      "bestTimeToVisit": "En soirée, en fin de semaine",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/localized/spot-jaaba-c7411f.jpg",
+      "tags": [
+        "Restaurant",
+        "Grill",
+        "Bar",
+        "Fidjrossè"
+      ],
+      "rating": 4.9,
+      "reviewCount": 44,
+      "crowdLevel": "élevé",
+      "chapter": 1,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-face-a-la-mer",
+      "title": "Face à la Mer",
+      "subtitle": "La table de fruits de mer les pieds dans le sable",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.331,
+        "lng": 2.392
+      },
+      "address": "Fidjrossè plage, Cotonou",
+      "secretLevel": "facile",
+      "description": "Face à la Mer vous invite à vivre une expérience authentique à Cotonou, Littoral. La table de fruits de mer les pieds dans le sable Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Réservez une table du premier rang au coucher du soleil : le spectacle vaut le repas.",
+      "bestTimeToVisit": "En fin de journée",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/localized/spot-face-a-la-mer-da3675.jpg",
+      "tags": [
+        "Restaurant",
+        "Fruits de mer",
+        "Plage",
+        "Cotonou"
+      ],
+      "rating": 4.8,
+      "reviewCount": 407,
+      "crowdLevel": "élevé",
+      "chapter": 1,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-cali-cali-togbin",
+      "title": "Cali Cali",
+      "subtitle": "Food court de plage à Togbin",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.349,
+        "lng": 2.3298
+      },
+      "address": "Plage de Togbin, entre Coco Beach et le Club des Rois, Cotonou",
+      "secretLevel": "moyen",
+      "description": "Bar et food court les pieds dans le sable à Togbin : quatre à cinq restaurants se partagent la carte entre tacos mexicains, pokés hawaïens, poutine québécoise, poulets braisés, pizzas et barbecue. La nouvelle tendance gourmande de la côte ouest de Cotonou.",
+      "secretAccessHint": "Le « Schmutzy ! », plat signature inventé par les fondatrices, et les tacos mexicains sont les incontournables ; ambiance plage assurée dès 11h.",
+      "bestTimeToVisit": "Le midi ou le soir",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/cali-cali.jpg",
+      "tags": [
+        "Restaurant",
+        "Food court",
+        "Plage",
+        "Togbin"
+      ],
+      "rating": 4.7,
+      "reviewCount": 10,
+      "crowdLevel": "modéré",
+      "chapter": 1,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-rousski-dom",
+      "title": "Rousski Dom",
+      "subtitle": "La maison russe gourmande",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.36,
+        "lng": 2.42
+      },
+      "address": "Cotonou",
+      "secretLevel": "moyen",
+      "description": "Rousski Dom vous invite à vivre une expérience authentique à Cotonou, Littoral. La maison russe gourmande Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Le bortsch maison est la spécialité ; les portions sont copieuses, prévoyez de partager.",
+      "bestTimeToVisit": "Le soir",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "/images/rousski-dom.jpg",
+      "tags": [
+        "Restaurant",
+        "Russe",
+        "Bortsch",
+        "Cotonou"
+      ],
+      "rating": 4.6,
+      "reviewCount": 34,
+      "crowdLevel": "faible",
+      "chapter": 1,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-petit-four",
+      "title": "Le Petit Four",
+      "subtitle": "Restaurant, pâtisserie et salon de thé",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.3585,
+        "lng": 2.3915
+      },
+      "address": "Haie Vive, 200 m après l'agence MTN, Cotonou",
+      "secretLevel": "moyen",
+      "description": "Le Petit Four vous invite à vivre une expérience authentique à Cotonou, Littoral. Restaurant, pâtisserie et salon de thé Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Les petits-déjeuners du matin et les dîners du soir ont deux ambiances bien distinctes ; le salon de thé est parfait pour une pause sucrée.",
+      "bestTimeToVisit": "Le matin ou le soir",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "/images/petit-four.jpg",
+      "tags": [
+        "Restaurant",
+        "Pâtisserie",
+        "Salon de thé",
+        "Haie Vive"
+      ],
+      "rating": 4.5,
+      "reviewCount": 0,
+      "crowdLevel": "modéré",
+      "chapter": 1,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-musee-soleil-ouidah",
+      "title": "Le Restaurant Bar du Musée du Soleil",
+      "subtitle": "Cuisine locale et internationale",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.361516,
+        "lng": 2.085328
+      },
+      "address": "À côté de la Basilique et en face de la Fondation Zinsou, Ouidah",
+      "secretLevel": "facile",
+      "description": "Le Restaurant Bar du Musée du Soleil vous invite à vivre une expérience authentique à Ouidah, Atlantique. Cuisine locale et internationale Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Idéal pour se restaurer après la visite du musée.",
+      "bestTimeToVisit": "Midi ou fin d'après-midi",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80",
+      "tags": [
+        "Restaurant",
+        "Bar",
+        "Musée",
+        "Ouidah"
+      ],
+      "rating": 4.8,
+      "reviewCount": 13,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-hakuna-matata-ouidah",
+      "title": "Hakuna Matata Restaurant Grillades",
+      "subtitle": "Grillades et cuisine africaine",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.348,
+        "lng": 2.083
+      },
+      "address": "Route des Pêches, derrière l'IRSP, quartier Agondji Kpevi, Ouidah",
+      "secretLevel": "facile",
+      "description": "Hakuna Matata Restaurant Grillades vous invite à vivre une expérience authentique à Ouidah, Atlantique. Grillades et cuisine africaine Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Ouvert tous les jours de 9h à 23h.",
+      "bestTimeToVisit": "Le soir",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80",
+      "tags": [
+        "Restaurant",
+        "Grill",
+        "Africain",
+        "Ouidah"
+      ],
+      "rating": 4.7,
+      "reviewCount": 7,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-kole-ouidah",
+      "title": "Kolè",
+      "subtitle": "Cuisine africaine de qualité",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.3695917,
+        "lng": 2.0858741
+      },
+      "address": "Ouidah",
+      "secretLevel": "facile",
+      "description": "Kolè vous invite à vivre une expérience authentique à Ouidah, Atlantique. Cuisine africaine de qualité Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "L'une des meilleures tables d'Ouidah selon les voyageurs.",
+      "bestTimeToVisit": "Le soir",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=1200&q=80",
+      "tags": [
+        "Restaurant",
+        "Africain",
+        "Ouidah"
+      ],
+      "rating": 4.7,
+      "reviewCount": 6,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-alozo-terrasse-ouidah",
+      "title": "Alozo Terrasse",
+      "subtitle": "Terrasse avec vue sur la Basilique",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.360912,
+        "lng": 2.085141
+      },
+      "address": "936P+936, à côté de la Basilique de Ouidah, Ouidah",
+      "secretLevel": "facile",
+      "description": "Alozo Terrasse vous invite à vivre une expérience authentique à Ouidah, Atlantique. Terrasse avec vue sur la Basilique Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Idéal pour un repas au calme près du centre historique.",
+      "bestTimeToVisit": "En fin d'après-midi",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=1200&q=80",
+      "tags": [
+        "Restaurant",
+        "Terrasse",
+        "Grill",
+        "Ouidah"
+      ],
+      "rating": 4.6,
+      "reviewCount": 5,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-boca-del-rio",
+      "title": "La Boca del Rio",
+      "subtitle": "Un cocon gourmand au cœur de Grand-Popo",
+      "category": "restaurants",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "coordinates": {
+        "lat": 6.28,
+        "lng": 1.828
+      },
+      "address": "Grand-Popo",
+      "secretLevel": "moyen",
+      "description": "La Boca del Rio vous invite à vivre une expérience authentique à Grand-Popo, Mono. Un cocon gourmand au cœur de Grand-Popo Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Le déjeuner au jardin est un moment magique ; goûtez leurs desserts maison, réputés.",
+      "bestTimeToVisit": "Le midi ou au coucher du soleil",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/localized/spot-boca-del-rio-7fde17.jpg",
+      "tags": [
+        "Restaurant",
+        "Jardin",
+        "Poisson",
+        "Grand-Popo"
+      ],
+      "rating": 4.4,
+      "reviewCount": 31,
+      "crowdLevel": "faible",
+      "chapter": 3,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-chez-jean-ganvie",
+      "title": "Chez Raphaël à Ganvié",
+      "subtitle": "Un repas sur pilotis au milieu du lac",
+      "category": "restaurants",
+      "city": "Ganvié",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.4695,
+        "lng": 2.4203
+      },
+      "address": "Village lacustre de Ganvié",
+      "secretLevel": "moyen",
+      "description": "Chez Raphaël à Ganvié vous invite à vivre une expérience authentique à Ganvié, Atlantique. Un repas sur pilotis au milieu du lac Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Prévenez votre piroguier à l'aller et prévoyez le temps du repas : c'est une halte incontournable du tour de Ganvié.",
+      "bestTimeToVisit": "Le midi",
+      "estimatedDurationMinutes": 90,
+      "imageUrl": "/images/chez-raphael-ganvie.jpg",
+      "tags": [
+        "Restaurant",
+        "Ganvié",
+        "Lac",
+        "Pirogue"
+      ],
+      "rating": 4.1,
+      "reviewCount": 67,
+      "crowdLevel": "modéré",
+      "chapter": 2,
+      "ficheKind": "resto"
+    },
+    {
+      "id": "spot-maison-rouge",
+      "title": "Maison Rouge Cotonou",
+      "subtitle": "Hôtel de luxe sur le Boulevard de la Marina",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.34837,
+        "lng": 2.3894
+      },
+      "address": "Boulevard de la Marina, quartier Haie Vive, entre l'aéroport et les sièges de la Banque mondiale et de l'Unicef, Cotonou",
+      "secretLevel": "moyen",
+      "description": "Hôtel 4 étoiles atypique et raffiné sur le Boulevard de la Marina, bordé par l'océan Atlantique. Décoration unique, œuvres d'art contemporaines et africaines, deux piscines, terrasse panoramique et restaurant ouvert de 7h à 23h avec une cuisine à base d'ingrédients agroécologiques locaux.",
+      "secretAccessHint": "Le restaurant propose un buffet de produits issus de fermes locales, et la terrasse panoramique offre une vue exceptionnelle sur le littoral.",
+      "bestTimeToVisit": "Toute l'année",
+      "estimatedDurationMinutes": 180,
+      "imageUrl": "/images/maison-rouge.webp",
+      "tags": [
+        "Hôtel",
+        "Luxe",
+        "Marina",
+        "Haie Vive",
+        "Restaurant"
+      ],
+      "rating": 4.6,
+      "reviewCount": 59,
+      "crowdLevel": "modéré",
+      "chapter": 1,
+      "ficheKind": "hotel"
+    },
+    {
+      "id": "spot-hotel-sofitel",
+      "title": "Sofitel Cotonou Marina Hôtel & Spa",
+      "subtitle": "Le luxe 5 étoiles de la Marina",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "coordinates": {
+        "lat": 6.3502,
+        "lng": 2.4183
+      },
+      "address": "Boulevard de la Marina, Cotonou",
+      "secretLevel": "facile",
+      "description": "Le grand hôtel de standing de Cotonou sur le Boulevard de la Marina. Chambres et suites luxueuses, spa, piscine, restaurants gastronomiques et vue sur l'océan Atlantique. Une référence pour les séjours d'affaires et de prestige.",
+      "secretAccessHint": "Son restaurant et son bar au bord de la piscine sont accessibles aux non-résidents ; idéal pour un brunch ou un cocktail face à la mer.",
+      "bestTimeToVisit": "Toute l'année",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/sofitel-marina.jpg",
+      "tags": [
+        "Hôtel",
+        "Sofitel",
+        "Luxe",
+        "Marina",
+        "Spa"
+      ],
+      "rating": 4.4,
+      "reviewCount": 300,
+      "crowdLevel": "modéré",
+      "chapter": 1,
+      "ficheKind": "hotel"
+    },
+    {
+      "id": "spot-hotel-au-coeur-ouidah",
+      "title": "Au cœur de Ouidah",
+      "subtitle": "La guesthouse en plein centre historique",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "coordinates": {
+        "lat": 6.358,
+        "lng": 2.085
+      },
+      "address": "Rue du Marché, Ouidah",
+      "secretLevel": "moyen",
+      "description": "Au cœur de Ouidah vous invite à vivre une expérience authentique à Ouidah, Atlantique. La guesthouse en plein centre historique Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Le meilleur point de chute pour s'imprégner de l'âme vodun de la ville.",
+      "bestTimeToVisit": "Toute l'année",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/au-coeur-ouidah.jpg",
+      "tags": [
+        "Hôtel",
+        "Ouidah",
+        "Guesthouse",
+        "Centre"
+      ],
+      "rating": 4.7,
+      "reviewCount": 43,
+      "crowdLevel": "faible",
+      "chapter": 2,
+      "ficheKind": "hotel"
+    },
+    {
+      "id": "spot-hotel-bambou-beach",
+      "title": "Guesthouse Bambou Beach",
+      "subtitle": "La guesthouse de charme sur le sable",
+      "category": "hotels",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "coordinates": {
+        "lat": 6.27,
+        "lng": 1.83
+      },
+      "address": "Quartier Avloh, Grand-Popo",
+      "secretLevel": "moyen",
+      "description": "Guesthouse Bambou Beach vous invite à vivre une expérience authentique à Grand-Popo, Mono. La guesthouse de charme sur le sable Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Pause-déjeuner face à l'océan recommandée, même sans y dormir.",
+      "bestTimeToVisit": "Novembre à avril",
+      "estimatedDurationMinutes": 180,
+      "imageUrl": "/images/bambou-beach.jpg",
+      "tags": [
+        "Hôtel",
+        "Bambou Beach",
+        "Grand-Popo",
+        "Plage"
+      ],
+      "rating": 4.4,
+      "reviewCount": 121,
+      "crowdLevel": "modéré",
+      "chapter": 3,
+      "ficheKind": "hotel"
+    },
+    {
+      "id": "spot-hotel-ouadada",
+      "title": "Résidences Ouadada",
+      "subtitle": "Le cocon moderne de Porto-Novo",
+      "category": "hotels",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "coordinates": {
+        "lat": 6.50058,
+        "lng": 2.60794
+      },
+      "address": "Quartier Ouadada, Porto-Novo",
+      "secretLevel": "moyen",
+      "description": "Résidences Ouadada vous invite à vivre une expérience authentique à Porto-Novo, Ouémé. Le cocon moderne de Porto-Novo Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Près de 80 avis positifs pour l'une des meilleures adresses de Porto-Novo.",
+      "bestTimeToVisit": "Toute l'année",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "/images/ouadada.jpg",
+      "tags": [
+        "Hôtel",
+        "Ouadada",
+        "Porto-Novo",
+        "Résidence"
+      ],
+      "rating": 4.5,
+      "reviewCount": 78,
+      "crowdLevel": "faible",
+      "chapter": 5,
+      "ficheKind": "hotel"
+    },
+    {
+      "id": "spot-hotel-hotel-baobab-de-tanguieta",
+      "title": "Hôtel Baobab de Tanguiéta",
+      "subtitle": "Une halte à Tanguiéta",
+      "category": "hotels",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "coordinates": {
+        "lat": 10.6388192,
+        "lng": 1.2624537
+      },
+      "address": "Tanguiéta, Bénin",
+      "secretLevel": "facile",
+      "description": "Hôtel Baobab de Tanguiéta vous invite à vivre une expérience authentique à Tanguiéta, Atacora. Une halte à Tanguiéta Ce lieu se distingue par son ambiance et l’intérêt qu’il présente pour les voyageurs en quête de découverte.\n\nSur place, prenez le temps d’explorer, d’observer les détails et de profiter de l’atmosphère locale. C’est une étape agréable à intégrer à votre itinéraire.\n\nPrévoyez un peu de temps pour profiter pleinement de la visite et de son cadre. Une belle occasion d’enrichir votre découverte du Bénin avec une halte mémorable.",
+      "secretAccessHint": "Passez directement à la réception en matinée : c'est souvent le moment le plus tranquille.",
+      "bestTimeToVisit": "Toute l'année",
+      "estimatedDurationMinutes": 120,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Motel_Clauphi.jpg/1280px-Motel_Clauphi.jpg",
+      "tags": [
+        "Hôtel",
+        "Tanguiéta",
+        "Atacora"
+      ],
+      "rating": 4.2,
+      "reviewCount": 354,
+      "crowdLevel": "modéré",
+      "chapter": 7,
+      "ficheKind": "hotel"
+    }
+  ],
+  "directory": [
+    {
+      "id": "spot-ganvie-1",
+      "title": "Village Lacustre de Ganvié",
+      "category": "sites",
+      "city": "Sô-Ava",
+      "region": "Atlantique",
+      "address": "Ganvié, commune de Sô-Ava, lac Nokoué"
+    },
+    {
+      "id": "spot-grandpopo-bouche",
+      "title": "La Bouche du Roi",
+      "category": "sites",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Bouche du Roi, commune de Grand-Popo"
+    },
+    {
+      "id": "spot-grandpopo-lactoho",
+      "title": "Lac Toho & Rivage d'Ahozon",
+      "category": "sites",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Ahozon, commune de Grand-Popo"
+    },
+    {
+      "id": "spot-boukoumbe-tatasomba",
+      "title": "Tata Somba de Boukoumbé",
+      "category": "sites",
+      "city": "Boukoumbé",
+      "region": "Atacora",
+      "address": "Villages Somba, commune de Boukoumbé"
+    },
+    {
+      "id": "spot-tanougou-cascade",
+      "title": "Cascades de Tanougou",
+      "category": "sites",
+      "city": "Tanougou",
+      "region": "Atacora",
+      "address": "Tanougou, commune de Tanguiéta"
+    },
+    {
+      "id": "spot-pendjari-1",
+      "title": "Piste des Grands Espaces de la Pendjari",
+      "category": "sites",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Parc National de la Pendjari, commune de Tanguiéta"
+    },
+    {
+      "id": "spot-abomey-1",
+      "title": "Palais Royaux d'Abomey",
+      "category": "sites",
+      "city": "Abomey",
+      "region": "Zou",
+      "address": "Site des Palais Royaux, centre d'Abomey"
+    },
+    {
+      "id": "spot-ouidah-pythons",
+      "title": "Temple des Pythons d'Ouidah",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Temple des Pythons, centre historique d'Ouidah"
+    },
+    {
+      "id": "spot-ouidah-porte",
+      "title": "Porte du Non-Retour & Route des Esclaves",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Route des Esclaves, plage d'Ouidah"
+    },
+    {
+      "id": "spot-cotonou-fetiches",
+      "title": "Marché des Fétiches de Cotonou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Marché des Fétiches, à l'est du marché Dantokpa"
+    },
+    {
+      "id": "spot-dassa-1",
+      "title": "Collines sacrées de Dassa-Zoumé",
+      "category": "sites",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "address": "Dassa-Zoumé, département des Collines"
+    },
+    {
+      "id": "spot-cotonou-zinsou",
+      "title": "Fondation Zinsou, hôtel particulier caché",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Haie Vive, près de l'avenue Jean-Paul II, Cotonou"
+    },
+    {
+      "id": "spot-ouidah-fort",
+      "title": "Fort São João Baptista de Ajudá",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Fort portugais, centre historique d'Ouidah"
+    },
+    {
+      "id": "spot-ouidah-kpasse",
+      "title": "Forêt sacrée de Kpasse",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Forêt sacrée de Kpasse, sortie ouest d'Ouidah"
+    },
+    {
+      "id": "spot-ouidah-jardin-memoire",
+      "title": "Jardin de la Mémoire",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Route des Esclaves, entre Ouidah et la plage"
+    },
+    {
+      "id": "spot-ouidah-souza",
+      "title": "Musée Don Francisco Félix de Souza",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Quartier Docomè, Ouidah"
+    },
+    {
+      "id": "spot-ouidah-musee-vodun",
+      "title": "Musée International du Vodun",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Centre historique d'Ouidah"
+    },
+    {
+      "id": "spot-portonovo-honme",
+      "title": "Musée Honmè, Palais Royal de Porto-Novo",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Quartier Avassa, Porto-Novo"
+    },
+    {
+      "id": "spot-portonovo-ethnographique",
+      "title": "Musée Ethnographique Alexandre Sènou Adandé",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Boulevard Laguia, Porto-Novo"
+    },
+    {
+      "id": "spot-portonovo-dasilva",
+      "title": "Musée da Silva",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Quartier Akron, Porto-Novo"
+    },
+    {
+      "id": "spot-portonovo-mosquee",
+      "title": "Grande Mosquée de Porto-Novo",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Centre-ville de Porto-Novo"
+    },
+    {
+      "id": "spot-bohicon-agongointo",
+      "title": "Village souterrain d'Agongointo",
+      "category": "sites",
+      "city": "Bohicon",
+      "region": "Zou",
+      "address": "Zounkpinfè, route d'Abomey, Bohicon"
+    },
+    {
+      "id": "spot-allada-palais",
+      "title": "Palais Royal d'Allada",
+      "category": "sites",
+      "city": "Allada",
+      "region": "Atlantique",
+      "address": "Centre historique d'Allada"
+    },
+    {
+      "id": "spot-ketou-akaba",
+      "title": "Musée Akaba Idena de Kétou",
+      "category": "sites",
+      "city": "Kétou",
+      "region": "Plateau",
+      "address": "Près du palais royal, Kétou"
+    },
+    {
+      "id": "spot-nikki-palais",
+      "title": "Palais Royal de Nikki & Musée Danri",
+      "category": "sites",
+      "city": "Nikki",
+      "region": "Borgou",
+      "address": "Quartier Danri, Nikki"
+    },
+    {
+      "id": "spot-savalou-fa",
+      "title": "Musée de la Chasse et du Fâ de Savalou",
+      "category": "sites",
+      "city": "Savalou",
+      "region": "Collines",
+      "address": "Savalou, département des Collines"
+    },
+    {
+      "id": "spot-dassa-arigbo",
+      "title": "Basilique Notre-Dame d'Arigbo",
+      "category": "sites",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "address": "Colline d'Arigbo, Dassa-Zoumé"
+    },
+    {
+      "id": "spot-cotonou-cathedrale",
+      "title": "Cathédrale Notre-Dame de Cotonou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Place du 30 Août, Cotonou"
+    },
+    {
+      "id": "spot-copargo-taneka",
+      "title": "Banque Culturelle Tanéka",
+      "category": "sites",
+      "city": "Copargo",
+      "region": "Donga",
+      "address": "Copargo, département de la Donga"
+    },
+    {
+      "id": "spot-amazone",
+      "title": "Place de l’Amazone",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Place de l’Amazone, carrefour des 3 Glorieuses, Cotonou"
+    },
+    {
+      "id": "spot-etoile-rouge",
+      "title": "Place de l’Étoile Rouge",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Place de l’Étoile Rouge, boulevard Saint-Michel, Cotonou"
+    },
+    {
+      "id": "spot-martyrs",
+      "title": "Monument aux Martyrs",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Carrefour des Martyrs, Cotonou"
+    },
+    {
+      "id": "spot-fidjrosse",
+      "title": "Plage de Fidjrossè",
+      "category": "plages",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè plage, Cotonou"
+    },
+    {
+      "id": "spot-lac-ahomey",
+      "title": "Lac Ahémé & Possotomé",
+      "category": "sites",
+      "city": "Possotomé",
+      "region": "Mono",
+      "address": "Possotomé, commune de Houéyogbé, département du Mono"
+    },
+    {
+      "id": "spot-mosquee-cotonou",
+      "title": "Grande Mosquée de Zongo",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Zongo, Cotonou"
+    },
+    {
+      "id": "spot-so-ava",
+      "title": "Sô-Ava",
+      "category": "sites",
+      "city": "Sô-Ava",
+      "region": "Atlantique",
+      "address": "Sô-Ava, lac Nokoué, département de l’Atlantique"
+    },
+    {
+      "id": "spot-parc-w",
+      "title": "Parc national W (Bénin)",
+      "category": "sites",
+      "city": "Karimama",
+      "region": "Alibori",
+      "address": "Partie béninoise du parc W, commune de Karimama, Alibori"
+    },
+    {
+      "id": "spot-songhai",
+      "title": "Centre Songhaï",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Route de Sèmè-Kpodji, Porto-Novo"
+    },
+    {
+      "id": "spot-lac-nokoue",
+      "title": "Lac Nokoué & Île de la Vache",
+      "category": "sites",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "Lac Nokoué, entre Cotonou et Abomey-Calavi"
+    },
+    {
+      "id": "spot-kota",
+      "title": "Chutes de Kota",
+      "category": "sites",
+      "city": "Natitingou",
+      "region": "Atacora",
+      "address": "Cascades de Kota, commune de Natitingou"
+    },
+    {
+      "id": "spot-arzeke",
+      "title": "Grand Marché Arzèkè",
+      "category": "sites",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Grand Marché Arzèkè, Parakou"
+    },
+    {
+      "id": "spot-sokbaro",
+      "title": "Mont Sokbaro",
+      "category": "sites",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Mont Sokbaro, à la frontière bénino-togolaise"
+    },
+    {
+      "id": "spot-koutammakou",
+      "title": "Koutammakou côté Bénin",
+      "category": "sites",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Villages batammariba de l’Atacora, frontière bénino-togolaise"
+    },
+    {
+      "id": "spot-lama",
+      "title": "Forêt classée de la Lama",
+      "category": "sites",
+      "city": "Bohicon",
+      "region": "Zou",
+      "address": "Forêt classée de la Lama, entre Bohicon et Abomey"
+    },
+    {
+      "id": "spot-bio-guera",
+      "title": "Monument Bio Guéra",
+      "category": "sites",
+      "city": "Natitingou",
+      "region": "Atacora",
+      "address": "Entrée de Natitingou, RNIE 2"
+    },
+    {
+      "id": "spot-family-beach",
+      "title": "Family Beach",
+      "category": "plages",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè plage, Cotonou"
+    },
+    {
+      "id": "spot-obama-beach",
+      "title": "Obama Beach",
+      "category": "plages",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Route des pêches, ouest de Cotonou"
+    },
+    {
+      "id": "spot-code-bar",
+      "title": "Code Bar",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Centre-ville de Cotonou"
+    },
+    {
+      "id": "spot-casino-partouche",
+      "title": "Casino Partouche Cotonou",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-eya-centre",
+      "title": "Eya Centre Communautaire",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou"
+    },
+    {
+      "id": "spot-babs-dock",
+      "title": "Bab’s Dock",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè plage, Cotonou"
+    },
+    {
+      "id": "spot-face-a-la-mer",
+      "title": "Face à la Mer",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè plage, Cotonou"
+    },
+    {
+      "id": "spot-cabane-pecheur",
+      "title": "La Cabane du Pêcheur",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè plage, Cotonou"
+    },
+    {
+      "id": "spot-jaaba",
+      "title": "Jaaba – Grill & Bar",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-pili-pili",
+      "title": "Pili Pili",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-chez-maman-benin",
+      "title": "Chez Maman Bénin",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 201A, Cotonou"
+    },
+    {
+      "id": "spot-maquis-port",
+      "title": "Maquis du Port",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Ganhi, Cotonou"
+    },
+    {
+      "id": "spot-karim-24",
+      "title": "Restaurant Karim 24",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Route de Lomé, Cotonou"
+    },
+    {
+      "id": "spot-mandingue",
+      "title": "Le Mandingue",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-bangkok-terrasse",
+      "title": "Bangkok Terrasse",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-shamiana",
+      "title": "Shamiana",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou"
+    },
+    {
+      "id": "spot-chez-paterne",
+      "title": "Chez Paterne",
+      "category": "restaurants",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Centre-ville de Grand-Popo"
+    },
+    {
+      "id": "spot-boca-del-rio",
+      "title": "La Boca del Rio",
+      "category": "restaurants",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Grand-Popo"
+    },
+    {
+      "id": "spot-auberge-grandpopo",
+      "title": "Auberge de Grand-Popo",
+      "category": "restaurants",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Plage de Grand-Popo"
+    },
+    {
+      "id": "spot-la-manne",
+      "title": "La Manne",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Ouidah"
+    },
+    {
+      "id": "spot-chez-jean-ganvie",
+      "title": "Chez Raphaël à Ganvié",
+      "category": "restaurants",
+      "city": "Ganvié",
+      "region": "Atlantique",
+      "address": "Village lacustre de Ganvié"
+    },
+    {
+      "id": "spot-livingstone",
+      "title": "Livingstone",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-imprevu",
+      "title": "L'Imprévu",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-wasabi",
+      "title": "Wasabi Sushi Bar",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-hai-king",
+      "title": "Restaurant Hai King",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou"
+    },
+    {
+      "id": "spot-tandoori-nights",
+      "title": "Tandoori Nights",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou"
+    },
+    {
+      "id": "spot-rousski-dom",
+      "title": "Rousski Dom",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou"
+    },
+    {
+      "id": "spot-kedjenou",
+      "title": "Maquis Le Kédjénou",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Akpakpa, rue de la nouvelle radio Capp FM, Cotonou"
+    },
+    {
+      "id": "spot-chez-jb",
+      "title": "Chez JB",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Carrefour boulevard Saint-Michel et avenue Steinmetz, Cotonou"
+    },
+    {
+      "id": "spot-chill-n-grill",
+      "title": "Chill n' Grill",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Piste Amalco, face à Calypso, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-rin-restaurant",
+      "title": "Rïn Restaurant",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue de l'aéroport, en face du Ministère des Finances, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-le-teranga",
+      "title": "Le Teranga",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue des Cocotiers (rue 375), Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-la-villa-classic",
+      "title": "La Villa Classic Lounge",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue Teranga, à côté de l'hôpital SEZO, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-314-atelier",
+      "title": "3.14 Atelier",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Piste Amalco, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-nouveaux-alizes",
+      "title": "Les Nouveaux Alizés",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Plage de Jacquot, ancienne route des Pêches, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-cali-cali-togbin",
+      "title": "Cali Cali",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Plage de Togbin, entre Coco Beach et le Club des Rois, Cotonou"
+    },
+    {
+      "id": "spot-la-pirogue",
+      "title": "La Pirogue",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "104 B Tokpa-Hoho, en face du Centre Médical de Vaccination, Cotonou"
+    },
+    {
+      "id": "spot-iroko-bar",
+      "title": "IROKO Bar",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Aéroport International Cardinal Bernardin Gantin, niveau embarquement, avenue Jean-Paul II, Cotonou"
+    },
+    {
+      "id": "spot-mad-20",
+      "title": "MAD 2.0",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Piste Amalco, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-domino-express",
+      "title": "Domino Express Bénin",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Pavés de la Haie-Vive, à côté du Calypso Lounge Bar, Cotonou"
+    },
+    {
+      "id": "spot-petit-four",
+      "title": "Le Petit Four",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Haie Vive, 200 m après l'agence MTN, Cotonou"
+    },
+    {
+      "id": "spot-picasso",
+      "title": "Picasso Steak House",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Piste Amalco, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-bistrot-marche",
+      "title": "Le Bistrot du Marché",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "En face du nouveau marché de Cadjèhoun, Cotonou"
+    },
+    {
+      "id": "spot-ci-gusta",
+      "title": "Ci Gusta!",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Avenue Saint-Michel, à côté de la Pharmacie Camp Guézo, Cotonou"
+    },
+    {
+      "id": "spot-cornetto",
+      "title": "Cornetto Italian Ice Cream",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Avenue Clozel, en face de la banque SGBBE, Ganhi, Cotonou"
+    },
+    {
+      "id": "spot-le-matelot",
+      "title": "Le Matelot",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue des restaurants, Piste Amalco, à côté de la boulangerie SOPAI, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-didis-garden",
+      "title": "Didi's Garden",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Route des Pêches, Togbin, à 200 m avant la Grande Mosquée, Cotonou"
+    },
+    {
+      "id": "spot-skyline-resto",
+      "title": "Skyline Resto",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Carrefour Caboma, à côté de Les Bagnoles Motors, Cotonou"
+    },
+    {
+      "id": "spot-la-kribienne",
+      "title": "La Kribienne",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Route des Pêches, en quittant Togbin pour Cotonou, carrefour des amoureux"
+    },
+    {
+      "id": "spot-lyte-food",
+      "title": "Lyte Food",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier St Rita, Cotonou (également Akpakpa Avotrou)"
+    },
+    {
+      "id": "spot-kirikou-bar",
+      "title": "Kirikou Restaurant Bar",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Houenoussou, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-le-prive-cotonou",
+      "title": "Le Privé",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "1 Avenue du Gouverneur Gal Clozel, Cotonou"
+    },
+    {
+      "id": "spot-villa-kaya-cotonou",
+      "title": "Villa Kaya Cotonou",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue Isma, Fidjrossè Houénoussou Fin Pavé, Cotonou"
+    },
+    {
+      "id": "spot-pura-vida-cotonou",
+      "title": "Pura Vida",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 954B, face à la Brasserie de l'Europe, Cotonou"
+    },
+    {
+      "id": "spot-la-plage-code-bar-cotonou",
+      "title": "La Plage by Code Bar",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Route des Pêches, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-le-180-degres-cotonou",
+      "title": "Le 180 Degrés Cotonou",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 2356, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-djota-cotonou",
+      "title": "D'Jota Restaurant",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Aïbatin, dans la Cave à Vin de Diane, 100m après la pharmacie Aïbatin-Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-ya-hala-cotonou",
+      "title": "Ya-Hala",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Avenue Steinmetz, Rue 108, Cotonou"
+    },
+    {
+      "id": "spot-le-resto-cotonou",
+      "title": "Le Resto",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue Les Cocotiers, Cotonou"
+    },
+    {
+      "id": "spot-la-marine-cotonou",
+      "title": "La Marine",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè plage, Cotonou"
+    },
+    {
+      "id": "spot-maguy-bar-cotonou",
+      "title": "Maguy Bar - Les Saveurs de Marguerite",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Ganhi, Cotonou"
+    },
+    {
+      "id": "spot-hakuna-matata-ouidah",
+      "title": "Hakuna Matata Restaurant Grillades",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Route des Pêches, derrière l'IRSP, quartier Agondji Kpevi, Ouidah"
+    },
+    {
+      "id": "spot-alozo-terrasse-ouidah",
+      "title": "Alozo Terrasse",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "936P+936, à côté de la Basilique de Ouidah, Ouidah"
+    },
+    {
+      "id": "spot-kole-ouidah",
+      "title": "Kolè",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Ouidah"
+    },
+    {
+      "id": "spot-musee-soleil-ouidah",
+      "title": "Le Restaurant Bar du Musée du Soleil",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "À côté de la Basilique et en face de la Fondation Zinsou, Ouidah"
+    },
+    {
+      "id": "spot-cafe-zinsou-ouidah",
+      "title": "Café du Musée de la Fondation Zinsou",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Villa Ajavon, derrière la Basilique de Ouidah, à côté du Musée du Soleil, Ouidah"
+    },
+    {
+      "id": "spot-rives-de-toho-ouidah",
+      "title": "Les Rives de Toho",
+      "category": "restaurants",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Route de Toho, Pahou, près d'Ouidah"
+    },
+    {
+      "id": "spot-pantheon-negro-cotonou",
+      "title": "Panthéon Négro-Afro-Américain",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou"
+    },
+    {
+      "id": "spot-riviere-noire-cotonou",
+      "title": "Rivière Noire",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Autour du lac Nokoué, Cotonou"
+    },
+    {
+      "id": "spot-fondation-zinsou-cotonou",
+      "title": "Fondation Zinsou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fondation Zinsou, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-le-mur-cotonou",
+      "title": "Le Mur",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Centre-ville, Cotonou"
+    },
+    {
+      "id": "spot-marche-ganhi-cotonou",
+      "title": "Marché Ganhi",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Ganhi, Cotonou"
+    },
+    {
+      "id": "spot-cite-ministerielle-cotonou",
+      "title": "Cité Ministérielle",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cité Ministérielle, Cotonou"
+    },
+    {
+      "id": "spot-sosoden-cotonou",
+      "title": "Sosodèn",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Sosodèn, Cotonou"
+    },
+    {
+      "id": "spot-makoomba",
+      "title": "Makoomba",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "En face de l'Aéroport International Cardinal Bernardin Gantin, avenue Jean-Paul II, Cotonou"
+    },
+    {
+      "id": "spot-le-black",
+      "title": "Le Black",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Cadjèhoun, Cotonou"
+    },
+    {
+      "id": "spot-vip-club",
+      "title": "VIP Club",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Ganhi, Cotonou"
+    },
+    {
+      "id": "spot-le-loft",
+      "title": "Le Loft",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Centre-ville de Cotonou"
+    },
+    {
+      "id": "spot-black-white-club",
+      "title": "Black & White Club",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Centre-ville de Cotonou"
+    },
+    {
+      "id": "spot-2001-night-club",
+      "title": "2001 Night Club",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue des Cheminots, Cotonou"
+    },
+    {
+      "id": "spot-jammin",
+      "title": "Jammin",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Centre-ville de Cotonou"
+    },
+    {
+      "id": "spot-calypso",
+      "title": "Calypso",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-le-seven",
+      "title": "Le Seven",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Centre-ville de Cotonou"
+    },
+    {
+      "id": "spot-crystal-palace",
+      "title": "Crystal Palace Chez Alex's",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou"
+    },
+    {
+      "id": "spot-le-tabou",
+      "title": "Le Tabou Lounge Bar",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Centre-ville de Cotonou"
+    },
+    {
+      "id": "spot-314-club",
+      "title": "3.14 Club",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Piste Amalco, Haie Vive, Cotonou"
+    },
+    {
+      "id": "spot-artisanal",
+      "title": "Centre Artisanal de Cotonou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-palais-congres",
+      "title": "Palais des Congrès de Cotonou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-temple-zangbeto",
+      "title": "Temple Zangbéto de Cotonou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartiers vodun de Cotonou"
+    },
+    {
+      "id": "spot-institut-francais",
+      "title": "Institut Français du Bénin",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-stade-amitie",
+      "title": "Stade de l’Amitié",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Kouhounou, Cotonou"
+    },
+    {
+      "id": "spot-majestic-cinema",
+      "title": "Majestic Cinéma",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard Saint-Michel, Cotonou"
+    },
+    {
+      "id": "spot-eldorado-beach",
+      "title": "E Dorado Beach",
+      "category": "plages",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Route des pêches, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-plage-marina",
+      "title": "Plage de la Marina",
+      "category": "plages",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-plage-seme",
+      "title": "Plage de Sèmè-Kpodji",
+      "category": "plages",
+      "city": "Sèmè-Kpodji",
+      "region": "Ouémé",
+      "address": "Sèmè-Kpodji, département de l'Ouémé"
+    },
+    {
+      "id": "spot-plage-pahou",
+      "title": "Plage de Pahou",
+      "category": "plages",
+      "city": "Pahou",
+      "region": "Atlantique",
+      "address": "Pahou, commune de Ouidah, département de l'Atlantique"
+    },
+    {
+      "id": "spot-plage-ouidah",
+      "title": "Plage de Djégbadji (Ouidah)",
+      "category": "plages",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Djégbadji, commune de Ouidah"
+    },
+    {
+      "id": "spot-plage-avlekete",
+      "title": "Plage d'Avlékété",
+      "category": "plages",
+      "city": "Avlékété",
+      "region": "Atlantique",
+      "address": "Avlékété, commune de Ouidah"
+    },
+    {
+      "id": "spot-plage-grandpopo",
+      "title": "Grande Plage de Grand-Popo",
+      "category": "plages",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Grand-Popo, département du Mono"
+    },
+    {
+      "id": "spot-plage-avlo",
+      "title": "Presqu'île d'Avlo",
+      "category": "plages",
+      "city": "Avlo",
+      "region": "Mono",
+      "address": "Avlo, commune de Grand-Popo"
+    },
+    {
+      "id": "spot-plage-agoue",
+      "title": "Plage d'Agoué & Hillacondji",
+      "category": "plages",
+      "city": "Agoué",
+      "region": "Mono",
+      "address": "Agoué – Hillacondji, commune de Grand-Popo"
+    },
+    {
+      "id": "spot-plage-erevan",
+      "title": "Plage Erevan",
+      "category": "plages",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, route des pêches, Cotonou"
+    },
+    {
+      "id": "spot-gozem",
+      "title": "Gozem",
+      "category": "transports",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Disponible dans les grandes villes"
+    },
+    {
+      "id": "spot-yango",
+      "title": "Yango",
+      "category": "transports",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Disponible dans les grandes villes"
+    },
+    {
+      "id": "spot-hotel-azalai",
+      "title": "Hôtel Azalaï Cotonou",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-hotel-novotel",
+      "title": "Novotel Cotonou Orisha",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-hotel-cote",
+      "title": "Hôtel ELIA Résidence",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-maison-rouge",
+      "title": "Maison Rouge Cotonou",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, quartier Haie Vive, entre l'aéroport et les sièges de la Banque mondiale et de l'Unicef, Cotonou"
+    },
+    {
+      "id": "spot-hotel-sofitel",
+      "title": "Sofitel Cotonou Marina Hôtel & Spa",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-hotel-sun-beach",
+      "title": "Sun Beach Hotel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Carrefour du Calvaire, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-hotel-benin-royal",
+      "title": "Benin Royal Hotel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Lot 398, quartier Maro-Militaire, face Toxi Labo, avenue Germain Olory Togbé, Cotonou"
+    },
+    {
+      "id": "spot-hotel-golden-tulip",
+      "title": "Golden Tulip Le Diplomate",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "No 90, rue 12.017, Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-hotel-ibis",
+      "title": "Ibis Cotonou",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "1821 Boulevard de la Marina, 08 BP 0929, Cotonou"
+    },
+    {
+      "id": "spot-hotel-nobila",
+      "title": "Nobila Airport Hotel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Avenue Jean-Paul II, côté aéroport, face au siège de l'ASECNA, Cotonou"
+    },
+    {
+      "id": "spot-hotel-atlantic-beach",
+      "title": "Benin Atlantic Beach Hotel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè plage, route des Pêches, face à la pharmacie Les Maristes, Cotonou"
+    },
+    {
+      "id": "spot-hotel-du-lac",
+      "title": "Hôtel du Lac",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue Bel Air, quartier Akpakpa, Cotonou"
+    },
+    {
+      "id": "spot-hotel-orchidees",
+      "title": "Hôtel Les Orchidées",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, 02 BP 1140, Cotonou"
+    },
+    {
+      "id": "spot-hotel-tahiti",
+      "title": "Tahiti Hotel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Lot TF 2922, quartier Jak, Akpakpa, Cotonou"
+    },
+    {
+      "id": "spot-hotel-villa-saint-jean",
+      "title": "La Villa Saint Jean",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Avenue Yekpe, Cotonou"
+    },
+    {
+      "id": "spot-hotel-tamarin",
+      "title": "Tamarin Hôtel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 231, à côté du Centre national de casier judiciaire, Cotonou"
+    },
+    {
+      "id": "spot-hotel-riviera",
+      "title": "Riviera Hôtel Bénin",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue Dako Donou, quartier Tokpa Hoho Carré 57, Cotonou"
+    },
+    {
+      "id": "spot-hotel-beach-sand",
+      "title": "Beach Sand Hôtel & Resort",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Carré 93 Finangnon, Akpakpa, Cotonou"
+    },
+    {
+      "id": "spot-hotel-villa-ekabo",
+      "title": "Villa Ekabo",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 391, Patte d'Oie, Cotonou"
+    },
+    {
+      "id": "spot-hotel-casa-cielo",
+      "title": "Hôtel La Casa Cielo",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè Fin Pavé, Cotonou"
+    },
+    {
+      "id": "spot-hotel-residences-easy",
+      "title": "Résidences Easy",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 2106, Fidjrossê, Cotonou"
+    },
+    {
+      "id": "spot-hotel-le-prince",
+      "title": "Hôtel Le Prince",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier de la lagune, Cotonou"
+    },
+    {
+      "id": "spot-hotel-mavilla",
+      "title": "Hôtel Mavilla",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "C/327 Akpakpa Lom-Nava, juste après la Mosquée Lom-Nava, Cotonou"
+    },
+    {
+      "id": "spot-hotel-kare-ebene",
+      "title": "Le Karé Ébène",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Place des Martyrs, Cotonou"
+    },
+    {
+      "id": "spot-hotel-imprevu",
+      "title": "Hôtel L'Imprévu",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue des Hindous, Ganhi, Cotonou"
+    },
+    {
+      "id": "spot-hotel-bel-azur",
+      "title": "Hôtel Bel Azur",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 222, Saint Jean, Cotonou"
+    },
+    {
+      "id": "spot-hotel-noahgarden",
+      "title": "Noahgarden Resort",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Avenue de la plage, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-hotel-paradisia",
+      "title": "Paradisia Hotel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Haie Vive, près de l'aéroport de Cotonou, Cotonou"
+    },
+    {
+      "id": "spot-hotel-maryhouse",
+      "title": "Residence MaryHouse",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 12.320, Aïbatin, Cotonou"
+    },
+    {
+      "id": "spot-hotel-mh-services",
+      "title": "RESIDENCE MH Services",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Akpakpa, Cotonou"
+    },
+    {
+      "id": "spot-hotel-bamboo-numerik",
+      "title": "Bamboo Numerik",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-hotel-rg-residences",
+      "title": "RG Résidences",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Rue 2240, Fidjrossè, Cotonou"
+    },
+    {
+      "id": "spot-hotel-residences-inaya",
+      "title": "Résidences Inaya",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Akossombo, Cotonou"
+    },
+    {
+      "id": "spot-hotel-perle-bleue",
+      "title": "Résidences Hôtel Perle Bleue",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè Jacquot, maison n°69, Cotonou"
+    },
+    {
+      "id": "spot-hotel-klik-klak",
+      "title": "Klik Klak Appart Hotel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Immeuble après CIFEC Bénin, en quittant l'Étoile Rouge vers Vodjè, Cotonou"
+    },
+    {
+      "id": "spot-hotel-residence-ivoire",
+      "title": "Residence Ivoire Cotonou",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Cadjèhoun, Cotonou"
+    },
+    {
+      "id": "spot-hotel-le-hublot",
+      "title": "Le Hublot",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, Route des Pêches, Cotonou"
+    },
+    {
+      "id": "spot-hotel-maryka-ii",
+      "title": "Residence Maryka II",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Quartier Sikecodji, Cotonou"
+    },
+    {
+      "id": "spot-hotel-casa-del-papa",
+      "title": "Casa Del Papa Resort",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Route de l'aéroport, Ouidah"
+    },
+    {
+      "id": "spot-hotel-natura-camp",
+      "title": "Natura luxury camp",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Plage de Ouidah, Route des Pêches"
+    },
+    {
+      "id": "spot-hotel-jardin-secret",
+      "title": "Le Jardin Secret",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Quartier Gbéna, Ouidah"
+    },
+    {
+      "id": "spot-hotel-mga",
+      "title": "Residence MGA Hotel",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Carrefour des Trois Banques, Ouidah"
+    },
+    {
+      "id": "spot-hotel-au-coeur-ouidah",
+      "title": "Au cœur de Ouidah",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Rue du Marché, Ouidah"
+    },
+    {
+      "id": "spot-hotel-awale-plage",
+      "title": "Village Vacances Awale Plage",
+      "category": "hotels",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Boulevard de la Plage, Grand-Popo"
+    },
+    {
+      "id": "spot-hotel-ramaya",
+      "title": "Ramaya Auberge Espagnole",
+      "category": "hotels",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Boulevard de la Plage, Grand-Popo"
+    },
+    {
+      "id": "spot-hotel-bambou-beach",
+      "title": "Guesthouse Bambou Beach",
+      "category": "hotels",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Quartier Avloh, Grand-Popo"
+    },
+    {
+      "id": "spot-hotel-les-arcades",
+      "title": "Hôtel Les Arcades",
+      "category": "hotels",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "Carrefour Tokan, Abomey-Calavi"
+    },
+    {
+      "id": "spot-hotel-ouadada",
+      "title": "Résidences Ouadada",
+      "category": "hotels",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Quartier Ouadada, Porto-Novo"
+    },
+    {
+      "id": "spot-hotel-benin-marina",
+      "title": "Bénin Marina Hôtel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Boulevard de la Marina, Cotonou"
+    },
+    {
+      "id": "spot-new-land-beach",
+      "title": "New Land Beach",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Route des Pêches, Fidjrossè plage, 300 m après l'immeuble Gozem en direction de Togbin, Cotonou"
+    },
+    {
+      "id": "spot-hublot",
+      "title": "Le Hublot Brasserie & Guesthouse",
+      "category": "restaurants",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Fidjrossè, Route des Pêches, 400 m après l'immeuble Gozem (sur la droite), Cotonou"
+    },
+    {
+      "id": "spot-gogotinkpon",
+      "title": "Gogotinkpon",
+      "category": "sites",
+      "city": "Kpomassè",
+      "region": "Atlantique",
+      "address": "Village de Gogotinkpon, arrondissement d'Agbanto (commune de Kpomassè), à la frontière entre les départements de l'Atlantique et du Mono"
+    },
+    {
+      "id": "spot-homeboy",
+      "title": "Homeboy Lounge Bar",
+      "category": "boites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "9C34+H69, Arrondissement 12, Cotonou"
+    },
+    {
+      "id": "spot-hotel-hotel-chant-doiseau",
+      "title": "Hôtel Chant d'Oiseau",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-le-flamboyant-residence",
+      "title": "Le Flamboyant Résidence",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-arcada-marina",
+      "title": "Arcada Marina",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-peace-hotel",
+      "title": "Peace Hôtel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-guesthouse-haie-vive",
+      "title": "Guesthouse Haie Vive",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-le-zenith-hotel",
+      "title": "Le Zénith Hôtel",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-meljomar",
+      "title": "Hôtel MelJomar",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-best-western-plus-cotonou",
+      "title": "Best Western Plus Cotonou",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-la-carafe",
+      "title": "La Carafe",
+      "category": "hotels",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Cotonou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-la-mariella",
+      "title": "Hôtel La Mariella",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Ouidah, Bénin"
+    },
+    {
+      "id": "spot-hotel-auberge-le-crepuscule",
+      "title": "Auberge Le Crépuscule",
+      "category": "hotels",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Ouidah, Bénin"
+    },
+    {
+      "id": "spot-hotel-auberge-farafina",
+      "title": "Auberge Farafina",
+      "category": "hotels",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Grand-Popo, Bénin"
+    },
+    {
+      "id": "spot-hotel-saveurs-afrique",
+      "title": "Saveurs Afrique",
+      "category": "hotels",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Grand-Popo, Bénin"
+    },
+    {
+      "id": "spot-hotel-coco-beach",
+      "title": "Coco Beach",
+      "category": "hotels",
+      "city": "Avlo",
+      "region": "Mono",
+      "address": "Avlo, Bénin"
+    },
+    {
+      "id": "spot-hotel-paradise-island",
+      "title": "Paradise Island",
+      "category": "hotels",
+      "city": "Avlékété",
+      "region": "Atlantique",
+      "address": "Avlékété, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-dona",
+      "title": "Hôtel Dona",
+      "category": "hotels",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Porto-Novo, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-songhai",
+      "title": "Hôtel Songhaï",
+      "category": "hotels",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Porto-Novo, Bénin"
+    },
+    {
+      "id": "spot-hotel-casa-danza",
+      "title": "Casa Danza",
+      "category": "hotels",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Porto-Novo, Bénin"
+    },
+    {
+      "id": "spot-hotel-chez-tata-edith",
+      "title": "Chez Tata Edith",
+      "category": "hotels",
+      "city": "Abomey",
+      "region": "Zou",
+      "address": "Abomey, Bénin"
+    },
+    {
+      "id": "spot-hotel-motel-dabomey",
+      "title": "Motel d'Abomey",
+      "category": "hotels",
+      "city": "Abomey",
+      "region": "Zou",
+      "address": "Abomey, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-la-canadienne",
+      "title": "Hôtel La Canadienne",
+      "category": "hotels",
+      "city": "Bohicon",
+      "region": "Zou",
+      "address": "Bohicon, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-kanssounkpa",
+      "title": "Hôtel Kanssounkpa",
+      "category": "hotels",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "Abomey-Calavi, Bénin"
+    },
+    {
+      "id": "spot-hotel-le-reve",
+      "title": "Le Rêve",
+      "category": "hotels",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "Abomey-Calavi, Bénin"
+    },
+    {
+      "id": "spot-hotel-big-man-hotel",
+      "title": "Big Man Hôtel",
+      "category": "hotels",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "Abomey-Calavi, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-village-vacances-assouka",
+      "title": "Hôtel Village Vacances Assouka",
+      "category": "hotels",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "Abomey-Calavi, Bénin"
+    },
+    {
+      "id": "spot-hotel-royal-space-hotel",
+      "title": "Royal Space Hôtel",
+      "category": "hotels",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "Abomey-Calavi, Bénin"
+    },
+    {
+      "id": "spot-hotel-chez-m",
+      "title": "Chez M",
+      "category": "hotels",
+      "city": "Ganvié",
+      "region": "Atlantique",
+      "address": "Ganvié, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-sainte-elisabeth",
+      "title": "Hôtel Sainte Elisabeth",
+      "category": "hotels",
+      "city": "Allada",
+      "region": "Atlantique",
+      "address": "Allada, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-motel-au-jardin-helvetia",
+      "title": "Hôtel Motel Au Jardin Helvetia",
+      "category": "hotels",
+      "city": "Pahou",
+      "region": "Atlantique",
+      "address": "Pahou, Bénin"
+    },
+    {
+      "id": "spot-hotel-les-rives-de-toho",
+      "title": "Les Rives de Toho",
+      "category": "hotels",
+      "city": "Pahou",
+      "region": "Atlantique",
+      "address": "Pahou, Bénin"
+    },
+    {
+      "id": "spot-hotel-babs-dock",
+      "title": "Bab's Dock",
+      "category": "hotels",
+      "city": "Pahou",
+      "region": "Atlantique",
+      "address": "Pahou, Bénin"
+    },
+    {
+      "id": "spot-hotel-chez-foumi",
+      "title": "Chez Foumi",
+      "category": "hotels",
+      "city": "Pahou",
+      "region": "Atlantique",
+      "address": "Pahou, Bénin"
+    },
+    {
+      "id": "spot-hotel-le-bomba",
+      "title": "Le Bomba",
+      "category": "hotels",
+      "city": "Sèmè-Kpodji",
+      "region": "Ouémé",
+      "address": "Sèmè-Kpodji, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-houdegbe",
+      "title": "Hôtel Houdégbé",
+      "category": "hotels",
+      "city": "Bopa",
+      "region": "Mono",
+      "address": "Bopa, Bénin"
+    },
+    {
+      "id": "spot-hotel-chez-theo",
+      "title": "Chez Théo",
+      "category": "hotels",
+      "city": "Possotomé",
+      "region": "Mono",
+      "address": "Possotomé, Bénin"
+    },
+    {
+      "id": "spot-hotel-le-link",
+      "title": "Le Link",
+      "category": "hotels",
+      "city": "Lokossa",
+      "region": "Mono",
+      "address": "Lokossa, Bénin"
+    },
+    {
+      "id": "spot-hotel-centre-daccueil-henri-vignonde",
+      "title": "Centre d'Accueil Henri Vignondé",
+      "category": "hotels",
+      "city": "Lokossa",
+      "region": "Mono",
+      "address": "Lokossa, Bénin"
+    },
+    {
+      "id": "spot-hotel-letoile-rouge",
+      "title": "L'Étoile Rouge",
+      "category": "hotels",
+      "city": "Lokossa",
+      "region": "Mono",
+      "address": "Lokossa, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-avame-azove",
+      "title": "Hôtel Avamè Azovè",
+      "category": "hotels",
+      "city": "Aplahoué",
+      "region": "Couffo",
+      "address": "Aplahoué, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-des-princes",
+      "title": "Hôtel des Princes",
+      "category": "hotels",
+      "city": "Aplahoué",
+      "region": "Couffo",
+      "address": "Aplahoué, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-destiny",
+      "title": "Hotel Destiny",
+      "category": "hotels",
+      "city": "Dogbo-Tota",
+      "region": "Couffo",
+      "address": "Dogbo-Tota, Bénin"
+    },
+    {
+      "id": "spot-hotel-jeco-hotel",
+      "title": "Jeco Hotel",
+      "category": "hotels",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "address": "Dassa-Zoumé, Bénin"
+    },
+    {
+      "id": "spot-hotel-la-boussole",
+      "title": "La Boussole",
+      "category": "hotels",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "address": "Dassa-Zoumé, Bénin"
+    },
+    {
+      "id": "spot-hotel-chez-armand-ferme-mactu",
+      "title": "Chez Armand - Ferme Mactu",
+      "category": "hotels",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "address": "Dassa-Zoumé, Bénin"
+    },
+    {
+      "id": "spot-hotel-auberge-le-pelerin",
+      "title": "Auberge Le Pèlerin",
+      "category": "hotels",
+      "city": "Dassa-Zoumé",
+      "region": "Collines",
+      "address": "Dassa-Zoumé, Bénin"
+    },
+    {
+      "id": "spot-hotel-benin-calypso-hotel",
+      "title": "Bénin Calypso Hotel",
+      "category": "hotels",
+      "city": "Savalou",
+      "region": "Collines",
+      "address": "Savalou, Bénin"
+    },
+    {
+      "id": "spot-hotel-city-hotel",
+      "title": "City Hotel",
+      "category": "hotels",
+      "city": "Kétou",
+      "region": "Plateau",
+      "address": "Kétou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-chez-john",
+      "title": "Hotel Chez John",
+      "category": "hotels",
+      "city": "Nikki",
+      "region": "Borgou",
+      "address": "Nikki, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-kinyao",
+      "title": "Hôtel Kinyao",
+      "category": "hotels",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Parakou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-les-routiers",
+      "title": "Hôtel Les Routiers",
+      "category": "hotels",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Parakou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-la-princesse",
+      "title": "Hôtel La Princesse",
+      "category": "hotels",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Parakou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-jecorami",
+      "title": "Hôtel Jecorami",
+      "category": "hotels",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Parakou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-le-mirador",
+      "title": "Hotel Le Mirador",
+      "category": "hotels",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Parakou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-le-consulat",
+      "title": "Hôtel Le Consulat",
+      "category": "hotels",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Parakou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-gladenzo",
+      "title": "Hôtel Gladenzo",
+      "category": "hotels",
+      "city": "Djougou",
+      "region": "Donga",
+      "address": "Djougou, Bénin"
+    },
+    {
+      "id": "spot-hotel-la-romance",
+      "title": "La Romance",
+      "category": "hotels",
+      "city": "Bassila",
+      "region": "Donga",
+      "address": "Bassila, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-tanekas",
+      "title": "Hôtel Tanekas",
+      "category": "hotels",
+      "city": "Natitingou",
+      "region": "Atacora",
+      "address": "Natitingou, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-kantaborifa",
+      "title": "Hôtel Kantaborifa",
+      "category": "hotels",
+      "city": "Natitingou",
+      "region": "Atacora",
+      "address": "Natitingou, Bénin"
+    },
+    {
+      "id": "spot-hotel-nanto-lodge",
+      "title": "Nanto Lodge",
+      "category": "hotels",
+      "city": "Natitingou",
+      "region": "Atacora",
+      "address": "Natitingou, Bénin"
+    },
+    {
+      "id": "spot-hotel-auberge-des-s-urs-de-notre-dame-des-apotres",
+      "title": "Auberge des Sœurs de Notre-Dame des Apôtres",
+      "category": "hotels",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Tanguiéta, Bénin"
+    },
+    {
+      "id": "spot-hotel-auberge-de-la-gare",
+      "title": "Auberge de la Gare",
+      "category": "hotels",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Tanguiéta, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-yakti",
+      "title": "Hôtel Yakti",
+      "category": "hotels",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Tanguiéta, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-baobab-de-tanguieta",
+      "title": "Hôtel Baobab de Tanguiéta",
+      "category": "hotels",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Tanguiéta, Bénin"
+    },
+    {
+      "id": "spot-hotel-auberge-paroissiale",
+      "title": "Auberge Paroissiale",
+      "category": "hotels",
+      "city": "Kouandé",
+      "region": "Atacora",
+      "address": "Kouandé, Bénin"
+    },
+    {
+      "id": "spot-hotel-pendjari-lodge",
+      "title": "Pendjari Lodge",
+      "category": "hotels",
+      "city": "Tanguiéta",
+      "region": "Atacora",
+      "address": "Tanguiéta, Bénin"
+    },
+    {
+      "id": "spot-hotel-hotel-les-relais-du-sahel",
+      "title": "Hôtel Les Relais du Sahel",
+      "category": "hotels",
+      "city": "Malanville",
+      "region": "Alibori",
+      "address": "Malanville, Bénin"
+    },
+    {
+      "id": "spot-hotel-le-sota-hotel",
+      "title": "Le Sota Hôtel",
+      "category": "hotels",
+      "city": "Malanville",
+      "region": "Alibori",
+      "address": "Malanville, Bénin"
+    },
+    {
+      "id": "spot-hotel-campement-yentuguli-acra",
+      "title": "Campement Yentuguli (ACRA)",
+      "category": "hotels",
+      "city": "Karimama",
+      "region": "Alibori",
+      "address": "Karimama, Bénin"
+    },
+    {
+      "id": "spot-site-dantokpa",
+      "title": "Grand Marché Dantokpa",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Marché Dantokpa, 6e arrondissement, Cotonou"
+    },
+    {
+      "id": "spot-site-jardin-plantes-porto-novo",
+      "title": "Jardin des Plantes et de la Nature",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Jardin des Plantes et de la Nature, Porto-Novo"
+    },
+    {
+      "id": "spot-site-petit-train",
+      "title": "Petit Train Touristique de Cotonou",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Littoral",
+      "address": "Esplanade de l'Amazone, Cotonou"
+    },
+    {
+      "id": "spot-site-route-peches",
+      "title": "Route des Pêches",
+      "category": "sites",
+      "city": "Cotonou",
+      "region": "Atlantique",
+      "address": "Route des Pêches, Djako Daho, Abomey-Calavi"
+    },
+    {
+      "id": "spot-site-basilique-ouidah",
+      "title": "Basilique de l'Immaculée Conception",
+      "category": "sites",
+      "city": "Ouidah",
+      "region": "Atlantique",
+      "address": "Rue Monseigneur Dartois, Ouidah"
+    },
+    {
+      "id": "spot-site-cathedrale-porto-novo",
+      "title": "Cathédrale Notre-Dame de l'Immaculée Conception",
+      "category": "sites",
+      "city": "Porto-Novo",
+      "region": "Ouémé",
+      "address": "Avenue Malan, Gbedji, Porto-Novo"
+    },
+    {
+      "id": "spot-site-marche-azove",
+      "title": "Marché Azovè",
+      "category": "sites",
+      "city": "Aplahoué",
+      "region": "Couffo",
+      "address": "Azovè, commune d'Aplahoué"
+    },
+    {
+      "id": "spot-site-palais-kinkinhoue",
+      "title": "Palais royal et musée de Kinkinhoué",
+      "category": "sites",
+      "city": "Djakotomey",
+      "region": "Couffo",
+      "address": "Kinkinhoué, commune de Djakotomey"
+    },
+    {
+      "id": "spot-site-fort-grand-popo",
+      "title": "Fort et villas coloniales de Grand-Popo",
+      "category": "sites",
+      "city": "Grand-Popo",
+      "region": "Mono",
+      "address": "Quartier ancien, Grand-Popo"
+    },
+    {
+      "id": "spot-site-agoualand",
+      "title": "AgouaLand",
+      "category": "sites",
+      "city": "Abomey-Calavi",
+      "region": "Atlantique",
+      "address": "RN 30, Somè, Togba, Abomey-Calavi"
+    },
+    {
+      "id": "spot-site-lagune-kpomasse",
+      "title": "Lagune de Kpomassè",
+      "category": "sites",
+      "city": "Kpomassè",
+      "region": "Atlantique",
+      "address": "Kpomassè, rive de la lagune"
+    },
+    {
+      "id": "spot-site-bas-reliefs-abomey",
+      "title": "Ateliers de bas-reliefs d'Abomey",
+      "category": "sites",
+      "city": "Abomey",
+      "region": "Zou",
+      "address": "Quartier Gbécon-Hounli, Abomey"
+    },
+    {
+      "id": "spot-site-inselbergs-savalou",
+      "title": "Collines et inselbergs de Savalou",
+      "category": "sites",
+      "city": "Savalou",
+      "region": "Collines",
+      "address": "Collines de Savalou, commune de Savalou"
+    },
+    {
+      "id": "spot-site-foret-pobe",
+      "title": "Forêt sacrée de Pobè",
+      "category": "sites",
+      "city": "Pobè",
+      "region": "Plateau",
+      "address": "Forêt sacrée d'Igbo Akpa, Pobè"
+    },
+    {
+      "id": "spot-site-collines-sakete",
+      "title": "Collines de Sakété",
+      "category": "sites",
+      "city": "Sakété",
+      "region": "Plateau",
+      "address": "Sakété, département du Plateau"
+    },
+    {
+      "id": "spot-site-poterie-adjarra",
+      "title": "Poterie d'Adjarra",
+      "category": "sites",
+      "city": "Adjarra",
+      "region": "Ouémé",
+      "address": "Adjarra, commune d'Adjarra"
+    },
+    {
+      "id": "spot-site-koudou",
+      "title": "Chutes de Koudou",
+      "category": "sites",
+      "city": "Banikoara",
+      "region": "Alibori",
+      "address": "Chutes de Koudou, commune de Banikoara"
+    },
+    {
+      "id": "spot-site-koussoukoingou",
+      "title": "Village de Koussoukoingou",
+      "category": "sites",
+      "city": "Boukoumbé",
+      "region": "Atacora",
+      "address": "Koussoukoingou, commune de Boukoumbé"
+    },
+    {
+      "id": "spot-site-kouande",
+      "title": "Villages perchés de Kouandé",
+      "category": "sites",
+      "city": "Kouandé",
+      "region": "Atacora",
+      "address": "Kouandé, communes rurales de l'Atacora"
+    },
+    {
+      "id": "spot-site-musee-natitingou",
+      "title": "Musée régional de Natitingou",
+      "category": "sites",
+      "city": "Natitingou",
+      "region": "Atacora",
+      "address": "Musée régional de Natitingou, Natitingou"
+    },
+    {
+      "id": "spot-site-lac-djougou",
+      "title": "Lac de Djougou & barrage de Térou",
+      "category": "sites",
+      "city": "Djougou",
+      "region": "Donga",
+      "address": "Barrage de Térou, Djougou"
+    },
+    {
+      "id": "spot-site-musee-parakou",
+      "title": "Musée ethnographique et de plein air de Parakou",
+      "category": "sites",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "RNIE 2, Kpébié, Parakou"
+    },
+    {
+      "id": "spot-site-palais-kobourou",
+      "title": "Palais royal de Kobourou",
+      "category": "sites",
+      "city": "Parakou",
+      "region": "Borgou",
+      "address": "Palais royal de Kobourou, Parakou"
+    },
+    {
+      "id": "spot-site-gaani",
+      "title": "Arène de la Gaani",
+      "category": "sites",
+      "city": "Nikki",
+      "region": "Borgou",
+      "address": "Arène impériale, Nikki"
+    },
+    {
+      "id": "spot-site-niger-malanville",
+      "title": "Fleuve Niger & îles de Malanville",
+      "category": "sites",
+      "city": "Malanville",
+      "region": "Alibori",
+      "address": "Malanville, rive du fleuve Niger"
+    },
+    {
+      "id": "spot-site-basse-oueme",
+      "title": "Basse vallée de l'Ouémé",
+      "category": "sites",
+      "city": "Bonou",
+      "region": "Ouémé",
+      "address": "Bonou et Dangbo, basse vallée de l'Ouémé"
+    }
+  ],
+  "agenda": [
+    {
+      "id": "vodun-days",
+      "title": "Vodun Days",
+      "dayRange": "02-09",
+      "monthYear": "JANVIER 2027",
+      "description": "Les Vodun Days, le premier rendez-vous international autour des arts, de la culture et de la spiritualité Vodun.",
+      "image": "https://visitbeninrepublic.com/wp-content/uploads/2026/01/vodun-days-2026.jpg",
+      "variant": "featured",
+      "url": "https://vodundays.bj/",
+      "startDate": "2027-01-02",
+      "endDate": "2027-01-09"
+    },
+    {
+      "id": "weloveya",
+      "title": "Weloveya",
+      "dayRange": "26-27",
+      "monthYear": "DÉCEMBRE 2026",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmTGqttfLiLn3ILfp_u63VgN55Vi_1C8gQttd8wQjb2ajlnRAzAvrbMGE&s=10",
+      "variant": "small",
+      "url": "https://weloveyafestival.com/",
+      "startDate": "2026-12-26",
+      "endDate": "2026-12-27"
+    },
+    {
+      "id": "festival-masques",
+      "title": "Festival des Masques",
+      "dayRange": "07-08",
+      "monthYear": "AOÛT 2027",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj07wejFDqCzgagbVMAvwh0W36WJN1xZ7UQ_DomiR98aAn9rslNQ2ec8rEgYJEptzRj26wcSAa1W7cbP3CdelLh3Qpb3qBtAFbrjbkCJj7AwFMdb2AkWqzn79cBSF0raVB1Awa_d1n_ZwKdZ4HO1Lu4_ZnsJRwl6SmDVBvub2CK8qunK_Zn5PONui2UJB4/s750/Africa%20Exclusive%20-%20FESTIVAL%20DES%20MASQUES%20-%20Pari%20r%C3%A9ussi%20pour%20Porto-Novo.png",
+      "variant": "small",
+      "url": "https://festivaldesmasques.bj/",
+      "startDate": "2027-08-07",
+      "endDate": "2027-08-08"
+    },
+    {
+      "id": "jistna",
+      "title": "JISTNA",
+      "dayRange": "22-23",
+      "monthYear": "AOÛT 2027",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbT-tXge-bhlj-b97HHNtzdhtZj6rtlAjbqTBX-w-fw&s=10",
+      "variant": "small",
+      "url": "https://jistna.bj/",
+      "startDate": "2027-08-22",
+      "endDate": "2027-08-23"
+    },
+    {
+      "id": "gaani",
+      "title": "La Gaani",
+      "monthYear": "AOÛT 2027",
+      "image": "https://french.news.cn/20230929/2f4614bc3b404beb859b5f53b9e93fc5/202309292f4614bc3b404beb859b5f53b9e93fc5_XxjifrF007025_20230929_CBMFN0A002.jpg",
+      "variant": "small",
+      "url": "https://gaani.bj/"
+    },
+    {
+      "id": "finab",
+      "title": "Festival International des Arts du Bénin (FinAB)",
+      "monthYear": "DATES À VENIR",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX9e4mufe-EAr4fq4UjKLuRkz6z5mjMlw3H3yRMqMYD1k7aZxaY6mH60H7&s=10",
+      "variant": "small"
+    },
+    {
+      "id": "festichill",
+      "title": "Festichill",
+      "monthYear": "DATES À VENIR",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnO0ZtJ9PGbHsSmrfqHVd2Tf560RILAT2vMciRqIzNFQ&s=10",
+      "variant": "small"
+    },
+    {
+      "id": "chill-and-groove",
+      "title": "Chill & Groove",
+      "monthYear": "DATES À VENIR",
+      "image": "https://chillandgroovefestival.com/wp-content/uploads/2026/06/CG_About_Left_2.png",
+      "variant": "small"
+    }
+  ],
+  "problems": []
+}

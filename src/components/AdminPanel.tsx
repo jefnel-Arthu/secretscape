@@ -45,7 +45,9 @@ interface Message {
 type AdminTab = 'dashboard' | 'stats' | 'messages' | 'favorites' | 'spots' | 'photos';
 
 export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
-  const [token, setToken] = useState<string | null>(null);
+  // Le token est éphémère (régénéré à chaque démarrage du serveur) : on ne le garde pas en mémoire,
+  // il vit dans localStorage et le serveur en est la seule source de vérité.
+  const [authed, setAuthed] = useState<boolean>(() => !!localStorage.getItem('secretscape_admin_token'));
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -57,8 +59,14 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
 
   const headers = useCallback(() => ({
     'Content-Type': 'application/json',
-    'x-admin-token': token || '',
-  }), [token]);
+    'x-admin-token': localStorage.getItem('secretscape_admin_token') || '',
+  }), []);
+
+  const handleExpiredSession = useCallback(() => {
+    localStorage.removeItem('secretscape_admin_token');
+    setAuthed(false);
+    setLoginError('Session expirée : reconnectez-vous.');
+  }, []);
 
   const handleLogin = async () => {
     setLoading(true);
@@ -71,8 +79,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
       });
       const data = await res.json();
       if (data.ok) {
-        setToken(data.token);
         localStorage.setItem('secretscape_admin_token', data.token);
+        setAuthed(true);
       } else {
         setLoginError(data.error || 'Erreur');
       }
@@ -82,53 +90,58 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
     setLoading(false);
   };
 
-  useEffect(() => {
-    const saved = localStorage.getItem('secretscape_admin_token');
-    if (saved) setToken(saved);
-  }, []);
-
   const fetchStats = useCallback(async () => {
-    if (!token) return;
     try {
       const res = await fetch('/api/admin/stats', { headers: headers() });
+      if (res.status === 401) return handleExpiredSession();
       if (res.ok) setStats(await res.json());
     } catch {}
-  }, [token, headers]);
+  }, [headers, handleExpiredSession]);
 
   const fetchMessages = useCallback(async () => {
-    if (!token) return;
     try {
       const res = await fetch('/api/admin/messages', { headers: headers() });
+      if (res.status === 401) return handleExpiredSession();
       if (res.ok) setMessages((await res.json()).messages);
     } catch {}
-  }, [token, headers]);
+  }, [headers, handleExpiredSession]);
 
   const fetchPhotos = useCallback(async () => {
-    if (!token) return;
     try {
       const res = await fetch('/api/admin/photos', { headers: headers() });
+      if (res.status === 401) return handleExpiredSession();
       if (res.ok) setPhotos((await res.json()).photos);
     } catch {}
-  }, [token, headers]);
+  }, [headers, handleExpiredSession]);
 
   useEffect(() => {
-    if (token) {
+    if (authed) {
       fetchStats();
       fetchMessages();
       fetchPhotos();
     }
-  }, [token, fetchStats, fetchMessages, fetchPhotos]);
+  }, [authed, fetchStats, fetchMessages, fetchPhotos]);
+
+  const requireAuth = async (res: Response): Promise<boolean> => {
+    if (res.status === 401) {
+      handleExpiredSession();
+      return false;
+    }
+    return res.ok;
+  };
 
   const markRead = async (id: string) => {
-    await fetch('/api/admin/messages/read', {
+    const res = await fetch('/api/admin/messages/read', {
       method: 'POST', headers: headers(), body: JSON.stringify({ id }),
     });
+    if (!await requireAuth(res)) return;
     setMessages(prev => prev.map(m => m.id === id ? { ...m, read: true } : m));
     fetchStats();
   };
 
   const deleteMessage = async (id: string) => {
-    await fetch(`/api/admin/messages/${id}`, { method: 'DELETE', headers: headers() });
+    const res = await fetch(`/api/admin/messages/${id}`, { method: 'DELETE', headers: headers() });
+    if (!await requireAuth(res)) return;
     setMessages(prev => prev.filter(m => m.id !== id));
     fetchStats();
   };
@@ -136,25 +149,27 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   const togglePhotoApproval = async (id: string) => {
     const photo = photos.find(p => p.id === id);
     if (!photo) return;
-    await fetch(`/api/admin/photos/${id}`, {
+    const res = await fetch(`/api/admin/photos/${id}`, {
       method: 'PUT', headers: headers(), body: JSON.stringify({ approved: !photo.approved }),
     });
+    if (!await requireAuth(res)) return;
     setPhotos(prev => prev.map(p => p.id === id ? { ...p, approved: !p.approved } : p));
   };
 
   const deletePhoto = async (id: string) => {
-    await fetch(`/api/admin/photos/${id}`, { method: 'DELETE', headers: headers() });
+    const res = await fetch(`/api/admin/photos/${id}`, { method: 'DELETE', headers: headers() });
+    if (!await requireAuth(res)) return;
     setPhotos(prev => prev.filter(p => p.id !== id));
   };
 
   const logout = () => {
-    setToken(null);
     localStorage.removeItem('secretscape_admin_token');
+    setAuthed(false);
     onClose();
   };
 
   // ── Login screen ──
-  if (!token) {
+  if (!authed) {
     return (
       <div className="fixed inset-0 z-[800] bg-black/60 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl max-w-sm w-full p-8 shadow-2xl space-y-6">

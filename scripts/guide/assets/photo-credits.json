@@ -1,0 +1,502 @@
+[
+  {
+    "id": "spot-fondation-zinsou-cotonou",
+    "title": "Fondation Zinsou",
+    "source": "scratch",
+    "url": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80",
+    "rights": "libre",
+    "width": 1400,
+    "height": 1050,
+    "bytes": 139223
+  },
+  {
+    "id": "spot-marche-ganhi-cotonou",
+    "title": "Marché Ganhi",
+    "source": "override",
+    "url": "/images/localized/spot-marche-ganhi-cotonou-46dcc3.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 845,
+    "bytes": 271664
+  },
+  {
+    "id": "spot-amazone",
+    "title": "Place de l’Amazone",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Monument_de_l%27Amazone_au_Benin.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 2000,
+    "bytes": 299137
+  },
+  {
+    "id": "spot-fidjrosse",
+    "title": "Plage de Fidjrossè",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Coucher_du_soleil_sur_la_plage_Fidjross%C3%A8-Cotonou_Benin.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 1707,
+    "bytes": 287635
+  },
+  {
+    "id": "spot-ganvie-1",
+    "title": "Village Lacustre de Ganvié",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg/1280px-Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 994,
+    "bytes": 293578
+  },
+  {
+    "id": "spot-ouidah-porte",
+    "title": "Porte du Non-Retour & Route des Esclaves",
+    "source": "scratch",
+    "url": "/images/localized/spot-ouidah-porte-7b413a.jpg",
+    "rights": "tiers",
+    "width": 1024,
+    "height": 768,
+    "bytes": 107861
+  },
+  {
+    "id": "spot-ouidah-pythons",
+    "title": "Temple des Pythons d'Ouidah",
+    "source": "override",
+    "url": "/images/localized/spot-ouidah-pythons-d329cb.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 1000,
+    "bytes": 456301
+  },
+  {
+    "id": "spot-ouidah-musee-vodun",
+    "title": "Musée International du Vodun",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vodoun_Porto_Novo_05.jpg/1280px-Vodoun_Porto_Novo_05.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 938,
+    "bytes": 332060
+  },
+  {
+    "id": "spot-plage-ouidah",
+    "title": "Plage de Djégbadji (Ouidah)",
+    "source": "remote",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Dj%C3%A8gbadji_%C3%A0_Ouidah.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 1125,
+    "bytes": 203508
+  },
+  {
+    "id": "spot-plage-avlekete",
+    "title": "Plage d'Avlékété",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Cr%C3%A9puscule_avl%C3%A9k%C3%A9t%C3%A9.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 2000,
+    "bytes": 353422
+  },
+  {
+    "id": "spot-grandpopo-bouche",
+    "title": "La Bouche du Roi",
+    "source": "scratch",
+    "url": "/images/localized/spot-grandpopo-bouche-3f6adc.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 853,
+    "bytes": 177745
+  },
+  {
+    "id": "spot-grandpopo-lactoho",
+    "title": "Lac Toho & Rivage d'Ahozon",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pirogue_du_lac_toho_au_B%C3%A9nin.jpg/1280px-Pirogue_du_lac_toho_au_B%C3%A9nin.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 1707,
+    "bytes": 412290
+  },
+  {
+    "id": "spot-plage-grandpopo",
+    "title": "Grande Plage de Grand-Popo",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Plage_de_Grand-Popo_%283%29.jpg",
+    "rights": "cc",
+    "width": 960,
+    "height": 640,
+    "bytes": 141673
+  },
+  {
+    "id": "spot-plage-avlo",
+    "title": "Presqu'île d'Avlo",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Avlo_village.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 853,
+    "bytes": 288451
+  },
+  {
+    "id": "spot-abomey-1",
+    "title": "Palais Royaux d'Abomey",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Abomey-K%C3%B6nigspalast2.jpg/1280px-Abomey-K%C3%B6nigspalast2.jpg",
+    "rights": "cc",
+    "width": 960,
+    "height": 640,
+    "bytes": 185758
+  },
+  {
+    "id": "spot-site-bas-reliefs-abomey",
+    "title": "Ateliers de bas-reliefs d'Abomey",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Bas-relief_d%27une_r%C3%A9sidence_du_quartier_de_Gb%C3%A9con-Hounli%2C_non_loin_du_palais_princier_de_Gu%C3%A9zo%2C_motif_de_jarres_et_d%27%C3%A9cheveau_-_A63603S.jpg/1280px-Bas-relief_d%27une_r%C3%A9sidence_du_quartier_de_Gb%C3%A9con-Hounli%2C_non_loin_du_palais_princier_de_Gu%C3%A9zo%2C_motif_de_jarres_et_d%27%C3%A9cheveau_-_A63603S.jpg",
+    "rights": "cc",
+    "width": 960,
+    "height": 1294,
+    "bytes": 464422
+  },
+  {
+    "id": "spot-bohicon-agongointo",
+    "title": "Village souterrain d'Agongointo",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Village_souterrain_d%27Agongointo.jpg/1280px-Village_souterrain_d%27Agongointo.jpg",
+    "rights": "cc",
+    "width": 960,
+    "height": 1280,
+    "bytes": 481942
+  },
+  {
+    "id": "spot-portonovo-honme",
+    "title": "Musée Honmè, Palais Royal de Porto-Novo",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg/1280px-Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 719,
+    "bytes": 227525
+  },
+  {
+    "id": "spot-portonovo-mosquee",
+    "title": "Grande Mosquée de Porto-Novo",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Grande_Mosquee_de_Porto-Novo.jpg/1280px-Grande_Mosquee_de_Porto-Novo.jpg",
+    "rights": "cc",
+    "width": 960,
+    "height": 686,
+    "bytes": 198602
+  },
+  {
+    "id": "spot-site-poterie-adjarra",
+    "title": "Poterie d'Adjarra",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg/1280px-Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg",
+    "rights": "cc",
+    "width": 960,
+    "height": 640,
+    "bytes": 178574
+  },
+  {
+    "id": "spot-plage-seme",
+    "title": "Plage de Sèmè-Kpodji",
+    "source": "remote",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Couch%C3%A9_de_soleil_%C3%A0_la_plage_de_S%C3%A8m%C3%A8_%28B%C3%A9nin%29.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 1125,
+    "bytes": 128970
+  },
+  {
+    "id": "spot-dassa-arigbo",
+    "title": "Basilique Notre-Dame d'Arigbo",
+    "source": "remote",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Grotte_mariale_d%27Arigbo_.jpg/1280px-Grotte_mariale_d%27Arigbo_.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 720,
+    "bytes": 198322
+  },
+  {
+    "id": "spot-dassa-1",
+    "title": "Collines sacrées de Dassa-Zoumé",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg/1280px-Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 853,
+    "bytes": 267492
+  },
+  {
+    "id": "spot-boukoumbe-tatasomba",
+    "title": "Tata Somba de Boukoumbé",
+    "source": "override",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Koussoukoingou1.jpg/1280px-Koussoukoingou1.jpg",
+    "rights": "cc",
+    "width": 1500,
+    "height": 1004,
+    "bytes": 571311
+  },
+  {
+    "id": "spot-tanougou-cascade",
+    "title": "Cascades de Tanougou",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Jeune_homme_sautant_des_cascades_de_Tanougou_2_%28B%C3%A9nin%29.jpg/1280px-Jeune_homme_sautant_des_cascades_de_Tanougou_2_%28B%C3%A9nin%29.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 1920,
+    "bytes": 839017
+  },
+  {
+    "id": "spot-pendjari-1",
+    "title": "Piste des Grands Espaces de la Pendjari",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Parc_national_de_la_Pendjari.JPG/1280px-Parc_national_de_la_Pendjari.JPG",
+    "rights": "cc",
+    "width": 1280,
+    "height": 853,
+    "bytes": 336682
+  },
+  {
+    "id": "spot-parc-w",
+    "title": "Parc national W (Bénin)",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Mekrou_river_in_W-National_Park_MS_6380.JPG",
+    "rights": "cc",
+    "width": 1280,
+    "height": 853,
+    "bytes": 391052
+  },
+  {
+    "id": "spot-site-gaani",
+    "title": "Arène de la Gaani",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg/1280px-Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 960,
+    "bytes": 412288
+  },
+  {
+    "id": "spot-nikki-palais",
+    "title": "Palais Royal de Nikki & Musée Danri",
+    "source": "remote",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DEGAN_Gabin_%28_gani%27s_party_%29.jpg/1280px-DEGAN_Gabin_%28_gani%27s_party_%29.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 971,
+    "bytes": 351401
+  },
+  {
+    "id": "spot-copargo-taneka",
+    "title": "Banque Culturelle Tanéka",
+    "source": "remote",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ortseingang_Copargo.JPG/1280px-Ortseingang_Copargo.JPG",
+    "rights": "cc",
+    "width": 1280,
+    "height": 960,
+    "bytes": 236492
+  },
+  {
+    "id": "spot-site-palais-kinkinhoue",
+    "title": "Palais royal et musée de Kinkinhoué",
+    "source": "remote",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg/1280px-Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 960,
+    "bytes": 372259
+  },
+  {
+    "id": "spot-site-foret-pobe",
+    "title": "Forêt sacrée de Pobè",
+    "source": "remote",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Arbre_g%C3%A9ant_de_la_for%C3%AAt_sacr%C3%A9e_de_Pob%C3%A9.jpg/1280px-Arbre_g%C3%A9ant_de_la_for%C3%AAt_sacr%C3%A9e_de_Pob%C3%A9.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 1707,
+    "bytes": 743099
+  },
+  {
+    "id": "spot-villa-kaya-cotonou",
+    "title": "Villa Kaya Cotonou",
+    "source": "scratch",
+    "url": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80",
+    "rights": "libre",
+    "width": 1400,
+    "height": 1050,
+    "bytes": 362277
+  },
+  {
+    "id": "spot-jaaba",
+    "title": "Jaaba – Grill & Bar",
+    "source": "local",
+    "url": "/images/localized/spot-jaaba-c7411f.jpg",
+    "rights": "tiers",
+    "width": 1280,
+    "height": 960,
+    "bytes": 203545
+  },
+  {
+    "id": "spot-face-a-la-mer",
+    "title": "Face à la Mer",
+    "source": "scratch",
+    "url": "/images/localized/spot-face-a-la-mer-da3675.jpg",
+    "rights": "tiers",
+    "width": 500,
+    "height": 280,
+    "bytes": 37258
+  },
+  {
+    "id": "spot-cali-cali-togbin",
+    "title": "Cali Cali",
+    "source": "local",
+    "url": "/images/cali-cali.jpg",
+    "rights": "tiers",
+    "width": 765,
+    "height": 1020,
+    "bytes": 188119
+  },
+  {
+    "id": "spot-rousski-dom",
+    "title": "Rousski Dom",
+    "source": "local",
+    "url": "/images/rousski-dom.jpg",
+    "rights": "tiers",
+    "width": 1440,
+    "height": 1800,
+    "bytes": 474314
+  },
+  {
+    "id": "spot-petit-four",
+    "title": "Le Petit Four",
+    "source": "local",
+    "url": "/images/petit-four.jpg",
+    "rights": "tiers",
+    "width": 662,
+    "height": 1020,
+    "bytes": 138487
+  },
+  {
+    "id": "spot-musee-soleil-ouidah",
+    "title": "Le Restaurant Bar du Musée du Soleil",
+    "source": "scratch",
+    "url": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80",
+    "rights": "libre",
+    "width": 1400,
+    "height": 933,
+    "bytes": 405173
+  },
+  {
+    "id": "spot-hakuna-matata-ouidah",
+    "title": "Hakuna Matata Restaurant Grillades",
+    "source": "remote",
+    "url": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80",
+    "rights": "libre",
+    "width": 1200,
+    "height": 1600,
+    "bytes": 392923
+  },
+  {
+    "id": "spot-kole-ouidah",
+    "title": "Kolè",
+    "source": "remote",
+    "url": "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=1200&q=80",
+    "rights": "libre",
+    "width": 1200,
+    "height": 800,
+    "bytes": 79301
+  },
+  {
+    "id": "spot-alozo-terrasse-ouidah",
+    "title": "Alozo Terrasse",
+    "source": "remote",
+    "url": "https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=1200&q=80",
+    "rights": "libre",
+    "width": 1200,
+    "height": 800,
+    "bytes": 189337
+  },
+  {
+    "id": "spot-boca-del-rio",
+    "title": "La Boca del Rio",
+    "source": "scratch",
+    "url": "/images/localized/spot-boca-del-rio-7fde17.jpg",
+    "rights": "tiers",
+    "width": 600,
+    "height": 450,
+    "bytes": 108856
+  },
+  {
+    "id": "spot-chez-jean-ganvie",
+    "title": "Chez Raphaël à Ganvié",
+    "source": "scratch",
+    "url": "/images/chez-raphael-ganvie.jpg",
+    "rights": "projet",
+    "width": 1080,
+    "height": 810,
+    "bytes": 113269
+  },
+  {
+    "id": "spot-maison-rouge",
+    "title": "Maison Rouge Cotonou",
+    "source": "local",
+    "url": "/images/maison-rouge.webp",
+    "rights": "tiers",
+    "width": 765,
+    "height": 1020,
+    "bytes": 93217
+  },
+  {
+    "id": "spot-hotel-sofitel",
+    "title": "Sofitel Cotonou Marina Hôtel & Spa",
+    "source": "scratch",
+    "url": "/images/sofitel-marina.jpg",
+    "rights": "projet",
+    "width": 1280,
+    "height": 871,
+    "bytes": 195599
+  },
+  {
+    "id": "spot-hotel-au-coeur-ouidah",
+    "title": "Au cœur de Ouidah",
+    "source": "scratch",
+    "url": "/images/au-coeur-ouidah.jpg",
+    "rights": "projet",
+    "width": 1024,
+    "height": 768,
+    "bytes": 108412
+  },
+  {
+    "id": "spot-hotel-bambou-beach",
+    "title": "Guesthouse Bambou Beach",
+    "source": "scratch",
+    "url": "/images/bambou-beach.jpg",
+    "rights": "projet",
+    "width": 1024,
+    "height": 461,
+    "bytes": 77653
+  },
+  {
+    "id": "spot-hotel-ouadada",
+    "title": "Résidences Ouadada",
+    "source": "local",
+    "url": "/images/ouadada.jpg",
+    "rights": "tiers",
+    "width": 1024,
+    "height": 768,
+    "bytes": 179489
+  },
+  {
+    "id": "spot-hotel-hotel-baobab-de-tanguieta",
+    "title": "Hôtel Baobab de Tanguiéta",
+    "source": "scratch",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Motel_Clauphi.jpg/1280px-Motel_Clauphi.jpg",
+    "rights": "cc",
+    "width": 1280,
+    "height": 853,
+    "bytes": 331950
+  }
+]

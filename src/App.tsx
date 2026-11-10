@@ -16,13 +16,14 @@ import { GalleryView } from './components/GalleryView';
 import { VisitorPhotosView } from './components/VisitorPhotosView';
 import { AddVisitorPhotoModal } from './components/AddVisitorPhotoModal';
 import { CalendarItineraryView } from './components/CalendarItineraryView';
+import { TravelPlannerView } from './components/TravelPlannerView';
 import { SpotDetailModal } from './components/SpotDetailModal';
 import { AddSpotModal } from './components/AddSpotModal';
 import { ServicesView } from './components/ServicesView';
 import { ContactView } from './components/ContactView';
 import { AdminPanel } from './components/AdminPanel';
 import { NavigationModal } from './components/NavigationModal';
-import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2 } from 'lucide-react';
+import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2, ArrowLeft } from 'lucide-react';
 
 const APP_VERSION = '2.1';
 
@@ -40,6 +41,7 @@ export default function App() {
   migrateStorage();
   // Navigation tab state
   const [activeTab, setActiveTab] = useState<'home' | 'map' | 'gallery' | 'souvenirs' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
+  const [calendarView, setCalendarView] = useState<'planner' | 'itinerary'>('planner');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
 
   // Spots dataset
@@ -129,10 +131,8 @@ export default function App() {
   const [souvenirsRefreshKey, setSouvenirsRefreshKey] = useState<number>(0);
 
   const openAddVisitorPhoto = useCallback((spotId?: string | null) => {
-    console.log('[openAddVisitorPhoto] called with', spotId);
     setVisitorPhotoInitialSpot(spotId ?? null);
     setVisitorPhotoModalOpen(true);
-    console.log('[openAddVisitorPhoto] modal state set to open');
   }, []);
 
   // Save to LocalStorage
@@ -363,6 +363,7 @@ export default function App() {
             setActiveTab('admin');
           } else {
             if (tab === 'souvenirs') setVisitorPhotoInitialSpot(null);
+            if (tab === 'calendar') setCalendarView('planner');
             setActiveTab(tab);
           }
         }}
@@ -384,6 +385,9 @@ export default function App() {
               trackAction('homepage_click', `Clic homepage: ${tab}`);
               if (tab === 'map') {
                 setViewMode('map');
+              }
+              if (tab === 'calendar') {
+                setCalendarView('planner');
               }
               setActiveTab(tab as any);
             }}
@@ -425,11 +429,11 @@ export default function App() {
               />
             ) : (
               /* Grid / Catalog View */
-              <div className="relative flex-1 w-full">
+              <div className="relative flex-1 w-full min-h-[70vh]">
                 <div className="absolute inset-0">
-                  <img src="https://www.africanparks.org/sites/default/files/2017-07/pendjari_bg.jpg" alt="Forêt et savane du Bénin" className="w-full h-full object-cover" />
+                  <img src="/images/localized/fond-catalogue-c4f213.jpg" alt="Fond catalogue" className="w-full h-full object-cover" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0b1b2b]/80 via-[#0b1b2b]/70 to-[#0b1b2b]/85" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0b1b2b]/15 via-transparent to-[#0b1b2b]/25" />
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
                   {filteredSpots.length === 0 ? (
                     <div className="text-center py-20 bg-white/95 backdrop-blur-sm rounded-3xl border border-white/20 p-8 space-y-4 shadow-2xl">
@@ -472,15 +476,41 @@ export default function App() {
           />
         )}
 
-        {/* Calendar View */}
+        {/* Planner / itinerary */}
         {activeTab === 'calendar' && (
-          <CalendarItineraryView
-            calendar={calendar}
-            setCalendar={setCalendar}
-            onOpenSpotModal={(spot) => setSelectedSpotModal(spot)}
-            onNavigateToMap={() => setActiveTab('map')}
+          <>
+            {/* The planner stays mounted so a visit to the carnet keeps the form intact. */}
+            <div className={calendarView === 'planner' ? 'w-full' : 'hidden'}>
+              <TravelPlannerView
+                itineraryCount={calendarItemsCount}
+                onOpenItinerary={() => {
+                  trackAction('open_itinerary', 'Ouverture du carnet d’escapade');
+                  setCalendarView('itinerary');
+                }}
+              />
+            </div>
 
-          />
+            {calendarView === 'itinerary' && (
+              <div className="w-full bg-[#F6F4EF] pb-6">
+                <div className="mx-auto w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+                  <button
+                    type="button"
+                    onClick={() => setCalendarView('planner')}
+                    className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-[#E7E2D8] bg-white px-4 py-2 text-[13px] font-semibold text-[#0b1b2b] shadow-sm transition-colors hover:border-[#D97706] hover:text-[#B45309]"
+                  >
+                    <ArrowLeft className="h-4 w-4 text-[#D97706]" />
+                    Retour au planificateur
+                  </button>
+                </div>
+                <CalendarItineraryView
+                  calendar={calendar}
+                  setCalendar={setCalendar}
+                  onOpenSpotModal={(spot) => setSelectedSpotModal(spot)}
+                  onNavigateToMap={() => setActiveTab('map')}
+                />
+              </div>
+            )}
+          </>
         )}
 
         {/* Favorites View */}

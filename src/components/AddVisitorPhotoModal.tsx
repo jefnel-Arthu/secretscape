@@ -19,7 +19,6 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
   initialSpotId,
   onSubmitted,
 }) => {
-  console.log('[AddVisitorPhotoModal] render, isOpen:', isOpen, 'initialSpotId:', initialSpotId);
   const sortedSpots = useMemo(
     () => [...spots].sort((a, b) => a.title.localeCompare(b.title)),
     [spots]
@@ -56,11 +55,7 @@ export const AddVisitorPhotoModal: React.FC<AddVisitorPhotoModalProps> = ({
     setError('');
   }, [isOpen, initialSpotId, sortedSpots]);
 
-  if (!isOpen) {
-    console.log('[AddVisitorPhotoModal] not open, returning null');
-    return null;
-  }
-  console.log('[AddVisitorPhotoModal] rendering modal, isOpen:', isOpen);
+  if (!isOpen) return null;
 
   const handleFile = async (file: File | undefined) => {
     if (!file) return;

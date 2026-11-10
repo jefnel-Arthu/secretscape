@@ -109,7 +109,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
 
           <button
             type="button"
-            onClick={(e) => { e.preventDefault(); e.stopPropagation(); console.log('[VisitorPhotosView] add photo clicked, filterSpotId:', filterSpotId); setLightboxIndex(null); onAddPhoto?.(filterSpotId); }}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightboxIndex(null); onAddPhoto?.(filterSpotId); }}
             className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-amber-500 hover:text-stone-950 transition-all"
           >
             <ImagePlus className="w-3.5 h-3.5" />
@@ -131,7 +131,7 @@ export const VisitorPhotosView: React.FC<VisitorPhotosViewProps> = ({
           </p>
           <button
             type="button"
-            onClick={(e) => { e.preventDefault(); e.stopPropagation(); console.log('[VisitorPhotosView] empty add photo clicked, filterSpotId:', filterSpotId); setLightboxIndex(null); onAddPhoto?.(filterSpotId); }}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightboxIndex(null); onAddPhoto?.(filterSpotId); }}
             className="mt-5 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-bold py-2.5 px-5 rounded-full transition-colors"
           >
             <ImagePlus className="w-4 h-4" />

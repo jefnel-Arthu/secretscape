@@ -50,12 +50,18 @@ interface CalendarItineraryViewProps {
   onNavigateToMap: () => void;
 }
 
-const TIME_SLOT_LABELS: Record<TimeSlot, { label: string; time: string; bg: string; border: string }> = {
-  morning: { label: 'Matinée', time: '09h00', bg: 'bg-amber-50/70', border: 'border-amber-200' },
-  noon: { label: 'Midi & Déjeuner', time: '12h30', bg: 'bg-orange-50/70', border: 'border-orange-200' },
-  afternoon: { label: 'Après-midi', time: '15h00', bg: 'bg-emerald-50/70', border: 'border-emerald-200' },
-  sunset: { label: 'Coucher de Soleil (Golden Hour)', time: '18h30', bg: 'bg-rose-50/70', border: 'border-rose-200' },
-  evening: { label: 'Soirée & Nuit', time: '21h00', bg: 'bg-indigo-50/70', border: 'border-indigo-200' },
+const editFieldClass =
+  'w-full rounded-lg border-[1.5px] border-[#E7E2D8] bg-white px-2 py-1.5 text-xs text-[#0b1b2b] transition-colors focus:border-[#D97706] focus:outline-none';
+
+const editLabelClass =
+  'mb-1 block text-[9.5px] font-semibold uppercase tracking-[0.14em] text-[#8A8578]';
+
+const TIME_SLOT_LABELS: Record<TimeSlot, { label: string; time: string; bg: string; border: string; text: string }> = {
+  morning: { label: 'Matinée', time: '09h00', bg: 'bg-[#FDF3E3]', border: 'border-[#F0D9AE]', text: 'text-[#B45309]' },
+  noon: { label: 'Midi & Déjeuner', time: '12h30', bg: 'bg-[#FBF0DC]', border: 'border-[#EDD9B0]', text: 'text-[#9A6212]' },
+  afternoon: { label: 'Après-midi', time: '15h00', bg: 'bg-[#EDF3EC]', border: 'border-[#D5E2D3]', text: 'text-[#3F6B4A]' },
+  sunset: { label: 'Coucher de Soleil (Golden Hour)', time: '18h30', bg: 'bg-[#FBEEEA]', border: 'border-[#EFD8D0]', text: 'text-[#A2543F]' },
+  evening: { label: 'Soirée & Nuit', time: '21h00', bg: 'bg-[#ECEEF5]', border: 'border-[#D6DBE8]', text: 'text-[#4A5578]' },
 };
 
 export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
@@ -221,6 +227,25 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
   // Total count of items across all days
   const totalSpotsScheduled = calendar.days.reduce((acc, d) => acc + d.items.length, 0);
 
+  const totalDistanceKm = calendar.days.reduce(
+    (acc, day) =>
+      acc +
+      day.items.reduce((sum, item, idx) => {
+        const next = day.items[idx + 1];
+        if (!next) return sum;
+        return (
+          sum +
+          calculateDistanceKm(
+            item.spot.coordinates.lat,
+            item.spot.coordinates.lng,
+            next.spot.coordinates.lat,
+            next.spot.coordinates.lng
+          )
+        );
+      }, 0),
+    0
+  );
+
   // All spots grouped by category for the "endroit" selector
   const groupedSpots = INITIAL_HIDDEN_SPOTS.reduce<Record<string, HiddenSpot[]>>((acc, s) => {
     (acc[s.category] = acc[s.category] || []).push(s);
@@ -231,91 +256,102 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       
       {/* Calendar Header Card */}
-      <div className="bg-gradient-to-r from-stone-900 via-stone-850 to-stone-900 text-stone-100 rounded-3xl p-6 sm:p-8 shadow-xl border border-stone-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+      <div className="relative overflow-hidden rounded-[28px] border-t-[3px] border-[#D97706] bg-[#0b1b2b] text-white shadow-[0_18px_44px_rgba(11,27,43,0.18)]">
+        <div className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-[#D97706]/15 blur-3xl" />
 
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-xs font-bold text-amber-400 tracking-wider uppercase">
-              <CalendarIcon className="w-4 h-4" />
-              <span>Calendrier & Carnet d'Escapade</span>
-              <span className="text-stone-500">•</span>
-              <span className="text-stone-300">{calendar.destinationCity}</span>
+        <div className="relative z-10 p-6 sm:p-8">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#F59E0B]">
+                <CalendarIcon className="w-3.5 h-3.5" />
+                <span>Calendrier & Carnet d'Escapade</span>
+                <span className="text-white/25">•</span>
+                <span className="text-[#9FB0C0]">{calendar.destinationCity}</span>
+              </div>
+
+              {/* Editable Title */}
+              {isEditingTitle ? (
+                <div className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={titleInput}
+                    onChange={(e) => setTitleInput(e.target.value)}
+                    className="font-editorial rounded-xl border border-[#D97706]/50 bg-white/10 px-3 py-1.5 text-2xl font-medium text-[#F59E0B] focus:border-[#D97706] focus:outline-none"
+                  />
+                  <button
+                    onClick={handleSaveTitle}
+                    className="rounded-xl bg-[#D97706] p-2 text-white transition-colors hover:bg-[#B45309]"
+                    title="Enregistrer le titre"
+                  >
+                    <Check className="w-4 h-4" />
+                  </button>
+                </div>
+              ) : (
+                <div className="group flex cursor-pointer items-center gap-2" onClick={() => setIsEditingTitle(true)}>
+                  <h1 className="font-editorial text-[26px] font-medium leading-tight tracking-tight text-white sm:text-[32px]">
+                    {calendar.title}
+                  </h1>
+                  <Edit2 className="w-4 h-4 shrink-0 text-[#9FB0C0] opacity-0 transition-all group-hover:text-[#F59E0B] group-hover:opacity-100" />
+                </div>
+              )}
+
+              <p className="max-w-2xl text-xs leading-relaxed text-[#9FB0C0] sm:text-[13px]">
+                Organisez vos étapes par créneau horaire, optimisez vos déplacements secrets et exportez votre planning sur votre agenda personnel.
+              </p>
             </div>
 
-            {/* Editable Title */}
-            {isEditingTitle ? (
-              <div className="flex items-center gap-2">
-                <input
-                  type="text"
-                  value={titleInput}
-                  onChange={(e) => setTitleInput(e.target.value)}
-                  className="bg-stone-800 text-amber-300 font-display text-2xl font-bold px-3 py-1 rounded-xl border border-amber-500/50 focus:outline-none"
-                />
-                <button
-                  onClick={handleSaveTitle}
-                  className="bg-amber-500 text-stone-950 p-2 rounded-xl text-xs font-bold"
-                >
-                  <Check className="w-4 h-4" />
-                </button>
-              </div>
-            ) : (
-              <div className="flex items-center gap-2 group cursor-pointer" onClick={() => setIsEditingTitle(true)}>
-                <h1 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                  {calendar.title}
-                </h1>
-                <Edit2 className="w-4 h-4 text-stone-400 group-hover:text-amber-400 transition-colors opacity-0 group-hover:opacity-100" />
-              </div>
+            {/* Export & Action Buttons */}
+            <div className="flex shrink-0 flex-wrap items-center gap-2">
+              <button
+                onClick={() => setShowTicket(true)}
+                disabled={totalSpotsScheduled === 0}
+                className="flex items-center gap-2 rounded-full bg-[#D97706] px-4 py-2.5 text-xs font-bold text-white shadow-[0_8px_20px_rgba(217,119,6,0.3)] transition-all hover:bg-[#B45309] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+                title="Télécharger mon billet de voyage"
+              >
+                <Ticket className="w-4 h-4" />
+                <span>Mon billet</span>
+              </button>
+
+              <button
+                onClick={handlePrint}
+                className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-2.5 text-xs font-semibold text-[#E8E4DA] transition-colors hover:border-white/30 hover:bg-white/10"
+                title="Imprimer ou enregistrer en PDF"
+              >
+                <Printer className="w-4 h-4" />
+                <span className="hidden sm:inline">Imprimer</span>
+              </button>
+
+              <button
+                onClick={handleShare}
+                className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-2.5 text-xs font-semibold text-[#E8E4DA] transition-colors hover:border-white/30 hover:bg-white/10"
+                title="Copier le lien"
+              >
+                <Share2 className="w-4 h-4" />
+                <span>{copiedLink ? 'Copié !' : 'Partager'}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Stats Strip */}
+          <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-4">
+            <div>
+              <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-[#9FB0C0]">Lieux au programme</span>
+              <span className="font-editorial text-[19px] font-medium text-[#F59E0B]">{totalSpotsScheduled} pépites</span>
+            </div>
+            <div className="hidden h-7 w-px bg-white/10 sm:block" />
+            <div>
+              <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-[#9FB0C0]">Nombre de jours</span>
+              <span className="font-editorial text-[19px] font-medium text-white">{calendar.days.length} jour(s)</span>
+            </div>
+            {totalSpotsScheduled > 1 && (
+              <>
+                <div className="hidden h-7 w-px bg-white/10 sm:block" />
+                <div>
+                  <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-[#9FB0C0]">Distance estimée</span>
+                  <span className="font-editorial text-[19px] font-medium text-white">~{Math.round(totalDistanceKm)} km</span>
+                </div>
+              </>
             )}
-
-            <p className="text-stone-400 text-xs sm:text-sm max-w-2xl leading-relaxed">
-              Organisez vos étapes par créneau horaire, optimisez vos déplacements secrets et exportez votre planning sur votre agenda personnel.
-            </p>
-          </div>
-
-          {/* Export & Action Buttons */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 shrink-0">
-            <button
-              onClick={() => setShowTicket(true)}
-              disabled={totalSpotsScheduled === 0}
-              className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 disabled:opacity-40 text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center gap-2 shadow-md transition-all active:scale-95 cursor-pointer"
-              title="Télécharger mon billet de voyage"
-            >
-              <Ticket className="w-4 h-4" />
-              <span>Mon billet</span>
-            </button>
-
-            <button
-              onClick={handlePrint}
-              className="bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-semibold py-2.5 px-3 rounded-xl border border-stone-700/80 flex items-center gap-1.5 transition-all"
-              title="Imprimer ou enregistrer en PDF"
-            >
-              <Printer className="w-4 h-4" />
-              <span className="hidden sm:inline">Imprimer</span>
-            </button>
-
-            <button
-              onClick={handleShare}
-              className="bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-semibold py-2.5 px-3 rounded-xl border border-stone-700/80 flex items-center gap-1.5 transition-all"
-              title="Copier le lien"
-            >
-              <Share2 className="w-4 h-4" />
-              <span>{copiedLink ? 'Copié !' : 'Partager'}</span>
-            </button>
-
-          </div>
-        </div>
-
-        {/* Stats Strip */}
-        <div className="mt-6 pt-4 border-t border-stone-800/80 flex items-center gap-6 text-xs text-stone-400">
-          <div>
-            <span className="text-stone-500 block text-[10px]">Lieux au programme</span>
-            <span className="text-amber-400 font-bold text-base">{totalSpotsScheduled} pépites</span>
-          </div>
-          <div className="h-6 w-px bg-stone-800" />
-          <div>
-            <span className="text-stone-500 block text-[10px]">Nombre de jours</span>
-            <span className="text-stone-200 font-bold text-base">{calendar.days.length} jour(s)</span>
           </div>
         </div>
       </div>
@@ -329,16 +365,24 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
               <button
                 key={day.dayNumber}
                 onClick={() => setSelectedDayIndex(idx)}
-                className={`px-4 py-2.5 rounded-2xl text-xs font-bold flex items-center gap-2 whitespace-nowrap transition-all ${
+                aria-current={isActive ? 'true' : undefined}
+                className={`flex items-center gap-2 whitespace-nowrap rounded-xl border-[1.5px] px-3 py-2 text-xs font-semibold transition-all ${
                   isActive
-                    ? 'bg-amber-500 text-stone-950 shadow-md scale-105'
-                    : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-100'
+                    ? 'border-[#0b1b2b] bg-[#0b1b2b] text-white shadow-[0_8px_20px_rgba(11,27,43,0.18)]'
+                    : 'border-[#E7E2D8] bg-white text-[#8A8578] hover:border-[#D9C7A6] hover:text-[#0b1b2b]'
                 }`}
               >
+                <span
+                  className={`flex h-[22px] w-[22px] items-center justify-center rounded-full text-[10.5px] font-bold ${
+                    isActive ? 'bg-[#D97706] text-white' : 'bg-[#F6F4EF] text-[#8A8578]'
+                  }`}
+                >
+                  {day.dayNumber}
+                </span>
                 <span>Jour {day.dayNumber}</span>
                 {day.items.length > 0 && (
-                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
-                    isActive ? 'bg-amber-950 text-amber-200' : 'bg-stone-100 text-stone-600'
+                  <span className={`rounded-full px-1.5 py-0.5 text-[9px] font-bold ${
+                    isActive ? 'bg-[#FDF3E3] text-[#B45309]' : 'bg-[#F6F4EF] text-[#8A8578]'
                   }`}>
                     {day.items.length}
                   </span>
@@ -349,7 +393,7 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
 
           <button
             onClick={handleAddDay}
-            className="px-3 py-2.5 rounded-2xl border border-dashed border-stone-300 text-stone-500 hover:text-stone-800 hover:border-stone-400 text-xs font-semibold flex items-center gap-1 transition-colors whitespace-nowrap"
+            className="flex items-center gap-1 whitespace-nowrap rounded-xl border-[1.5px] border-dashed border-[#D9C7A6] px-3 py-2 text-xs font-semibold text-[#8A8578] transition-colors hover:border-[#D97706] hover:text-[#B45309]"
           >
             <Plus className="w-4 h-4" />
             <span>Ajouter un jour</span>
@@ -359,7 +403,7 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
         {calendar.days.length > 1 && (
           <button
             onClick={() => handleRemoveDay(selectedDayIndex)}
-            className="text-stone-400 hover:text-rose-600 text-xs font-medium flex items-center gap-1 px-2 py-1 transition-colors shrink-0"
+            className="flex shrink-0 items-center gap-1 px-2 py-1 text-xs font-medium text-[#B4AEA1] transition-colors hover:text-rose-600"
           >
             <Trash2 className="w-3.5 h-3.5" />
             <span>Supprimer le jour {currentDay.dayNumber}</span>
@@ -368,31 +412,31 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
       </div>
 
       {/* Main Day Timeline Schedule */}
-      <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-8 space-y-6">
-        <div className="flex items-center justify-between border-b border-stone-100 pb-4">
+      <div className="space-y-6 rounded-[28px] border border-[#E7E2D8] bg-white p-5 shadow-[0_18px_44px_rgba(11,27,43,0.06)] sm:p-7">
+        <div className="flex flex-col gap-4 border-b border-[#E7E2D8] pb-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <h2 className="font-display font-bold text-xl text-stone-900">
+            <h2 className="font-editorial text-[22px] font-medium leading-tight text-[#0b1b2b] sm:text-[26px]">
               {currentDay.title || `Jour ${currentDay.dayNumber}`}
             </h2>
-            <p className="text-stone-500 text-xs mt-0.5">
+            <p className="mt-1 text-xs text-[#8A8578]">
               Glissez et planifiez vos visites aux meilleurs moments d'affluence.
             </p>
-            <div className="flex items-center gap-2 mt-2.5">
-              <CalendarIcon className="w-3.5 h-3.5 text-stone-400" />
+            <div className="mt-3 flex items-center gap-2">
+              <CalendarIcon className="w-3.5 h-3.5 text-[#D97706]" />
               <input
                 type="date"
                 value={currentDay.dateString || ''}
                 onChange={(e) => handleDayDateChange(e.target.value)}
-                className="text-xs text-stone-700 bg-stone-50 border border-stone-200 rounded-lg px-2 py-1 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-200"
+                className="rounded-lg border-[1.5px] border-[#E7E2D8] bg-[#FAF8F3] px-2 py-1 text-xs text-[#0b1b2b] focus:border-[#D97706] focus:outline-none focus:ring-2 focus:ring-[#D97706]/15"
                 title="Modifier la date de cette journée"
               />
-              <span className="text-stone-400 text-[11px]">Date de la journée</span>
+              <span className="text-[11px] text-[#B4AEA1]">Date de la journée</span>
             </div>
           </div>
 
           <button
             onClick={onNavigateToMap}
-            className="text-amber-700 hover:text-amber-800 font-semibold text-xs flex items-center gap-1 bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200/60 transition-colors"
+            className="flex shrink-0 items-center gap-1.5 self-start rounded-full border-[1.5px] border-[#F0D9AE] bg-[#FDF3E3] px-4 py-2 text-xs font-semibold text-[#B45309] transition-colors hover:border-[#D97706] hover:bg-[#FAE8CC]"
           >
             <Compass className="w-4 h-4" />
             <span>Explorer la carte pour ajouter</span>
@@ -401,22 +445,22 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
 
         {/* Empty State */}
         {currentDay.items.length === 0 ? (
-          <div className="text-center py-16 px-4 bg-stone-50/60 rounded-2xl border border-dashed border-stone-200 space-y-4">
-            <div className="w-16 h-16 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mx-auto shadow-inner">
+          <div className="space-y-4 rounded-2xl border-[1.5px] border-dashed border-[#D9C7A6] bg-[#FAF8F3] px-4 py-16 text-center">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#FDF3E3] text-[#D97706] shadow-[0_0_0_5px_#ffffff]">
               <CalendarIcon className="w-8 h-8 stroke-[1.8]" />
             </div>
-            <div className="max-w-md mx-auto space-y-1">
-              <h3 className="font-display text-lg font-bold text-stone-800">
+            <div className="mx-auto max-w-md space-y-1">
+              <h3 className="font-editorial text-xl font-medium text-[#0b1b2b]">
                 Votre journée est libre !
               </h3>
-              <p className="text-stone-500 text-xs leading-relaxed">
+              <p className="text-xs leading-relaxed text-[#8A8578]">
                 Naviguez sur la carte des lieux secrets ou laissez l'IA créer automatiquement un itinéraire équilibré pour ce jour.
               </p>
             </div>
             <div className="flex justify-center gap-3 pt-2">
               <button
                 onClick={onNavigateToMap}
-                className="bg-amber-500 hover:bg-amber-600 text-stone-950 text-xs font-bold py-2.5 px-4 rounded-xl flex items-center gap-1.5 shadow-sm"
+                className="flex items-center gap-1.5 rounded-full bg-[#D97706] px-5 py-2.5 text-xs font-bold text-white shadow-[0_8px_20px_rgba(217,119,6,0.25)] transition-colors hover:bg-[#B45309]"
               >
                 <Compass className="w-4 h-4" />
                 <span>Découvrir la carte</span>
@@ -424,7 +468,7 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
             </div>
           </div>
         ) : (
-          <div className="space-y-6 relative">
+          <div className="escapade-timeline relative">
             {currentDay.items.map((item, itemIdx) => {
               const slotInfo = TIME_SLOT_LABELS[item.timeSlot] || TIME_SLOT_LABELS.morning;
               const nextItem = currentDay.items[itemIdx + 1];
@@ -447,265 +491,267 @@ export const CalendarItineraryView: React.FC<CalendarItineraryViewProps> = ({
 
               return (
                 <React.Fragment key={item.id}>
-                  <div
-                    draggable
-                    onDragStart={(e) => {
-                      setDragIndex(itemIdx);
-                      setDragOverIndex(null);
-                      e.dataTransfer.effectAllowed = 'move';
-                    }}
-                    onDragOver={(e) => {
-                      e.preventDefault();
-                      e.dataTransfer.dropEffect = 'move';
-                      setDragOverIndex(itemIdx);
-                    }}
-                    onDrop={(e) => {
-                      e.preventDefault();
-                      handleDropItem(itemIdx);
-                    }}
-                    onDragEnd={() => {
-                      setDragIndex(null);
-                      setDragOverIndex(null);
-                    }}
-                    className={`group relative rounded-2xl p-5 border shadow-sm transition-all space-y-4 cursor-grab active:cursor-grabbing ${
-                      dragIndex === itemIdx
-                        ? 'bg-amber-50 border-amber-300 opacity-60'
-                        : dragOverIndex === itemIdx && dragIndex !== null
-                          ? 'bg-white border-amber-400 ring-2 ring-amber-200'
-                          : 'bg-stone-50/80 hover:bg-white border-stone-200 hover:shadow-md'
-                    }`}
-                  >
-                    {/* Item Top Bar */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200/60 pb-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-stone-300 hover:text-amber-600 transition-colors" title="Glisser pour réordonner">
-                          <GripVertical className="w-4 h-4" />
-                        </span>
-                        <span className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border ${slotInfo.bg} ${slotInfo.border} text-stone-800`}>
-                          {slotInfo.label} • {item.arrivalTime || item.timeString || slotInfo.time}
-                          {item.departureTime ? ` → ${item.departureTime}` : ''}
-                        </span>
-                        <span className="text-stone-400 text-xs">•</span>
-                        <span className="text-stone-500 text-xs font-medium flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-amber-600" />
-                          {item.spot.city}
-                        </span>
-                        {item.transportMode && (
-                          <span
-                            className="text-[11px] font-semibold text-cyan-800 bg-cyan-50 border border-cyan-200 rounded-lg px-2 py-0.5 flex items-center gap-1"
-                            title={`Déplacement: ${itemTransport.label} — ${itemTransport.costHint}`}
-                          >
-                            <TransportIcon className="w-3 h-3 text-cyan-600" />
-                            {itemTransport.label}
-                          </span>
-                        )}
-                      </div>
-
-                      <div className="flex items-center gap-1">
-                        {editingItemId !== item.id && (
-                          <button
-                            onClick={() => handleStartEdit(item)}
-                            className="text-stone-400 hover:text-amber-600 p-1 rounded-lg transition-colors"
-                            title="Modifier l'étape (lieu, heure, arrivée, départ)"
-                          >
-                            <Edit2 className="w-4 h-4" />
-                          </button>
-                        )}
-                        <button
-                          onClick={() => handleRemoveItem(selectedDayIndex, item.id)}
-                          className="text-stone-400 hover:text-rose-600 p-1 rounded-lg transition-colors"
-                          title="Retirer du calendrier"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Edit Panel */}
-                    {editingItemId === item.id && draft && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 bg-white border border-amber-300 rounded-xl p-3 shadow-inner">
-                        <label className="sm:col-span-2 lg:col-span-1 block">
-                          <span className="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">Endroit</span>
-                          <select
-                            value={draft.spotId}
-                            onChange={(e) => setDraft({ ...draft, spotId: e.target.value })}
-                            className="w-full text-xs text-stone-800 bg-white border border-stone-300 rounded-lg px-2 py-1.5 focus:outline-none focus:border-amber-400"
-                          >
-                            {Object.entries(groupedSpots).map(([cat, spots]) => (
-                              <optgroup key={cat} label={CATEGORY_LABELS[cat]?.name || cat}>
-                                {spots.map((s) => (
-                                  <option key={s.id} value={s.id}>
-                                    {s.title} — {s.city}
-                                  </option>
-                                ))}
-                              </optgroup>
-                            ))}
-                          </select>
-                        </label>
-
-                        <label className="block">
-                          <span className="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">Créneau</span>
-                          <select
-                            value={draft.timeSlot}
-                            onChange={(e) => setDraft({ ...draft, timeSlot: e.target.value as TimeSlot })}
-                            className="w-full text-xs text-stone-800 bg-white border border-stone-300 rounded-lg px-2 py-1.5 focus:outline-none focus:border-amber-400"
-                          >
-                            {(Object.keys(TIME_SLOT_LABELS) as TimeSlot[]).map((slot) => (
-                              <option key={slot} value={slot}>
-                                {TIME_SLOT_LABELS[slot].label}
-                              </option>
-                            ))}
-                          </select>
-                        </label>
-
-                        <label className="block">
-                          <span className="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">Heure</span>
-                          <input
-                            type="time"
-                            value={draft.timeString}
-                            onChange={(e) => setDraft({ ...draft, timeString: e.target.value })}
-                            className="w-full text-xs text-stone-800 bg-white border border-stone-300 rounded-lg px-2 py-1.5 focus:outline-none focus:border-amber-400"
-                          />
-                        </label>
-
-                        <label className="block">
-                          <span className="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">Arrivée (début)</span>
-                          <input
-                            type="time"
-                            value={draft.arrivalTime}
-                            onChange={(e) => setDraft({ ...draft, arrivalTime: e.target.value })}
-                            className="w-full text-xs text-stone-800 bg-white border border-stone-300 rounded-lg px-2 py-1.5 focus:outline-none focus:border-amber-400"
-                          />
-                        </label>
-
-                        <label className="block">
-                          <span className="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">Départ (fin)</span>
-                          <input
-                            type="time"
-                            value={draft.departureTime}
-                            onChange={(e) => setDraft({ ...draft, departureTime: e.target.value })}
-                            className="w-full text-xs text-stone-800 bg-white border border-stone-300 rounded-lg px-2 py-1.5 focus:outline-none focus:border-amber-400"
-                          />
-                        </label>
-
-                        <label className="block sm:col-span-2 lg:col-span-1">
-                          <span className="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">
-                            Déplacement (pour y aller)
-                          </span>
-                          <select
-                            value={draft.transportMode}
-                            onChange={(e) => setDraft({ ...draft, transportMode: e.target.value as TransportMode | '' })}
-                            className="w-full text-xs text-stone-800 bg-white border border-stone-300 rounded-lg px-2 py-1.5 focus:outline-none focus:border-amber-400"
-                          >
-                            <option value="">À définir (défaut: à pied)</option>
-                            {TRANSPORT_OPTIONS.map((t) => (
-                              <option key={t.id} value={t.id}>
-                                {t.label} — {t.costHint}
-                              </option>
-                            ))}
-                          </select>
-                        </label>
-
-                        <div className="sm:col-span-2 lg:col-span-5 flex items-center justify-end gap-2 pt-1">
-                          <button
-                            onClick={handleCancelEdit}
-                            className="text-xs font-semibold text-stone-500 hover:text-stone-800 px-3 py-1.5 rounded-lg transition-colors"
-                          >
-                            Annuler
-                          </button>
-                          <button
-                            onClick={() => handleSaveItem(selectedDayIndex, item.id)}
-                            className="bg-amber-500 hover:bg-amber-600 text-stone-950 text-xs font-bold px-4 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm transition-colors"
-                          >
-                            <Check className="w-3.5 h-3.5" />
-                            Enregistrer
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Main Item Content Grid */}
-                    <div 
-                      className="grid grid-cols-1 sm:grid-cols-4 gap-4 cursor-pointer"
-                      onClick={() => onOpenSpotModal(item.spot)}
+                  <div className="relative pb-3 pl-10">
+                    <span className="escapade-node" aria-hidden="true" />
+                    <div
+                      draggable
+                      onDragStart={(e) => {
+                        setDragIndex(itemIdx);
+                        setDragOverIndex(null);
+                        e.dataTransfer.effectAllowed = 'move';
+                      }}
+                      onDragOver={(e) => {
+                        e.preventDefault();
+                        e.dataTransfer.dropEffect = 'move';
+                        setDragOverIndex(itemIdx);
+                      }}
+                      onDrop={(e) => {
+                        e.preventDefault();
+                        handleDropItem(itemIdx);
+                      }}
+                      onDragEnd={() => {
+                        setDragIndex(null);
+                        setDragOverIndex(null);
+                      }}
+                      className={`group relative cursor-grab space-y-3.5 rounded-2xl border bg-white p-3.5 transition-all active:cursor-grabbing sm:p-4 ${
+                        dragIndex === itemIdx
+                          ? 'border-[#D97706] bg-[#FDF3E3] opacity-60'
+                          : dragOverIndex === itemIdx && dragIndex !== null
+                            ? 'border-[#D97706] ring-2 ring-[#FDF3E3]'
+                            : 'border-[#E7E2D8] hover:border-[#D9C7A6] hover:shadow-[0_10px_28px_rgba(11,27,43,0.08)]'
+                      }`}
                     >
-                      <div className="sm:col-span-1 h-32 rounded-xl overflow-hidden bg-stone-200 relative">
-                        <img
-                          src={item.spot.imageUrl}
-                          alt={item.spot.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <span className="absolute bottom-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-md bg-stone-900/80 text-amber-300 backdrop-blur-sm">
-                          ★ {item.spot.rating}
-                        </span>
-                      </div>
-
-                      <div className="sm:col-span-3 space-y-2 flex flex-col justify-between">
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md">
-                              {CATEGORY_LABELS[item.spot.category]?.name || 'Lieu secret'}
+                      {/* Item Top Bar */}
+                      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#F1EDE4] pb-2.5">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          <span className="text-[#D9C7A6] transition-colors hover:text-[#D97706]" title="Glisser pour réordonner">
+                            <GripVertical className="w-4 h-4" />
+                          </span>
+                          <span className={`rounded-md border px-2 py-0.5 text-[10.5px] font-semibold ${slotInfo.bg} ${slotInfo.border} ${slotInfo.text}`}>
+                            {slotInfo.label} • {item.arrivalTime || item.timeString || slotInfo.time}
+                            {item.departureTime ? ` → ${item.departureTime}` : ''}
+                          </span>
+                          <span className="flex items-center gap-1 rounded-md border border-[#E7E2D8] bg-[#F6F4EF] px-2 py-0.5 text-[10.5px] font-medium text-[#8A8578]">
+                            <MapPin className="w-3 h-3 text-[#D97706]" />
+                            {item.spot.city}
+                          </span>
+                          {item.transportMode && (
+                            <span
+                              className="flex items-center gap-1 rounded-md border border-[#E7E2D8] bg-[#F6F4EF] px-2 py-0.5 text-[10.5px] font-semibold text-[#0b1b2b]"
+                              title={`Déplacement: ${itemTransport.label} — ${itemTransport.costHint}`}
+                            >
+                              <TransportIcon className="w-3 h-3 text-[#D97706]" />
+                              {itemTransport.label}
                             </span>
-                            <span className="text-stone-400 text-[11px]">
-                              Durée: ~{item.spot.estimatedDurationMinutes} min
-                            </span>
-                          </div>
-
-                          <h3 className="font-display font-bold text-stone-900 text-lg group-hover:text-amber-700 transition-colors">
-                            {item.spot.title}
-                          </h3>
-
-                          <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1.5 text-[11px] text-stone-500">
-                            <span className="flex items-center gap-1">
-                              <MapPin className="w-3 h-3 text-amber-600 shrink-0" />
-                              {item.spot.address}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <Clock className="w-3 h-3 text-amber-600 shrink-0" />
-                              {item.spot.bestTimeToVisit}
-                            </span>
-                            {!item.transportMode && (
-                              <span className="flex items-center gap-1 text-stone-400">
-                                Déplacement à définir
-                              </span>
-                            )}
-                          </div>
-
-                          <p className="text-stone-600 text-xs line-clamp-2 mt-1">
-                            {item.spot.description}
-                          </p>
+                          )}
                         </div>
 
-                        {/* Secret Access Hint */}
-                        <div className="bg-amber-50 border border-amber-200/80 rounded-xl p-2.5 text-[11px] text-amber-900 flex items-start gap-2">
-                          <Compass className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
+                        <div className="flex items-center gap-1">
+                          {editingItemId !== item.id && (
+                            <button
+                              onClick={() => handleStartEdit(item)}
+                              className="rounded-lg p-1 text-[#B4AEA1] transition-colors hover:bg-[#FDF3E3] hover:text-[#D97706]"
+                              title="Modifier l'étape (lieu, heure, arrivée, départ)"
+                            >
+                              <Edit2 className="w-4 h-4" />
+                            </button>
+                          )}
+                          <button
+                            onClick={() => handleRemoveItem(selectedDayIndex, item.id)}
+                            className="rounded-lg p-1 text-[#B4AEA1] transition-colors hover:bg-rose-50 hover:text-rose-600"
+                            title="Retirer du calendrier"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Edit Panel */}
+                      {editingItemId === item.id && draft && (
+                        <div className="grid grid-cols-1 gap-3 rounded-xl border-[1.5px] border-[#F0D9AE] bg-[#FAF8F3] p-3 sm:grid-cols-2 lg:grid-cols-5">
+                          <label className="block sm:col-span-2 lg:col-span-1">
+                            <span className={editLabelClass}>Endroit</span>
+                            <select
+                              value={draft.spotId}
+                              onChange={(e) => setDraft({ ...draft, spotId: e.target.value })}
+                              className={editFieldClass}
+                            >
+                              {Object.entries(groupedSpots).map(([cat, spots]) => (
+                                <optgroup key={cat} label={CATEGORY_LABELS[cat]?.name || cat}>
+                                  {spots.map((s) => (
+                                    <option key={s.id} value={s.id}>
+                                      {s.title} — {s.city}
+                                    </option>
+                                  ))}
+                                </optgroup>
+                              ))}
+                            </select>
+                          </label>
+
+                          <label className="block">
+                            <span className={editLabelClass}>Créneau</span>
+                            <select
+                              value={draft.timeSlot}
+                              onChange={(e) => setDraft({ ...draft, timeSlot: e.target.value as TimeSlot })}
+                              className={editFieldClass}
+                            >
+                              {(Object.keys(TIME_SLOT_LABELS) as TimeSlot[]).map((slot) => (
+                                <option key={slot} value={slot}>
+                                  {TIME_SLOT_LABELS[slot].label}
+                                </option>
+                              ))}
+                            </select>
+                          </label>
+
+                          <label className="block">
+                            <span className={editLabelClass}>Heure</span>
+                            <input
+                              type="time"
+                              value={draft.timeString}
+                              onChange={(e) => setDraft({ ...draft, timeString: e.target.value })}
+                              className={editFieldClass}
+                            />
+                          </label>
+
+                          <label className="block">
+                            <span className={editLabelClass}>Arrivée (début)</span>
+                            <input
+                              type="time"
+                              value={draft.arrivalTime}
+                              onChange={(e) => setDraft({ ...draft, arrivalTime: e.target.value })}
+                              className={editFieldClass}
+                            />
+                          </label>
+
+                          <label className="block">
+                            <span className={editLabelClass}>Départ (fin)</span>
+                            <input
+                              type="time"
+                              value={draft.departureTime}
+                              onChange={(e) => setDraft({ ...draft, departureTime: e.target.value })}
+                              className={editFieldClass}
+                            />
+                          </label>
+
+                          <label className="block sm:col-span-2 lg:col-span-1">
+                            <span className={editLabelClass}>
+                              Déplacement (pour y aller)
+                            </span>
+                            <select
+                              value={draft.transportMode}
+                              onChange={(e) => setDraft({ ...draft, transportMode: e.target.value as TransportMode | '' })}
+                              className={editFieldClass}
+                            >
+                              <option value="">À définir (défaut: à pied)</option>
+                              {TRANSPORT_OPTIONS.map((t) => (
+                                <option key={t.id} value={t.id}>
+                                  {t.label} — {t.costHint}
+                                </option>
+                              ))}
+                            </select>
+                          </label>
+
+                          <div className="flex items-center justify-end gap-2 pt-1 sm:col-span-2 lg:col-span-5">
+                            <button
+                              onClick={handleCancelEdit}
+                              className="rounded-lg px-3 py-1.5 text-xs font-semibold text-[#8A8578] transition-colors hover:text-[#0b1b2b]"
+                            >
+                              Annuler
+                            </button>
+                            <button
+                              onClick={() => handleSaveItem(selectedDayIndex, item.id)}
+                              className="flex items-center gap-1.5 rounded-full bg-[#D97706] px-4 py-1.5 text-xs font-bold text-white shadow-sm transition-colors hover:bg-[#B45309]"
+                            >
+                              <Check className="w-3.5 h-3.5" />
+                              Enregistrer
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Main Item Content Grid */}
+                      <div
+                        className="grid cursor-pointer grid-cols-1 gap-3.5 sm:grid-cols-[140px_minmax(0,1fr)]"
+                        onClick={() => onOpenSpotModal(item.spot)}
+                      >
+                        <div className="relative h-32 overflow-hidden rounded-xl bg-[#E7E2D8] sm:h-[104px]">
+                          <img
+                            src={item.spot.imageUrl}
+                            alt={item.spot.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <span className="absolute bottom-2 left-2 rounded-md bg-[#0b1b2b]/85 px-2 py-0.5 text-[10px] font-bold text-[#F59E0B] backdrop-blur-sm">
+                            ★ {item.spot.rating}
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col justify-between space-y-2">
                           <div>
-                            <span className="font-bold">Astuce Secrète: </span>
-                            {item.spot.secretAccessHint}
+                            <div className="mb-1 flex flex-wrap items-center gap-2">
+                              <span className="rounded-md bg-[#FDF3E3] px-2 py-0.5 text-[9.5px] font-bold uppercase tracking-[0.12em] text-[#B45309]">
+                                {CATEGORY_LABELS[item.spot.category]?.name || 'Lieu secret'}
+                              </span>
+                              <span className="text-[11px] text-[#B4AEA1]">
+                                Durée: ~{item.spot.estimatedDurationMinutes} min
+                              </span>
+                            </div>
+
+                            <h3 className="font-editorial text-[18px] font-medium leading-snug text-[#0b1b2b] transition-colors group-hover:text-[#B45309]">
+                              {item.spot.title}
+                            </h3>
+
+                            <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[#8A8578]">
+                              <span className="flex items-center gap-1">
+                                <MapPin className="w-3 h-3 shrink-0 text-[#D97706]" />
+                                {item.spot.address}
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <Clock className="w-3 h-3 shrink-0 text-[#D97706]" />
+                                {item.spot.bestTimeToVisit}
+                              </span>
+                              {!item.transportMode && (
+                                <span className="flex items-center gap-1 text-[#B4AEA1]">
+                                  Déplacement à définir
+                                </span>
+                              )}
+                            </div>
+
+                            <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-[#6E685C]">
+                              {item.spot.description}
+                            </p>
+                          </div>
+
+                          {/* Secret Access Hint */}
+                          <div className="flex items-start gap-2 rounded-r-lg border-l-[3px] border-[#F59E0B] bg-[#FDF3E3] py-2 pl-2.5 pr-3 text-[11px] leading-relaxed text-[#7A4A08]">
+                            <Compass className="mt-0.5 w-3.5 h-3.5 shrink-0 text-[#D97706]" />
+                            <div>
+                              <span className="font-bold">Astuce Secrète: </span>
+                              {item.spot.secretAccessHint}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
+                    </div>
                   </div>
 
                   {/* Transition route line between consecutive spots */}
                   {nextItem && distKm !== null && travelMin !== null && (
-                    <div className="flex items-center justify-center my-2 text-xs text-stone-400 font-medium">
-                      <div className="flex items-center gap-2 bg-stone-100 px-4 py-1.5 rounded-full border border-stone-200">
-                        <ArrowRight className="w-3.5 h-3.5 text-amber-600" />
-                        <span>Trajet estimé: ~{distKm} km — ~{travelMin} min</span>
-                        <span
-                          className="flex items-center gap-1 text-cyan-700 font-semibold"
-                          title={`Coût: ${travelTransport.costHint}`}
-                        >
-                          {(() => {
-                            const TI = TRANSPORT_ICONS[travelTransport.icon] || Navigation;
-                            return <TI className="w-3 h-3" />;
-                          })()}
-                          {travelTransport.label}
-                        </span>
-                      </div>
+                    <div className="mb-3 ml-10 flex items-center gap-2 text-[11px] font-medium text-[#8A8578]">
+                      <span className="h-px w-5 bg-[#E7E2D8]" aria-hidden="true" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#D97706]" />
+                      <span>Trajet estimé: ~{distKm} km — ~{travelMin} min</span>
+                      <span
+                        className="flex items-center gap-1 font-semibold text-[#0b1b2b]"
+                        title={`Coût: ${travelTransport.costHint}`}
+                      >
+                        {(() => {
+                          const TI = TRANSPORT_ICONS[travelTransport.icon] || Navigation;
+                          return <TI className="w-3 h-3 text-[#D97706]" />;
+                        })()}
+                        {travelTransport.label}
+                      </span>
+                      <span className="hidden h-px flex-1 bg-[#E7E2D8] sm:block" aria-hidden="true" />
                     </div>
                   )}
                 </React.Fragment>

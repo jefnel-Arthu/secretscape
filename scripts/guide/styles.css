@@ -1,0 +1,3055 @@
+/* ==========================================================================
+   SecretScape — Bénin, les lieux secrets
+   Feuille de style de la maquette (spécimen 10 pages)
+   Format A4 portrait — impression Chrome headless
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('assets/fonts/PlayfairDisplay-Variable.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('assets/fonts/PlayfairDisplay-Italic-Variable.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  --cream: #faf6ee;
+  --cream-2: #f1e9da;
+  --cream-3: #e8dfcd;
+  --navy: #11263a;
+  --navy-2: #1b3550;
+  --ink: #22323f;
+  --muted: #71808b;
+  --gold: #ac854b;
+  --gold-2: #cdb083;
+  --line: rgba(17, 38, 58, 0.14);
+  --line-light: rgba(250, 246, 238, 0.24);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #6f6f6f;
+  color: var(--ink);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---------- Pages ------------------------------------------------------- */
+
+section.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  background: var(--cream);
+  break-after: page;
+  page-break-after: always;
+}
+
+section.page:last-child,
+section.page:last-of-type {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+@media screen {
+  body { padding: 12mm 0; }
+  section.page {
+    margin: 0 auto 12mm;
+    box-shadow: 0 8px 34px rgba(0, 0, 0, 0.28);
+  }
+}
+
+@media print {
+  body { padding: 0; background: #fff; }
+  section.page { margin: 0; box-shadow: none; }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+/* ---------- Primitives -------------------------------------------------- */
+
+.pad {
+  position: absolute;
+  top: 16mm;
+  left: 18mm;
+  right: 18mm;
+  bottom: 14mm;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 6.6pt;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.eyebrow--dark { color: var(--gold); }
+.eyebrow--light { color: var(--gold-2); }
+
+.display {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  color: var(--navy);
+}
+
+.serif-italic {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+p { margin: 0; }
+
+.body-copy {
+  font-size: 9.1pt;
+  line-height: 1.74;
+  color: #3a4955;
+  font-weight: 300;
+}
+
+.body-copy + .body-copy { margin-top: 3.4mm; }
+
+.body-copy strong {
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.rule {
+  width: 26mm;
+  height: 0.7pt;
+  background: var(--gold);
+  border: 0;
+  margin: 0;
+}
+
+.folio {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 7.5mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 6pt;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.folio .folio__line {
+  flex: 1;
+  height: 0.4pt;
+  background: var(--line);
+  margin: 0 5mm;
+}
+
+.folio--light { color: rgba(250, 246, 238, 0.55); }
+.folio--light .folio__line { background: var(--line-light); }
+
+/* ---------- Photo blocks ------------------------------------------------ */
+
+.ph {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-3);
+}
+
+.ph img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.credit {
+  position: absolute;
+  right: 2.6mm;
+  bottom: 2mm;
+  font-size: 4.6pt;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.72);
+  text-transform: uppercase;
+}
+
+/* ---------- Icons ------------------------------------------------------- */
+
+.ic {
+  width: 3.2mm;
+  height: 3.2mm;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* ---------- Cover ------------------------------------------------------- */
+
+section.cover {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.cover__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180mm;
+}
+
+.cover__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+  display: block;
+}
+
+.cover__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 24, 37, 0.42) 0%, rgba(10, 24, 37, 0) 34%),
+    linear-gradient(180deg, rgba(17, 38, 58, 0) 55%, rgba(17, 38, 58, 0.72) 84%, var(--navy) 100%);
+}
+
+.cover__top {
+  position: absolute;
+  top: 13mm;
+  left: 16mm;
+  right: 16mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.wordmark {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.wordmark span { color: var(--gold-2); }
+
+.specimen-tag {
+  border: 0.5pt solid rgba(250, 246, 238, 0.6);
+  padding: 1.4mm 3.2mm 1.1mm;
+  font-size: 5.6pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.9);
+}
+
+.cover__band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 124mm;
+  padding: 11mm 16mm 13mm;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.cover__map {
+  position: absolute;
+  right: -16mm;
+  bottom: 6mm;
+  width: 108mm;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.cover__kicker {
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  margin-bottom: 6mm;
+}
+
+.cover__kicker span {
+  font-size: 6.4pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+}
+
+.cover__kicker i {
+  display: block;
+  width: 14mm;
+  height: 0.5pt;
+  background: var(--gold-2);
+}
+
+.cover__title {
+  margin: 0;
+  font-size: 70pt;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.cover__title em {
+  display: block;
+  margin-top: 3mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 31pt;
+  letter-spacing: 0;
+  color: var(--gold-2);
+}
+
+.cover__sub {
+  margin-top: 7mm;
+  max-width: 104mm;
+  font-size: 8.8pt;
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgba(250, 246, 238, 0.82);
+}
+
+.cover__foot {
+  position: absolute;
+  left: 16mm;
+  right: 16mm;
+  bottom: 10mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 5.8pt;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.55);
+}
+
+/* ---------- Inside cover ------------------------------------------------- */
+
+.inside {
+  background: var(--cream);
+}
+
+.inside__frame {
+  position: absolute;
+  inset: 12mm;
+  border: 0.5pt solid var(--line);
+  pointer-events: none;
+}
+
+.inside__content {
+  position: absolute;
+  top: 78mm;
+  left: 34mm;
+  right: 34mm;
+  text-align: center;
+}
+
+.monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15mm;
+  height: 15mm;
+  border: 0.6pt solid var(--gold);
+  border-radius: 50%;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 15pt;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.inside__epigraph {
+  margin: 13mm auto 0;
+  max-width: 118mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 19pt;
+  line-height: 1.5;
+  color: var(--navy);
+}
+
+.inside__rule {
+  width: 18mm;
+  height: 0.6pt;
+  background: var(--gold);
+  margin: 10mm auto;
+}
+
+.inside__text {
+  max-width: 108mm;
+  margin: 0 auto;
+  font-size: 8.4pt;
+  line-height: 1.85;
+  color: #46545f;
+  font-weight: 300;
+}
+
+.inside__text + .inside__text { margin-top: 4mm; }
+
+.inside__note {
+  margin-top: 9mm;
+  font-size: 6.6pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.colophon {
+  position: absolute;
+  left: 26mm;
+  right: 26mm;
+  bottom: 22mm;
+  padding-top: 5mm;
+  border-top: 0.4pt solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm 8mm;
+  font-size: 5.9pt;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.colophon b {
+  display: block;
+  font-weight: 500;
+  font-size: 5.4pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.6mm;
+}
+
+/* ---------- Sommaire ----------------------------------------------------- */
+
+.toc {
+  background: var(--cream);
+}
+
+.toc__head {
+  position: absolute;
+  top: 19mm;
+  left: 18mm;
+  width: 100mm;
+}
+
+.toc__title {
+  margin: 2mm 0 0;
+  font-size: 42pt;
+  line-height: 1;
+}
+
+.toc__sub {
+  margin-top: 5mm;
+  font-size: 7.4pt;
+  line-height: 1.7;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  max-width: 84mm;
+}
+
+.toc__list {
+  position: absolute;
+  top: 74mm;
+  left: 18mm;
+  width: 106mm;
+}
+
+.toc__group {
+  margin-bottom: 8mm;
+}
+
+.toc__group-label {
+  font-size: 5.8pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3mm;
+  padding-bottom: 1.6mm;
+  border-bottom: 0.4pt solid var(--line);
+}
+
+.toc-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2.4mm;
+  padding: 1.45mm 0;
+  font-size: 8pt;
+  color: var(--ink);
+}
+
+.toc-row .num {
+  width: 5.4mm;
+  flex: none;
+  font-size: 6pt;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.toc-row .label {
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.toc-row .dots {
+  flex: 1;
+  border-bottom: 0.4pt dotted rgba(17, 38, 58, 0.32);
+  transform: translateY(-0.8mm);
+}
+
+.toc-row .page {
+  flex: none;
+  font-size: 7pt;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.toc__aside {
+  position: absolute;
+  top: 19mm;
+  right: 16mm;
+  width: 58mm;
+  bottom: 16mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.toc__photo {
+  height: 86mm;
+  margin-top: 9mm;
+}
+
+.toc__caption {
+  margin-top: 3.2mm;
+  font-size: 6pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc__stats {
+  margin-top: auto;
+  padding-top: 5mm;
+  border-top: 0.4pt solid var(--line);
+}
+
+.toc__stat {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  padding: 1.4mm 0;
+}
+
+.toc__stat b {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 15pt;
+  color: var(--navy);
+  width: 12mm;
+}
+
+.toc__stat span {
+  font-size: 6.4pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc__note {
+  position: absolute;
+  left: 18mm;
+  width: 106mm;
+  bottom: 22mm;
+  padding-top: 4mm;
+  border-top: 0.4pt solid var(--line);
+}
+
+.toc__note p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 9.4pt;
+  line-height: 1.5;
+  color: var(--navy);
+}
+
+.toc__note span {
+  display: block;
+  margin-top: 2mm;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-size: 5.4pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---------- Introduction + carte ---------------------------------------- */
+
+.intro {
+  background: var(--cream);
+}
+
+.intro__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  width: 104mm;
+}
+
+.intro__title {
+  margin: 3mm 0 0;
+  font-size: 30pt;
+  line-height: 1.08;
+}
+
+.intro__title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.intro__text {
+  position: absolute;
+  top: 78mm;
+  left: 18mm;
+  width: 106mm;
+}
+
+.intro__text .body-copy { font-size: 8.8pt; }
+
+.intro__legend {
+  margin-top: 4mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro__legend-item {
+  display: flex;
+  gap: 2.6mm;
+  align-items: baseline;
+  padding: 1.2mm 0;
+  border-top: 0.4pt solid var(--line);
+  font-size: 6.6pt;
+  color: var(--ink);
+}
+
+.intro__legend-item:last-child { border-bottom: 0.4pt solid var(--line); }
+
+.intro__legend-item b {
+  font-size: 5.8pt;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  width: 3.6mm;
+  flex: none;
+}
+
+.intro__legend-item span {
+  line-height: 1.35;
+}
+
+.map-col {
+  position: absolute;
+  top: 17mm;
+  right: 15mm;
+  bottom: 17mm;
+  width: 68mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-col__frame {
+  position: relative;
+  flex: none;
+  height: 178mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f5eee0 0%, #efe5d2 100%);
+  border: 0.5pt solid var(--line);
+}
+
+.map-col__frame img {
+  display: block;
+  width: 62mm;
+  height: auto;
+}
+
+.map-col__label {
+  font-size: 5.6pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4mm;
+  text-align: center;
+}
+
+/* ---------- Chapter opener ---------------------------------------------- */
+
+section.chapter {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.chapter__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150mm;
+}
+
+.chapter__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+  display: block;
+}
+
+.chapter__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 38, 58, 0.28) 0%, rgba(17, 38, 58, 0) 40%, rgba(17, 38, 58, 0.55) 82%, var(--navy) 100%);
+}
+
+.chapter__body {
+  position: absolute;
+  top: 150mm;
+  left: 18mm;
+  right: 18mm;
+  bottom: 16mm;
+}
+
+.chapter__num {
+  position: absolute;
+  top: -6mm;
+  right: -2mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 88pt;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 0.5pt rgba(205, 176, 131, 0.55);
+}
+
+.chapter__kicker {
+  display: flex;
+  align-items: center;
+  gap: 3.6mm;
+}
+
+.chapter__kicker i {
+  width: 12mm;
+  height: 0.5pt;
+  background: var(--gold-2);
+}
+
+.chapter__title {
+  position: relative;
+  z-index: 2;
+  margin: 7mm 0 0;
+  max-width: 132mm;
+  font-size: 33pt;
+  line-height: 1.08;
+  color: var(--cream);
+}
+
+.chapter__lead {
+  margin-top: 7mm;
+  max-width: 118mm;
+  font-size: 9.4pt;
+  line-height: 1.8;
+  font-weight: 300;
+  color: rgba(250, 246, 238, 0.82);
+}
+
+.chapter__meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.chapter__places {
+  font-size: 6pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.6);
+}
+
+.chapter__places b {
+  display: block;
+  margin-bottom: 1.5mm;
+  font-weight: 500;
+  color: var(--gold-2);
+}
+
+.chapter__pages {
+  font-size: 6pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.6);
+}
+
+.chapter__contents {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 15mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 10mm;
+  padding-top: 4mm;
+  border-top: 0.4pt solid var(--line-light);
+}
+
+.chapter__item {
+  display: flex;
+  align-items: baseline;
+  gap: 2.6mm;
+  padding: 1.15mm 0;
+  font-size: 6.8pt;
+  color: rgba(250, 246, 238, 0.78);
+}
+
+.chapter__item span {
+  flex: none;
+  width: 7mm;
+  font-size: 5.6pt;
+  letter-spacing: 0.08em;
+  color: var(--gold-2);
+}
+
+.chapter__item b {
+  font-weight: 400;
+  color: rgba(250, 246, 238, 0.55);
+}
+
+/* ---------- Fiche header ------------------------------------------------ */
+
+.fiche__head {
+  position: absolute;
+  top: 12mm;
+  left: 18mm;
+  right: 18mm;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 2.6mm;
+  border-bottom: 0.4pt solid var(--line);
+  font-size: 5.8pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fiche__head b {
+  font-weight: 500;
+  color: var(--gold);
+}
+
+/* ---------- Fiche 1 (Ganvié) -------------------------------------------- */
+
+.fiche-a {
+  background: var(--cream);
+}
+
+.fiche-a__photo {
+  position: absolute;
+  top: 19mm;
+  left: 0;
+  right: 0;
+  height: 88mm;
+}
+
+.fiche-a__titleblock {
+  position: absolute;
+  top: 109mm;
+  left: 18mm;
+  right: 18mm;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.fiche-a__title {
+  margin: 2.5mm 0 0;
+  font-size: 25pt;
+  line-height: 1.05;
+}
+
+.fiche-a__sub {
+  margin-top: 2mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 11pt;
+  color: var(--gold);
+}
+
+.rating {
+  flex: none;
+  text-align: right;
+  padding-top: 2mm;
+}
+
+.rating b {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 22pt;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.rating small {
+  display: block;
+  margin-top: 1.4mm;
+  font-size: 5.4pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stars {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7mm;
+  margin-top: 1.4mm;
+  color: var(--gold);
+}
+
+.stars svg { width: 2.2mm; height: 2.2mm; fill: currentColor; stroke: none; }
+
+.meta-strip {
+  position: absolute;
+  top: 143mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 1.35fr 1.05fr;
+  gap: 4mm;
+  padding: 3.2mm 0;
+  border-top: 0.4pt solid var(--line);
+  border-bottom: 0.4pt solid var(--line);
+}
+
+.meta-strip .item {
+  display: flex;
+  gap: 2.2mm;
+  align-items: flex-start;
+  color: var(--gold);
+}
+
+.meta-strip .item .txt { color: var(--ink); }
+
+.meta-strip .k {
+  font-size: 5.2pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.9mm;
+}
+
+.meta-strip .v {
+  font-size: 7.2pt;
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--navy);
+}
+
+.fiche-a__body {
+  position: absolute;
+  top: 164mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+}
+
+.fiche-a__body .body-copy { font-size: 8pt; line-height: 1.6; }
+
+.secret {
+  position: absolute;
+  top: 214mm;
+  left: 18mm;
+  right: 18mm;
+  background: var(--cream-2);
+  border-left: 1.5pt solid var(--gold);
+  padding: 3.8mm 6mm 4mm;
+}
+
+.secret .eyebrow { font-size: 5.6pt; margin-bottom: 1.8mm; }
+
+.secret p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 9.6pt;
+  line-height: 1.45;
+  color: var(--navy);
+}
+
+.fiche-a__cols {
+  position: absolute;
+  top: 246mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 7mm;
+}
+
+.mini-col h4 {
+  margin: 0 0 2mm;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 5.5pt;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.mini-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 6.8pt;
+  line-height: 1.55;
+  color: #43525e;
+}
+
+.mini-col li {
+  position: relative;
+  padding-left: 3.2mm;
+  margin-bottom: 0.9mm;
+}
+
+.mini-col li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.55mm;
+  width: 1.4mm;
+  height: 0.4pt;
+  background: var(--gold);
+}
+
+.mini-col p {
+  font-size: 6.8pt;
+  line-height: 1.6;
+  color: #43525e;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2mm;
+}
+
+.tags span {
+  border: 0.4pt solid var(--line);
+  padding: 1.1mm 2.2mm 0.9mm;
+  font-size: 5.6pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Fiche 2 (Bouche du Roi) ------------------------------------- */
+
+.fiche-b {
+  background: var(--cream);
+}
+
+.fiche-b__grid {
+  position: absolute;
+  top: 24mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 89mm 1fr;
+  gap: 9mm;
+}
+
+.fiche-b__photo {
+  height: 88mm;
+}
+
+.fiche-b__caption {
+  margin-top: 2.6mm;
+  font-size: 5.4pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fiche-b__meta {
+  margin-top: 7mm;
+  border-top: 0.4pt solid var(--line);
+}
+
+.fiche-b__meta .row {
+  display: flex;
+  gap: 2.4mm;
+  align-items: flex-start;
+  padding: 2.3mm 0;
+  border-bottom: 0.4pt solid var(--line);
+  color: var(--gold);
+}
+
+.fiche-b__meta .k {
+  font-size: 5.2pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5mm;
+}
+
+.fiche-b__meta .v {
+  font-size: 7pt;
+  line-height: 1.35;
+  color: var(--navy);
+}
+
+.fiche-b__text {
+  padding-top: 1mm;
+}
+
+.fiche-b__title {
+  margin: 2.5mm 0 0;
+  font-size: 29pt;
+  line-height: 1.04;
+}
+
+.fiche-b__sub {
+  margin: 2.5mm 0 6mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 11.5pt;
+  color: var(--gold);
+}
+
+.fiche-b__text .body-copy { font-size: 8.7pt; line-height: 1.74; }
+
+.secret--b {
+  position: static;
+  margin-top: 6mm;
+  padding: 4mm 5mm 4.2mm;
+}
+
+.secret--b p { font-size: 9.4pt; }
+
+.fiche-b__quote {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14mm;
+  height: 48mm;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  padding: 0 30mm;
+}
+
+.fiche-b__quote p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 15.5pt;
+  line-height: 1.45;
+  color: var(--cream);
+  text-align: center;
+}
+
+.fiche-b__quote .qmark {
+  position: absolute;
+  left: 16mm;
+  top: 4mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 48pt;
+  color: rgba(205, 176, 131, 0.35);
+  line-height: 1;
+}
+
+/* ---------- Restaurant -------------------------------------------------- */
+
+.resto {
+  background: var(--cream);
+}
+
+.resto__intro {
+  position: absolute;
+  top: 22mm;
+  left: 18mm;
+  right: 18mm;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.resto__intro h2 {
+  margin: 2.5mm 0 0;
+  font-size: 27pt;
+  line-height: 1.05;
+}
+
+.resto__intro p {
+  width: 66mm;
+  font-size: 7.3pt;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.resto__feature {
+  position: absolute;
+  top: 60mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 1fr 92mm;
+  gap: 9mm;
+}
+
+.resto__photo {
+  height: 90mm;
+}
+
+.resto__feature-copy h3 {
+  margin: 1.5mm 0 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 21pt;
+  line-height: 1.08;
+  color: var(--navy);
+}
+
+.resto__feature-copy .sub {
+  margin-top: 1.8mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 10pt;
+  color: var(--gold);
+}
+
+.resto__meta {
+  display: flex;
+  gap: 4mm;
+  margin: 4mm 0 4.4mm;
+  padding: 2.6mm 0;
+  border-top: 0.4pt solid var(--line);
+  border-bottom: 0.4pt solid var(--line);
+}
+
+.resto__meta div {
+  font-size: 5.6pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.resto__meta b {
+  display: block;
+  margin-top: 0.8mm;
+  font-weight: 400;
+  font-size: 6.8pt;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--navy);
+}
+
+.resto__feature-copy .body-copy { font-size: 8.2pt; line-height: 1.7; }
+
+.resto__note {
+  margin-top: 4mm;
+  padding-left: 4mm;
+  border-left: 1pt solid var(--gold);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 8.8pt;
+  line-height: 1.5;
+  color: var(--navy);
+}
+
+.resto__list {
+  position: absolute;
+  top: 162mm;
+  left: 18mm;
+  right: 18mm;
+}
+
+.resto__list-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 2.4mm;
+  border-bottom: 0.6pt solid var(--navy);
+}
+
+.resto__list-head h3 {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 13pt;
+  color: var(--navy);
+}
+
+.resto__list-head span {
+  font-size: 5.6pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.resto__item {
+  display: grid;
+  grid-template-columns: 7mm 1fr 42mm 18mm;
+  gap: 3mm;
+  align-items: baseline;
+  padding: 3.1mm 0;
+  border-bottom: 0.4pt solid var(--line);
+}
+
+.resto__item .n {
+  font-size: 5.8pt;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+.resto__item .name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 10.5pt;
+  color: var(--navy);
+}
+
+.resto__item .name small {
+  display: block;
+  margin-top: 0.6mm;
+  font-family: 'Poppins', sans-serif;
+  font-size: 6pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.resto__item .why {
+  font-size: 6.6pt;
+  line-height: 1.45;
+  color: #4a5965;
+}
+
+.resto__item .city {
+  text-align: right;
+  font-size: 5.8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Itinéraire -------------------------------------------------- */
+
+.itin {
+  background: var(--cream);
+}
+
+.itin__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  right: 18mm;
+}
+
+.itin__title {
+  margin: 3mm 0 0;
+  font-size: 31pt;
+  line-height: 1.05;
+}
+
+.itin__title em { font-style: italic; color: var(--gold); }
+
+.itin__lead {
+  margin-top: 4mm;
+  max-width: 118mm;
+  font-size: 8.2pt;
+  line-height: 1.7;
+  color: #46545f;
+}
+
+.itin__tabs {
+  display: flex;
+  gap: 2mm;
+  margin-top: 6mm;
+}
+
+.itin__tab {
+  padding: 1.8mm 4.2mm 1.5mm;
+  border: 0.4pt solid var(--line);
+  font-size: 5.8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.itin__tab.on {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--cream);
+}
+
+.itin__days {
+  position: absolute;
+  top: 103mm;
+  left: 18mm;
+  right: 18mm;
+  bottom: 46mm;
+}
+
+.itin__day {
+  position: relative;
+  display: grid;
+  grid-template-columns: 15mm 32mm 1fr;
+  gap: 4mm;
+  padding: 3mm 0;
+  border-top: 0.4pt solid var(--line);
+}
+
+.itin__day:last-child { border-bottom: 0.4pt solid var(--line); }
+
+.itin__daynum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9.4mm;
+  height: 9.4mm;
+  border: 0.5pt solid var(--gold);
+  border-radius: 50%;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 8pt;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+
+.itin__daytitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 10.5pt;
+  line-height: 1.25;
+  color: var(--navy);
+  padding-top: 1mm;
+}
+
+.itin__daytitle small {
+  display: block;
+  margin-top: 0.8mm;
+  font-family: 'Poppins', sans-serif;
+  font-size: 5.4pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.itin__daytext {
+  font-size: 6.9pt;
+  line-height: 1.5;
+  color: #46545f;
+  padding-top: 0.8mm;
+}
+
+.itin__daytext b {
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.itin__variants {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 16mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7mm;
+  padding-top: 4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.itin__variant {
+  display: flex;
+  gap: 3.4mm;
+}
+
+.itin__variant .n {
+  flex: none;
+  width: 8mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16pt;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.itin__variant h4 {
+  margin: 0 0 1mm;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 5.6pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.itin__variant p {
+  font-size: 6.6pt;
+  line-height: 1.5;
+  color: #46545f;
+}
+
+/* ---------- Back cover --------------------------------------------------- */
+
+section.back {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.back__map {
+  position: absolute;
+  right: -34mm;
+  top: 18mm;
+  width: 150mm;
+  opacity: 0.08;
+}
+
+.back__inner {
+  position: absolute;
+  top: 62mm;
+  left: 26mm;
+  right: 26mm;
+  text-align: center;
+}
+
+.back__mono {
+  width: 13mm;
+  height: 13mm;
+  border-color: rgba(205, 176, 131, 0.6);
+  color: var(--gold-2);
+  font-size: 13pt;
+}
+
+.back__title {
+  margin: 13mm auto 0;
+  max-width: 122mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 27pt;
+  line-height: 1.4;
+  color: var(--cream);
+}
+
+.back__rule {
+  width: 22mm;
+  height: 0.6pt;
+  background: var(--gold-2);
+  margin: 12mm auto;
+}
+
+.back__contents {
+  display: flex;
+  justify-content: center;
+  gap: 8mm;
+  font-size: 6pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.7);
+}
+
+.back__contents b {
+  display: block;
+  margin-bottom: 1.4mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 15pt;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--gold-2);
+}
+
+.back__contents i {
+  display: block;
+  width: 0.4pt;
+  height: 9mm;
+  background: var(--line-light);
+  align-self: center;
+}
+
+.back__text {
+  margin: 13mm auto 0;
+  max-width: 106mm;
+  font-size: 8pt;
+  line-height: 1.75;
+  font-weight: 300;
+  color: rgba(250, 246, 238, 0.68);
+}
+
+.back__foot {
+  position: absolute;
+  left: 26mm;
+  right: 26mm;
+  bottom: 18mm;
+  text-align: center;
+}
+
+.back__foot .wordmark {
+  color: var(--cream);
+}
+
+.back__foot p {
+  margin-top: 3mm;
+  font-size: 5.8pt;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.45);
+}
+
+.back__specimen {
+  position: absolute;
+  top: 18mm;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 5.6pt;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(205, 176, 131, 0.65);
+}
+
+/* ---------- Carte pleine page ------------------------------------------- */
+
+.map-full {
+  background: var(--cream);
+}
+
+.map-full__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  width: 110mm;
+}
+
+.map-full__head h2 {
+  margin: 3mm 0 0;
+  font-size: 30pt;
+  line-height: 1.06;
+}
+
+.map-full__head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.map-full__head p {
+  margin-top: 4mm;
+  max-width: 98mm;
+  font-size: 7.6pt;
+  line-height: 1.7;
+  color: #46545f;
+}
+
+.map-full__map {
+  position: absolute;
+  top: 84mm;
+  left: 16mm;
+  width: 78mm;
+  height: 178mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f5eee0 0%, #efe5d2 100%);
+  border: 0.5pt solid var(--line);
+}
+
+.map-full__map img {
+  display: block;
+  width: 62mm;
+  height: auto;
+  max-height: 166mm;
+}
+
+.map-full__legend {
+  position: absolute;
+  top: 88mm;
+  right: 18mm;
+  width: 86mm;
+}
+
+.map-full__item {
+  display: flex;
+  gap: 3.2mm;
+  align-items: baseline;
+  padding: 2.6mm 0;
+  border-top: 0.4pt solid var(--line);
+}
+
+.map-full__item:last-child { border-bottom: 0.4pt solid var(--line); }
+
+.map-full__item b {
+  flex: none;
+  width: 4.6mm;
+  font-size: 5.8pt;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.map-full__item span {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 9.2pt;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.map-full__item small {
+  display: block;
+  margin-top: 0.7mm;
+  font-size: 5.2pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Mode d'emploi ------------------------------------------------ */
+
+.howto {
+  background: var(--cream);
+}
+
+.howto__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  width: 112mm;
+}
+
+.howto__head h2 {
+  margin: 3mm 0 0;
+  font-size: 30pt;
+  line-height: 1.06;
+}
+
+.howto__head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.howto__head p {
+  margin-top: 4mm;
+  max-width: 98mm;
+  font-size: 7.6pt;
+  line-height: 1.7;
+  color: #46545f;
+}
+
+.howto__anatomy {
+  position: absolute;
+  top: 78mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 88mm 1fr;
+  gap: 13mm;
+}
+
+.howto__diagram {
+  position: relative;
+  height: 82mm;
+  padding: 4mm;
+  border: 0.5pt solid var(--line);
+  background: linear-gradient(180deg, #fbf7f0 0%, #f4ecde 100%);
+}
+
+.howto__ph {
+  height: 31mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream-3);
+  font-size: 5.2pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.howto__line {
+  margin-top: 1.9mm;
+  padding: 1.2mm 2.2mm;
+  border-left: 1pt solid var(--gold-2);
+  background: rgba(250, 246, 238, 0.72);
+  font-size: 5.8pt;
+  letter-spacing: 0.05em;
+  color: #4a5965;
+}
+
+.howto__line--title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 9pt;
+  color: var(--navy);
+}
+
+.howto__line--meta,
+.howto__line--foot {
+  font-size: 5.1pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.howto__line--secret {
+  border-left-color: var(--gold);
+  background: var(--cream-2);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 7.4pt;
+  color: var(--navy);
+}
+
+.howto__keys {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.howto__keys li {
+  display: grid;
+  grid-template-columns: 30mm 1fr;
+  gap: 4mm;
+  align-items: baseline;
+  padding: 2.7mm 0;
+  border-top: 0.4pt solid var(--line);
+}
+
+.howto__keys li:last-child { border-bottom: 0.4pt solid var(--line); }
+
+.howto__keys b {
+  font-size: 5.6pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.howto__keys span {
+  font-size: 6.8pt;
+  line-height: 1.5;
+  color: #46545f;
+}
+
+.howto__levels {
+  position: absolute;
+  top: 170mm;
+  left: 18mm;
+  right: 18mm;
+}
+
+.howto__levels-head {
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  margin-bottom: 3.4mm;
+}
+
+.howto__levels-head span {
+  font-size: 5.6pt;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.howto__levels-head i {
+  flex: 1;
+  height: 0.5pt;
+  background: var(--line);
+}
+
+.howto__levels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7mm;
+}
+
+.howto__levels-head { grid-column: 1 / -1; margin-bottom: 0; }
+
+.howto__level {
+  padding-top: 3mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.howto__level b {
+  display: block;
+  margin-bottom: 1.4mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 11pt;
+  color: var(--navy);
+}
+
+.howto__level p {
+  font-size: 6.4pt;
+  line-height: 1.55;
+  color: #46545f;
+}
+
+.howto__cats {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 17mm;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7mm;
+  padding-top: 4mm;
+  border-top: 0.4pt solid var(--line);
+}
+
+.howto__cats > div {
+  display: grid;
+  grid-template-columns: 3mm 1fr;
+  gap: 1mm 2.4mm;
+  align-items: baseline;
+}
+
+.howto__cats b {
+  font-size: 6.4pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.howto__cats p {
+  grid-column: 2;
+  font-size: 5.8pt;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.cat-dot {
+  width: 2.2mm;
+  height: 2.2mm;
+  border-radius: 50%;
+  transform: translateY(-0.2mm);
+}
+
+.cat-dot--site { background: var(--gold); }
+.cat-dot--plage { background: #6f8fa3; }
+.cat-dot--table { background: #b0714a; }
+.cat-dot--hotel { background: var(--navy); }
+
+/* ---------- Le Bénin pratique ------------------------------------------- */
+
+.practical {
+  background: var(--cream);
+}
+
+.practical__head {
+  position: absolute;
+  top: 16mm;
+  left: 18mm;
+  width: 112mm;
+}
+
+.practical__head h2 {
+  margin: 3mm 0 0;
+  font-size: 30pt;
+  line-height: 1.06;
+}
+
+.practical__head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.practical__grid {
+  position: absolute;
+  top: 58mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9mm 8mm;
+}
+
+.practical__block h4 {
+  margin: 0 0 2.2mm;
+  padding-bottom: 1.6mm;
+  border-bottom: 0.5pt solid var(--navy);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 6.2pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.practical__block p {
+  font-size: 6.7pt;
+  line-height: 1.62;
+  color: #43525e;
+}
+
+.practical__block p + p { margin-top: 2mm; }
+
+.practical__block b {
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.budget {
+  width: 100%;
+  margin-top: 1mm;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 5.5pt;
+}
+
+.budget th,
+.budget td {
+  padding: 1.3mm 1mm 1.3mm 0;
+  text-align: left;
+  border-bottom: 0.4pt solid var(--line);
+}
+
+.budget th {
+  font-weight: 500;
+  font-size: 4.7pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.budget td { color: #43525e; }
+
+.budget td.num { white-space: nowrap; }
+
+.budget td:first-child {
+  width: 13mm;
+  font-weight: 400;
+  color: var(--navy);
+}
+
+.budget-note {
+  margin-top: 2mm;
+  font-size: 5.3pt;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.practical__check {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 15mm;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2mm 2.4mm;
+  padding-top: 3.4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.practical__check b {
+  margin-right: 2mm;
+  font-size: 5.4pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.practical__check span {
+  padding: 1mm 2.2mm;
+  border: 0.4pt solid var(--line);
+  font-size: 5.5pt;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* ---------- Fiche 3 : tables & hôtels ----------------------------------- */
+
+.fiche-c {
+  background: var(--cream);
+}
+
+.fc__head {
+  position: absolute;
+  top: 109mm;
+  left: 18mm;
+  right: 18mm;
+}
+
+.fc__head h2 {
+  margin: 2.5mm 0 0;
+  max-width: 156mm;
+  font-size: 27pt;
+  line-height: 1.06;
+}
+
+.fc__sub {
+  margin-top: 2.2mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 11pt;
+  color: var(--gold);
+}
+
+.fc__photo {
+  position: absolute;
+  top: 19mm;
+  left: 0;
+  right: 0;
+  height: 85mm;
+}
+
+.fc__text {
+  position: absolute;
+  top: 144mm;
+  left: 18mm;
+  right: 18mm;
+}
+
+.fc__meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4mm;
+  padding: 3mm 0;
+  border-top: 0.4pt solid var(--line);
+  border-bottom: 0.4pt solid var(--line);
+}
+
+.fc__meta span {
+  display: block;
+  margin-bottom: 0.8mm;
+  font-size: 5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fc__meta b {
+  display: block;
+  font-weight: 400;
+  font-size: 6.7pt;
+  line-height: 1.3;
+  color: var(--navy);
+}
+
+.fc__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+  margin-top: 4.6mm;
+}
+
+.fc__cols .body-copy {
+  font-size: 8.2pt;
+  line-height: 1.66;
+}
+
+.fc__tip {
+  position: absolute;
+  top: 196mm;
+  left: 18mm;
+  right: 18mm;
+  padding: 3.4mm 5mm 3.8mm;
+  background: var(--cream-2);
+  border-left: 1.5pt solid var(--gold);
+}
+
+.fc__tip .eyebrow {
+  margin-bottom: 1.4mm;
+  font-size: 5.5pt;
+}
+
+.fc__tip p:last-child {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 9.6pt;
+  line-height: 1.5;
+  color: var(--navy);
+}
+
+.fc__facts {
+  position: absolute;
+  top: 232mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 1.05fr 1.35fr 18mm;
+  gap: 8mm;
+  padding-top: 4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.fc__facts span {
+  display: block;
+  margin-bottom: 1.2mm;
+  font-size: 5.1pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.fc__facts p {
+  font-size: 6.6pt;
+  line-height: 1.55;
+  color: #43525e;
+}
+
+.fc__facts-badge {
+  padding-left: 6mm;
+  border-left: 0.4pt solid var(--line);
+  text-align: center;
+}
+
+.fc__facts-badge b {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 15pt;
+  line-height: 1;
+  color: var(--navy);
+}
+
+.fc__facts-badge span {
+  margin-top: 1.4mm;
+  margin-bottom: 0;
+}
+
+.fiche-c--hotel {
+  background: linear-gradient(180deg, #faf6ee 0%, #f4ecdd 100%);
+}
+
+.fiche-c--hotel .fc__tip { background: rgba(17, 38, 58, 0.055); }
+
+/* ---------- Itinéraires : introduction ---------------------------------- */
+
+.itin-intro {
+  background: var(--cream);
+}
+
+.itin-intro__grid {
+  position: absolute;
+  top: 80mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6mm;
+}
+
+.itin-card {
+  display: flex;
+  flex-direction: column;
+  height: 150mm;
+  padding: 7mm 6.5mm;
+  border: 0.5pt solid var(--line);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.itin-card__n {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 38pt;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.itin-card h3 {
+  margin: 4mm 0 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 15pt;
+  line-height: 1.16;
+  color: var(--navy);
+}
+
+.itin-card__sub {
+  margin-top: 2.2mm;
+  font-size: 5.5pt;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: var(--gold);
+}
+
+.itin-card p {
+  margin-top: 4mm;
+  font-size: 7.1pt;
+  line-height: 1.65;
+  color: #46545f;
+}
+
+.itin-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4mm;
+  margin-top: auto;
+  padding-top: 4mm;
+  border-top: 0.4pt solid var(--line);
+  font-size: 5.5pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.itin-card--dark {
+  border-color: var(--navy);
+  background: var(--navy);
+}
+
+.itin-card--dark .itin-card__n { color: var(--gold-2); }
+.itin-card--dark h3 { color: var(--cream); }
+.itin-card--dark .itin-card__sub { color: var(--gold-2); }
+.itin-card--dark p { color: rgba(250, 246, 238, 0.72); }
+.itin-card--dark .itin-card__meta {
+  border-color: var(--line-light);
+  color: rgba(250, 246, 238, 0.55);
+}
+
+.itin-intro__note {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 16mm;
+  display: grid;
+  grid-template-columns: 52mm 1fr;
+  gap: 9mm;
+  padding-top: 4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.itin-intro__note b {
+  font-size: 5.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.itin-intro__note p {
+  font-size: 6.8pt;
+  line-height: 1.6;
+  color: #43525e;
+}
+
+/* ---------- Agenda ------------------------------------------------------- */
+
+.agenda {
+  background: var(--cream);
+}
+
+.agenda__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  width: 124mm;
+}
+
+.agenda__head h2 {
+  margin: 3mm 0 0;
+  font-size: 30pt;
+  line-height: 1.06;
+}
+
+.agenda__head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.agenda__head p {
+  margin-top: 4mm;
+  max-width: 108mm;
+  font-size: 7.5pt;
+  line-height: 1.7;
+  color: #46545f;
+}
+
+.agenda__grid {
+  position: absolute;
+  top: 78mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm 9mm;
+}
+
+.agenda-card {
+  display: grid;
+  grid-template-columns: 24mm 1fr;
+  gap: 4mm;
+  align-items: start;
+  padding-top: 3.6mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.agenda-card__date b {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 21pt;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--navy);
+}
+
+.agenda-card__date span {
+  display: block;
+  margin-top: 1.2mm;
+  font-size: 5.5pt;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+
+.agenda-card__body h3 {
+  margin: 0 0 1.6mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 13pt;
+  line-height: 1.15;
+  color: var(--navy);
+}
+
+.agenda-card__body p {
+  font-size: 6.7pt;
+  line-height: 1.55;
+  color: #46545f;
+}
+
+.agenda-card__body small {
+  display: block;
+  margin-top: 2mm;
+  font-size: 5.1pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.agenda__note {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 16mm;
+  display: grid;
+  grid-template-columns: 44mm 1fr;
+  gap: 9mm;
+  padding-top: 4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.agenda__note b {
+  font-size: 5.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.agenda__note p {
+  font-size: 6.8pt;
+  line-height: 1.6;
+  color: #43525e;
+}
+
+.agenda-list {
+  position: absolute;
+  top: 74mm;
+  left: 18mm;
+  right: 18mm;
+}
+
+.agenda-row {
+  display: grid;
+  grid-template-columns: 27mm 1fr 32mm;
+  gap: 6mm;
+  align-items: baseline;
+  padding: 2.4mm 0;
+  border-top: 0.4pt solid var(--line);
+}
+
+.agenda-row:last-child { border-bottom: 0.4pt solid var(--line); }
+
+.agenda-row__date b {
+  margin-right: 2mm;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 12pt;
+  color: var(--navy);
+}
+
+.agenda-row__date span {
+  font-size: 5.3pt;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+
+.agenda-row__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 10.5pt;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.agenda-row__title small {
+  display: block;
+  margin-top: 0.9mm;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 6.1pt;
+  line-height: 1.5;
+  color: #46545f;
+}
+
+.agenda-row__year {
+  text-align: right;
+  font-size: 5.3pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.agenda__advice {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 16mm;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  padding-top: 4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.agenda__advice b {
+  display: block;
+  margin-bottom: 1.4mm;
+  font-size: 5.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.agenda__advice p {
+  font-size: 6.4pt;
+  line-height: 1.55;
+  color: #46545f;
+}
+
+/* ---------- Répertoire --------------------------------------------------- */
+
+.directory {
+  background: var(--cream);
+}
+
+.directory__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  right: 18mm;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10mm;
+}
+
+.directory__head h2 {
+  flex: none;
+  margin: 2.5mm 0 0;
+  font-size: 27pt;
+  line-height: 1.06;
+}
+
+.directory__head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.directory__head p {
+  width: 63mm;
+  font-size: 6.5pt;
+  line-height: 1.6;
+  color: #46545f;
+}
+
+.directory__running {
+  position: absolute;
+  top: 12mm;
+  left: 18mm;
+  right: 18mm;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.4mm;
+  border-bottom: 0.4pt solid rgba(17, 38, 58, 0.14);
+  font-size: 5.6pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #71808b;
+}
+
+.directory__stats {
+  position: absolute;
+  top: 62mm;
+  left: 18mm;
+  right: 18mm;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2.6mm 0;
+  border-top: 0.4pt solid var(--line);
+  border-bottom: 0.4pt solid var(--line);
+}
+
+.directory__stats > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2.4mm;
+  border-left: 0.4pt solid var(--line);
+}
+
+.directory__stats > div:first-child { border-left: 0; }
+
+.directory__stats b {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 13pt;
+  color: var(--navy);
+}
+
+.directory__stats span {
+  font-size: 5.2pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.dir-flow {
+  position: absolute;
+  top: 24mm;
+  left: 18mm;
+  right: 18mm;
+  bottom: 16mm;
+  column-count: 3;
+  column-gap: 6mm;
+  column-fill: auto;
+}
+
+.dir-flow--first { top: 76mm; }
+
+.dir-region {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2mm;
+  margin: 3mm 0 1.2mm;
+  padding-bottom: 1mm;
+  border-bottom: 0.5pt solid var(--navy);
+  font-size: 5.7pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+.dir-region:first-child { margin-top: 0; }
+
+.dir-region--cont {
+  margin-top: 0;
+  border-bottom-style: dashed;
+  color: var(--muted);
+}
+
+.dir-region b { font-weight: 500; }
+
+.dir-region span {
+  flex: none;
+  font-size: 4.9pt;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.dir-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2mm;
+  padding: 1.25mm 0;
+  border-bottom: 0.3pt solid rgba(17, 38, 58, 0.1);
+  break-inside: avoid;
+}
+
+.dir-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 5.9pt;
+  font-weight: 400;
+  color: var(--navy);
+}
+
+.dir-meta {
+  flex: none;
+  font-size: 4.9pt;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Index -------------------------------------------------------- */
+
+.index {
+  background: var(--cream);
+}
+
+.index__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  width: 104mm;
+}
+
+.index__head h2 {
+  margin: 3mm 0 0;
+  font-size: 30pt;
+  line-height: 1.05;
+}
+
+.index__head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.index__head p {
+  margin-top: 4mm;
+  max-width: 88mm;
+  font-size: 7.4pt;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.index__list {
+  position: absolute;
+  top: 68mm;
+  left: 18mm;
+  right: 18mm;
+  bottom: 60mm;
+  column-count: 2;
+  column-gap: 12mm;
+  column-fill: auto;
+}
+
+.index-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2mm;
+  padding: 1.35mm 0;
+  break-inside: avoid;
+}
+
+.index-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 8.2pt;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.index-row .dots {
+  flex: 1;
+  border-bottom: 0.4pt dotted rgba(17, 38, 58, 0.3);
+  transform: translateY(-0.6mm);
+}
+
+.index-page {
+  flex: none;
+  font-size: 6.2pt;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.index__cats {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 16mm;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  padding-top: 4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.index__cats b {
+  display: block;
+  margin-bottom: 1.4mm;
+  font-size: 5.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.index__cats p {
+  font-size: 6.3pt;
+  line-height: 1.65;
+  color: #46545f;
+}
+
+/* ---------- Crédits ------------------------------------------------------ */
+
+.credits {
+  background: var(--cream);
+}
+
+.credits__head {
+  position: absolute;
+  top: 17mm;
+  left: 18mm;
+  width: 110mm;
+}
+
+.credits__head h2 {
+  margin: 3mm 0 0;
+  font-size: 30pt;
+  line-height: 1.05;
+}
+
+.credits__head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.credits__grid {
+  position: absolute;
+  top: 60mm;
+  left: 18mm;
+  right: 18mm;
+  bottom: 17mm;
+  display: grid;
+  grid-template-columns: 1.25fr 0.72fr;
+  gap: 12mm;
+}
+
+.credits__group { margin-bottom: 4.2mm; }
+
+.credits__group h4,
+.credits__legal h4 {
+  margin: 0 0 1.6mm;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 5.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.credits__note {
+  font-size: 6.2pt;
+  line-height: 1.55;
+  color: #46545f;
+}
+
+.credits__names {
+  margin-top: 1.4mm;
+  font-size: 5.5pt;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.credits__legal {
+  padding-left: 8mm;
+  border-left: 0.4pt solid var(--line);
+}
+
+.credits__legal p {
+  margin-bottom: 2.6mm;
+  font-size: 6.2pt;
+  line-height: 1.65;
+  color: #46545f;
+}
+
+.credits__edition {
+  margin-top: 6mm;
+  padding-top: 3mm;
+  border-top: 0.4pt solid var(--line);
+  font-size: 5.5pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Compléments de pagination ----------------------------------- */
+
+.intro__stats {
+  position: absolute;
+  left: 18mm;
+  bottom: 16mm;
+  width: 106mm;
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  padding-top: 3.4mm;
+  border-top: 0.6pt solid var(--navy);
+}
+
+.intro__stats b {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 15pt;
+  line-height: 1;
+  color: var(--navy);
+}
+
+.intro__stats span {
+  display: block;
+  margin-top: 1.4mm;
+  font-size: 5.1pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.itin__days--short {
+  bottom: 40mm;
+}
+
+.itin__days--short .itin__day {
+  padding: 6.4mm 0;
+}
+
+.itin__days--short .itin__daytitle {
+  font-size: 11.5pt;
+}
+
+.itin__days--short .itin__daytext {
+  font-size: 7.6pt;
+  line-height: 1.6;
+}
+
+.itin__days--double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
+  column-gap: 9mm;
+}
+
+.itin__days--double .itin__day {
+  grid-template-columns: 10mm 1fr;
+  grid-template-rows: auto auto;
+  gap: 1mm 3mm;
+  padding: 2.4mm 0;
+}
+
+.itin__days--double .itin__daynum {
+  grid-row: 1 / span 2;
+  align-self: start;
+  width: 8mm;
+  height: 8mm;
+  margin-top: 0.8mm;
+  font-size: 7.2pt;
+}
+
+.itin__days--double .itin__daytitle {
+  grid-column: 2;
+  padding-top: 0;
+  font-size: 10pt;
+}
+
+.itin__days--double .itin__daytext {
+  grid-column: 2;
+  padding-top: 0;
+  font-size: 6.4pt;
+  line-height: 1.5;
+}
+
+.agenda__head--small {
+  width: 120mm;
+}
+
+.agenda__head--small h2 {
+  font-size: 28pt;
+}
+
+.agenda--calendar {
+  background: linear-gradient(180deg, #faf6ee 0%, #f6efe2 100%);
+}
+
+.credits__main {
+  min-height: 0;
+}
+
+/* ---------- Debug -------------------------------------------------------- */
+
+#audit {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  font-size: 8pt;
+}
+
+
+
