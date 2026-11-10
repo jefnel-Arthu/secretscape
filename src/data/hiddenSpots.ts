@@ -5963,7 +5963,7 @@ export const REAL_IMAGES: Record<string, string> = {
   'spot-portonovo-honme': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg/1280px-Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg',
   'spot-portonovo-ethnographique': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Gate_of_Porto_Novo_ethnographic_museum_Benin_Dec_2017.jpg/1280px-Gate_of_Porto_Novo_ethnographic_museum_Benin_Dec_2017.jpg',
   'spot-portonovo-dasilva': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg/1280px-Affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg',
-  'spot-portonovo-mosquee': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Grande_Mosquee_de_Porto-Novo.jpg/1280px-Grande_Mosquee_de_Porto-Novo.jpg',
+  'spot-portonovo-mosquee': '/images/localized/porto-novo-mosquee.jpg',
   'spot-bohicon-agongointo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Village_souterrain_d%27Agongointo.jpg/1280px-Village_souterrain_d%27Agongointo.jpg',
   'spot-allada-palais': 'https://upload.wikimedia.org/wikipedia/commons/1/10/Roi_d%27Allada-1900.jpg',
   'spot-ketou-akaba': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/G%C3%A8l%C3%A8d%C3%A9_masked_dancer%2C_K%C3%A9tou%2C_Benin.jpg/1280px-G%C3%A8l%C3%A8d%C3%A9_masked_dancer%2C_K%C3%A9tou%2C_Benin.jpg',

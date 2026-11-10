@@ -31,7 +31,8 @@ const GANVIE_IMAGE = '/images/localized/ganvie-6b0090.jpg';
 const COTONOU_IMAGE = '/images/localized/cotonou-5951af.jpg';
 const OUIDAH_IMAGE = '/images/localized/ouidah-7f9923.jpg';
 const GRAND_POPO_IMAGE = '/images/localized/grand-popo-3a6ca6.jpg';
-const PORTO_NOVO_IMAGE = 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg';
+// Grande Mosquée de Porto-Novo — photo GBETONGNINOUGBO Joseph Hervé Ahissou, CC BY-SA 4.0
+const PORTO_NOVO_IMAGE = '/images/localized/porto-novo-mosquee.jpg';
 const SAFARI_IMAGE = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=80';
 
 /** Culture béninoise en fond du hero — défilement automatique toutes les 10 s. */
@@ -346,7 +347,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg" alt="Porto-Novo" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <OptimizedImage src={PORTO_NOVO_IMAGE} alt="Porto-Novo" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">HISTOIRE & TRADITIONS</span>
