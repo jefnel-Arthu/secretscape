@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiddenSpot } from '../types';
 import { INITIAL_HIDDEN_SPOTS } from '../data/hiddenSpots';
+import { OptimizedImage } from './OptimizedImage';
 import {
   Compass,
   MapPin,
@@ -148,6 +149,9 @@ const FEATURED_SPOT_IDS = [
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCategory, onOpenSpot }) => {
   const [heroReady, setHeroReady] = React.useState(false);
   const [heroIndex, setHeroIndex] = React.useState(0);
+  // Diapositives déjà montées : on ne télécharge au départ que l'image courante
+  // et la suivante, les autres arrivent au fil du défilement.
+  const [mountedSlides, setMountedSlides] = React.useState<number[]>([0, 1]);
 
   React.useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
@@ -163,13 +167,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
     return () => window.clearInterval(id);
   }, []);
 
-  // Précharge les images pour éviter un flash blanc au changement.
   React.useEffect(() => {
-    HERO_SLIDES.forEach((slide) => {
-      const img = new Image();
-      img.src = slide.src;
+    setMountedSlides((prev) => {
+      const next = new Set<number>(prev);
+      next.add(heroIndex);
+      next.add((heroIndex + 1) % HERO_SLIDES.length);
+      if (next.size === prev.length) return prev;
+      return Array.from(next).sort((a, b) => a - b);
     });
-  }, []);
+  }, [heroIndex]);
 
   const featuredSpots = FEATURED_SPOT_IDS.map((id) =>
     INITIAL_HIDDEN_SPOTS.find((s) => s.id === id)
@@ -189,17 +195,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       {/* ═══════════════════════════════════════════════ HERO ═══ */}
       <section className="relative h-[100vh] min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          {HERO_SLIDES.map((slide, index) => (
-            <img
-              key={slide.src}
-              src={slide.src}
-              alt={slide.alt}
-              aria-hidden={index !== heroIndex}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-out ${
-                index === heroIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-          ))}
+          {HERO_SLIDES.map((slide, index) =>
+            mountedSlides.includes(index) ? (
+              <OptimizedImage
+                key={slide.src}
+                src={slide.src}
+                alt={slide.alt}
+                aria-hidden={index !== heroIndex}
+                decoding="async"
+                fetchPriority={index === 0 ? 'high' : 'low'}
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-out ${
+                  index === heroIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ) : null
+          )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/70 via-[#0b1b2b]/45 to-[#0b1b2b]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b2b]/80 via-transparent to-transparent" />
@@ -258,7 +268,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl h-[420px] sm:h-[560px]">
-                <img src="/images/localized/ambiance-beninoise-1f72ae.jpg" alt="Ambiance béninoise" className="w-full h-full object-cover" />
+                <OptimizedImage src="/images/localized/ambiance-beninoise-1f72ae.jpg" alt="Ambiance béninoise" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="space-y-6">
@@ -291,7 +301,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-6 group relative overflow-hidden rounded-3xl h-[380px] sm:h-[460px] text-left">
-              <img src="/images/localized/ganvie-5096cd.jpg" alt="Ganvié" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <OptimizedImage src="/images/localized/ganvie-5096cd.jpg" alt="Ganvié" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">VILLAGE LACUSTRE</span>
@@ -299,7 +309,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-6 group relative overflow-hidden rounded-3xl h-[380px] sm:h-[460px] text-left">
-              <img src="/images/localized/cotonou-15460d.jpg" alt="Cotonou" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <OptimizedImage src="/images/localized/cotonou-15460d.jpg" alt="Cotonou" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">VILLE VIBRANTE</span>
@@ -307,7 +317,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
-              <img src="/images/localized/ouidah-7f9923.jpg" alt="Ouidah" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <OptimizedImage src="/images/localized/ouidah-7f9923.jpg" alt="Ouidah" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">MÉMOIRE & SPIRITUALITÉ</span>
@@ -315,7 +325,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
-              <img src="/images/localized/grand-popo-3a6ca6.jpg" alt="Grand-Popo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <OptimizedImage src="/images/localized/grand-popo-3a6ca6.jpg" alt="Grand-Popo" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">OCÉAN & DOUCEUR</span>
@@ -323,7 +333,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               </div>
             </button>
             <button onClick={() => onNavigate('gallery')} className="lg:col-span-4 group relative overflow-hidden rounded-3xl h-[340px] sm:h-[400px] text-left">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg" alt="Porto-Novo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg" alt="Porto-Novo" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 space-y-2">
                 <span className="text-xs tracking-[0.3em] uppercase text-white/70">HISTOIRE & TRADITIONS</span>
@@ -339,7 +349,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl h-[520px] sm:h-[640px]">
-                <img src="/images/localized/ambiance-et-rencontres-au-benin-8597ad.jpg" alt="Ambiance et rencontres au Bénin" className="w-full h-full object-cover" />
+                <OptimizedImage src="/images/localized/ambiance-et-rencontres-au-benin-8597ad.jpg" alt="Ambiance et rencontres au Bénin" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="space-y-8">
@@ -385,7 +395,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
 
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/localized/savane-du-parc-national-de-la-pendjari-390588.jpg" alt="Savane du Parc National de la Pendjari" className="w-full h-full object-cover" />
+          <OptimizedImage src="/images/localized/savane-du-parc-national-de-la-pendjari-390588.jpg" alt="Savane du Parc National de la Pendjari" loading="lazy" decoding="async" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -502,7 +512,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
       {/* ═══════════════════════════════════════════════ CTA ═══ */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80" alt="Bénin autrement" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80" alt="Bénin autrement" loading="lazy" decoding="async" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/90 via-[#0b1b2b]/70 to-[#0b1b2b]/50" />
 

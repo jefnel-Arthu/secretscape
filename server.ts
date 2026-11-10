@@ -9,7 +9,7 @@ dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json({ limit: '8mb' }));
 
@@ -618,8 +618,29 @@ Pour chaque jour, génère de 3 à 4 étapes réparties sur la journée (Matin 0
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
+    const assetsDir = path.join(distPath, 'assets') + path.sep;
+    const imagesDir = path.join(distPath, 'images') + path.sep;
+
+    app.use(express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        // Assets à empreinte de contenu : cache long, jamais revalidé.
+        if (filePath.startsWith(assetsDir)) {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+          return;
+        }
+        // Images : 30 jours côté navigateur et CDN, puis revalidation.
+        if (filePath.startsWith(imagesDir)) {
+          res.setHeader('Cache-Control', 'public, max-age=2592000');
+          return;
+        }
+        // index.html : toujours revalidé pour récupérer la nouvelle version.
+        if (filePath.endsWith('.html')) {
+          res.setHeader('Cache-Control', 'no-cache');
+        }
+      },
+    }));
     app.get('*all', (_req, res) => {
+      res.setHeader('Cache-Control', 'no-cache');
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }

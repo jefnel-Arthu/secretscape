@@ -9,6 +9,7 @@ const overlayStyle: React.CSSProperties = {
 
 /** Photo Vodun Days (celle de la carte événement), voilée en bleu nuit. */
 const AGENDA_BACKGROUND = '/images/vodun-days-2026.jpg';
+const AGENDA_BACKGROUND_WEBP = '/images/vodun-days-2026.webp';
 
 export const GalleryView: React.FC = () => {
   const featured = AGENDA_EVENTS[0];
@@ -321,6 +322,10 @@ export const GalleryView: React.FC = () => {
 
         .agenda-bg {
           background-image: url("${AGENDA_BACKGROUND}");
+          background-image: image-set(
+            url("${AGENDA_BACKGROUND_WEBP}") type("image/webp"),
+            url("${AGENDA_BACKGROUND}") type("image/jpeg")
+          );
           background-size: cover;
           background-position: center 35%;
           background-repeat: no-repeat;
