@@ -35,13 +35,22 @@ const PORTO_NOVO_IMAGE = 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Gr
 const SAFARI_IMAGE = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=80';
 
 /** Culture béninoise en fond du hero — défilement automatique toutes les 10 s. */
-const HERO_SLIDES = [
-  { src: GANVIE_IMAGE, alt: 'Village lacustre de Ganvié' },
-  { src: '/images/vodun-days-2026.jpg', alt: 'Vodun Days à Ouidah' },
-  { src: '/images/localized/event-festival-masques-4623dc.jpg', alt: 'Festival des Masques de Porto-Novo' },
-  { src: '/images/localized/event-1er-aout-file-degan-gabin-motorized-parade-jpg-4a8da6.jpg', alt: 'Fête du 1er Août au Bénin' },
-  { src: '/images/hero-festival-sica.jpg', alt: 'Festival SICA, arts et culture du Bénin' },
+type HeroSlide = { src: string; alt: string; width: number };
+
+const HERO_SLIDES: HeroSlide[] = [
+  { src: GANVIE_IMAGE, alt: 'Village lacustre de Ganvié', width: 1600 },
+  { src: '/images/vodun-days-2026.jpg', alt: 'Vodun Days à Ouidah', width: 1600 },
+  { src: '/images/localized/event-festival-masques-4623dc.jpg', alt: 'Festival des Masques de Porto-Novo', width: 1280 },
+  { src: '/images/localized/event-1er-aout-file-degan-gabin-motorized-parade-jpg-4a8da6.jpg', alt: 'Fête du 1er Août au Bénin', width: 1600 },
+  { src: '/images/hero-festival-sica.jpg', alt: 'Festival SICA, arts et culture du Bénin', width: 1600 },
 ];
+
+const replaceExt = (src: string, ext: string) => src.replace(/\.(jpe?g|png)$/i, ext);
+const heroWebpSet = (slide: HeroSlide) =>
+  `${replaceExt(slide.src, '-800.webp')} 800w, ${replaceExt(slide.src, '.webp')} ${slide.width}w`;
+const heroJpegSet = (slide: HeroSlide) =>
+  `${replaceExt(slide.src, '-800.jpg')} 800w, ${slide.src} ${slide.width}w`;
+
 const HERO_INTERVAL_MS = 10000;
 
 const CATEGORY_CARDS = [
@@ -151,7 +160,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
   const [heroIndex, setHeroIndex] = React.useState(0);
   // Diapositives déjà montées : on ne télécharge au départ que l'image courante
   // et la suivante, les autres arrivent au fil du défilement.
-  const [mountedSlides, setMountedSlides] = React.useState<number[]>([0, 1]);
+  const [mountedSlides, setMountedSlides] = React.useState<number[]>([0]);
 
   React.useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
@@ -167,14 +176,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
     return () => window.clearInterval(id);
   }, []);
 
+  // Monte la diapositive suivante quelques secondes après l'affichage courant :
+  // elle a ainsi le temps de se télécharger avant la transition, sans retarder
+  // le premier rendu.
   React.useEffect(() => {
-    setMountedSlides((prev) => {
-      const next = new Set<number>(prev);
-      next.add(heroIndex);
-      next.add((heroIndex + 1) % HERO_SLIDES.length);
-      if (next.size === prev.length) return prev;
-      return Array.from(next).sort((a, b) => a - b);
-    });
+    const nextIndex = (heroIndex + 1) % HERO_SLIDES.length;
+    const timer = window.setTimeout(() => {
+      setMountedSlides((prev) => (prev.includes(nextIndex) ? prev : [...prev, nextIndex].sort((a, b) => a - b)));
+    }, 3000);
+    return () => window.clearTimeout(timer);
   }, [heroIndex]);
 
   const featuredSpots = FEATURED_SPOT_IDS.map((id) =>
@@ -200,6 +210,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onNavigateToCate
               <OptimizedImage
                 key={slide.src}
                 src={slide.src}
+                srcSet={heroJpegSet(slide)}
+                webpSrcSet={heroWebpSet(slide)}
+                sizes="100vw"
                 alt={slide.alt}
                 aria-hidden={index !== heroIndex}
                 decoding="async"
