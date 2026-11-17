@@ -23,9 +23,23 @@ import { ServicesView } from './components/ServicesView';
 import { ContactView } from './components/ContactView';
 import { AdminPanel } from './components/AdminPanel';
 import { NavigationModal } from './components/NavigationModal';
-import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2, ArrowLeft } from 'lucide-react';
+import { PhotoCreditsModal } from './components/PhotoCreditsModal';
+import { AGENCY_CONTACT, AGENCY_PHONE_HREF } from './data/contact';
+import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2, ArrowLeft, Mail, MapPin, Phone } from 'lucide-react';
 
 const APP_VERSION = '2.1';
+
+/** Destinations mises en avant dans le footer. */
+const FOOTER_DESTINATIONS = [
+  'Cotonou',
+  'Ouidah',
+  'Abomey',
+  'Grand-Popo',
+  'Porto-Novo',
+  'Dassa-Zoumé',
+  'Ganvié',
+  'Natitingou',
+];
 
 function migrateStorage() {
   const stored = localStorage.getItem('secretscape_version');
@@ -43,6 +57,8 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'home' | 'map' | 'gallery' | 'souvenirs' | 'calendar' | 'addSpot' | 'favorites' | 'services' | 'contact' | 'admin'>('home');
   const [calendarView, setCalendarView] = useState<'planner' | 'itinerary'>('planner');
   const [viewMode, setViewMode] = useState<'map' | 'grid'>('grid');
+  const [creditsOpen, setCreditsOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(24);
 
   // Spots dataset
   const [spots, setSpots] = useState<HiddenSpot[]>(() => {
@@ -179,6 +195,11 @@ export default function App() {
       searchQuery,
     });
   }, [spots, selectedCity, selectedCategory, selectedSecretLevel, searchQuery]);
+
+  // Nouvelle recherche / nouveau filtre → on repart des 24 premiers résultats
+  useEffect(() => {
+    setVisibleCount(24);
+  }, [filteredSpots]);
 
   // Add spot to trip calendar
   const handleAddToCalendar = (spot: HiddenSpot, dayNumber = 1, timeSlot: TimeSlot = 'afternoon') => {
@@ -396,7 +417,14 @@ export default function App() {
               setSelectedCategory(category as any);
               setActiveTab('map');
             }}
-            onOpenSpot={(spot) => {
+            onNavigateToCity={(city) => {
+              trackAction('homepage_city', `Navigation ville: ${city}`);
+              setSelectedCity(city);
+              setActiveTab('map');
+            }}
+            onOpenSpot={(spotId) => {
+              const spot = INITIAL_HIDDEN_SPOTS.find((s) => s.id === spotId);
+              if (!spot) return;
               trackAction('spot_preview', `Aperçu lieu: ${spot.title}`, spot.id);
               setSelectedSpotModal(spot);
             }}
@@ -443,7 +471,7 @@ export default function App() {
                     </div>
                   ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {filteredSpots.map(spot => (
+                      {filteredSpots.slice(0, visibleCount).map(spot => (
                         <SpotCard
                           key={spot.id}
                           spot={spot}
@@ -453,6 +481,19 @@ export default function App() {
                           isFavorite={favorites.includes(spot.id)}
                         />
                       ))}
+                    </div>
+                  )}
+                  {filteredSpots.length > visibleCount && (
+                    <div className="mt-8 flex justify-center">
+                      <button
+                        onClick={() => setVisibleCount((count) => count + 24)}
+                        className="px-6 py-3 rounded-xl bg-white/95 hover:bg-white text-stone-800 text-sm font-semibold shadow-lg transition-colors"
+                      >
+                        Afficher {Math.min(24, filteredSpots.length - visibleCount)} lieux de plus
+                        <span className="ml-2 text-stone-500 font-normal">
+                          ({visibleCount}/{filteredSpots.length})
+                        </span>
+                      </button>
                     </div>
                   )}
                 </div>
@@ -610,33 +651,125 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-stone-900 border-t border-stone-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-stone-900">
-                <Compass className="w-5 h-5 stroke-[2.2]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+            {/* Marque */}
+            <div className="lg:col-span-4 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-stone-900">
+                  <Compass className="w-5 h-5 stroke-[2.2]" />
+                </div>
+                <div>
+                  <span className="font-display text-lg font-bold text-stone-100 block leading-none">
+                    Secret<span className="text-amber-400">Scape</span>
+                  </span>
+                  <span className="text-[10px] text-stone-500 font-medium tracking-wider uppercase block mt-0.5">
+                    Lieux Cachés & Itinéraires
+                  </span>
+                </div>
               </div>
-              <div>
-                <span className="font-display text-lg font-bold text-stone-100 block leading-none">
-                  Secret<span className="text-amber-400">Scape</span>
-                </span>
-                <span className="text-[10px] text-stone-500 font-medium tracking-wider uppercase block mt-0.5">
-                  Lieux Cachés & Itinéraires
-                </span>
-              </div>
+              <p className="text-stone-400 text-xs leading-relaxed max-w-xs">
+                Les lieux secrets du Bénin, racontés par ceux qui y vivent. Des adresses vérifiées,
+                des itinéraires modulables et des guides locaux rémunérés.
+              </p>
+              <p className="text-stone-600 text-[11px] leading-relaxed">
+                Cotonou, Bénin · Agence locale
+              </p>
             </div>
-            <p className="text-stone-500 text-xs text-center sm:text-right max-w-xs leading-relaxed">
-              Conçu pour les explorateurs de lieux cachés et de pépites méconnues du Bénin.
-            </p>
+
+            {/* Destinations */}
+            <nav className="lg:col-span-3" aria-label="Destinations">
+              <h3 className="text-[10px] font-bold tracking-[0.28em] uppercase text-amber-400/90 mb-4">
+                Destinations
+              </h3>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+                {FOOTER_DESTINATIONS.map((city) => (
+                  <li key={city}>
+                    <button
+                      onClick={() => {
+                        setSelectedCity(city);
+                        setActiveTab('map');
+                      }}
+                      className="text-xs text-stone-400 hover:text-amber-400 transition-colors text-left"
+                    >
+                      {city}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Préparer */}
+            <nav className="lg:col-span-2" aria-label="Préparer son voyage">
+              <h3 className="text-[10px] font-bold tracking-[0.28em] uppercase text-amber-400/90 mb-4">
+                Préparer
+              </h3>
+              <ul className="space-y-2.5">
+                <li>
+                  <button onClick={() => { setCalendarView('planner'); setActiveTab('calendar'); }} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">
+                    Circuits sur mesure
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { setViewMode('grid'); setActiveTab('map'); }} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">
+                    Excursions
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { setSelectedCategory('hotels'); setActiveTab('map'); }} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">
+                    Hébergements
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => setActiveTab('gallery')} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">
+                    Agenda culturel
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => setActiveTab('services')} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">
+                    Nos services
+                  </button>
+                </li>
+              </ul>
+            </nav>
+
+            {/* Contact */}
+            <div className="lg:col-span-3">
+              <h3 className="text-[10px] font-bold tracking-[0.28em] uppercase text-amber-400/90 mb-4">
+                Nous joindre
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href={AGENCY_PHONE_HREF} className="group flex items-center gap-2.5 text-xs text-stone-400 hover:text-amber-400 transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-stone-500 group-hover:text-amber-400 transition-colors" />
+                    {AGENCY_CONTACT.phone}
+                  </a>
+                </li>
+                <li>
+                  <a href={`mailto:${AGENCY_CONTACT.email}`} className="group flex items-center gap-2.5 text-xs text-stone-400 hover:text-amber-400 transition-colors break-all">
+                    <Mail className="w-3.5 h-3.5 shrink-0 text-stone-500 group-hover:text-amber-400 transition-colors" />
+                    {AGENCY_CONTACT.email}
+                  </a>
+                </li>
+                <li className="flex items-center gap-2.5 text-xs text-stone-400">
+                  <MapPin className="w-3.5 h-3.5 shrink-0 text-stone-500" />
+                  {AGENCY_CONTACT.address}
+                </li>
+                <li className="text-[11px] text-stone-600 leading-relaxed pl-6">
+                  {AGENCY_CONTACT.hours}
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="mt-6 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-stone-600">
+
+          <div className="mt-10 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-stone-600">
             <span>&copy; {new Date().getFullYear()} SecretScape. Tous droits réservés.</span>
-            <div className="flex items-center gap-4">
-              <button onClick={() => setActiveTab('services')} className="hover:text-amber-400 transition-colors font-medium">Services</button>
-              <span className="text-stone-800">•</span>
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <button onClick={() => setActiveTab('contact')} className="hover:text-amber-400 transition-colors font-medium">Contact</button>
               <span className="text-stone-800">•</span>
               <button onClick={() => setActiveTab('addSpot')} className="hover:text-amber-400 transition-colors font-medium">Proposer un lieu</button>
+              <span className="text-stone-800">•</span>
+              <button onClick={() => setCreditsOpen(true)} className="hover:text-amber-400 transition-colors font-medium">Crédits photos</button>
             </div>
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -645,6 +778,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      <PhotoCreditsModal open={creditsOpen} onClose={() => setCreditsOpen(false)} />
 
     </div>
   );

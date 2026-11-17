@@ -14,7 +14,10 @@ type OptimizedImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
  * classes passées à `className` continuent de s'appliquer à la balise `<img>`.
  */
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, webpSrcSet, ...rest }) => {
-  const webpSrc = src.replace(/\.(jpe?g|png)$/i, '.webp');
+  // Le WebP n'est proposé que pour nos images locales : une URL distante ou
+  // saisie par un visiteur n'a pas forcément de variante .webp à côté.
+  const isLocal = src.startsWith('/images/');
+  const webpSrc = isLocal ? src.replace(/\.(jpe?g|png)$/i, '.webp') : src;
   const sources = webpSrcSet ?? (webpSrc !== src ? webpSrc : undefined);
 
   return (

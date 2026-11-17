@@ -1,0 +1,26 @@
+﻿{
+  "/images/localized/abomey-palais.jpg": {
+    "author": "Karalyn Monteil (UNESCO)",
+    "licence": "CC BY-SA 3.0 IGO",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Royal_Palaces_of_Abomey-133470.jpg"
+  },
+  "/images/localized/ouidah-porte-non-retour.jpg": {
+    "author": "Borisghost",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Porte_du_non-retour_au_Benin.jpg"
+  },
+  "/images/localized/dassa-collines.jpg": {
+    "author": "Padonou Dotou",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg"
+  },
+  "/images/localized/guelede-danse.jpg": {
+    "author": "DEGAN Gabin",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Beninese_culture_-Gu%C3%A8l%C3%A8de_dance.jpg"
+  }
+}

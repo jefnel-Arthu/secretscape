@@ -1,0 +1,2970 @@
+[
+  {
+    "key": "wm:coucher_du_soleil_sur_la_plage_fidjrossè-cotonou_benin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Coucher_du_soleil_sur_la_plage_Fidjross%C3%A8-Cotonou_Benin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/0f/Coucher_du_soleil_sur_la_plage_Fidjross%C3%A8-Cotonou_Benin.jpg"
+    ],
+    "slug": "coucher-du-soleil-sur-la-plage-fidjrosse-cotonou-b-986584",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\coucher-du-soleil-sur-la-plage-fidjrosse-cotonou-b-986584.src",
+    "bytes": 305416,
+    "files": [
+      "src\\components\\AddSpotModal.tsx",
+      "src\\components\\MapExplorer.tsx",
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1516426122078-c23e76319801",
+    "url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=80"
+    ],
+    "slug": "photo-1516426122078-c23e76319801-cea606",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1516426122078-c23e76319801-cea606.src",
+    "bytes": 143918,
+    "files": [
+      "src\\components\\HomePage.tsx"
+    ]
+  },
+  {
+    "key": "us:photo-1507525428034-b723cf961d3e",
+    "url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1507525428034-b723cf961d3e-07cb02",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1507525428034-b723cf961d3e-07cb02.src",
+    "bytes": 128198,
+    "files": [
+      "src\\components\\HomePage.tsx",
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "raw:https://french.news.cn/20230929/2f4614bc3b404beb859b5f53b9e93fc5/202309292f4614bc3b404beb859b5f53b9e93fc5_XxjifrF007025_20230929_CBMFN0A002.jpg",
+    "url": "https://french.news.cn/20230929/2f4614bc3b404beb859b5f53b9e93fc5/202309292f4614bc3b404beb859b5f53b9e93fc5_XxjifrF007025_20230929_CBMFN0A002.jpg",
+    "urls": [
+      "https://french.news.cn/20230929/2f4614bc3b404beb859b5f53b9e93fc5/202309292f4614bc3b404beb859b5f53b9e93fc5_XxjifrF007025_20230929_CBMFN0A002.jpg"
+    ],
+    "slug": "202309292f4614bc3b404beb859b5f53b9e93fc5-xxjifrf00-c0f7b1",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\202309292f4614bc3b404beb859b5f53b9e93fc5-xxjifrf00-c0f7b1.src",
+    "bytes": 194483,
+    "files": [
+      "src\\data\\agendaEvents.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1533105079780-92b9be482077",
+    "url": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1533105079780-92b9be482077-1228d0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1533105079780-92b9be482077-1228d0.src",
+    "bytes": 404885,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1432405972618-c60b0225b8f9",
+    "url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1432405972618-c60b0225b8f9-9f772c",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1432405972618-c60b0225b8f9-9f772c.src",
+    "bytes": 326052,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1524850011238-e3d235c7d4c9",
+    "url": "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1524850011238-e3d235c7d4c9-12e2c9",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1524850011238-e3d235c7d4c9-12e2c9.src",
+    "bytes": 292645,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1509299349698-dd22323b5963",
+    "url": "https://images.unsplash.com/photo-1509299349698-dd22323b5963?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1509299349698-dd22323b5963?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1509299349698-dd22323b5963-d3c780",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1509299349698-dd22323b5963-d3c780.src",
+    "bytes": 141608,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1549144511-f099e773c147",
+    "url": "https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1549144511-f099e773c147-1ad8e6",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1549144511-f099e773c147-1ad8e6.src",
+    "bytes": 0,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1552832230-c0197dd311b5",
+    "url": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1552832230-c0197dd311b5-65f83e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1552832230-c0197dd311b5-65f83e.src",
+    "bytes": 158570,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:vue_de_dassa_depuis_la_colline_de_kamaté.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg/1280px-Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg/1280px-Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg"
+    ],
+    "slug": "vue-de-dassa-depuis-la-colline-de-kamate-726f82",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\vue-de-dassa-depuis-la-colline-de-kamate-726f82.src",
+    "bytes": 295855,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1510812431401-41d2bd2722f3",
+    "url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1510812431401-41d2bd2722f3-1d28f0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1510812431401-41d2bd2722f3-1d28f0.src",
+    "bytes": 102260,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:gate_of_porto_novo_ethnographic_museum_benin_dec_2017.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Gate_of_Porto_Novo_ethnographic_museum_Benin_Dec_2017.jpg/1280px-Gate_of_Porto_Novo_ethnographic_museum_Benin_Dec_2017.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Gate_of_Porto_Novo_ethnographic_museum_Benin_Dec_2017.jpg/1280px-Gate_of_Porto_Novo_ethnographic_museum_Benin_Dec_2017.jpg"
+    ],
+    "slug": "gate-of-porto-novo-ethnographic-museum-benin-dec-2-350f21",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\gate-of-porto-novo-ethnographic-museum-benin-dec-2-350f21.src",
+    "bytes": 314719,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1493976040374-85c8e12f0c0e",
+    "url": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1493976040374-85c8e12f0c0e-189735",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1493976040374-85c8e12f0c0e-189735.src",
+    "bytes": 242441,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:grotte_mariale_d'arigbo_.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Grotte_mariale_d%27Arigbo_.jpg/1280px-Grotte_mariale_d%27Arigbo_.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Grotte_mariale_d%27Arigbo_.jpg/1280px-Grotte_mariale_d%27Arigbo_.jpg"
+    ],
+    "slug": "grotte-mariale-d-arigbo-b7c778",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\grotte-mariale-d-arigbo-b7c778.src",
+    "bytes": 219764,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1494522358652-f30e61a60313",
+    "url": "https://images.unsplash.com/photo-1494522358652-f30e61a60313?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1494522358652-f30e61a60313?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1494522358652-f30e61a60313-b83b5f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1494522358652-f30e61a60313-b83b5f.src",
+    "bytes": 307522,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1473116763249-2faaef81ccda",
+    "url": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1473116763249-2faaef81ccda-ef4420",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1473116763249-2faaef81ccda-ef4420.src",
+    "bytes": 129922,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1546182990-dffeafbe841d",
+    "url": "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1546182990-dffeafbe841d-08e918",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1546182990-dffeafbe841d-08e918.src",
+    "bytes": 235883,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1531592937781-344ad608fabf",
+    "url": "https://images.unsplash.com/photo-1531592937781-344ad608fabf?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1531592937781-344ad608fabf?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1531592937781-344ad608fabf-2db8db",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1531592937781-344ad608fabf-2db8db.src",
+    "bytes": 426621,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1506905925346-21bda4d32df4",
+    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1506905925346-21bda4d32df4-2d4ce2",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1506905925346-21bda4d32df4-2d4ce2.src",
+    "bytes": 130501,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1519046904884-53103b34b206",
+    "url": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1519046904884-53103b34b206-dfe6c0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1519046904884-53103b34b206-dfe6c0.src",
+    "bytes": 166626,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1596838132731-3301c3fd4317",
+    "url": "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1596838132731-3301c3fd4317-58a687",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1596838132731-3301c3fd4317-58a687.src",
+    "bytes": 268656,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1467003909585-2f8a72700288",
+    "url": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1467003909585-2f8a72700288-c17f25",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1467003909585-2f8a72700288-c17f25.src",
+    "bytes": 253967,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1504674900247-0877df9cc836",
+    "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1504674900247-0877df9cc836-1dbb5e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1504674900247-0877df9cc836-1dbb5e.src",
+    "bytes": 192834,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1559847844-5315695dadae",
+    "url": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1559847844-5315695dadae-792b62",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1559847844-5315695dadae-792b62.src",
+    "bytes": 131607,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1516321318423-f06f85e504b3",
+    "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1516321318423-f06f85e504b3-6adfca",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1516321318423-f06f85e504b3-6adfca.src",
+    "bytes": 77150,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1488459716781-31db52582fe9",
+    "url": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1488459716781-31db52582fe9-e4cf81",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1488459716781-31db52582fe9-e4cf81.src",
+    "bytes": 206633,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1555396273-367ea4eb4db5",
+    "url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1555396273-367ea4eb4db5-3751d8",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1555396273-367ea4eb4db5-3751d8.src",
+    "bytes": 205632,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1540189549336-e6e99c3679fe",
+    "url": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1540189549336-e6e99c3679fe-3ebedc",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1540189549336-e6e99c3679fe-3ebedc.src",
+    "bytes": 260667,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1555939594-58d7cb561ad1",
+    "url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1555939594-58d7cb561ad1-bade39",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1555939594-58d7cb561ad1-bade39.src",
+    "bytes": 382766,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1561651823-34feb02250e4",
+    "url": "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1561651823-34feb02250e4-40c289",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1561651823-34feb02250e4-40c289.src",
+    "bytes": 130035,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "raw:https://chillandgroovefestival.com/wp-content/uploads/2026/06/CG_About_Left_2.png",
+    "url": "https://chillandgroovefestival.com/wp-content/uploads/2026/06/CG_About_Left_2.png",
+    "urls": [
+      "https://chillandgroovefestival.com/wp-content/uploads/2026/06/CG_About_Left_2.png"
+    ],
+    "slug": "cg-about-left-2-45eb47",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\cg-about-left-2-45eb47.src",
+    "bytes": 520051,
+    "files": [
+      "src\\data\\agendaEvents.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1476224203421-9ac39bcb3327",
+    "url": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1476224203421-9ac39bcb3327-7f6791",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1476224203421-9ac39bcb3327-7f6791.src",
+    "bytes": 105098,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1414235077428-338989a2e8c0",
+    "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1414235077428-338989a2e8c0-dde193",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1414235077428-338989a2e8c0-dde193.src",
+    "bytes": 111869,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1441974231531-c6227db76b6e",
+    "url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1441974231531-c6227db76b6e-46d95a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1441974231531-c6227db76b6e-46d95a.src",
+    "bytes": 196579,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1585937421612-70a008356fbe",
+    "url": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1585937421612-70a008356fbe-45404d",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1585937421612-70a008356fbe-45404d.src",
+    "bytes": 287642,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1553621042-f6e147245754",
+    "url": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1553621042-f6e147245754-a88c66",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1553621042-f6e147245754-a88c66.src",
+    "bytes": 140420,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1517248135467-4c7edcad34c4",
+    "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1517248135467-4c7edcad34c4-deecf0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1517248135467-4c7edcad34c4-deecf0.src",
+    "bytes": 161636,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1546842931-886c185b4c8c",
+    "url": "https://images.unsplash.com/photo-1546842931-886c185b4c8c?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1546842931-886c185b4c8c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1546842931-886c185b4c8c-a3f2ba",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1546842931-886c185b4c8c-a3f2ba.src",
+    "bytes": 183865,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1552566626-52f8b828add9",
+    "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1552566626-52f8b828add9-64e1a2",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1552566626-52f8b828add9-64e1a2.src",
+    "bytes": 179659,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1511739001486-6bfe10ce785f",
+    "url": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1511739001486-6bfe10ce785f-92e39e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1511739001486-6bfe10ce785f-92e39e.src",
+    "bytes": 193523,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:sushi_(26571132695).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Sushi_%2826571132695%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Sushi_%2826571132695%29.jpg"
+    ],
+    "slug": "sushi-26571132695-3381e1",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\sushi-26571132695-3381e1.src",
+    "bytes": 106962,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:riz_gras_à_la_viande_de_boeuf.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Riz_gras_%C3%A0_la_viande_de_boeuf.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/3d/Riz_gras_%C3%A0_la_viande_de_boeuf.JPG"
+    ],
+    "slug": "riz-gras-a-la-viande-de-boeuf-451d3b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\riz-gras-a-la-viande-de-boeuf-451d3b.src",
+    "bytes": 180091,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:borsch-tube.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Borsch-tube.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/fd/Borsch-tube.jpg"
+    ],
+    "slug": "borsch-tube-2287b2",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\borsch-tube-2287b2.src",
+    "bytes": 254352,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1550966871-3ed3cdb5ed0c",
+    "url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1550966871-3ed3cdb5ed0c-0fafa4",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1550966871-3ed3cdb5ed0c-0fafa4.src",
+    "bytes": 94237,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:mutton_dopiaza.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Mutton_Dopiaza.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/75/Mutton_Dopiaza.jpg"
+    ],
+    "slug": "mutton-dopiaza-3f51cf",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\mutton-dopiaza-3f51cf.src",
+    "bytes": 281455,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1470337458703-46ad1756a187",
+    "url": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1470337458703-46ad1756a187-f44bc9",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1470337458703-46ad1756a187-f44bc9.src",
+    "bytes": 83571,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1519671482749-fd09be7ccebf",
+    "url": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1519671482749-fd09be7ccebf-039e07",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1519671482749-fd09be7ccebf-039e07.src",
+    "bytes": 77209,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:eq_it-na_pizza-margherita_sep2005_sml.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg"
+    ],
+    "slug": "eq-it-na-pizza-margherita-sep2005-sml-5a88e9",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\eq-it-na-pizza-margherita-sep2005-sml-5a88e9.src",
+    "bytes": 657369,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1528605248644-14dd04022da1",
+    "url": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1528605248644-14dd04022da1-2edc6a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1528605248644-14dd04022da1-2edc6a.src",
+    "bytes": 116197,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:pizza-napoletana.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Pizza-napoletana.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/46/Pizza-napoletana.jpg"
+    ],
+    "slug": "pizza-napoletana-84478f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\pizza-napoletana-84478f.src",
+    "bytes": 576034,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:kedjenou_de_poisson.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Kedjenou_de_Poisson.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c0/Kedjenou_de_Poisson.JPG"
+    ],
+    "slug": "kedjenou-de-poisson-9d91fa",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\kedjenou-de-poisson-9d91fa.src",
+    "bytes": 226164,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1554118811-1e0d58224f24",
+    "url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1554118811-1e0d58224f24-df79ad",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1554118811-1e0d58224f24-df79ad.src",
+    "bytes": 160582,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "raw:https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj07wejFDqCzgagbVMAvwh0W36WJN1xZ7UQ_DomiR98aAn9rslNQ2ec8rEgYJEptzRj26wcSAa1W7cbP3CdelLh3Qpb3qBtAFbrjbkCJj7AwFMdb2AkWqzn79cBSF0raVB1Awa_d1n_ZwKdZ4HO1Lu4_ZnsJRwl6SmDVBvub2CK8qunK_Zn5PONui2UJB4/s750/Africa%20Exclusive%20-%20FESTIVAL%20DES%20MASQUES%20-%20Pari%20r%C3%A9ussi%20pour%20Porto-Novo.png",
+    "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj07wejFDqCzgagbVMAvwh0W36WJN1xZ7UQ_DomiR98aAn9rslNQ2ec8rEgYJEptzRj26wcSAa1W7cbP3CdelLh3Qpb3qBtAFbrjbkCJj7AwFMdb2AkWqzn79cBSF0raVB1Awa_d1n_ZwKdZ4HO1Lu4_ZnsJRwl6SmDVBvub2CK8qunK_Zn5PONui2UJB4/s750/Africa%20Exclusive%20-%20FESTIVAL%20DES%20MASQUES%20-%20Pari%20r%C3%A9ussi%20pour%20Porto-Novo.png",
+    "urls": [
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj07wejFDqCzgagbVMAvwh0W36WJN1xZ7UQ_DomiR98aAn9rslNQ2ec8rEgYJEptzRj26wcSAa1W7cbP3CdelLh3Qpb3qBtAFbrjbkCJj7AwFMdb2AkWqzn79cBSF0raVB1Awa_d1n_ZwKdZ4HO1Lu4_ZnsJRwl6SmDVBvub2CK8qunK_Zn5PONui2UJB4/s750/Africa%20Exclusive%20-%20FESTIVAL%20DES%20MASQUES%20-%20Pari%20r%C3%A9ussi%20pour%20Porto-Novo.png"
+    ],
+    "slug": "africa-20exclusive-20-20festival-20des-20masques-2-b4a1fa",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\africa-20exclusive-20-20festival-20des-20masques-2-b4a1fa.src",
+    "bytes": 698892,
+    "files": [
+      "src\\data\\agendaEvents.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1473093295043-cdd812d0e601",
+    "url": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1473093295043-cdd812d0e601-fae444",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1473093295043-cdd812d0e601-fae444.src",
+    "bytes": 109509,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1547592180-85f173990554",
+    "url": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1547592180-85f173990554-d24416",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1547592180-85f173990554-d24416.src",
+    "bytes": 153440,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1498654896293-37aacf113fd9",
+    "url": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1498654896293-37aacf113fd9-51aeb0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1498654896293-37aacf113fd9-51aeb0.src",
+    "bytes": 172516,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1604329760661-e71dc83f8f26",
+    "url": "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1604329760661-e71dc83f8f26-c999ae",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1604329760661-e71dc83f8f26-c999ae.src",
+    "bytes": 58867,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1592861956120-e524fc739696",
+    "url": "https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1592861956120-e524fc739696-e993bb",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1592861956120-e524fc739696-e993bb.src",
+    "bytes": 136233,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1466978913421-dad2ebd01d17",
+    "url": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1466978913421-dad2ebd01d17-e2e647",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1466978913421-dad2ebd01d17-e2e647.src",
+    "bytes": 184054,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1544148103-0773bf10d330",
+    "url": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1544148103-0773bf10d330-db9904",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1544148103-0773bf10d330-db9904.src",
+    "bytes": 95422,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1519708227418-c8fd9a32b7a2",
+    "url": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1519708227418-c8fd9a32b7a2-a4cc06",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1519708227418-c8fd9a32b7a2-a4cc06.src",
+    "bytes": 65204,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1541544741938-0af808871cc0",
+    "url": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1541544741938-0af808871cc0-33e100",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1541544741938-0af808871cc0-33e100.src",
+    "bytes": 93165,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1512453979798-5ea266f8880c",
+    "url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1512453979798-5ea266f8880c-91a827",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1512453979798-5ea266f8880c-91a827.src",
+    "bytes": 126304,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1518998053901-5348d3961a04",
+    "url": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1518998053901-5348d3961a04-aa0078",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1518998053901-5348d3961a04-aa0078.src",
+    "bytes": 71398,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1492684223066-81342ee5ff30",
+    "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1492684223066-81342ee5ff30-b7a404",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1492684223066-81342ee5ff30-b7a404.src",
+    "bytes": 179289,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1498837167922-ddd27525d352",
+    "url": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1498837167922-ddd27525d352-634a8a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1498837167922-ddd27525d352-634a8a.src",
+    "bytes": 225660,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1495474472287-4d71bcdd2085",
+    "url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1495474472287-4d71bcdd2085-346582",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1495474472287-4d71bcdd2085-346582.src",
+    "bytes": 82463,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1566737236500-c8ac43014a67",
+    "url": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1566737236500-c8ac43014a67-bd3f7a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1566737236500-c8ac43014a67-bd3f7a.src",
+    "bytes": 110159,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1514525253161-7a46d19cd819",
+    "url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1514525253161-7a46d19cd819-14ef38",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1514525253161-7a46d19cd819-14ef38.src",
+    "bytes": 233352,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1470229722913-7c0e2dbbafd3",
+    "url": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1470229722913-7c0e2dbbafd3-6785b7",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1470229722913-7c0e2dbbafd3-6785b7.src",
+    "bytes": 65711,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1533174072545-7a4b6ad7a6c3",
+    "url": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1533174072545-7a4b6ad7a6c3-08a03b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1533174072545-7a4b6ad7a6c3-08a03b.src",
+    "bytes": 144229,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1508700115892-45ecd05ae2ad",
+    "url": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1508700115892-45ecd05ae2ad-b9643c",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1508700115892-45ecd05ae2ad-b9643c.src",
+    "bytes": 85836,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1501281668745-f7f57925c3b4",
+    "url": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1501281668745-f7f57925c3b4-7beae7",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1501281668745-f7f57925c3b4-7beae7.src",
+    "bytes": 64063,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1529193591184-b1d58069ecdd",
+    "url": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1529193591184-b1d58069ecdd-2b0f57",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1529193591184-b1d58069ecdd-2b0f57.src",
+    "bytes": 281285,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1551218808-94e220e084d2",
+    "url": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1551218808-94e220e084d2-a93c7e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1551218808-94e220e084d2-a93c7e.src",
+    "bytes": 288871,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1516450360452-9312f5e86fc7",
+    "url": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1516450360452-9312f5e86fc7-1893a8",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1516450360452-9312f5e86fc7-1893a8.src",
+    "bytes": 87323,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1509021436665-8f07dbf5bf1d",
+    "url": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1509021436665-8f07dbf5bf1d-0e37e4",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1509021436665-8f07dbf5bf1d-0e37e4.src",
+    "bytes": 92089,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1429962714451-bb934ecdc4ec",
+    "url": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1429962714451-bb934ecdc4ec-659e66",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1429962714451-bb934ecdc4ec-659e66.src",
+    "bytes": 76734,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1511192336575-5a79af67a629",
+    "url": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1511192336575-5a79af67a629-86e938",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1511192336575-5a79af67a629-86e938.src",
+    "bytes": 73218,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1470225620780-dba8ba36b745",
+    "url": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1470225620780-dba8ba36b745-38e304",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1470225620780-dba8ba36b745-38e304.src",
+    "bytes": 58394,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1560419015-7c427e8ae5ba",
+    "url": "https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1560419015-7c427e8ae5ba-8814dd",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1560419015-7c427e8ae5ba-8814dd.src",
+    "bytes": 60561,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1542314831-068cd1dbfeeb",
+    "url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1542314831-068cd1dbfeeb-bced53",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1542314831-068cd1dbfeeb-bced53.src",
+    "bytes": 101524,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1518020382113-a7e8fc38eac9",
+    "url": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1518020382113-a7e8fc38eac9-6b6bab",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1518020382113-a7e8fc38eac9-6b6bab.src",
+    "bytes": 202497,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1554469384-e58fac16e23a",
+    "url": "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1554469384-e58fac16e23a-8d4328",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1554469384-e58fac16e23a-8d4328.src",
+    "bytes": 233409,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1551882547-ff40c63fe5fa",
+    "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1551882547-ff40c63fe5fa-7c6488",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1551882547-ff40c63fe5fa-7c6488.src",
+    "bytes": 113124,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1520250497591-112f2f40a3f4",
+    "url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1520250497591-112f2f40a3f4-0dcd67",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1520250497591-112f2f40a3f4-0dcd67.src",
+    "bytes": 192249,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1511919884226-fd3cad34687c",
+    "url": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1511919884226-fd3cad34687c-d1d5a5",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1511919884226-fd3cad34687c-d1d5a5.src",
+    "bytes": 173184,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1582719478250-c89cae4dc85b",
+    "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1582719478250-c89cae4dc85b-f857a4",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1582719478250-c89cae4dc85b-f857a4.src",
+    "bytes": 110191,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1521783988139-89397d761dce",
+    "url": "https://images.unsplash.com/photo-1521783988139-89397d761dce?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1521783988139-89397d761dce?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1521783988139-89397d761dce-248728",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1521783988139-89397d761dce-248728.src",
+    "bytes": 119363,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1512918728675-ed5a9ecdebfd",
+    "url": "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1512918728675-ed5a9ecdebfd-6d56c8",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1512918728675-ed5a9ecdebfd-6d56c8.src",
+    "bytes": 91220,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1590490360182-c33d57733427",
+    "url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1590490360182-c33d57733427-c3ea7d",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1590490360182-c33d57733427-c3ea7d.src",
+    "bytes": 124475,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:chinese_food,_xiamen.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Chinese_food%2C_Xiamen.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/36/Chinese_food%2C_Xiamen.jpg"
+    ],
+    "slug": "chinese-food-xiamen-e3fe67",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\chinese-food-xiamen-e3fe67.src",
+    "bytes": 546554,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1560448204-e02f11c3d0e2",
+    "url": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1560448204-e02f11c3d0e2-b8017b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1560448204-e02f11c3d0e2-b8017b.src",
+    "bytes": 89201,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1540541338287-41700207dee6",
+    "url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1540541338287-41700207dee6-0e28f5",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1540541338287-41700207dee6-0e28f5.src",
+    "bytes": 152876,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1505693416388-ac5ce068fe85",
+    "url": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1505693416388-ac5ce068fe85-4d0403",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1505693416388-ac5ce068fe85-4d0403.src",
+    "bytes": 181290,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1571896349842-33c89424de2d",
+    "url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1571896349842-33c89424de2d-9233ee",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1571896349842-33c89424de2d-9233ee.src",
+    "bytes": 179448,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1449965408869-eaa3f722e40d",
+    "url": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1449965408869-eaa3f722e40d-45dd22",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1449965408869-eaa3f722e40d-45dd22.src",
+    "bytes": 69655,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1564501049412-61c2a3083791",
+    "url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1564501049412-61c2a3083791-ec4865",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1564501049412-61c2a3083791-ec4865.src",
+    "bytes": 138733,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1461896836934-ffe607ba8211",
+    "url": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1461896836934-ffe607ba8211-608997",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1461896836934-ffe607ba8211-608997.src",
+    "bytes": 116044,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1521017432531-fbd92d768814",
+    "url": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1521017432531-fbd92d768814-9a80b1",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1521017432531-fbd92d768814-9a80b1.src",
+    "bytes": 167593,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1578683010236-d716f9a3f461",
+    "url": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1578683010236-d716f9a3f461-533d49",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1578683010236-d716f9a3f461-533d49.src",
+    "bytes": 99027,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "us:photo-1566073771259-6a8506099945",
+    "url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    "urls": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "slug": "photo-1566073771259-6a8506099945-bd5313",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\photo-1566073771259-6a8506099945-bd5313.src",
+    "bytes": 155532,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:jet_d'eau_et_de_lumière_a_fidjrossè_dravant_sun_beach_hôtel_cotonou_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Jet_d%27eau_et_de_lumi%C3%A8re_a_Fidjross%C3%A8_dravant_sun_beach_h%C3%B4tel_Cotonou_B%C3%A9nin.jpg/1280px-Jet_d%27eau_et_de_lumi%C3%A8re_a_Fidjross%C3%A8_dravant_sun_beach_h%C3%B4tel_Cotonou_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Jet_d%27eau_et_de_lumi%C3%A8re_a_Fidjross%C3%A8_dravant_sun_beach_h%C3%B4tel_Cotonou_B%C3%A9nin.jpg/1280px-Jet_d%27eau_et_de_lumi%C3%A8re_a_Fidjross%C3%A8_dravant_sun_beach_h%C3%B4tel_Cotonou_B%C3%A9nin.jpg"
+    ],
+    "slug": "jet-d-eau-et-de-lumiere-a-fidjrosse-dravant-sun-be-a0750a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\jet-d-eau-et-de-lumiere-a-fidjrosse-dravant-sun-be-a0750a.src",
+    "bytes": 189265,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:chambre_dans_azalai_hotel_cotonou_01.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Chambre_dans_Azalai_Hotel_Cotonou_01.jpg/1280px-Chambre_dans_Azalai_Hotel_Cotonou_01.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Chambre_dans_Azalai_Hotel_Cotonou_01.jpg/1280px-Chambre_dans_Azalai_Hotel_Cotonou_01.jpg"
+    ],
+    "slug": "chambre-dans-azalai-hotel-cotonou-01-7530c4",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\chambre-dans-azalai-hotel-cotonou-01-7530c4.src",
+    "bytes": 213323,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:20131010-dsc_3190_(10310808146).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/20131010-DSC_3190_%2810310808146%29.jpg/1280px-20131010-DSC_3190_%2810310808146%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/20131010-DSC_3190_%2810310808146%29.jpg/1280px-20131010-DSC_3190_%2810310808146%29.jpg"
+    ],
+    "slug": "20131010-dsc-3190-10310808146-c3ad81",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\20131010-dsc-3190-10310808146-c3ad81.src",
+    "bytes": 297830,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:adele-bake-bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Adele-Bake-B%C3%A9nin.jpg/1280px-Adele-Bake-B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Adele-Bake-B%C3%A9nin.jpg/1280px-Adele-Bake-B%C3%A9nin.jpg"
+    ],
+    "slug": "adele-bake-benin-978919",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\adele-bake-benin-978919.src",
+    "bytes": 304024,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:sun_beach_hotel_cotonou,_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Sun_Beach_Hotel_Cotonou%2C_B%C3%A9nin.jpg/1280px-Sun_Beach_Hotel_Cotonou%2C_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Sun_Beach_Hotel_Cotonou%2C_B%C3%A9nin.jpg/1280px-Sun_Beach_Hotel_Cotonou%2C_B%C3%A9nin.jpg"
+    ],
+    "slug": "sun-beach-hotel-cotonou-benin-03cc21",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\sun-beach-hotel-cotonou-benin-03cc21.src",
+    "bytes": 353624,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:thumbnail.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/2021-10-11_17_21_07_View_across_a_standard_king_bedroom_towards_the_exit_on_the_22nd_floor_of_the_Diamond_Head_Tower_at_the_Hyatt_Regency_Waikiki_Resort_and_Spa_in_Waikiki%2C_Honolulu%2C_Oahu%2C_Hawaii.jpg/1280px-thumbnail.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/2021-10-11_17_21_07_View_across_a_standard_king_bedroom_towards_the_exit_on_the_22nd_floor_of_the_Diamond_Head_Tower_at_the_Hyatt_Regency_Waikiki_Resort_and_Spa_in_Waikiki%2C_Honolulu%2C_Oahu%2C_Hawaii.jpg/1280px-thumbnail.jpg"
+    ],
+    "slug": "thumbnail-425726",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\thumbnail-425726.src",
+    "bytes": 40600,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:hôtel_adele_bake_à_cotonou.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/H%C3%B4tel_Adele_Bake_%C3%A0_Cotonou.jpg/1280px-H%C3%B4tel_Adele_Bake_%C3%A0_Cotonou.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/H%C3%B4tel_Adele_Bake_%C3%A0_Cotonou.jpg/1280px-H%C3%B4tel_Adele_Bake_%C3%A0_Cotonou.jpg"
+    ],
+    "slug": "hotel-adele-bake-a-cotonou-821e80",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\hotel-adele-bake-a-cotonou-821e80.src",
+    "bytes": 245786,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:chambre_dans_azalai_hotel_cotonou_04.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Chambre_dans_Azalai_Hotel_Cotonou_04.jpg/1280px-Chambre_dans_Azalai_Hotel_Cotonou_04.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Chambre_dans_Azalai_Hotel_Cotonou_04.jpg/1280px-Chambre_dans_Azalai_Hotel_Cotonou_04.jpg"
+    ],
+    "slug": "chambre-dans-azalai-hotel-cotonou-04-af87de",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\chambre-dans-azalai-hotel-cotonou-04-af87de.src",
+    "bytes": 345461,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:chambre_dans_azalai_hotel_cotonou_02.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Chambre_dans_Azalai_Hotel_Cotonou_02.jpg/1280px-Chambre_dans_Azalai_Hotel_Cotonou_02.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Chambre_dans_Azalai_Hotel_Cotonou_02.jpg/1280px-Chambre_dans_Azalai_Hotel_Cotonou_02.jpg"
+    ],
+    "slug": "chambre-dans-azalai-hotel-cotonou-02-5c04e3",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\chambre-dans-azalai-hotel-cotonou-02-5c04e3.src",
+    "bytes": 338523,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:accommodation_at_green_turtle_lodge_-_near_akwaadi_village_-_ghana_(4735485286).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Accommodation_at_Green_Turtle_Lodge_-_Near_Akwaadi_Village_-_Ghana_%284735485286%29.jpg/1280px-Accommodation_at_Green_Turtle_Lodge_-_Near_Akwaadi_Village_-_Ghana_%284735485286%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Accommodation_at_Green_Turtle_Lodge_-_Near_Akwaadi_Village_-_Ghana_%284735485286%29.jpg/1280px-Accommodation_at_Green_Turtle_Lodge_-_Near_Akwaadi_Village_-_Ghana_%284735485286%29.jpg"
+    ],
+    "slug": "accommodation-at-green-turtle-lodge-near-akwaadi-v-393557",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\accommodation-at-green-turtle-lodge-near-akwaadi-v-393557.src",
+    "bytes": 353213,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:29._bonner_stammtisch,_petersberg_(hotel-suite_1.og).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg/1280px-29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg/1280px-29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg"
+    ],
+    "slug": "29-bonner-stammtisch-petersberg-hotel-suite-1-og-5eed79",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\29-bonner-stammtisch-petersberg-hotel-suite-1-og-5eed79.src",
+    "bytes": 174649,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:restaurant_de_l'auberge_de_grand-popo.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Restaurant_de_l%27auberge_de_Grand-Popo.jpg/1280px-Restaurant_de_l%27auberge_de_Grand-Popo.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Restaurant_de_l%27auberge_de_Grand-Popo.jpg/1280px-Restaurant_de_l%27auberge_de_Grand-Popo.jpg"
+    ],
+    "slug": "restaurant-de-l-auberge-de-grand-popo-9e5983",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\restaurant-de-l-auberge-de-grand-popo-9e5983.src",
+    "bytes": 453188,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:a_bedroom_of_the_grand_hotel_campo_dei_fiori.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg/1280px-A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg/1280px-A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg"
+    ],
+    "slug": "a-bedroom-of-the-grand-hotel-campo-dei-fiori-5ed95c",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\a-bedroom-of-the-grand-hotel-campo-dei-fiori-5ed95c.src",
+    "bytes": 355372,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:abomey-hôtel_chez_monique_(2).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Abomey-H%C3%B4tel_Chez_Monique_%282%29.jpg/1280px-Abomey-H%C3%B4tel_Chez_Monique_%282%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Abomey-H%C3%B4tel_Chez_Monique_%282%29.jpg/1280px-Abomey-H%C3%B4tel_Chez_Monique_%282%29.jpg"
+    ],
+    "slug": "abomey-hotel-chez-monique-2-855540",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\abomey-hotel-chez-monique-2-855540.src",
+    "bytes": 399067,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:abomey-hôtel_chez_monique_(1).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Abomey-H%C3%B4tel_Chez_Monique_%281%29.jpg/1280px-Abomey-H%C3%B4tel_Chez_Monique_%281%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Abomey-H%C3%B4tel_Chez_Monique_%281%29.jpg/1280px-Abomey-H%C3%B4tel_Chez_Monique_%281%29.jpg"
+    ],
+    "slug": "abomey-hotel-chez-monique-1-7058ee",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\abomey-hotel-chez-monique-1-7058ee.src",
+    "bytes": 216907,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:coffee_and_infused_water_on_a_table_near_a_bed_in_a_hotel_room.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Coffee_and_infused_water_on_a_table_near_a_bed_in_a_hotel_room.jpg/1280px-Coffee_and_infused_water_on_a_table_near_a_bed_in_a_hotel_room.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Coffee_and_infused_water_on_a_table_near_a_bed_in_a_hotel_room.jpg/1280px-Coffee_and_infused_water_on_a_table_near_a_bed_in_a_hotel_room.jpg"
+    ],
+    "slug": "coffee-and-infused-water-on-a-table-near-a-bed-in--f6a07c",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\coffee-and-infused-water-on-a-table-near-a-bed-in--f6a07c.src",
+    "bytes": 284284,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:executive_room_-_teraskita_hotel_makassar.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/EXECUTIVE_ROOM_-_Teraskita_Hotel_Makassar.jpg/1280px-EXECUTIVE_ROOM_-_Teraskita_Hotel_Makassar.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/EXECUTIVE_ROOM_-_Teraskita_Hotel_Makassar.jpg/1280px-EXECUTIVE_ROOM_-_Teraskita_Hotel_Makassar.jpg"
+    ],
+    "slug": "executive-room-teraskita-hotel-makassar-1609df",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\executive-room-teraskita-hotel-makassar-1609df.src",
+    "bytes": 140636,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:delmar_hotel_room_sea_side.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Delmar_hotel_room_sea_side.jpg/1280px-Delmar_hotel_room_sea_side.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Delmar_hotel_room_sea_side.jpg/1280px-Delmar_hotel_room_sea_side.jpg"
+    ],
+    "slug": "delmar-hotel-room-sea-side-548d81",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\delmar-hotel-room-sea-side-548d81.src",
+    "bytes": 247259,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:best_western_hotel_baltic_sundsvall_room_interior.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Best_Western_Hotel_Baltic_Sundsvall_room_interior.jpg/1280px-Best_Western_Hotel_Baltic_Sundsvall_room_interior.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Best_Western_Hotel_Baltic_Sundsvall_room_interior.jpg/1280px-Best_Western_Hotel_Baltic_Sundsvall_room_interior.jpg"
+    ],
+    "slug": "best-western-hotel-baltic-sundsvall-room-interior-39050d",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\best-western-hotel-baltic-sundsvall-room-interior-39050d.src",
+    "bytes": 379746,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:executive_room_shakti_hotel_city_jakarta.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Executive_Room_Shakti_Hotel_City_Jakarta.jpg/1280px-Executive_Room_Shakti_Hotel_City_Jakarta.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Executive_Room_Shakti_Hotel_City_Jakarta.jpg/1280px-Executive_Room_Shakti_Hotel_City_Jakarta.jpg"
+    ],
+    "slug": "executive-room-shakti-hotel-city-jakarta-03764e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\executive-room-shakti-hotel-city-jakarta-03764e.src",
+    "bytes": 119667,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:grand-popo-awalé_plage.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Grand-Popo-Awal%C3%A9_Plage.jpg/1280px-Grand-Popo-Awal%C3%A9_Plage.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Grand-Popo-Awal%C3%A9_Plage.jpg/1280px-Grand-Popo-Awal%C3%A9_Plage.jpg"
+    ],
+    "slug": "grand-popo-awale-plage-212feb",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\grand-popo-awale-plage-212feb.src",
+    "bytes": 559766,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:hôtel_sur_l'eau_à_ganvié_au_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/H%C3%B4tel_sur_l%27eau_%C3%A0_Ganvi%C3%A9_au_B%C3%A9nin.jpg/1280px-H%C3%B4tel_sur_l%27eau_%C3%A0_Ganvi%C3%A9_au_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/H%C3%B4tel_sur_l%27eau_%C3%A0_Ganvi%C3%A9_au_B%C3%A9nin.jpg/1280px-H%C3%B4tel_sur_l%27eau_%C3%A0_Ganvi%C3%A9_au_B%C3%A9nin.jpg"
+    ],
+    "slug": "hotel-sur-l-eau-a-ganvie-au-benin-7d4b6e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\hotel-sur-l-eau-a-ganvie-au-benin-7d4b6e.src",
+    "bytes": 212327,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:al_bustan_rotana_room.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Al_Bustan_Rotana_room.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/5c/Al_Bustan_Rotana_room.jpg"
+    ],
+    "slug": "al-bustan-rotana-room-573627",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\al-bustan-rotana-room-573627.src",
+    "bytes": 97427,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:front_view_of_hotel_marie_stella_in_cotonou,_benin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FRONT_VIEW_OF_HOTEL_MARIE_STELLA_IN_COTONOU%2C_BENIN.jpg/1280px-FRONT_VIEW_OF_HOTEL_MARIE_STELLA_IN_COTONOU%2C_BENIN.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FRONT_VIEW_OF_HOTEL_MARIE_STELLA_IN_COTONOU%2C_BENIN.jpg/1280px-FRONT_VIEW_OF_HOTEL_MARIE_STELLA_IN_COTONOU%2C_BENIN.jpg"
+    ],
+    "slug": "front-view-of-hotel-marie-stella-in-cotonou-benin-bf670e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\front-view-of-hotel-marie-stella-in-cotonou-benin-bf670e.src",
+    "bytes": 345428,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg/1280px-Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg/1280px-Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg"
+    ],
+    "slug": "cozy-hotel-room-with-warm-lighting-and-refreshment-63c24d",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\cozy-hotel-room-with-warm-lighting-and-refreshment-63c24d.src",
+    "bytes": 331236,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:bungalowsiedlung_gunzenberg.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bungalowsiedlung_Gunzenberg.jpg/1280px-Bungalowsiedlung_Gunzenberg.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bungalowsiedlung_Gunzenberg.jpg/1280px-Bungalowsiedlung_Gunzenberg.jpg"
+    ],
+    "slug": "bungalowsiedlung-gunzenberg-9c9985",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\bungalowsiedlung-gunzenberg-9c9985.src",
+    "bytes": 410647,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:bungalow_at_bird_of_paradise.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Bungalow_at_Bird_of_Paradise.jpg/1280px-Bungalow_at_Bird_of_Paradise.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Bungalow_at_Bird_of_Paradise.jpg/1280px-Bungalow_at_Bird_of_Paradise.jpg"
+    ],
+    "slug": "bungalow-at-bird-of-paradise-78d190",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\bungalow-at-bird-of-paradise-78d190.src",
+    "bytes": 258030,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:bungalows_on_e_2nd_marshfield_wisc.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bungalows_on_E_2nd_Marshfield_Wisc.jpg/1280px-Bungalows_on_E_2nd_Marshfield_Wisc.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bungalows_on_E_2nd_Marshfield_Wisc.jpg/1280px-Bungalows_on_E_2nd_Marshfield_Wisc.jpg"
+    ],
+    "slug": "bungalows-on-e-2nd-marshfield-wisc-294cf3",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\bungalows-on-e-2nd-marshfield-wisc-294cf3.src",
+    "bytes": 321834,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:bavaro_—_iberostar_—_bungalow_inside_(main_room_2).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Bavaro_%E2%80%94_Iberostar_%E2%80%94_bungalow_inside_%28main_room_2%29.JPG/1280px-Bavaro_%E2%80%94_Iberostar_%E2%80%94_bungalow_inside_%28main_room_2%29.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Bavaro_%E2%80%94_Iberostar_%E2%80%94_bungalow_inside_%28main_room_2%29.JPG/1280px-Bavaro_%E2%80%94_Iberostar_%E2%80%94_bungalow_inside_%28main_room_2%29.JPG"
+    ],
+    "slug": "bavaro-iberostar-bungalow-inside-main-room-2-4f919f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\bavaro-iberostar-bungalow-inside-main-room-2-4f919f.src",
+    "bytes": 200916,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:dunk_-_beachfront_room_2nd_floor_-_lowres.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/DUNK_-_Beachfront_Room_2nd_Floor_-_LowRes.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/ff/DUNK_-_Beachfront_Room_2nd_Floor_-_LowRes.JPG"
+    ],
+    "slug": "dunk-beachfront-room-2nd-floor-lowres-7073a3",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\dunk-beachfront-room-2nd-floor-lowres-7073a3.src",
+    "bytes": 441021,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:amerisuites_(422565437).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/AmeriSuites_%28422565437%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/ff/AmeriSuites_%28422565437%29.jpg"
+    ],
+    "slug": "amerisuites-422565437-e7abcf",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\amerisuites-422565437-e7abcf.src",
+    "bytes": 725810,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:deluxe_suite_bedroom.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Deluxe_Suite_bedroom.jpg/1280px-Deluxe_Suite_bedroom.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Deluxe_Suite_bedroom.jpg/1280px-Deluxe_Suite_bedroom.jpg"
+    ],
+    "slug": "deluxe-suite-bedroom-feb732",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\deluxe-suite-bedroom-feb732.src",
+    "bytes": 329710,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:executive_suite_bedroom.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Executive_Suite_bedroom.jpg/1280px-Executive_Suite_bedroom.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Executive_Suite_bedroom.jpg/1280px-Executive_Suite_bedroom.jpg"
+    ],
+    "slug": "executive-suite-bedroom-cf27a0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\executive-suite-bedroom-cf27a0.src",
+    "bytes": 296581,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:family_suite.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Family_suite.jpg/1280px-Family_suite.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Family_suite.jpg/1280px-Family_suite.jpg"
+    ],
+    "slug": "family-suite-956025",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\family-suite-956025.src",
+    "bytes": 232239,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:2025-01-18_lake_hill_resort_kanchanaburi_view_from_lake.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/2025-01-18_Lake_Hill_Resort_Kanchanaburi_view_from_lake.jpg/1280px-2025-01-18_Lake_Hill_Resort_Kanchanaburi_view_from_lake.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/2025-01-18_Lake_Hill_Resort_Kanchanaburi_view_from_lake.jpg/1280px-2025-01-18_Lake_Hill_Resort_Kanchanaburi_view_from_lake.jpg"
+    ],
+    "slug": "2025-01-18-lake-hill-resort-kanchanaburi-view-from-688b9c",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\2025-01-18-lake-hill-resort-kanchanaburi-view-from-688b9c.src",
+    "bytes": 249256,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:bungalow_(1).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Bungalow_%281%29.jpg/1280px-Bungalow_%281%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Bungalow_%281%29.jpg/1280px-Bungalow_%281%29.jpg"
+    ],
+    "slug": "bungalow-1-2e265a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\bungalow-1-2e265a.src",
+    "bytes": 516425,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:hotel_00_ghana.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Hotel_00_Ghana.jpg/1280px-Hotel_00_Ghana.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Hotel_00_Ghana.jpg/1280px-Hotel_00_Ghana.jpg"
+    ],
+    "slug": "hotel-00-ghana-18849f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\hotel-00-ghana-18849f.src",
+    "bytes": 249578,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:godawari_resort_at_a_glance.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Godawari_resort_at_a_glance.jpg/1280px-Godawari_resort_at_a_glance.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Godawari_resort_at_a_glance.jpg/1280px-Godawari_resort_at_a_glance.jpg"
+    ],
+    "slug": "godawari-resort-at-a-glance-f1d8c6",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\godawari-resort-at-a-glance-f1d8c6.src",
+    "bytes": 499511,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:charlotte_amalie_—_windward_passage_hotel_—_1st_floor_and_ground_floor_outside.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Charlotte_Amalie_%E2%80%94_Windward_Passage_Hotel_%E2%80%94_1st_floor_and_ground_floor_outside.JPG/1280px-Charlotte_Amalie_%E2%80%94_Windward_Passage_Hotel_%E2%80%94_1st_floor_and_ground_floor_outside.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Charlotte_Amalie_%E2%80%94_Windward_Passage_Hotel_%E2%80%94_1st_floor_and_ground_floor_outside.JPG/1280px-Charlotte_Amalie_%E2%80%94_Windward_Passage_Hotel_%E2%80%94_1st_floor_and_ground_floor_outside.JPG"
+    ],
+    "slug": "charlotte-amalie-windward-passage-hotel-1st-floor--9ef735",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\charlotte-amalie-windward-passage-hotel-1st-floor--9ef735.src",
+    "bytes": 499717,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:hotel_riu_garopa,_sal,_cape_verde_islands_(4334056593).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Hotel_Riu_Garopa%2C_Sal%2C_Cape_Verde_Islands_%284334056593%29.jpg/1280px-Hotel_Riu_Garopa%2C_Sal%2C_Cape_Verde_Islands_%284334056593%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Hotel_Riu_Garopa%2C_Sal%2C_Cape_Verde_Islands_%284334056593%29.jpg/1280px-Hotel_Riu_Garopa%2C_Sal%2C_Cape_Verde_Islands_%284334056593%29.jpg"
+    ],
+    "slug": "hotel-riu-garopa-sal-cape-verde-islands-4334056593-f8fe25",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\hotel-riu-garopa-sal-cape-verde-islands-4334056593-f8fe25.src",
+    "bytes": 324574,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:a_hotel_in_accra.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/A_Hotel_in_Accra.jpg/1280px-A_Hotel_in_Accra.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/A_Hotel_in_Accra.jpg/1280px-A_Hotel_in_Accra.jpg"
+    ],
+    "slug": "a-hotel-in-accra-259653",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\a-hotel-in-accra-259653.src",
+    "bytes": 263246,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:lanjut_resort.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Lanjut_Resort.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/b4/Lanjut_Resort.jpg"
+    ],
+    "slug": "lanjut-resort-cc90b5",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\lanjut-resort-cc90b5.src",
+    "bytes": 122836,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:aruba_radisson_resort_at_night_(2888377311).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Aruba_Radisson_Resort_at_Night_%282888377311%29.jpg/1280px-Aruba_Radisson_Resort_at_Night_%282888377311%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Aruba_Radisson_Resort_at_Night_%282888377311%29.jpg/1280px-Aruba_Radisson_Resort_at_Night_%282888377311%29.jpg"
+    ],
+    "slug": "aruba-radisson-resort-at-night-2888377311-77676d",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\aruba-radisson-resort-at-night-2888377311-77676d.src",
+    "bytes": 271598,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:baba_guesthouse_don_det_laos.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Baba_guesthouse_don_det_laos.jpg/1280px-Baba_guesthouse_don_det_laos.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Baba_guesthouse_don_det_laos.jpg/1280px-Baba_guesthouse_don_det_laos.jpg"
+    ],
+    "slug": "baba-guesthouse-don-det-laos-5f2657",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\baba-guesthouse-don-det-laos-5f2657.src",
+    "bytes": 243576,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:live_in_holidays_old_village.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Live_In_Holidays_Old_Village.jpg/1280px-Live_In_Holidays_Old_Village.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Live_In_Holidays_Old_Village.jpg/1280px-Live_In_Holidays_Old_Village.jpg"
+    ],
+    "slug": "live-in-holidays-old-village-3acae1",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\live-in-holidays-old-village-3acae1.src",
+    "bytes": 650099,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:guesthouse.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Guesthouse.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/af/Guesthouse.jpg"
+    ],
+    "slug": "guesthouse-15b3fb",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\guesthouse-15b3fb.src",
+    "bytes": 175730,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:khasrang_hill_resort.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Khasrang_Hill_Resort.jpg/1280px-Khasrang_Hill_Resort.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Khasrang_Hill_Resort.jpg/1280px-Khasrang_Hill_Resort.jpg"
+    ],
+    "slug": "khasrang-hill-resort-159177",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\khasrang-hill-resort-159177.src",
+    "bytes": 630565,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:guest_house_cusat.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Guest_house_CUSAT.jpg/1280px-Guest_house_CUSAT.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Guest_house_CUSAT.jpg/1280px-Guest_house_CUSAT.jpg"
+    ],
+    "slug": "guest-house-cusat-e079a3",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\guest-house-cusat-e079a3.src",
+    "bytes": 385857,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:bha_nassau,_paradise_island,_atlantis_resort_001.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BHA_Nassau%2C_Paradise_Island%2C_Atlantis_Resort_001.jpg/1280px-BHA_Nassau%2C_Paradise_Island%2C_Atlantis_Resort_001.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BHA_Nassau%2C_Paradise_Island%2C_Atlantis_Resort_001.jpg/1280px-BHA_Nassau%2C_Paradise_Island%2C_Atlantis_Resort_001.jpg"
+    ],
+    "slug": "bha-nassau-paradise-island-atlantis-resort-001-fb27be",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\bha-nassau-paradise-island-atlantis-resort-001-fb27be.src",
+    "bytes": 505252,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:lafayette_motel_2019-02-18_0165_p100.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Lafayette_Motel_2019-02-18_0165_P100.jpg/1280px-Lafayette_Motel_2019-02-18_0165_P100.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Lafayette_Motel_2019-02-18_0165_P100.jpg/1280px-Lafayette_Motel_2019-02-18_0165_P100.jpg"
+    ],
+    "slug": "lafayette-motel-2019-02-18-0165-p100-35dab0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\lafayette-motel-2019-02-18-0165-p100-35dab0.src",
+    "bytes": 231453,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:lukla,_shop,_guesthouse,_homestay,_nepal.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Lukla%2C_Shop%2C_Guesthouse%2C_Homestay%2C_Nepal.jpg/1280px-Lukla%2C_Shop%2C_Guesthouse%2C_Homestay%2C_Nepal.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Lukla%2C_Shop%2C_Guesthouse%2C_Homestay%2C_Nepal.jpg/1280px-Lukla%2C_Shop%2C_Guesthouse%2C_Homestay%2C_Nepal.jpg"
+    ],
+    "slug": "lukla-shop-guesthouse-homestay-nepal-002a62",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\lukla-shop-guesthouse-homestay-nepal-002a62.src",
+    "bytes": 325376,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:motel_.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Motel_.jpg/1280px-Motel_.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Motel_.jpg/1280px-Motel_.jpg"
+    ],
+    "slug": "motel-aa92a5",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\motel-aa92a5.src",
+    "bytes": 298228,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:motel_marić_-_žepče.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Motel_Mari%C4%87_-_%C5%BDep%C4%8De.jpg/1280px-Motel_Mari%C4%87_-_%C5%BDep%C4%8De.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Motel_Mari%C4%87_-_%C5%BDep%C4%8De.jpg/1280px-Motel_Mari%C4%87_-_%C5%BDep%C4%8De.jpg"
+    ],
+    "slug": "motel-maric-zepce-a74168",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\motel-maric-zepce-a74168.src",
+    "bytes": 214057,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:motel_le_bambou.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Motel_le_Bambou.JPG/1280px-Motel_le_Bambou.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Motel_le_Bambou.JPG/1280px-Motel_le_Bambou.JPG"
+    ],
+    "slug": "motel-le-bambou-4af9c3",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\motel-le-bambou-4af9c3.src",
+    "bytes": 275238,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:kyrgyzstan,_guesthouse.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kyrgyzstan%2C_guesthouse.jpg/1280px-Kyrgyzstan%2C_guesthouse.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kyrgyzstan%2C_guesthouse.jpg/1280px-Kyrgyzstan%2C_guesthouse.jpg"
+    ],
+    "slug": "kyrgyzstan-guesthouse-0a5d3d",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\kyrgyzstan-guesthouse-0a5d3d.src",
+    "bytes": 317100,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:jomsom,_guesthouse,_mustang,_nepal.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Jomsom%2C_Guesthouse%2C_Mustang%2C_Nepal.jpg/1280px-Jomsom%2C_Guesthouse%2C_Mustang%2C_Nepal.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Jomsom%2C_Guesthouse%2C_Mustang%2C_Nepal.jpg/1280px-Jomsom%2C_Guesthouse%2C_Mustang%2C_Nepal.jpg"
+    ],
+    "slug": "jomsom-guesthouse-mustang-nepal-7a3ecb",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\jomsom-guesthouse-mustang-nepal-7a3ecb.src",
+    "bytes": 255931,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:intercontinental_maldives_maamunagau_resort_–_coetzer_deysel_(then_general_manager,_september_2024)_with_jc_santos_global_luxury_and_lifestyle_sales_team.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/InterContinental_Maldives_Maamunagau_Resort_%E2%80%93_Coetzer_Deysel_%28then_General_Manager%2C_September_2024%29_with_JC_Santos_Global_Luxury_and_Lifestyle_Sales_team.jpg/1280px-InterContinental_Maldives_Maamunagau_Resort_%E2%80%93_Coetzer_Deysel_%28then_General_Manager%2C_September_2024%29_with_JC_Santos_Global_Luxury_and_Lifestyle_Sales_team.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/InterContinental_Maldives_Maamunagau_Resort_%E2%80%93_Coetzer_Deysel_%28then_General_Manager%2C_September_2024%29_with_JC_Santos_Global_Luxury_and_Lifestyle_Sales_team.jpg/1280px-InterContinental_Maldives_Maamunagau_Resort_%E2%80%93_Coetzer_Deysel_%28then_General_Manager%2C_September_2024%29_with_JC_Santos_Global_Luxury_and_Lifestyle_Sales_team.jpg"
+    ],
+    "slug": "intercontinental-maldives-maamunagau-resort-coetze-2032b5",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\intercontinental-maldives-maamunagau-resort-coetze-2032b5.src",
+    "bytes": 555397,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:parc_national_de_la_pendjari-hôtel_campement_(1).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Parc_national_de_la_Pendjari-H%C3%B4tel_campement_%281%29.jpg/1280px-Parc_national_de_la_Pendjari-H%C3%B4tel_campement_%281%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Parc_national_de_la_Pendjari-H%C3%B4tel_campement_%281%29.jpg/1280px-Parc_national_de_la_Pendjari-H%C3%B4tel_campement_%281%29.jpg"
+    ],
+    "slug": "parc-national-de-la-pendjari-hotel-campement-1-34458d",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\parc-national-de-la-pendjari-hotel-campement-1-34458d.src",
+    "bytes": 313402,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:motel_und_parkhaus,_kosztolányi_straße,_2020_zalaegerszeg.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Motel_und_Parkhaus%2C_Kosztol%C3%A1nyi_Stra%C3%9Fe%2C_2020_Zalaegerszeg.jpg/1280px-Motel_und_Parkhaus%2C_Kosztol%C3%A1nyi_Stra%C3%9Fe%2C_2020_Zalaegerszeg.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Motel_und_Parkhaus%2C_Kosztol%C3%A1nyi_Stra%C3%9Fe%2C_2020_Zalaegerszeg.jpg/1280px-Motel_und_Parkhaus%2C_Kosztol%C3%A1nyi_Stra%C3%9Fe%2C_2020_Zalaegerszeg.jpg"
+    ],
+    "slug": "motel-und-parkhaus-kosztolanyi-stra-e-2020-zalaege-d397ed",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\motel-und-parkhaus-kosztolanyi-stra-e-2020-zalaege-d397ed.src",
+    "bytes": 330153,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:vendeuse_de_condiments_sur_la_passerelle_marche_dantokpa-cotonou_benin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/VENDEUSE_DE_CONDIMENTS_SUR_LA_PASSERELLE_MARCHE_DANTOKPA-COTONOU_BENIN.jpg/1280px-VENDEUSE_DE_CONDIMENTS_SUR_LA_PASSERELLE_MARCHE_DANTOKPA-COTONOU_BENIN.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/VENDEUSE_DE_CONDIMENTS_SUR_LA_PASSERELLE_MARCHE_DANTOKPA-COTONOU_BENIN.jpg/1280px-VENDEUSE_DE_CONDIMENTS_SUR_LA_PASSERELLE_MARCHE_DANTOKPA-COTONOU_BENIN.jpg"
+    ],
+    "slug": "vendeuse-de-condiments-sur-la-passerelle-marche-da-0fce6e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\vendeuse-de-condiments-sur-la-passerelle-marche-da-0fce6e.src",
+    "bytes": 290000,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:parc_national_de_la_pendjari-campement_(1).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Parc_national_de_la_Pendjari-Campement_%281%29.jpg/1280px-Parc_national_de_la_Pendjari-Campement_%281%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Parc_national_de_la_Pendjari-Campement_%281%29.jpg/1280px-Parc_national_de_la_Pendjari-Campement_%281%29.jpg"
+    ],
+    "slug": "parc-national-de-la-pendjari-campement-1-fa97bc",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\parc-national-de-la-pendjari-campement-1-fa97bc.src",
+    "bytes": 395358,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:monument_de_l'amazone.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Monument_de_l%27amazone.jpg/1280px-Monument_de_l%27amazone.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Monument_de_l%27amazone.jpg/1280px-Monument_de_l%27amazone.jpg"
+    ],
+    "slug": "monument-de-l-amazone-a9d4cf",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\monument-de-l-amazone-a9d4cf.src",
+    "bytes": 200826,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:plage_de_la_route_des_pêches_au_bénin_01.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Plage_de_la_Route_des_P%C3%AAches_au_B%C3%A9nin_01.jpg/1280px-Plage_de_la_Route_des_P%C3%AAches_au_B%C3%A9nin_01.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Plage_de_la_Route_des_P%C3%AAches_au_B%C3%A9nin_01.jpg/1280px-Plage_de_la_Route_des_P%C3%AAches_au_B%C3%A9nin_01.jpg"
+    ],
+    "slug": "plage-de-la-route-des-peches-au-benin-01-ef0360",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\plage-de-la-route-des-peches-au-benin-01-ef0360.src",
+    "bytes": 332963,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:le_pied_du_colatier_géant_dans_le_jardin_botanique_de_porto-novo.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Le_pied_du_colatier_g%C3%A9ant_dans_le_jardin_botanique_de_porto-novo.jpg/1280px-Le_pied_du_colatier_g%C3%A9ant_dans_le_jardin_botanique_de_porto-novo.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Le_pied_du_colatier_g%C3%A9ant_dans_le_jardin_botanique_de_porto-novo.jpg/1280px-Le_pied_du_colatier_g%C3%A9ant_dans_le_jardin_botanique_de_porto-novo.jpg"
+    ],
+    "slug": "le-pied-du-colatier-geant-dans-le-jardin-botanique-ef82f1",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\le-pied-du-colatier-geant-dans-le-jardin-botanique-ef82f1.src",
+    "bytes": 362439,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:motel_clauphi.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Motel_Clauphi.jpg/1280px-Motel_Clauphi.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Motel_Clauphi.jpg/1280px-Motel_Clauphi.jpg"
+    ],
+    "slug": "motel-clauphi-0beee9",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\motel-clauphi-0beee9.src",
+    "bytes": 370579,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:grand-popo-architecture_coloniale_(3).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Grand-Popo-Architecture_coloniale_%283%29.jpg/1280px-Grand-Popo-Architecture_coloniale_%283%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Grand-Popo-Architecture_coloniale_%283%29.jpg/1280px-Grand-Popo-Architecture_coloniale_%283%29.jpg"
+    ],
+    "slug": "grand-popo-architecture-coloniale-3-848826",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\grand-popo-architecture-coloniale-3-848826.src",
+    "bytes": 260985,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:layfayette_motel_all_june_19_2019-02-03_0798_a300.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Layfayette_Motel_All_June_19_2019-02-03_0798_A300.jpg/1280px-Layfayette_Motel_All_June_19_2019-02-03_0798_A300.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Layfayette_Motel_All_June_19_2019-02-03_0798_A300.jpg/1280px-Layfayette_Motel_All_June_19_2019-02-03_0798_A300.jpg"
+    ],
+    "slug": "layfayette-motel-all-june-19-2019-02-03-0798-a300-5236a1",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\layfayette-motel-all-june-19-2019-02-03-0798-a300-5236a1.src",
+    "bytes": 377231,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:basilique_immaculée_conception_de_ouidah_02.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Basilique_Immacul%C3%A9e_conception_de_Ouidah_02.jpg/1280px-Basilique_Immacul%C3%A9e_conception_de_Ouidah_02.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Basilique_Immacul%C3%A9e_conception_de_Ouidah_02.jpg/1280px-Basilique_Immacul%C3%A9e_conception_de_Ouidah_02.jpg"
+    ],
+    "slug": "basilique-immaculee-conception-de-ouidah-02-008643",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\basilique-immaculee-conception-de-ouidah-02-008643.src",
+    "bytes": 353904,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:cathédrale_notre_dame_de_l'immaculée_conception_de_porto-novo_(benin).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cath%C3%A9drale_Notre_Dame_de_l%27Immacul%C3%A9e_Conception_de_Porto-Novo_%28Benin%29.jpg/1280px-Cath%C3%A9drale_Notre_Dame_de_l%27Immacul%C3%A9e_Conception_de_Porto-Novo_%28Benin%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cath%C3%A9drale_Notre_Dame_de_l%27Immacul%C3%A9e_Conception_de_Porto-Novo_%28Benin%29.jpg/1280px-Cath%C3%A9drale_Notre_Dame_de_l%27Immacul%C3%A9e_Conception_de_Porto-Novo_%28Benin%29.jpg"
+    ],
+    "slug": "cathedrale-notre-dame-de-l-immaculee-conception-de-751ec8",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\cathedrale-notre-dame-de-l-immaculee-conception-de-751ec8.src",
+    "bytes": 277173,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:marché_de_hlassamè.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/March%C3%A9_de_Hlassam%C3%A8.jpg/1280px-March%C3%A9_de_Hlassam%C3%A8.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/March%C3%A9_de_Hlassam%C3%A8.jpg/1280px-March%C3%A9_de_Hlassam%C3%A8.jpg"
+    ],
+    "slug": "marche-de-hlassame-b379e0",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\marche-de-hlassame-b379e0.src",
+    "bytes": 246430,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:symbole_du_vodoun_hebiosso_agbotaklan_au_parc_agoualand_au_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Symbole_du_vodoun_Hebiosso_Agbotaklan_au_parc_Agoualand_au_B%C3%A9nin.jpg/1280px-Symbole_du_vodoun_Hebiosso_Agbotaklan_au_parc_Agoualand_au_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Symbole_du_vodoun_Hebiosso_Agbotaklan_au_parc_Agoualand_au_B%C3%A9nin.jpg/1280px-Symbole_du_vodoun_Hebiosso_Agbotaklan_au_parc_Agoualand_au_B%C3%A9nin.jpg"
+    ],
+    "slug": "symbole-du-vodoun-hebiosso-agbotaklan-au-parc-agou-b37afc",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\symbole-du-vodoun-hebiosso-agbotaklan-au-parc-agou-b37afc.src",
+    "bytes": 304763,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:poterie_de_sè_(bénin)_(3).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg/1280px-Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg/1280px-Poterie_de_S%C3%A8_%28B%C3%A9nin%29_%283%29.jpg"
+    ],
+    "slug": "poterie-de-se-benin-3-c0deea",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\poterie-de-se-benin-3-c0deea.src",
+    "bytes": 312018,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:voie_de_sakété_-_pobé.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Voie_de_Sak%C3%A9t%C3%A9_-_Pob%C3%A9.jpg/1280px-Voie_de_Sak%C3%A9t%C3%A9_-_Pob%C3%A9.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Voie_de_Sak%C3%A9t%C3%A9_-_Pob%C3%A9.jpg/1280px-Voie_de_Sak%C3%A9t%C3%A9_-_Pob%C3%A9.jpg"
+    ],
+    "slug": "voie-de-sakete-pobe-3c4c79",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\voie-de-sakete-pobe-3c4c79.src",
+    "bytes": 362777,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:façade_du_musée_régional_de_kinkinhoué.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg/1280px-Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg/1280px-Fa%C3%A7ade_du_mus%C3%A9e_r%C3%A9gional_de_Kinkinhou%C3%A9.jpg"
+    ],
+    "slug": "facade-du-musee-regional-de-kinkinhoue-cbfbc3",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\facade-du-musee-regional-de-kinkinhoue-cbfbc3.src",
+    "bytes": 408514,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:musée_régional_natitingou.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Mus%C3%A9e_R%C3%A9gional_Natitingou.jpg/1280px-Mus%C3%A9e_R%C3%A9gional_Natitingou.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Mus%C3%A9e_R%C3%A9gional_Natitingou.jpg/1280px-Mus%C3%A9e_R%C3%A9gional_Natitingou.jpg"
+    ],
+    "slug": "musee-regional-natitingou-e2071f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\musee-regional-natitingou-e2071f.src",
+    "bytes": 551684,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:équipements_du_lac_de_djougou_01.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/%C3%89quipements_du_lac_de_Djougou_01.jpg/1280px-%C3%89quipements_du_lac_de_Djougou_01.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/%C3%89quipements_du_lac_de_Djougou_01.jpg/1280px-%C3%89quipements_du_lac_de_Djougou_01.jpg"
+    ],
+    "slug": "equipements-du-lac-de-djougou-01-144471",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\equipements-du-lac-de-djougou-01-144471.src",
+    "bytes": 328407,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:place_publique_pour_la_gaani,_nikki,_département_du_borgou,_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg/1280px-Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg/1280px-Place_publique_pour_la_Gaani%2C_Nikki%2C_d%C3%A9partement_du_Borgou%2C_B%C3%A9nin.jpg"
+    ],
+    "slug": "place-publique-pour-la-gaani-nikki-departement-du--6c7407",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\place-publique-pour-la-gaani-nikki-departement-du--6c7407.src",
+    "bytes": 457541,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:pirogues_sur_le_fleuve_niger,_fermeture_de_la_frontière_niger_bénin_01.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Pirogues_sur_le_fleuve_Niger%2C_fermeture_de_la_fronti%C3%A8re_Niger_B%C3%A9nin_01.jpg/1280px-Pirogues_sur_le_fleuve_Niger%2C_fermeture_de_la_fronti%C3%A8re_Niger_B%C3%A9nin_01.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Pirogues_sur_le_fleuve_Niger%2C_fermeture_de_la_fronti%C3%A8re_Niger_B%C3%A9nin_01.jpg/1280px-Pirogues_sur_le_fleuve_Niger%2C_fermeture_de_la_fronti%C3%A8re_Niger_B%C3%A9nin_01.jpg"
+    ],
+    "slug": "pirogues-sur-le-fleuve-niger-fermeture-de-la-front-9e8a5f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\pirogues-sur-le-fleuve-niger-fermeture-de-la-front-9e8a5f.src",
+    "bytes": 564100,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:koussoukoingou2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Koussoukoingou2.jpg/1280px-Koussoukoingou2.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Koussoukoingou2.jpg/1280px-Koussoukoingou2.jpg"
+    ],
+    "slug": "koussoukoingou2-2f554b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\koussoukoingou2-2f554b.src",
+    "bytes": 474155,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:la_pêche_à_so-ava.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/La_p%C3%AAche_%C3%A0_so-ava.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e7/La_p%C3%AAche_%C3%A0_so-ava.jpg"
+    ],
+    "slug": "la-peche-a-so-ava-513448",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\la-peche-a-so-ava-513448.src",
+    "bytes": 242341,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:source_thermale_de_hêtin_sota_(_dangbo_,_oueme_).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Source_thermale_de_h%C3%AAtin_sota_%28_Dangbo_%2C_OUEME_%29.jpg/1280px-Source_thermale_de_h%C3%AAtin_sota_%28_Dangbo_%2C_OUEME_%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Source_thermale_de_h%C3%AAtin_sota_%28_Dangbo_%2C_OUEME_%29.jpg/1280px-Source_thermale_de_h%C3%AAtin_sota_%28_Dangbo_%2C_OUEME_%29.jpg"
+    ],
+    "slug": "source-thermale-de-hetin-sota-dangbo-oueme-a7b3f6",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\source-thermale-de-hetin-sota-dangbo-oueme-a7b3f6.src",
+    "bytes": 465598,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:parakoupleinairmuseum.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Parakoupleinairmuseum.jpg/1280px-Parakoupleinairmuseum.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Parakoupleinairmuseum.jpg/1280px-Parakoupleinairmuseum.jpg"
+    ],
+    "slug": "parakoupleinairmuseum-16fbc6",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\parakoupleinairmuseum-16fbc6.src",
+    "bytes": 258506,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:degan_gabin_(_arzeke_market).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/DEGAN_Gabin_%28_ARZEKE_market%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/1d/DEGAN_Gabin_%28_ARZEKE_market%29.jpg"
+    ],
+    "slug": "degan-gabin-arzeke-market-f6a5ff",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\degan-gabin-arzeke-market-f6a5ff.src",
+    "bytes": 323052,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:mont_sokbaro_cropped.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Mont_Sokbaro_Cropped.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/db/Mont_Sokbaro_Cropped.jpg"
+    ],
+    "slug": "mont-sokbaro-cropped-82e5ec",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\mont-sokbaro-cropped-82e5ec.src",
+    "bytes": 366499,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:statut_de_bio-guéra.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Statut_de_Bio-gu%C3%A9ra.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e7/Statut_de_Bio-gu%C3%A9ra.jpg"
+    ],
+    "slug": "statut-de-bio-guera-0440c6",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\statut-de-bio-guera-0440c6.src",
+    "bytes": 163926,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:palais_royal_de_kobourou_à_parakou.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Palais_Royal_de_Kobourou_%C3%A0_Parakou.jpg/1280px-Palais_Royal_de_Kobourou_%C3%A0_Parakou.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Palais_Royal_de_Kobourou_%C3%A0_Parakou.jpg/1280px-Palais_Royal_de_Kobourou_%C3%A0_Parakou.jpg"
+    ],
+    "slug": "palais-royal-de-kobourou-a-parakou-12e13a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\palais-royal-de-kobourou-a-parakou-12e13a.src",
+    "bytes": 378717,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:songhai_farm(_plant_growing).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Songhai_farm%28_plant_growing%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/57/Songhai_farm%28_plant_growing%29.jpg"
+    ],
+    "slug": "songhai-farm-plant-growing-f079e8",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\songhai-farm-plant-growing-f079e8.src",
+    "bytes": 633392,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:mekrou_river_in_w-national_park_ms_6380.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Mekrou_river_in_W-National_Park_MS_6380.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/83/Mekrou_river_in_W-National_Park_MS_6380.JPG"
+    ],
+    "slug": "mekrou-river-in-w-national-park-ms-6380-ccf0af",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\mekrou-river-in-w-national-park-ms-6380-ccf0af.src",
+    "bytes": 436978,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:passage_a_obama_beach.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Passage_a_obama_beach.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4f/Passage_a_obama_beach.jpg"
+    ],
+    "slug": "passage-a-obama-beach-fd030e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\passage-a-obama-beach-fd030e.src",
+    "bytes": 379880,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:zangbeto_on_board.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Zangbeto_on_board.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/Zangbeto_on_board.jpg"
+    ],
+    "slug": "zangbeto-on-board-0ef3af",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\zangbeto-on-board-0ef3af.src",
+    "bytes": 393246,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:institut_français_du_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Institut_fran%C3%A7ais_du_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Institut_fran%C3%A7ais_du_B%C3%A9nin.jpg"
+    ],
+    "slug": "institut-francais-du-benin-73183e",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\institut-francais-du-benin-73183e.src",
+    "bytes": 223401,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:ganvié_fishing_village_on_stilts_in_benin_(10282059623)_(2).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg/1280px-Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg/1280px-Ganvi%C3%A9_fishing_village_on_stilts_in_Benin_%2810282059623%29_%282%29.jpg"
+    ],
+    "slug": "ganvie-fishing-village-on-stilts-in-benin-10282059-b6c428",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\ganvie-fishing-village-on-stilts-in-benin-10282059-b6c428.src",
+    "bytes": 315270,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:pirogue_du_lac_toho_au_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pirogue_du_lac_toho_au_B%C3%A9nin.jpg/1280px-Pirogue_du_lac_toho_au_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pirogue_du_lac_toho_au_B%C3%A9nin.jpg/1280px-Pirogue_du_lac_toho_au_B%C3%A9nin.jpg"
+    ],
+    "slug": "pirogue-du-lac-toho-au-benin-51cd27",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\pirogue-du-lac-toho-au-benin-51cd27.src",
+    "bytes": 447859,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:marché_dantokpa_(vue_arrière).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/March%C3%A9_Dantokpa_%28vue_arri%C3%A8re%29.jpg/1280px-March%C3%A9_Dantokpa_%28vue_arri%C3%A8re%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/March%C3%A9_Dantokpa_%28vue_arri%C3%A8re%29.jpg/1280px-March%C3%A9_Dantokpa_%28vue_arri%C3%A8re%29.jpg"
+    ],
+    "slug": "marche-dantokpa-vue-arriere-01abb3",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\marche-dantokpa-vue-arriere-01abb3.src",
+    "bytes": 248715,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:azalai_hotel_cotonou_au_bénin_02.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Azalai_hotel_cotonou_au_B%C3%A9nin_02.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/65/Azalai_hotel_cotonou_au_B%C3%A9nin_02.jpg"
+    ],
+    "slug": "azalai-hotel-cotonou-au-benin-02-11a26f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\azalai-hotel-cotonou-au-benin-02-11a26f.src",
+    "bytes": 519099,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:fondation_zinsou_in_cotonou_2015.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Fondation_Zinsou_in_Cotonou_2015.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/49/Fondation_Zinsou_in_Cotonou_2015.jpg"
+    ],
+    "slug": "fondation-zinsou-in-cotonou-2015-3f325b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\fondation-zinsou-in-cotonou-2015-3f325b.src",
+    "bytes": 143203,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:koussoukoingou1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Koussoukoingou1.jpg/1280px-Koussoukoingou1.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Koussoukoingou1.jpg/1280px-Koussoukoingou1.jpg"
+    ],
+    "slug": "koussoukoingou1-6b975f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\koussoukoingou1-6b975f.src",
+    "bytes": 415093,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:roi_d'allada-1900.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Roi_d%27Allada-1900.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/10/Roi_d%27Allada-1900.jpg"
+    ],
+    "slug": "roi-d-allada-1900-fbc3fd",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\roi-d-allada-1900-fbc3fd.src",
+    "bytes": 86990,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:fort_of_são_joão_baptista_de_ajudá_(1890).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Fort_of_S%C3%A3o_Jo%C3%A3o_Baptista_de_Ajud%C3%A1_%281890%29.jpg/1280px-Fort_of_S%C3%A3o_Jo%C3%A3o_Baptista_de_Ajud%C3%A1_%281890%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Fort_of_S%C3%A3o_Jo%C3%A3o_Baptista_de_Ajud%C3%A1_%281890%29.jpg/1280px-Fort_of_S%C3%A3o_Jo%C3%A3o_Baptista_de_Ajud%C3%A1_%281890%29.jpg"
+    ],
+    "slug": "fort-of-sao-joao-baptista-de-ajuda-1890-056b39",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\fort-of-sao-joao-baptista-de-ajuda-1890-056b39.src",
+    "bytes": 164709,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:abomey-königspalast2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Abomey-K%C3%B6nigspalast2.jpg/1280px-Abomey-K%C3%B6nigspalast2.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Abomey-K%C3%B6nigspalast2.jpg/1280px-Abomey-K%C3%B6nigspalast2.jpg"
+    ],
+    "slug": "abomey-konigspalast2-679d70",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\abomey-konigspalast2-679d70.src",
+    "bytes": 355292,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:vodoun_porto_novo_05.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vodoun_Porto_Novo_05.jpg/1280px-Vodoun_Porto_Novo_05.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vodoun_Porto_Novo_05.jpg/1280px-Vodoun_Porto_Novo_05.jpg"
+    ],
+    "slug": "vodoun-porto-novo-05-d195cb",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\vodoun-porto-novo-05-d195cb.src",
+    "bytes": 356610,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:affiche_de_l'esclavage_au_musée_da_sylva_de_porto_novo.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg/1280px-Affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg/1280px-Affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg"
+    ],
+    "slug": "affiche-de-l-esclavage-au-musee-da-sylva-de-porto--31e46b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\affiche-de-l-esclavage-au-musee-da-sylva-de-porto--31e46b.src",
+    "bytes": 419971,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:statuts_des_personnes_en_attente_de_jugement_au_palais_royal_de_savalou_01.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Statuts_des_personnes_en_attente_de_jugement_au_Palais_royal_de_Savalou_01.jpg/1280px-Statuts_des_personnes_en_attente_de_jugement_au_Palais_royal_de_Savalou_01.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Statuts_des_personnes_en_attente_de_jugement_au_Palais_royal_de_Savalou_01.jpg/1280px-Statuts_des_personnes_en_attente_de_jugement_au_Palais_royal_de_Savalou_01.jpg"
+    ],
+    "slug": "statuts-des-personnes-en-attente-de-jugement-au-pa-8fc932",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\statuts-des-personnes-en-attente-de-jugement-au-pa-8fc932.src",
+    "bytes": 338940,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:ortseingang_copargo.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ortseingang_Copargo.JPG/1280px-Ortseingang_Copargo.JPG",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Ortseingang_Copargo.JPG/1280px-Ortseingang_Copargo.JPG"
+    ],
+    "slug": "ortseingang-copargo-91e9d5",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\ortseingang-copargo-91e9d5.src",
+    "bytes": 259018,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:degan_gabin_(_gani's_party_).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DEGAN_Gabin_%28_gani%27s_party_%29.jpg/1280px-DEGAN_Gabin_%28_gani%27s_party_%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DEGAN_Gabin_%28_gani%27s_party_%29.jpg/1280px-DEGAN_Gabin_%28_gani%27s_party_%29.jpg"
+    ],
+    "slug": "degan-gabin-gani-s-party-d64ddd",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\degan-gabin-gani-s-party-d64ddd.src",
+    "bytes": 384148,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:front_yard_musee_honme_porto_novo_benin_dec_2017.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg/1280px-Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg/1280px-Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg"
+    ],
+    "slug": "front-yard-musee-honme-porto-novo-benin-dec-2017-082a81",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\front-yard-musee-honme-porto-novo-benin-dec-2017-082a81.src",
+    "bytes": 248063,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:etoile_rouge_de_cotonou.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Etoile_rouge_de_cotonou.jpg/1280px-Etoile_rouge_de_cotonou.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Etoile_rouge_de_cotonou.jpg/1280px-Etoile_rouge_de_cotonou.jpg"
+    ],
+    "slug": "etoile-rouge-de-cotonou-0cbdd9",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\etoile-rouge-de-cotonou-0cbdd9.src",
+    "bytes": 343185,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:petites_foulées_à_la_plage_de_fidjrossè_cotonou_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Petites_foul%C3%A9es_%C3%A0_la_plage_de_Fidjross%C3%A8_Cotonou_B%C3%A9nin.jpg/1280px-Petites_foul%C3%A9es_%C3%A0_la_plage_de_Fidjross%C3%A8_Cotonou_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Petites_foul%C3%A9es_%C3%A0_la_plage_de_Fidjross%C3%A8_Cotonou_B%C3%A9nin.jpg/1280px-Petites_foul%C3%A9es_%C3%A0_la_plage_de_Fidjross%C3%A8_Cotonou_B%C3%A9nin.jpg"
+    ],
+    "slug": "petites-foulees-a-la-plage-de-fidjrosse-cotonou-be-ea360f",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\petites-foulees-a-la-plage-de-fidjrosse-cotonou-be-ea360f.src",
+    "bytes": 533695,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:plage_au_sud_du_bénin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Plage_au_sud_du_B%C3%A9nin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/bc/Plage_au_sud_du_B%C3%A9nin.jpg"
+    ],
+    "slug": "plage-au-sud-du-benin-dabbed",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\plage-au-sud-du-benin-dabbed.src",
+    "bytes": 257172,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:cotonoucathedral.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Cotonoucathedral.jpg/1280px-Cotonoucathedral.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Cotonoucathedral.jpg/1280px-Cotonoucathedral.jpg"
+    ],
+    "slug": "cotonoucathedral-00c6eb",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\cotonoucathedral-00c6eb.src",
+    "bytes": 409737,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:monument_de_l'amazone_au_benin.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Monument_de_l%27Amazone_au_Benin.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/Monument_de_l%27Amazone_au_Benin.jpg"
+    ],
+    "slug": "monument-de-l-amazone-au-benin-a3b466",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\monument-de-l-amazone-au-benin-a3b466.src",
+    "bytes": 336671,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:djègbadji_à_ouidah.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Dj%C3%A8gbadji_%C3%A0_Ouidah.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/58/Dj%C3%A8gbadji_%C3%A0_Ouidah.jpg"
+    ],
+    "slug": "djegbadji-a-ouidah-75ef35",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\djegbadji-a-ouidah-75ef35.src",
+    "bytes": 229336,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:couché_de_soleil_à_la_plage_de_sèmè_(bénin).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Couch%C3%A9_de_soleil_%C3%A0_la_plage_de_S%C3%A8m%C3%A8_%28B%C3%A9nin%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/b2/Couch%C3%A9_de_soleil_%C3%A0_la_plage_de_S%C3%A8m%C3%A8_%28B%C3%A9nin%29.jpg"
+    ],
+    "slug": "couche-de-soleil-a-la-plage-de-seme-benin-e9072b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\couche-de-soleil-a-la-plage-de-seme-benin-e9072b.src",
+    "bytes": 140539,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:la_cote_de_la_mer_à_agoué.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/La_cote_de_la_mer_%C3%A0_agou%C3%A9.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/35/La_cote_de_la_mer_%C3%A0_agou%C3%A9.jpg"
+    ],
+    "slug": "la-cote-de-la-mer-a-agoue-471023",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\la-cote-de-la-mer-a-agoue-471023.src",
+    "bytes": 155488,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:mosquée_de_zongo_-_vue_de_face_2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mosqu%C3%A9e_de_Zongo_-_Vue_de_Face_2.jpg/1280px-Mosqu%C3%A9e_de_Zongo_-_Vue_de_Face_2.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mosqu%C3%A9e_de_Zongo_-_Vue_de_Face_2.jpg/1280px-Mosqu%C3%A9e_de_Zongo_-_Vue_de_Face_2.jpg"
+    ],
+    "slug": "mosquee-de-zongo-vue-de-face-2-a90604",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\mosquee-de-zongo-vue-de-face-2-a90604.src",
+    "bytes": 194866,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:amiwô_accompagné_de_poisson_frit.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Amiw%C3%B4_accompagn%C3%A9_de_poisson_frit.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e3/Amiw%C3%B4_accompagn%C3%A9_de_poisson_frit.jpg"
+    ],
+    "slug": "amiwo-accompagne-de-poisson-frit-a2bebc",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\amiwo-accompagne-de-poisson-frit-a2bebc.src",
+    "bytes": 195010,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:crépuscule_avlékété.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Cr%C3%A9puscule_avl%C3%A9k%C3%A9t%C3%A9.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Cr%C3%A9puscule_avl%C3%A9k%C3%A9t%C3%A9.jpg"
+    ],
+    "slug": "crepuscule-avlekete-d7a6a7",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\crepuscule-avlekete-d7a6a7.src",
+    "bytes": 383176,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:plage_de_grand-popo_(3).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Plage_de_Grand-Popo_%283%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/66/Plage_de_Grand-Popo_%283%29.jpg"
+    ],
+    "slug": "plage-de-grand-popo-3-f348e1",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\plage-de-grand-popo-3-f348e1.src",
+    "bytes": 290959,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:avlo_village.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Avlo_village.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d2/Avlo_village.jpg"
+    ],
+    "slug": "avlo-village-437eea",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\avlo-village-437eea.src",
+    "bytes": 322849,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:boulevard_de_la_marina.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Boulevard_de_la_Marina.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e5/Boulevard_de_la_Marina.jpg"
+    ],
+    "slug": "boulevard-de-la-marina-266504",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\boulevard-de-la-marina-266504.src",
+    "bytes": 232601,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:mafé_au_poulet_pané.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Maf%C3%A9_au_poulet_pan%C3%A9.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Maf%C3%A9_au_poulet_pan%C3%A9.jpg"
+    ],
+    "slug": "mafe-au-poulet-pane-c14b6a",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\mafe-au-poulet-pane-c14b6a.src",
+    "bytes": 455898,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:maison_de_la_famille_de_souza,_à_ouidah.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Maison_de_la_famille_de_Souza%2C_%C3%A0_Ouidah.jpg/1280px-Maison_de_la_famille_de_Souza%2C_%C3%A0_Ouidah.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Maison_de_la_famille_de_Souza%2C_%C3%A0_Ouidah.jpg/1280px-Maison_de_la_famille_de_Souza%2C_%C3%A0_Ouidah.jpg"
+    ],
+    "slug": "maison-de-la-famille-de-souza-a-ouidah-b6f8eb",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\maison-de-la-famille-de-souza-a-ouidah-b6f8eb.src",
+    "bytes": 434179,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:monuments_des_martyrs_de_cotonou.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Monuments_des_Martyrs_de_Cotonou.jpg/1280px-Monuments_des_Martyrs_de_Cotonou.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Monuments_des_Martyrs_de_Cotonou.jpg/1280px-Monuments_des_Martyrs_de_Cotonou.jpg"
+    ],
+    "slug": "monuments-des-martyrs-de-cotonou-50a100",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\monuments-des-martyrs-de-cotonou-50a100.src",
+    "bytes": 310480,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:le_lac_ahémé.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Le_lac_Ah%C3%A9m%C3%A9.jpg/1280px-Le_lac_Ah%C3%A9m%C3%A9.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Le_lac_Ah%C3%A9m%C3%A9.jpg/1280px-Le_lac_Ah%C3%A9m%C3%A9.jpg"
+    ],
+    "slug": "le-lac-aheme-8e151b",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\le-lac-aheme-8e151b.src",
+    "bytes": 503283,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  },
+  {
+    "key": "wm:mémorial_de_zoungbodji_(2).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/M%C3%A9morial_de_Zoungbodji_%282%29.jpg/1280px-M%C3%A9morial_de_Zoungbodji_%282%29.jpg",
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/M%C3%A9morial_de_Zoungbodji_%282%29.jpg/1280px-M%C3%A9morial_de_Zoungbodji_%282%29.jpg"
+    ],
+    "slug": "memorial-de-zoungbodji-2-645e05",
+    "file": "C:\\Users\\ajefn\\Documents\\TOurismeBenin\\scripts\\images\\_download\\memorial-de-zoungbodji-2-645e05.src",
+    "bytes": 816476,
+    "files": [
+      "src\\data\\hiddenSpots.ts"
+    ]
+  }
+]

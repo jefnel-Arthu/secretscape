@@ -3,6 +3,7 @@ import { HiddenSpot } from '../types';
 import { CATEGORY_LABELS, SECRET_LEVEL_LABELS } from '../data/hiddenSpots';
 import { CalendarPlus, Bookmark, MapPin, Clock, Eye, Sparkles, Star, Footprints, ExternalLink, Navigation } from 'lucide-react';
 import { openInGoogleMaps } from '../lib/googleMaps';
+import { OptimizedImage } from './OptimizedImage';
 
 interface SpotCardProps {
   spot: HiddenSpot;
@@ -37,11 +38,12 @@ export const SpotCard: React.FC<SpotCardProps> = ({
     >
       {/* Card Image */}
       <div className="relative h-52 bg-stone-100 overflow-hidden shrink-0">
-        <img
+        <OptimizedImage
           src={spot.imageUrl}
           alt={spot.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/10 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 via-transparent to-amber-600/10 group-hover:from-amber-500/10 transition-all duration-500" />

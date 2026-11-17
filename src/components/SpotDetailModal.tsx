@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HiddenSpot, VisitorPhoto } from '../types';
 import { CATEGORY_LABELS } from '../data/hiddenSpots';
+import { OptimizedImage } from './OptimizedImage';
 import {
   X,
   MapPin,
@@ -69,10 +70,11 @@ export const SpotDetailModal: React.FC<SpotDetailModalProps> = ({
 
         {/* Hero Image */}
         <div className="relative h-56 sm:h-64 bg-stone-900 overflow-hidden">
-          <img
+          <OptimizedImage
             src={spot.imageUrl}
             alt={spot.title}
             className="w-full h-full object-cover"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent" />
 

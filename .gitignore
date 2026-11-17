@@ -9,3 +9,6 @@ scripts/guide/_scratch/
 .env*
 !.env.example
 /data/
+
+scripts/images/_download/
+scripts/images/external-urls.json
