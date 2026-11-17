@@ -44,6 +44,12 @@ interface Message {
 
 type AdminTab = 'dashboard' | 'stats' | 'messages' | 'favorites' | 'spots' | 'photos';
 
+/** Le contact saisit un nombre de jours, le planificateur choisit une tranche (« 5 à 7 jours »). */
+const formatTripDuration = (value: string) => (/^\d+$/.test(value.trim()) ? `${value.trim()}j` : value);
+
+/** Le budget est en FCFA ; certaines demandes plus anciennes portent déjà leur unité. */
+const formatBudget = (value: string) => (/(FCFA|€|\$)/i.test(value) ? value : `${value} FCFA`);
+
 export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   // Le token est éphémère (régénéré à chaque démarrage du serveur) : on ne le garde pas en mémoire,
   // il vit dans localStorage et le serveur en est la seule source de vérité.
@@ -353,10 +359,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                     {(msg.arrivalDate || msg.tripDuration || msg.adults || msg.children || msg.budget || msg.tripType || msg.accommodation || msg.transport || msg.guide || msg.foodPreferences) && (
                       <div className="bg-stone-50 rounded-xl p-3 grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                         {msg.arrivalDate && <div><span className="text-stone-400">Arrivée:</span> <span className="font-medium">{msg.arrivalDate}</span></div>}
-                        {msg.tripDuration && <div><span className="text-stone-400">Durée:</span> <span className="font-medium">{msg.tripDuration}j</span></div>}
+                        {msg.tripDuration && <div><span className="text-stone-400">Durée:</span> <span className="font-medium">{formatTripDuration(msg.tripDuration)}</span></div>}
                         {msg.adults && <div><span className="text-stone-400">Adultes:</span> <span className="font-medium">{msg.adults}</span></div>}
                         {msg.children && <div><span className="text-stone-400">Enfants:</span> <span className="font-medium">{msg.children}</span></div>}
-                        {msg.budget && <div><span className="text-stone-400">Budget:</span> <span className="font-medium">{msg.budget} FCFA</span></div>}
+                        {msg.budget && <div><span className="text-stone-400">Budget:</span> <span className="font-medium">{formatBudget(msg.budget)}</span></div>}
                         {msg.tripType && <div><span className="text-stone-400">Type:</span> <span className="font-medium">{msg.tripType}</span></div>}
                         {msg.accommodation && <div><span className="text-stone-400">Hébergement:</span> <span className="font-medium">{msg.accommodation}</span></div>}
                         {msg.transport && <div><span className="text-stone-400">Transport:</span> <span className="font-medium">{msg.transport}</span></div>}

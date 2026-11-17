@@ -25,21 +25,10 @@ import { AdminPanel } from './components/AdminPanel';
 import { NavigationModal } from './components/NavigationModal';
 import { PhotoCreditsModal } from './components/PhotoCreditsModal';
 import { AGENCY_CONTACT, AGENCY_PHONE_HREF } from './data/contact';
+import { FEATURED_DESTINATIONS } from './data/destinations';
 import { Sparkles, Bookmark, Calendar, Compass, Search, Loader2, ArrowLeft, Mail, MapPin, Phone } from 'lucide-react';
 
 const APP_VERSION = '2.1';
-
-/** Destinations mises en avant dans le footer. */
-const FOOTER_DESTINATIONS = [
-  'Cotonou',
-  'Ouidah',
-  'Abomey',
-  'Grand-Popo',
-  'Porto-Novo',
-  'Dassa-Zoumé',
-  'Ganvié',
-  'Natitingou',
-];
 
 function migrateStorage() {
   const stored = localStorage.getItem('secretscape_version');
@@ -683,7 +672,7 @@ export default function App() {
                 Destinations
               </h3>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
-                {FOOTER_DESTINATIONS.map((city) => (
+                {FEATURED_DESTINATIONS.map((city) => (
                   <li key={city}>
                     <button
                       onClick={() => {

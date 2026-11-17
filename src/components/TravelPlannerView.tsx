@@ -18,6 +18,7 @@ import {
   Waves,
   Wine,
 } from 'lucide-react';
+import { FEATURED_DESTINATIONS } from '../data/destinations';
 
 const PLANNER_IMAGE = '/images/localized/ganvie-6b0090.jpg';
 
@@ -79,22 +80,15 @@ const TRIP_TYPE_META: Record<string, { icon: React.ElementType; hint: string }> 
 
 const DURATIONS = ['3 à 4 jours', '5 à 7 jours', '8 à 10 jours', '11 jours et +'];
 
-const DESTINATIONS = [
-  'Cotonou',
-  'Ouidah',
-  'Ganvié',
-  'Abomey',
-  'Porto-Novo',
-  'Pendjari',
-  'Grand-Popo',
-  'Natitingou',
-];
+/** Même liste que le footer, pour ne jamais proposer un lieu absent du catalogue. */
+const DESTINATIONS = FEATURED_DESTINATIONS;
 
+/** Budgets exprimés en FCFA, comme le formulaire de contact et l'espace admin. */
 const BUDGETS = [
-  'Moins de 800 €',
-  '800 à 1 500 €',
-  '1 500 à 2 500 €',
-  'Plus de 2 500 €',
+  'Moins de 500 000 FCFA',
+  '500 000 à 1 000 000 FCFA',
+  '1 000 000 à 1 600 000 FCFA',
+  'Plus de 1 600 000 FCFA',
   'À définir ensemble',
 ];
 
@@ -243,6 +237,14 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
     setError('');
   };
 
+  /** Une date de retour antérieure à la nouvelle date de départ est effacée. */
+  const updateStartDate = (value: string) =>
+    setForm((prev) => ({
+      ...prev,
+      startDate: value,
+      endDate: prev.endDate && value && prev.endDate < value ? '' : prev.endDate,
+    }));
+
   const buildSummary = () =>
     [
       `Type de voyage : ${form.tripTypes.join(', ') || 'À définir'}`,
@@ -258,6 +260,11 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
   const handleSubmit = async () => {
     if (!form.name.trim() || !form.email.trim()) {
       setError('Merci de renseigner votre nom et votre adresse email.');
+      return;
+    }
+
+    if (form.startDate && form.endDate && form.endDate < form.startDate) {
+      setError('La date de retour doit être postérieure à la date de départ.');
       return;
     }
 
@@ -284,11 +291,12 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
     };
 
     try {
-      await fetch('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
+      if (!response.ok) throw new Error(`Erreur ${response.status}`);
       setStatus('sent');
     } catch {
       setStatus('error');
@@ -415,7 +423,7 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
               <input
                 type="date"
                 value={form.startDate}
-                onChange={(event) => update('startDate', event.target.value)}
+                onChange={(event) => updateStartDate(event.target.value)}
                 className={fieldBase}
               />
             </label>
@@ -475,7 +483,7 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
       return (
         <div className="space-y-8">
           <div>
-            <FieldLabel hint="Par personne">Budget indicatif</FieldLabel>
+            <FieldLabel hint="En FCFA · par personne">Budget indicatif</FieldLabel>
             <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {BUDGETS.map((budget) => {
                 const active = form.budget === budget;
@@ -577,6 +585,12 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
             Votre voyage en un coup d'œil
           </p>
           <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+            <div className="flex gap-2 sm:col-span-2">
+              <dt className="shrink-0 text-[#8A8578]">Style :</dt>
+              <dd className="font-semibold text-[#0b1b2b]">
+                {form.tripTypes.join(', ') || 'À définir'}
+              </dd>
+            </div>
             <div className="flex gap-2">
               <dt className="text-[#8A8578]">Durée :</dt>
               <dd className="font-semibold text-[#0b1b2b]">{form.duration || 'À définir'}</dd>
@@ -588,7 +602,9 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
             <div className="flex gap-2">
               <dt className="text-[#8A8578]">Dates :</dt>
               <dd className="font-semibold text-[#0b1b2b]">
-                {formatFrDate(form.startDate)} → {formatFrDate(form.endDate)}
+                {form.startDate
+                  ? `${formatFrDate(form.startDate)} → ${formatFrDate(form.endDate)}`
+                  : 'À définir'}
               </dd>
             </div>
             <div className="flex gap-2">
@@ -651,7 +667,7 @@ export const TravelPlannerView: React.FC<TravelPlannerViewProps> = ({
             Créez votre voyage au Bénin
           </h1>
           <p className="mt-3 max-w-[560px] text-[13px] leading-relaxed text-[#E8E4DA]">
-            Cinq étapes, une proposition personnalisée sous 48 h. Votre carnet se remplit au fil de vos choix.
+            Cinq étapes, une réponse sous 24 h et une proposition personnalisée sous 48 h. Votre carnet se remplit au fil de vos choix.
           </p>
         </div>
       </section>

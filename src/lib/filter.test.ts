@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { filterSpots, normalizeText, SpotFilters } from './filter';
 import { HiddenSpot } from '../types';
 import { INITIAL_HIDDEN_SPOTS } from '../data/hiddenSpots';
+import { FEATURED_DESTINATIONS } from '../data/destinations';
 
 const spot = (overrides: Partial<HiddenSpot>): HiddenSpot => ({
   id: 'spot-1',
@@ -84,6 +85,13 @@ describe('filterSpots', () => {
     expect(new Set(normalized).size).toBe(cities.length);
     for (const city of cities) {
       expect(filterSpots(INITIAL_HIDDEN_SPOTS, { ...base, city }).length).toBeGreaterThan(0);
+    }
+  });
+
+  it('les destinations du footer et du planificateur existent dans le catalogue', () => {
+    const cities = new Set(INITIAL_HIDDEN_SPOTS.map(s => normalizeText(s.city)));
+    for (const destination of FEATURED_DESTINATIONS) {
+      expect(cities.has(normalizeText(destination))).toBe(true);
     }
   });
 });
