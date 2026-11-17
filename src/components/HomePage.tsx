@@ -32,28 +32,15 @@ interface HomePageProps {
   onOpenSpot: (spotId: string) => void;
 }
 
-const GANVIE_IMAGE = '/images/localized/ganvie-6b0090.jpg';
 // Grande Mosquée de Porto-Novo — photo GBETONGNINOUGBO Joseph Hervé Ahissou, CC BY-SA 4.0
 const PORTO_NOVO_IMAGE = '/images/localized/porto-novo-mosquee.jpg';
 
-/** Culture béninoise en fond du hero — défilement automatique toutes les 10 s. */
-type HeroSlide = { src: string; alt: string; width: number };
-
-const HERO_SLIDES: HeroSlide[] = [
-  { src: GANVIE_IMAGE, alt: 'Village lacustre de Ganvié', width: 1600 },
-  { src: '/images/vodun-days-2026.jpg', alt: 'Vodun Days à Ouidah', width: 1600 },
-  { src: '/images/localized/event-festival-masques-4623dc.jpg', alt: 'Festival des Masques de Porto-Novo', width: 1280 },
-  { src: '/images/localized/event-1er-aout-file-degan-gabin-motorized-parade-jpg-4a8da6.jpg', alt: 'Fête du 1er Août au Bénin', width: 1600 },
-  { src: '/images/hero-festival-sica.jpg', alt: 'Festival SICA, arts et culture du Bénin', width: 1600 },
-];
-
-const replaceExt = (src: string, ext: string) => src.replace(/\.(jpe?g|png)$/i, ext);
-const heroWebpSet = (slide: HeroSlide) =>
-  `${replaceExt(slide.src, '-800.webp')} 800w, ${replaceExt(slide.src, '.webp')} ${slide.width}w`;
-const heroJpegSet = (slide: HeroSlide) =>
-  `${replaceExt(slide.src, '-800.jpg')} 800w, ${slide.src} ${slide.width}w`;
-
-const HERO_INTERVAL_MS = 10000;
+/**
+ * Plan drone de la plage Amazone à Cotonou, tourné par mataki klimtetou.
+ * Vidéo libre Pexels (https://www.pexels.com/video/plage-amazone-17634881/).
+ */
+const HERO_VIDEO = '/videos/plage-amazone-cotonou.mp4';
+const HERO_VIDEO_POSTER = '/videos/plage-amazone-cotonou-poster.jpg';
 
 const CATEGORY_CARDS = [
   {
@@ -140,35 +127,25 @@ export const HomePage: React.FC<HomePageProps> = ({
   onOpenSpot,
 }) => {
   const [heroReady, setHeroReady] = React.useState(false);
-  const [heroIndex, setHeroIndex] = React.useState(0);
-  // Diapositives déjà montées : on ne télécharge au départ que l'image courante
-  // et la suivante, les autres arrivent au fil du défilement.
-  const [mountedSlides, setMountedSlides] = React.useState<number[]>([0]);
+  const heroVideoRef = React.useRef<HTMLVideoElement>(null);
 
   React.useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
     return () => clearTimeout(t);
   }, []);
 
-  // Défilement automatique des images de la culture béninoise.
+  // La vidéo reste immobile pour les visiteurs qui préfèrent réduire les animations.
   React.useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const id = window.setInterval(() => {
-      setHeroIndex((current) => (current + 1) % HERO_SLIDES.length);
-    }, HERO_INTERVAL_MS);
-    return () => window.clearInterval(id);
+    const video = heroVideoRef.current;
+    if (!video) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.pause();
+    } else {
+      void video.play().catch(() => {
+        // Lecture automatique refusée par le navigateur : le poster reste affiché.
+      });
+    }
   }, []);
-
-  // Monte la diapositive suivante quelques secondes après l'affichage courant :
-  // elle a ainsi le temps de se télécharger avant la transition, sans retarder
-  // le premier rendu.
-  React.useEffect(() => {
-    const nextIndex = (heroIndex + 1) % HERO_SLIDES.length;
-    const timer = window.setTimeout(() => {
-      setMountedSlides((prev) => (prev.includes(nextIndex) ? prev : [...prev, nextIndex].sort((a, b) => a - b)));
-    }, 3000);
-    return () => window.clearTimeout(timer);
-  }, [heroIndex]);
 
   /** Nombre de lieux référencés par ville, pour les cartes de destination. */
   const countsByCity = React.useMemo(() => {
@@ -185,24 +162,20 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* ═══════════════════════════════════════════════ HERO ═══ */}
       <section className="relative h-[100vh] min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          {HERO_SLIDES.map((slide, index) =>
-            mountedSlides.includes(index) ? (
-              <OptimizedImage
-                key={slide.src}
-                src={slide.src}
-                srcSet={heroJpegSet(slide)}
-                webpSrcSet={heroWebpSet(slide)}
-                sizes="100vw"
-                alt={slide.alt}
-                aria-hidden={index !== heroIndex}
-                decoding="async"
-                fetchPriority={index === 0 ? 'high' : 'low'}
-                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-out ${
-                  index === heroIndex ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
-            ) : null
-          )}
+          <video
+            ref={heroVideoRef}
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={HERO_VIDEO_POSTER}
+            aria-hidden="true"
+            tabIndex={-1}
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1b2b]/70 via-[#0b1b2b]/45 to-[#0b1b2b]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b2b]/80 via-transparent to-transparent" />
@@ -254,6 +227,14 @@ export const HomePage: React.FC<HomePageProps> = ({
             <ArrowDown className="w-4 h-4" />
           </div>
         </div>
+        <a
+          href="https://www.pexels.com/video/plage-amazone-17634881/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-4 right-4 z-10 hidden text-[9px] text-white/45 transition-colors hover:text-white/80 sm:block"
+        >
+          Vidéo drone : Plage Amazone, Cotonou · mataki klimtetou / Pexels
+        </a>
       </section>
 
       {/* ═══════════════════════════════════════════════ MANIFESTE ═══ */}
